@@ -1,0 +1,10 @@
+{
+  "id": "router-pihole-005-final",
+  "title": "Router + Pi-hole 5/5 - end-to-end acceptance",
+  "description": "Run final DNS and remote logging acceptance tests, self-repair once if necessary, and publish a concise integration report. Roll back router changes if final acceptance still fails.",
+  "backup": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase Backup",
+  "script": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase Final",
+  "test": "$ErrorActionPreference='Stop';$r='C:/3EN-Agent/router-pihole-final/FINAL-REPORT.txt';if(-not(Test-Path $r)){throw 'final report missing'};$c=Get-Content $r -Raw;if($c -notmatch 'FINAL_STATUS=SUCCESS'){throw 'final status not success'};Write-Host 'ROUTER_PIHOLE_PROJECT_ACCEPTANCE=PASS'",
+  "repair": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase ApplyDns;& $p -Phase ApplyLogging;& $p -Phase Final",
+  "rollback": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase Rollback"
+}
