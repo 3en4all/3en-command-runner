@@ -1,0 +1,9 @@
+{
+  "id": "2026-09-09-043",
+  "title": "v4.0 dependency gate acceptance",
+  "risk": "low",
+  "backup": "Write-Output 'V40_043_BACKUP=PASS'",
+  "script": "$p='C:/3EN-Agent/v40-acceptance/low-risk.flag'; if(-not(Test-Path $p)){throw 'DEPENDENCY_ARTIFACT_MISSING'}; Write-Output 'V40_043_DEPENDENCY_VISIBLE=PASS'",
+  "test": "Write-Output 'V40_043_TEST=PASS'",
+  "rollback": "Write-Output 'V40_043_ROLLBACK=PASS'"
+}
