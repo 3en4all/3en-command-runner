@@ -1,0 +1,378 @@
+OPENCLAW_STATE_BACKUP=C:\3EN-Agent\backups\018b\20260909-131721\openclaw-state
+BACKUP_ROOT=C:\3EN-Agent\backups\018b\20260909-131721
+BACKUP_018B_READY
+=== OPENCLAW EXISTING INSTALL AUDIT 018B ===
+TIMESTAMP=2026-09-09T13:17:46.3741462+02:00
+OPENCLAW_PATH=C:\Users\wi3lk\AppData\Roaming\npm\openclaw.ps1
+--- INSTALLED VERSION ---
+OpenClaw 2026.7.1-2 (0790d9f)
+--- NPM LATEST VERSION ---
+"2026.9.3"
+--- OPENCLAW UPDATE STATUS ---
+{
+  "update": {
+    "root": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw",
+    "installKind": "package",
+    "packageManager": "npm",
+    "deps": {
+      "manager": "npm",
+      "status": "ok",
+      "lockfilePath": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\npm-shrinkwrap.json",
+      "markerPath": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\node_modules"
+    },
+    "registry": {
+      "latestVersion": "2026.9.3",
+      "tag": "latest"
+    }
+  },
+  "channel": {
+    "value": "stable",
+    "source": "default",
+    "label": "stable (default)",
+    "config": null
+  },
+  "availability": {
+    "available": true,
+    "hasGitUpdate": false,
+    "hasRegistryUpdate": true,
+    "latestVersion": "2026.9.3",
+    "gitBehind": null
+  }
+}
+--- GATEWAY STATUS JSON ---
+{
+  "cli": {
+    "version": "2026.7.1-2",
+    "entrypoint": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\openclaw.mjs"
+  },
+  "logFile": "D:\\TEMP\\openclaw\\openclaw-2026-09-09.log",
+  "service": {
+    "label": "Scheduled Task",
+    "loaded": true,
+    "loadedText": "registered",
+    "notLoadedText": "missing",
+    "command": {
+      "programArguments": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\index.js",
+        "gateway",
+        "--port",
+        "18789"
+      ],
+      "environment": {
+        "OPENCLAW_GATEWAY_PORT": "18789"
+      },
+      "environmentValueSources": {
+        "TMPDIR": "inline",
+        "OPENCLAW_GATEWAY_PORT": "inline",
+        "OPENCLAW_SYSTEMD_UNIT": "inline",
+        "OPENCLAW_WINDOWS_TASK_NAME": "inline",
+        "OPENCLAW_WINDOWS_TASK_HIDDEN_LAUNCHER": "inline",
+        "OPENCLAW_SERVICE_MARKER": "inline",
+        "OPENCLAW_SERVICE_KIND": "inline",
+        "OPENCLAW_SERVICE_VERSION": "inline"
+      },
+      "sourcePath": "C:\\Users\\wi3lk\\.openclaw\\gateway.cmd"
+    },
+    "runtime": {
+      "status": "running",
+      "pid": 25624,
+      "detail": "Gateway process detected for gateway port 18789.",
+      "state": "Ready",
+      "lastRunTime": "8.09.2026 12:45:10",
+      "lastRunResult": "0"
+    },
+    "configAudit": {
+      "ok": true,
+      "issues": []
+    }
+  },
+  "config": {
+    "cli": {
+      "path": "C:\\Users\\wi3lk\\.openclaw\\openclaw.json",
+      "exists": true,
+      "valid": true,
+      "controlUi": {
+        "allowInsecureAuth": true
+      }
+    },
+    "daemon": {
+      "path": "C:\\Users\\wi3lk\\.openclaw\\openclaw.json",
+      "exists": true,
+      "valid": true,
+      "controlUi": {
+        "allowInsecureAuth": true
+      }
+    }
+  },
+  "gateway": {
+    "bindMode": "loopback",
+    "bindHost": "127.0.0.1",
+    "port": 18789,
+    "portSource": "service args",
+    "probeUrl": "ws://127.0.0.1:18789",
+    "controlUiLinks": {
+      "httpUrl": "http://127.0.0.1:18789/",
+      "wsUrl": "ws://127.0.0.1:18789"
+    },
+    "probeNote": "Loopback-only gateway; only local clients can connect.",
+    "version": "2026.7.1-2"
+  },
+  "port": {
+    "port": 18789,
+    "status": "busy",
+    "listeners": [
+      {
+        "pid": 25624,
+        "address": "127.0.0.1:18789",
+        "command": "node.exe",
+        "commandLine": "\"C:\\Program Files\\nodejs\\node.exe\"  C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\
+\openclaw\\dist\\index.js gateway --port 18789"
+      }
+    ],
+    "hints": []
+  },
+  "rpc": {
+    "ok": true,
+    "kind": "connect",
+    "capability": "connected_no_operator_scope",
+    "auth": {
+      "role": "operator",
+      "scopes": [],
+      "capability": "connected_no_operator_scope"
+    },
+    "server": {
+      "version": "2026.7.1-2",
+      "connId": "da6b8294-5160-47ad-b71c-438ce4b9e760"
+    },
+    "version": "2026.7.1-2",
+    "url": "ws://127.0.0.1:18789"
+  },
+  "extraServices": [],
+  "pluginVersionDrift": {
+    "gatewayVersion": "2026.7.1-2",
+    "drifts": []
+  }
+}
+
+=== PORT 18789 ===
+PORT_18789_LISTENING=TRUE PID=25624
+PORT_18789_PROCESS=node PID=25624
+
+=== OPENCLAW SCHEDULED TASK ===
+OPENCLAW_SCHEDULED_TASK_COUNT=1
+TASK=OpenClaw Gateway STATE=Ready LAST_RESULT=0 LAST_RUN=2026-09-08T12:45:10.0000000+02:00
+
+=== STATE INVENTORY (NO CONTENT) ===
+STATE_FILE_COUNT=19259
+STATE_FILE=C:\Users\wi3lk\.openclaw\agents\main\agent\models.json SIZE=22 SHA256=F6A60FFE718B445A923E5D870FF3B23CED2A8E
+42EF7322A0494C48C788E66E10
+STATE_FILE=C:\Users\wi3lk\.openclaw\agents\main\agent\plugins\ollama\catalog.json SIZE=9825 SHA256=4FFA06BB78C12E337503
+ECE18A63DD6A343B947CEF41032548958D7079C37D9B
+STATE_FILE=C:\Users\wi3lk\.openclaw\agents\main\sessions\4d4a45b0-c19b-422f-9505-6f6cbac06de4.trajectory-path.json SIZE
+=255 SHA256=2B5C30252B35E9E4C6900AF3A93432B2318B3C49D86E1C109D289EA7DA638CDA
+STATE_FILE=C:\Users\wi3lk\.openclaw\agents\main\sessions\d797a009-186d-4009-bd53-eb75f76dfab0.trajectory-path.json SIZE
+=255 SHA256=F0FDA9E1AA8C67A418F4CA877A1E62B65EC2120EE040A1CE5652608CC8117706
+STATE_FILE=C:\Users\wi3lk\.openclaw\agents\main\sessions\ed35f631-a05a-489a-894c-043dfb6b9df5.trajectory-path.json SIZE
+=255 SHA256=0FEF593C141C10223CB3E69C24D8062747AE125995A163397ED8C0F8356D3096
+STATE_FILE=C:\Users\wi3lk\.openclaw\agents\main\sessions\sessions.json SIZE=15495 SHA256=C7FA8B1270CF01F31726FAD2BBD644
+18A21397E071FE23A7B71510A11CF30E60
+STATE_FILE=C:\Users\wi3lk\.openclaw\completions\openclaw.ps1 SIZE=165985 SHA256=5B6BF2809B2E63D7D196AE4274ED805E03261CA
+B1808F6D192F1D89638F00F04
+STATE_FILE=C:\Users\wi3lk\.openclaw\devices\paired.json SIZE=1405 SHA256=F396F0EB843E1B95E01179BFBD8D817909B7FDB5EDC63F
+D6A68497D0A660D37B
+STATE_FILE=C:\Users\wi3lk\.openclaw\devices\pending.json SIZE=2 SHA256=44136FA355B3678A1146AD16F7E8649E94FB4FC21FE77E83
+10C060F61CAAFF8A
+STATE_FILE=C:\Users\wi3lk\.openclaw\gateway.cmd SIZE=504 SHA256=242CFEBB3F1BA64E29AE0E79CAD3DB03FD9CF90CF88733CDC771D47
+C0202387A
+STATE_FILE=C:\Users\wi3lk\.openclaw\identity\device.json SIZE=416 SHA256=DF619052EB6BF6A6CC8A62AB350DA345681872ED9112DC
+2EFD644F8DD04A537D
+STATE_FILE=C:\Users\wi3lk\.openclaw\openclaw.json SIZE=9475 SHA256=0760AFF53D3989221929C0A1695E9602D35D760A9CFC4E003CF1
+DC7F3AE2FBF7
+STATE_FILE=C:\Users\wi3lk\.openclaw\skill-workshop\proposals.json SIZE=113 SHA256=6B3C7DDE6D49A6BD41BAE8D6F4C665031F559
+39F6EBBE4BE44B08966A52BFFBD
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\mcporter.cmd SIZE=335 SHA256=F581EFEC92F4BA31A69E53DCE3F1DA0EB4C6B1F
+78D8C091C6A8736015E653CC9
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\mcporter.ps1 SIZE=845 SHA256=49F2A9C46FD66D70131345F43D7CE32B5D90A04
+46C39F963E0CB94AEC5EC115E
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\chrome-remote-interf
+ace.cmd SIZE=342 SHA256=EC7E50904B2BEEBAF810A572BECD80802C59FA1D18D2015624707A1D12D623A6
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\chrome-remote-interf
+ace.ps1 SIZE=873 SHA256=D6C63336C917C5A331FBEA37E57F82BAD53EEB65E2830535A8064A3995A598B7
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\clipboard-image.cmd 
+SIZE=327 SHA256=61ED8369143E24E0CFA01988181F4B3CFACB1E5F56A2885A4ACD1D9F9D1E69EA
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\clipboard-image.ps1 
+SIZE=813 SHA256=3037670CF999B4E12646D5BE4C0E3E4CF672F4FF6BAB39D4B32C545367C3A387
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\is-docker.cmd SIZE=3
+21 SHA256=30F3557C93F870AB7BC1F7872AACF5984CF9D1306AB940F8ECAB0EA09381CD4C
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\is-docker.ps1 SIZE=7
+89 SHA256=9289873F0542ABE22269F79A09BC043269B548E090A976CD36A6D29837D67FA7
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\is-inside-container.
+cmd SIZE=331 SHA256=A67DADC17E6C3288E5E301A4981F4EEF325B611C7842EF1D8C80367DC508EB76
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\is-inside-container.
+ps1 SIZE=829 SHA256=4FA4EB514B091AB936F07554260449024506CEFF52B539073D74E54BD0F30D93
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\json5.cmd SIZE=321 S
+HA256=AC1C85EF42FD4756851C82BCCED541694345D9E5196F36F25FEF83D2CB4409CD
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\json5.ps1 SIZE=789 S
+HA256=1928BF0CBC643164307FC9B7529A03657BBF58A74E552C1CD241305C6FAFA754
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\markdansi.cmd SIZE=3
+26 SHA256=31AE57C8DAB468B9E72065D326CCAC36051CB34D8E05C3DAC7555FD702730757
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\markdansi.ps1 SIZE=8
+09 SHA256=A898FD20B0C574F27A4D811A210FA3E93522BC8EB14ECC3D722FAF95A9D535F8
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\marked.cmd SIZE=325 
+SHA256=EDB0253556FE34ED754CCCBCF70027D14D2C849899BE704412711E8878E5E19B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\marked.ps1 SIZE=805 
+SHA256=9BB9168C2A6A9DB06BD716AA4A17E7437D0B43AE4F8B1496BCBEBEDB79B01174
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\node-which.cmd SIZE=
+325 SHA256=818856453703B9E61DE47223E7505AD77CB4F40F456E348DAE2CA9CD501ABAD0
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\node-which.ps1 SIZE=
+805 SHA256=D293014F7B06FFFC145F94CD02BD82B53C2DBBC3EBA99FF62DEDF882ADCC1711
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\print-chrome-path.cm
+d SIZE=346 SHA256=6A070DF767D15E0C5B7B56D476F5E8629364DDAEC4D3B9AEF8EDBBCE5511EB30
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\print-chrome-path.ps
+1 SIZE=889 SHA256=16FD2A30C98A673B9A3EF421693E157D25A982A99144137C504BF859796C3A1B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\semver.cmd SIZE=325 
+SHA256=3FA2710C6522669C2253EDBD465CCF4C58D0D29E0EFF3337D7900CD4E5CEC7AC
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\semver.ps1 SIZE=805 
+SHA256=1E1355D1AAF2A75275F9D884DBCD2F1C713D4ADA1782FE8370BC21DB6AEDBC31
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\sweet-cookie.cmd SIZ
+E=339 SHA256=D3C67AED7B8F008B595D0D8F7A5CB0E2E6FB6D7605F70447B5934C9E391EDDC0
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\.bin\sweet-cookie.ps1 SIZ
+E=861 SHA256=C342A9AC735D00EB2EC013C86CECAFB8A0067CE0D3F12AB62E6E3CE5A2C28A4E
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@anthropic-ai\tokenizer\c
+laude.json SIZE=696615 SHA256=58DAD83D85E9CD57BE209172449EBFBC395DF2B455C11FE8B7E5B661E6F462AD
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@anthropic-ai\tokenizer\d
+ist\cjs\claude.json SIZE=696615 SHA256=58DAD83D85E9CD57BE209172449EBFBC395DF2B455C11FE8B7E5B661E6F462AD
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@anthropic-ai\tokenizer\p
+ackage.json SIZE=1146 SHA256=F08107DDF5815A4E498CE9C309AED1D8BEB762DDF2323DC18E340D4625B30E54
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@anthropic-ai\tokenizer\t
+sconfig.cjs.json SIZE=139 SHA256=EC7AC345FCE3376645592883B207F49FF6405CF289ABE6699AFE075B2F30B4DA
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@anthropic-ai\tokenizer\t
+sconfig.json SIZE=869 SHA256=77777D958BC7E5D4EA29C5B885DD36454ADFF18DEBB7B33D3E93C155D4AC3259
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@google\genai\node\packag
+e.json SIZE=70 SHA256=5CEF9A9F3C9AD615FF03906E04C3CB320BE77B9020E1B1D4A8ADAB71BAB0E2D4
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@google\genai\package.jso
+n SIZE=6665 SHA256=EEE84CDBA8EA1FA4D1FA246EC5ED2ECD4666BED3C324067262049B4A69BF59AB
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@google\genai\web\package
+.json SIZE=71 SHA256=5C0D05E923AD5E49125325D6C6AF5A0D1ABA4416F308EBB70F7C14EBD6BC85F9
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@google\generative-ai\dis
+t\tsdoc-metadata.json SIZE=329 SHA256=8483F6E357C7F0A23FCD3D28FDDF73F7FCC6063B16F0B4AE8E1919E83AFD7EC7
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@google\generative-ai\pac
+kage.json SIZE=3337 SHA256=CE0271FA0D7A83B83CB080166B45DC954AA4D9942FB4581669633251FB5FB302
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@google\generative-ai\ser
+ver\package.json SIZE=271 SHA256=7E5263C61E8EA39CFE1068D99C25887D2255E0CD2EBCFE521211E5110E7B55CA
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@hono\node-server\package
+.json SIZE=3121 SHA256=66F3AA3DDEF3A6B54C5B99EC22E76CC85B1F5BCABE9BB7849675EDD0F7221553
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\ansi\package.js
+on SIZE=1434 SHA256=8662D7C753C81091B9D0E308A86272CCE51C281C58EA19F9FADBC40DE08AFB95
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\checkbox\node_m
+odules\@inquirer\core\package.json SIZE=1943 SHA256=107EFAA0987F89CB99E96E01907590CE95F455A6A9FCE50D0A9F07AFFF70C85B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\checkbox\packag
+e.json SIZE=1800 SHA256=EF94132B429B1E312E1FCBDDB31CB6F60E0024D1F6AA29201126616876708A67
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\confirm\node_mo
+dules\@inquirer\core\package.json SIZE=1943 SHA256=107EFAA0987F89CB99E96E01907590CE95F455A6A9FCE50D0A9F07AFFF70C85B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\confirm\package
+.json SIZE=1730 SHA256=AF8B1EA37DCE14888B2AB68F6D012E39C89B2C184B9FE2D43331B7060DAB7811
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\core\package.js
+on SIZE=1912 SHA256=C9FB8FF430B19B5E0F1C38EE41F7C682D3473DD0177D8A6230AADE4E1990562B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\editor\node_mod
+ules\@inquirer\core\package.json SIZE=1943 SHA256=107EFAA0987F89CB99E96E01907590CE95F455A6A9FCE50D0A9F07AFFF70C85B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\editor\package.
+json SIZE=1780 SHA256=8801FB7A563362581007B6D2CA96E165D33C77F72E32CCE87B331CE83D48E58B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\expand\node_mod
+ules\@inquirer\core\package.json SIZE=1943 SHA256=107EFAA0987F89CB99E96E01907590CE95F455A6A9FCE50D0A9F07AFFF70C85B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\expand\package.
+json SIZE=1729 SHA256=741B85A38E2C8B9E2CE05D66A68F696FFFD9920E4BFC7EBFEC6ECE8E5CFD3C81
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\external-editor
+\package.json SIZE=1932 SHA256=8683059D2FE67F72DBD41369C22F1B0B70077D95303EE16B4851A889FC19EE12
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\figures\package
+.json SIZE=1496 SHA256=08FCDE40CF9471E83CC8629FAA347E18DE90ABDD2FA6B712B71256B76CDD2048
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\input\node_modu
+les\@inquirer\core\package.json SIZE=1943 SHA256=107EFAA0987F89CB99E96E01907590CE95F455A6A9FCE50D0A9F07AFFF70C85B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\input\package.j
+son SIZE=1729 SHA256=777824EC1D0AA9C1389D525D5048F39D3D28A82CC4034E37E97D9DBAB1779A64
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\number\node_mod
+ules\@inquirer\core\package.json SIZE=1943 SHA256=107EFAA0987F89CB99E96E01907590CE95F455A6A9FCE50D0A9F07AFFF70C85B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\number\package.
+json SIZE=1727 SHA256=804A0D8DE549A5AE68B2010C44C37D710EC17BA050AB441460D2769038F66EBC
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\password\node_m
+odules\@inquirer\core\package.json SIZE=1943 SHA256=107EFAA0987F89CB99E96E01907590CE95F455A6A9FCE50D0A9F07AFFF70C85B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\password\packag
+e.json SIZE=1765 SHA256=75889FC2EEAF9CB6107E6F4A1973E4231981201692E756ABC15EB84D8C63F9E4
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\prompts\package
+.json SIZE=2096 SHA256=973A875A477D39AF4C039DA84B2A395C7BD0FA2774F2E99752701DE75D5D81CF
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\rawlist\node_mo
+dules\@inquirer\core\package.json SIZE=1943 SHA256=107EFAA0987F89CB99E96E01907590CE95F455A6A9FCE50D0A9F07AFFF70C85B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\rawlist\package
+.json SIZE=1730 SHA256=67D3342E2E4CB23ABD04DD3855E99105BD588BA076CF54BC3D82C0173625B869
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\search\node_mod
+ules\@inquirer\core\package.json SIZE=1943 SHA256=107EFAA0987F89CB99E96E01907590CE95F455A6A9FCE50D0A9F07AFFF70C85B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\search\package.
+json SIZE=1762 SHA256=55D47E7A8D7F33201160F9B1A3127ED4AB11AA8087FB2E9B4E78BB0B64B96851
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\select\node_mod
+ules\@inquirer\core\package.json SIZE=1943 SHA256=107EFAA0987F89CB99E96E01907590CE95F455A6A9FCE50D0A9F07AFFF70C85B
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\select\package.
+json SIZE=1799 SHA256=B8E630C6A29ACE9E397DCC992FE58E0F96CF4A47D375F89394A0BB437F0017F2
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@inquirer\type\package.js
+on SIZE=1542 SHA256=A5A4FCEBAEC7967772D0833C59A2D3423B2BCD637A7F648DF3038AAC14364FEA
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@modelcontextprotocol\sdk
+\dist\cjs\package.json SIZE=21 SHA256=E78ADBBBE5741F27E8D900BE349911234C1AE45C20A3F2FA293E2C8E5ABF3C31
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@modelcontextprotocol\sdk
+\dist\esm\package.json SIZE=19 SHA256=48E847860DD4F0907CE91E346DBB00A4A12213163AD3D80A953C343EB9A11979
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@modelcontextprotocol\sdk
+\package.json SIZE=6511 SHA256=0690CBE02511A95D1FF199ACF20B5A12AC4DFDE1BBE30C82A0DE73AFA92DFFC9
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@nodelib\fs.scandir\packa
+ge.json SIZE=1163 SHA256=D2DD608EF7400BC51BFA744F658B6A32B679AC5C053EF6D21499B2B0DB1CCABA
+STATE_FILE=C:\Users\wi3lk\.openclaw\tools\node\npm\node_modules\@steipete\oracle\node_modules\@nodelib\fs.stat\package.
+json SIZE=987 SHA256=AD8601AD12A424F995579FFA7AE24042C44DF9F89248B715DCD8EF56C54AACCA
+
+--- DOCTOR HELP ONLY ---
+OpenClaw 2026.7.1-2 (0790d9f) ÔÇö All your chats, one OpenClaw.
+
+Usage: openclaw doctor [options]
+
+Health checks + quick fixes for the gateway and channels
+
+Options:
+  --all                       With --lint: run all registered checks, including
+                              opt-in checks (default: false)
+  --allow-exec                Allow doctor to execute exec SecretRefs while
+                              verifying configured secrets (default: false)
+  --deep                      Scan system services for extra gateway installs
+                              (default: false)
+  --fix                       Apply recommended repairs (alias for --repair)
+                              (default: false)
+  --force                     Apply aggressive repairs (overwrites custom
+                              service config) (default: false)
+  --generate-gateway-token    Generate and configure a gateway token (default:
+                              false)
+  -h, --help                  Display help for command
+  --json                      With --lint or --post-upgrade: emit
+                              machine-readable JSON output (default: false)
+  --lint                      Run read-only health checks and report findings
+                              (default: false)
+  --no-workspace-suggestions  Disable workspace memory system suggestions
+  --non-interactive           Run without prompts (safe migrations only)
+                              (default: false)
+  --only <id>                 With --lint: run only the specified check id
+                              (repeatable) (default: [])
+  --post-upgrade              Emit plugin-compat findings only (machine-readable
+                              with --json) (default: false)
+  --repair                    Apply recommended repairs without prompting
+                              (default: false)
+  --severity-min <level>      With --lint: drop findings below this severity
+                              (info|warning|error)
+  --skip <id>                 With --lint: skip a specific check id (repeatable)
+                              (default: [])
+  --yes                       Accept defaults without prompting (default: false)
+
+Docs: https://docs.openclaw.ai/cli/doctor
+
+=== AUDIT DECISION ===
+INSTALLED_RAW=OpenClaw 2026.7.1-2 (0790d9f)
+LATEST_RAW=2026.9.3
+UPGRADE_REQUIRED=TRUE
+OPENCLAW_AUDIT_018B=PASS
+REPORT=C:\3EN-Agent\openclaw-audit-018b.txt
+REPORT_SIZE=23107
+VALIDATION_018B=PASS
