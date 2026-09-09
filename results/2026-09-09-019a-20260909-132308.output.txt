@@ -1,0 +1,278 @@
+ACTIVE_RUNNER=C:\3EN-Agent\3en-agent-runner-v3.5.ps1
+ACTIVE_RUNNER_SHA256=D0A43894764F39AE30EE1972DFF8D57B547FCD52C879FAC1FB5ECE10A3E63BE1
+BACKUP_ROOT=C:\3EN-Agent\backups\019a\20260909-132308
+BACKUP_019A_READY
+=== 3EN AGENT RUNNER V3.6 PREP 019A ===
+RUNNER=C:\3EN-Agent\3en-agent-runner-v3.5.ps1
+SHA256=D0A43894764F39AE30EE1972DFF8D57B547FCD52C879FAC1FB5ECE10A3E63BE1
+LINES=230
+
+=== VERSION / CONFIG ===
+   1: # 3EN Agent Runner v3.5
+ 176: Log '3EN Agent Runner v3.5 started.'
+   6: [Parameter(Mandatory=$true)][string]$TaskUrl,
+ 177: Log "Task URL: $TaskUrl"
+ 183: $task=Fetch-Task $TaskUrl
+   7: [int]$PollSeconds = 15,
+ 178: Log "Polling every $PollSeconds seconds."
+ 227: } catch {Log "Poll failed: $($_.Exception.Message)" 'ERROR'}
+ 228: Start-Sleep -Seconds $PollSeconds
+  15: $StateFile = Join-Path $Root '3en-agent.state.json'
+  40: function Load-State {
+  41: if(Test-Path $StateFile){
+  42: try { return Get-Content $StateFile -Raw -Encoding UTF8 | ConvertFrom-Json }
+  43: catch { Log "State read failed: $($_.Exception.Message)" 'WARN' }
+  48: function Save-State([string]$Id,[string]$Hash) {
+  49: Log 'FINALIZE 1/4: saving state'
+  51: ConvertTo-Json | Set-Content -LiteralPath $StateFile -Encoding UTF8
+  52: Log 'FINALIZE 1/4: state saved'
+ 179: $state=Load-State
+ 185: if($state.lastExecutedId -eq [string]$task.id -and $state.lastExecutedHash -eq $hash){
+ 211: Save-State ([string]$task.id) $hash
+ 212: $state=Load-State
+ 197: $resultFile=Join-Path $dir 'result.json'
+ 206: Log 'FINALIZE 2/4: writing result.json'
+ 208: Log 'FINALIZE 2/4: result.json written'
+
+=== FINALIZE / STATUS / STATE CONTEXT ===
+  29:     return $p.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+  30: }
+  31: 
+  32: function Sha256([string]$Text) {
+  33:     $sha=[Security.Cryptography.SHA256]::Create()
+  34:     try {
+  35:         $h=$sha.ComputeHash([Text.Encoding]::UTF8.GetBytes($Text))
+  36:         return ([BitConverter]::ToString($h)-replace '-','').ToLowerInvariant()
+  37:     } finally { $sha.Dispose() }
+  38: }
+  46: }
+  47: 
+  48: function Save-State([string]$Id,[string]$Hash) {
+  49:     Log 'FINALIZE 1/4: saving state'
+  50:     [ordered]@{lastExecutedId=$Id;lastExecutedHash=$Hash;updatedUtc=(Get-Date).ToUniversalTime().ToString('o')} |
+  51:         ConvertTo-Json | Set-Content -LiteralPath $StateFile -Encoding UTF8
+  52:     Log 'FINALIZE 1/4: state saved'
+  53: }
+  54: 
+  55: function Fetch-Task([string]$Url) {
+  56:     Log 'Fetching task...'
+  57:     $headers=@{
+  83:     Write-Host "ID:          $($Task.id)"
+  84:     Write-Host "TITLE:       $($Task.title)" -ForegroundColor Cyan
+  85:     Write-Host "DESCRIPTION: $($Task.description)"
+  86:     Write-Host "SHA256:      $Hash"
+  87:     Write-Host '--------------------------------------------------------------------'
+  88:     foreach($x in @(@('BACKUP','backup','Magenta'),@('SCRIPT','script','Green'),@('TEST','test','Blue'),@('ROLLBA
+CK','rollback','DarkYellow'))){
+  89:         if($Task.PSObject.Properties.Name.Contains($x[1])){
+  90:             $v=[string]$Task.($x[1])
+  91:             if(-not [string]::IsNullOrWhiteSpace($v)){
+ 113: }
+ 114: 
+ 115: function Run-Step([string]$Name,[string]$Code,[string]$Transcript) {
+ 116:     if([string]::IsNullOrWhiteSpace($Code)){return [pscustomobject]@{name=$Name;status='SKIPPED';error=$null}}
+ 117:     Write-Host ''
+ 118:     Write-Host ">>> $Name" -ForegroundColor Yellow
+ 119:     Log "$Name START"
+ 120:     try {
+ 121:         $out=& ([ScriptBlock]::Create($Code)) *>&1
+ 122:         if($null -ne $out){$out | Tee-Object -FilePath $Transcript -Append | Out-Host}
+ 123:         Log "$Name STEP RETURNED"
+ 124:         return [pscustomobject]@{name=$Name;status='OK';error=$null}
+ 125:     } catch {
+ 126:         $_ | Out-String | Add-Content -LiteralPath $Transcript -Encoding UTF8
+ 127:         Log "$Name FAILED: $($_.Exception.Message)" 'ERROR'
+ 128:         return [pscustomobject]@{name=$Name;status='FAILED';error=$_.Exception.Message}
+ 129:     }
+ 130: }
+ 131: 
+ 132: function Get-GitHubHeaders {
+ 133:     $token=$env:THREEEN_GH_TOKEN
+ 155: 
+ 156: function Publish-Run([string]$TaskId,[string]$RunStamp,[string]$ResultPath,[string]$Transcript) {
+ 157:     try {
+ 158:         Log 'FINALIZE 3/4: preparing GitHub uploads'
+ 159:         $headers=Get-GitHubHeaders
+ 160:         if($null -eq $headers){Log 'FINALIZE 3/4: upload skipped (no THREEEN_GH_TOKEN)' 'WARN';return}
+ 161:         $repoInfo=Invoke-RestMethod -Method Get -Uri "https://api.github.com/repos/$ResultRepo" -Headers $headers
+ -TimeoutSec 15
+ 162:         Log "UPLOAD AUTH OK repo=$($repoInfo.full_name)"
+ 163:         $safe=$TaskId-replace '[^a-zA-Z0-9._-]','_'
+ 164:         $resultRemote="results/$safe-$RunStamp.json"
+ 165:         $outputRemote="results/$safe-$RunStamp.output.txt"
+ 166:         Publish-RawFile $ResultPath $resultRemote "Result $TaskId $RunStamp" $headers | Out-Null
+ 167:         Publish-RawFile $Transcript $outputRemote "Output $TaskId $RunStamp" $headers | Out-Null
+ 168:         Log 'FINALIZE 3/4: RESULT + OUTPUT UPLOADED'
+ 169:     } catch {
+ 170:         Log "FINALIZE 3/4: upload failed: $($_.Exception.Message)" 'WARN'
+ 171:         if($_.ErrorDetails.Message){Log "GITHUB RESPONSE: $($_.ErrorDetails.Message)" 'WARN'}
+ 172:     }
+ 173: }
+ 174: 
+ 175: if(-not (Is-Admin)){Write-Host 'ERROR: Run PowerShell as Administrator.' -ForegroundColor Red;exit 1}
+ 181: while($true){
+ 182:     try {
+ 183:         $task=Fetch-Task $TaskUrl
+ 184:         $hash=Sha256 ($task|ConvertTo-Json -Depth 20 -Compress)
+ 185:         if($state.lastExecutedId -eq [string]$task.id -and $state.lastExecutedHash -eq $hash){
+ 186:             Log "No new task. ID=$($task.id)"
+ 187:         } else {
+ 188:             Log "TASK DETECTED ID=$($task.id) SHA256=$hash"
+ 189:             Show-Task $task $hash
+ 190:             if((Choice '[Y] Approve task   [N] Reject task') -eq 'Y'){
+ 191:                 $stamp=Get-Date -Format 'yyyyMMdd-HHmmss'
+ 192:                 $safe=([string]$task.id)-replace '[^a-zA-Z0-9._-]','_'
+ 193:                 $dir=Join-Path $RunsDir "$stamp-$safe"
+ 195:                 $taskFile=Join-Path $dir 'task.json'
+ 196:                 $transcript=Join-Path $dir 'transcript.txt'
+ 197:                 $resultFile=Join-Path $dir 'result.json'
+ 198:                 $task|ConvertTo-Json -Depth 20|Set-Content $taskFile -Encoding UTF8
+ 199:                 $results=@();$overall='SUCCESS'
+ 200: 
+ 201:                 if($task.PSObject.Properties.Name.Contains('backup') -and -not [string]::IsNullOrWhiteSpace([stri
+ng]$task.backup)){$r=Run-Step 'BACKUP' ([string]$task.backup) $transcript;$results+=$r;if($r.status-ne'OK'){$overall='F
+AILED_BACKUP'}}
+ 202:                 if($overall-eq'SUCCESS'){$r=Run-Step 'SCRIPT' ([string]$task.script) $transcript;$results+=$r;if(
+$r.status-ne'OK'){$overall='FAILED_SCRIPT'}}
+ 203:                 if($overall-eq'SUCCESS' -and $task.PSObject.Properties.Name.Contains('test') -and -not [string]::
+IsNullOrWhiteSpace([string]$task.test)){$r=Run-Step 'TEST' ([string]$task.test) $transcript;$results+=$r;if($r.status-n
+e'OK'){$overall='FAILED_TEST'}}
+ 204:                 if($overall-ne'SUCCESS' -and $task.PSObject.Properties.Name.Contains('rollback') -and -not [strin
+g]::IsNullOrWhiteSpace([string]$task.rollback)){if((Choice '[Y] Run rollback   [N] Leave as-is')-eq'Y'){$results+=Run-S
+tep 'ROLLBACK' ([string]$task.rollback) $transcript}}
+ 205: 
+ 206:                 Log 'FINALIZE 2/4: writing result.json'
+ 207:                 @($results)|ConvertTo-Json -Depth 10|Set-Content -LiteralPath $resultFile -Encoding UTF8
+ 208:                 Log 'FINALIZE 2/4: result.json written'
+ 209: 
+ 210:                 if($overall-eq'SUCCESS'){
+ 211:                     Save-State ([string]$task.id) $hash
+ 212:                     $state=Load-State
+ 213:                 }
+ 214: 
+ 215:                 Publish-Run ([string]$task.id) $stamp $resultFile $transcript
+ 216: 
+ 217:                 if($overall-eq'SUCCESS'){
+ 218:                     Log 'FINALIZE 4/4: COMPLETE'
+ 219:                     Write-Host ''
+ 220:                     Write-Host 'TASK COMPLETE' -ForegroundColor Green
+ 221:                 } else {
+ 222:                     Log "FINALIZE 4/4: task status $overall" 'ERROR'
+ 223:                 }
+ 224:                 Write-Host "Run directory: $dir"
+ 225:             } else {Log "Task rejected by user. ID=$($task.id)" 'WARN'}
+ 226:         }
+ 227:     } catch {Log "Poll failed: $($_.Exception.Message)" 'ERROR'}
+
+=== TASK DECISION CONTEXT ===
+  28:     $p=[Security.Principal.WindowsPrincipal]::new($id)
+  29:     return $p.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+  30: }
+  31: 
+  32: function Sha256([string]$Text) {
+  33:     $sha=[Security.Cryptography.SHA256]::Create()
+  34:     try {
+  35:         $h=$sha.ComputeHash([Text.Encoding]::UTF8.GetBytes($Text))
+  36:         return ([BitConverter]::ToString($h)-replace '-','').ToLowerInvariant()
+  37:     } finally { $sha.Dispose() }
+  38: }
+  39: 
+  79: function Show-Task($Task,[string]$Hash) {
+  80:     Write-Host ''
+  81:     Write-Host '====================================================================' -ForegroundColor DarkGray
+  82:     Write-Host '3EN AGENT v3.5 - NEW TASK' -ForegroundColor Yellow
+  83:     Write-Host "ID:          $($Task.id)"
+  84:     Write-Host "TITLE:       $($Task.title)" -ForegroundColor Cyan
+  85:     Write-Host "DESCRIPTION: $($Task.description)"
+  86:     Write-Host "SHA256:      $Hash"
+  87:     Write-Host '--------------------------------------------------------------------'
+  88:     foreach($x in @(@('BACKUP','backup','Magenta'),@('SCRIPT','script','Green'),@('TEST','test','Blue'),@('ROLLBA
+CK','rollback','DarkYellow'))){
+  89:         if($Task.PSObject.Properties.Name.Contains($x[1])){
+  90:             $v=[string]$Task.($x[1])
+  91:             if(-not [string]::IsNullOrWhiteSpace($v)){
+  92:                 Write-Host "$($x[0]):" -ForegroundColor $x[2]
+ 103:     Write-Host $Prompt -ForegroundColor Yellow
+ 104:     Write-Host 'Press Y or N (no Enter required).' -ForegroundColor DarkGray
+ 105:     while($true){
+ 106:         if([Console]::KeyAvailable){
+ 107:             $k=[Console]::ReadKey($true)
+ 108:             $c=[char]::ToUpperInvariant($k.KeyChar)
+ 109:             if($c -in @('Y','N')){Write-Host $c;return $c}
+ 110:         }
+ 111:         Start-Sleep -Milliseconds 50
+ 112:     }
+ 113: }
+ 152:     Log "UPLOAD OK $RemotePath commit=$($r.commit.sha)"
+ 153:     return $true
+ 154: }
+ 155: 
+ 156: function Publish-Run([string]$TaskId,[string]$RunStamp,[string]$ResultPath,[string]$Transcript) {
+ 157:     try {
+ 158:         Log 'FINALIZE 3/4: preparing GitHub uploads'
+ 159:         $headers=Get-GitHubHeaders
+ 160:         if($null -eq $headers){Log 'FINALIZE 3/4: upload skipped (no THREEEN_GH_TOKEN)' 'WARN';return}
+ 161:         $repoInfo=Invoke-RestMethod -Method Get -Uri "https://api.github.com/repos/$ResultRepo" -Headers $headers
+ -TimeoutSec 15
+ 162:         Log "UPLOAD AUTH OK repo=$($repoInfo.full_name)"
+ 163:         $safe=$TaskId-replace '[^a-zA-Z0-9._-]','_'
+ 164:         $resultRemote="results/$safe-$RunStamp.json"
+ 165:         $outputRemote="results/$safe-$RunStamp.output.txt"
+ 166:         Publish-RawFile $ResultPath $resultRemote "Result $TaskId $RunStamp" $headers | Out-Null
+ 167:         Publish-RawFile $Transcript $outputRemote "Output $TaskId $RunStamp" $headers | Out-Null
+ 168:         Log 'FINALIZE 3/4: RESULT + OUTPUT UPLOADED'
+ 169:     } catch {
+ 170:         Log "FINALIZE 3/4: upload failed: $($_.Exception.Message)" 'WARN'
+ 171:         if($_.ErrorDetails.Message){Log "GITHUB RESPONSE: $($_.ErrorDetails.Message)" 'WARN'}
+ 172:     }
+ 173: }
+ 180: 
+ 181: while($true){
+ 182:     try {
+ 183:         $task=Fetch-Task $TaskUrl
+ 184:         $hash=Sha256 ($task|ConvertTo-Json -Depth 20 -Compress)
+ 185:         if($state.lastExecutedId -eq [string]$task.id -and $state.lastExecutedHash -eq $hash){
+ 186:             Log "No new task. ID=$($task.id)"
+ 187:         } else {
+ 188:             Log "TASK DETECTED ID=$($task.id) SHA256=$hash"
+ 189:             Show-Task $task $hash
+ 190:             if((Choice '[Y] Approve task   [N] Reject task') -eq 'Y'){
+ 191:                 $stamp=Get-Date -Format 'yyyyMMdd-HHmmss'
+ 192:                 $safe=([string]$task.id)-replace '[^a-zA-Z0-9._-]','_'
+ 193:                 $dir=Join-Path $RunsDir "$stamp-$safe"
+ 194:                 New-Item -ItemType Directory -Force -Path $dir | Out-Null
+ 195:                 $taskFile=Join-Path $dir 'task.json'
+ 196:                 $transcript=Join-Path $dir 'transcript.txt'
+ 197:                 $resultFile=Join-Path $dir 'result.json'
+ 198:                 $task|ConvertTo-Json -Depth 20|Set-Content $taskFile -Encoding UTF8
+ 207:                 @($results)|ConvertTo-Json -Depth 10|Set-Content -LiteralPath $resultFile -Encoding UTF8
+ 208:                 Log 'FINALIZE 2/4: result.json written'
+ 209: 
+ 210:                 if($overall-eq'SUCCESS'){
+ 211:                     Save-State ([string]$task.id) $hash
+ 212:                     $state=Load-State
+ 213:                 }
+ 214: 
+ 215:                 Publish-Run ([string]$task.id) $stamp $resultFile $transcript
+ 216: 
+ 217:                 if($overall-eq'SUCCESS'){
+ 218:                     Log 'FINALIZE 4/4: COMPLETE'
+ 219:                     Write-Host ''
+ 220:                     Write-Host 'TASK COMPLETE' -ForegroundColor Green
+ 221:                 } else {
+ 222:                     Log "FINALIZE 4/4: task status $overall" 'ERROR'
+ 223:                 }
+ 224:                 Write-Host "Run directory: $dir"
+ 225:             } else {Log "Task rejected by user. ID=$($task.id)" 'WARN'}
+ 226:         }
+ 227:     } catch {Log "Poll failed: $($_.Exception.Message)" 'ERROR'}
+ 228:     Start-Sleep -Seconds $PollSeconds
+ 229: }
+ 230: 
+
+=== SYNTAX CHECK ===
+SYNTAX_ERROR_COUNT=0
+RUNNER_V36_PREP_019A=PASS
+REPORT=C:\3EN-Agent\runner-v36-prep-019a.txt
+REPORT_SIZE=14042
+VALIDATION_019A=PASS
