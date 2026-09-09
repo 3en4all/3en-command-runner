@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "projectId": "2026-09-10-v452-openclaw-verified-admin-repair",
+  "title": "OpenClaw verified read-write autonomous admin repair",
+  "policy": {
+    "showErrors": false,
+    "maxAttempts": 1,
+    "publishRetries": 3,
+    "autoRollbackOnFinalFailure": true,
+    "highRiskAction": "reject"
+  },
+  "chapters": [
+    {
+      "id": "2026-09-10-057r",
+      "path": "tasks/2026-09-10-057r.json",
+      "expectedStatus": "SUCCESS"
+    }
+  ]
+}
