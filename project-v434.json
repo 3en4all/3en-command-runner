@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-09-v434-openclaw-tool-evidence",
+  "title":"3EN v4.3.4 OpenClaw tool failure evidence",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-09-057e","path":"tasks/2026-09-09-057e.json","expectedStatus":"SUCCESS"}]
+}
