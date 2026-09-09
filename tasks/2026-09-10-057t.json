@@ -1,0 +1,10 @@
+{
+  "id": "2026-09-10-057t",
+  "title": "Evidence-injected OpenClaw autonomous admin repair",
+  "description": "Use runner-captured immutable evidence for diagnosis, then use only OpenClaw write operations for backup/change/report, followed by an independent verifier.",
+  "risk": "medium",
+  "backup": "$ErrorActionPreference='Stop';$url='https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/openclaw-admin-repair-057t.ps1?ts='+[DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds();$dst='C:/3EN-Agent/workbench/openclaw-admin-repair-057t.ps1';Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $dst;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $dst -Phase Backup;if($LASTEXITCODE -ne 0){throw ('057T_BACKUP_PHASE_EXIT_'+$LASTEXITCODE)}",
+  "script": "$ErrorActionPreference='Stop';$dst='C:/3EN-Agent/workbench/openclaw-admin-repair-057t.ps1';if(-not(Test-Path $dst)){throw '057T_HELPER_MISSING'};& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $dst -Phase Execute;if($LASTEXITCODE -ne 0){throw ('057T_EXECUTE_PHASE_EXIT_'+$LASTEXITCODE)}",
+  "test": "$ErrorActionPreference='Stop';$dst='C:/3EN-Agent/workbench/openclaw-admin-repair-057t.ps1';& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $dst -Phase Test;if($LASTEXITCODE -ne 0){throw ('057T_TEST_PHASE_EXIT_'+$LASTEXITCODE)}",
+  "rollback": "$ErrorActionPreference='Continue';$dst='C:/3EN-Agent/workbench/openclaw-admin-repair-057t.ps1';if(Test-Path $dst){& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $dst -Phase Rollback}"
+}
