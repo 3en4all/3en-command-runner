@@ -1,0 +1,9 @@
+{
+  "id": "2026-09-09-055",
+  "title": "v4.1.3 OpenClaw end-to-end smoke",
+  "risk": "low",
+  "backup": "Write-Output 'V413_055_BACKUP=READ_ONLY'",
+  "script": "$root='C:/3EN-Agent/openclaw-bridge'; $stdout=Join-Path $root 'agent-smoke-v413.json'; $stderr=Join-Path $root 'agent-smoke-v413.stderr.txt'; & openclaw agent --session-key '3en-v413-smoke' --message 'Reply with exactly OPENCLAW_BRIDGE_OK' --json --timeout 180 1> $stdout 2> $stderr; if($LASTEXITCODE -ne 0){throw 'OPENCLAW_AGENT_FAILED'}; $j=Get-Content $stdout -Raw | ConvertFrom-Json; $raw=Get-Content $stdout -Raw; if($raw -notmatch 'OPENCLAW_BRIDGE_OK'){throw 'OPENCLAW_MARKER_MISSING'}; Write-Output 'V413_055_SCRIPT=PASS'",
+  "test": "$root='C:/3EN-Agent/openclaw-bridge'; $raw=Get-Content (Join-Path $root 'agent-smoke-v413.json') -Raw; if($raw -notmatch 'OPENCLAW_BRIDGE_OK'){throw 'OPENCLAW_SMOKE_INVALID'}; & openclaw gateway status --json 1> (Join-Path $root 'gateway-final-v413.json') 2> (Join-Path $root 'gateway-final-v413.stderr.txt'); if($LASTEXITCODE -ne 0){throw 'GATEWAY_NOT_HEALTHY_AFTER_AGENT'}; Write-Output 'V413_055_TEST=PASS'",
+  "rollback": "Write-Output 'V413_055_ROLLBACK=NO_CHANGE'"
+}
