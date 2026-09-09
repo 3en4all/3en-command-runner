@@ -1,0 +1,9 @@
+{
+  "id": "ai-media-004-runtime",
+  "title": "AI Media 4/5 - runtime wiring",
+  "description": "Bind discovered ComfyUI plus existing FFmpeg and D:-hosted model/cache paths into one runtime config. Validate image, video, audio and voice assets without duplicating installed software.",
+  "backup": "Write-Host 'RUNTIME_CONFIG_ADDITIVE_ONLY'",
+  "script": "$ErrorActionPreference='Stop';& 'C:/3EN-Agent/ai-media-local-v1.ps1' -Phase Runtime -Root 'D:/AI-Media';$a=Get-Content 'D:/AI-Media/state/media-addons.json' -Raw|ConvertFrom-Json;$r=Get-Content 'D:/AI-Media/state/runtime.json' -Raw|ConvertFrom-Json;$r|Add-Member -NotePropertyName audioModel -NotePropertyValue $a.audioModel -Force;$r|Add-Member -NotePropertyName piper -NotePropertyValue $a.piper -Force;$r|Add-Member -NotePropertyName voiceModel -NotePropertyValue $a.voiceModel -Force;$r|ConvertTo-Json -Depth 10|Set-Content 'D:/AI-Media/state/runtime.json' -Encoding UTF8;Write-Host 'AI_MEDIA_RUNTIME=PASS'",
+  "test": "$ErrorActionPreference='Stop';$r=Get-Content 'D:/AI-Media/state/runtime.json' -Raw|ConvertFrom-Json;foreach($p in @($r.comfyUI,$r.imageModel,$r.videoModel,$r.audioModel,$r.piper,$r.voiceModel)){if(-not(Test-Path $p)){throw ('runtime dependency missing '+$p)}};Write-Host 'AI_MEDIA_RUNTIME_TEST=PASS'",
+  "rollback": "Write-Host 'Runtime chapter writes configuration only.'"
+}
