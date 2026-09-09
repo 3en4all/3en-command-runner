@@ -4,7 +4,7 @@
     "pointerRevision":  "2026-09-10T01:48:00+02:00-v454-057t-evidence-injected-admin-repair",
     "pointerProject":  "project-v454.json",
     "processedRevision":  "2026-09-10T01:27:00+02:00-v451-057q2-read-diagnostic",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  3,
     "lastError":  "",
     "nextRetryUtc":  "2026-09-09T23:17:59.6680639Z",
@@ -13,5 +13,5 @@
     "lastExitCode":  4,
     "workerPid":  31120,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T23:18:01.8213616Z"
+    "updatedUtc":  "2026-09-09T23:18:03.2870873Z"
 }
