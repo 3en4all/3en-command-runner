@@ -33,25 +33,25 @@ function Publish-Diagnostic {
 }
 
 function Stop-ProcessTree {
-    param([int]$RootPid,[int]$ProtectPid)
+    param([int]$RootProcessId,[int]$ProtectProcessId)
     $all = @(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue)
     $children = @{}
     foreach ($p in $all) {
-        $ppid = [int]$p.ParentProcessId
-        if (-not $children.ContainsKey($ppid)) { $children[$ppid] = New-Object System.Collections.Generic.List[int] }
-        [void]$children[$ppid].Add([int]$p.ProcessId)
+        $parentId = [int]$p.ParentProcessId
+        if (-not $children.ContainsKey($parentId)) { $children[$parentId] = New-Object System.Collections.Generic.List[int] }
+        [void]$children[$parentId].Add([int]$p.ProcessId)
     }
     $order = New-Object System.Collections.Generic.List[int]
-    function Walk([int]$Pid) {
-        if ($children.ContainsKey($Pid)) {
-            foreach ($c in $children[$Pid]) { Walk $c }
+    function Walk-ProcessTree([int]$ProcessIdToWalk) {
+        if ($children.ContainsKey($ProcessIdToWalk)) {
+            foreach ($childId in $children[$ProcessIdToWalk]) { Walk-ProcessTree $childId }
         }
-        [void]$order.Add($Pid)
+        [void]$order.Add($ProcessIdToWalk)
     }
-    Walk $RootPid
-    foreach ($pid in $order) {
-        if ($pid -eq $ProtectPid) { continue }
-        try { Stop-Process -Id $pid -Force -ErrorAction Stop; Write-BootLog ('Stopped PID=' + $pid) } catch {}
+    Walk-ProcessTree $RootProcessId
+    foreach ($processIdToStop in $order) {
+        if ($processIdToStop -eq $ProtectProcessId) { continue }
+        try { Stop-Process -Id $processIdToStop -Force -ErrorAction Stop; Write-BootLog ('Stopped PID=' + $processIdToStop) } catch {}
     }
 }
 
@@ -60,7 +60,6 @@ try {
     $me = $PID
     $all = @(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue)
 
-    # Find OpenClaw onboarding left by the first inline v4.1 run.
     $onboard = @($all | Where-Object {
         ($_.CommandLine -match 'openclaw') -and ($_.CommandLine -match '\bonboard\b')
     })
@@ -69,24 +68,22 @@ try {
         $parent = $all | Where-Object { $_.ProcessId -eq $oc.ParentProcessId } | Select-Object -First 1
         Write-BootLog ('Found stuck OpenClaw onboarding PID=' + $oc.ProcessId + ' parent=' + $oc.ParentProcessId)
         if ($null -ne $parent -and $parent.ProcessId -ne $me -and ($parent.Name -eq 'powershell.exe' -or $parent.Name -eq 'pwsh.exe' -or $parent.Name -eq 'cmd.exe')) {
-            Stop-ProcessTree -RootPid ([int]$parent.ProcessId) -ProtectPid $me
+            Stop-ProcessTree -RootProcessId ([int]$parent.ProcessId) -ProtectProcessId $me
         } else {
-            Stop-ProcessTree -RootPid ([int]$oc.ProcessId) -ProtectPid $me
+            Stop-ProcessTree -RootProcessId ([int]$oc.ProcessId) -ProtectProcessId $me
         }
     }
 
     if ($onboard.Count -gt 0) { Start-Sleep -Seconds 2 }
 
-    # Also stop any explicit old 3EN runner hosts, excluding this shell.
     $all2 = @(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue)
     foreach ($p in $all2) {
         if ($p.ProcessId -ne $me -and ($p.Name -eq 'powershell.exe' -or $p.Name -eq 'pwsh.exe') -and $p.CommandLine -match '3en-agent-runner-v4\.0\.2\.ps1') {
-            Stop-ProcessTree -RootPid ([int]$p.ProcessId) -ProtectPid $me
+            Stop-ProcessTree -RootProcessId ([int]$p.ProcessId) -ProtectProcessId $me
         }
     }
     Start-Sleep -Seconds 1
 
-    # Refresh accepted execution engine and parser-check it.
     $uri = 'https://raw.githubusercontent.com/3en4all/3en-command-runner/main/3en-agent-runner-v4.0.2.ps1?ts=' + [DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()
     Invoke-WebRequest -UseBasicParsing -Uri $uri -OutFile $runner
     $tokens = $null
@@ -94,7 +91,6 @@ try {
     [System.Management.Automation.Language.Parser]::ParseFile($runner,[ref]$tokens,[ref]$errors) | Out-Null
     if (@($errors).Count -gt 0) { throw ('RUNNER_SYNTAX_FAILED count=' + @($errors).Count) }
 
-    # Ensure the original project mutex is actually free now.
     $probe = New-Object Threading.Mutex($false,'Global\3EN-Agent-Project-v402')
     $owned = $false
     try {
