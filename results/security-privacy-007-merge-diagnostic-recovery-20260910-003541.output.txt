@@ -1,0 +1,26 @@
+MERGE007_BACKUP=MERGER_MANAGED
+MERGE007_TIME=2026-09-10T00:35:41.7411862+02:00
+
+Start-ScheduledTask : Nie można odnaleźć określonego pliku.
+
+At C:\3EN-Agent\merge-security-monitor-into-privacy-gui-v1.ps1:21 char:3
++   Start-ScheduledTask -TaskName $TaskName -ErrorAction Stop
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (PS_ScheduledTask:Root/Microsoft/...S_ScheduledTask) [Start-ScheduledTask], C 
+   imException
+    + FullyQualifiedErrorId : HRESULT 0x80070002,Start-ScheduledTask
+ 
+
+Start-ScheduledTask : Nie można odnaleźć określonego pliku.
+
+At C:\3EN-Agent\merge-security-monitor-into-privacy-gui-v1.ps1:21 char:3
++   Start-ScheduledTask -TaskName $TaskName -ErrorAction Stop
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (PS_ScheduledTask:Root/Microsoft/...S_ScheduledTask) [Start-ScheduledTask], C 
+   imException
+    + FullyQualifiedErrorId : HRESULT 0x80070002,Start-ScheduledTask
+ 
+
+MERGE007_PHASE=ROLLBACK
+MERGE007_ROLLBACK=FAILED;ERROR=merge state missing
+
