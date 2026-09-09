@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-057z",
+  "title":"v4.2 high-risk rejection before executor",
+  "risk":"high",
+  "backup":"Write-Output 'V42_057Z_BACKUP=SHOULD_NOT_RUN'",
+  "script":"Set-Content -LiteralPath 'C:/3EN-Agent/executor-contract/HIGH_RISK_SHOULD_NOT_EXIST.txt' -Value 'BAD' -Encoding ASCII;throw 'HIGH_RISK_SCRIPT_SHOULD_NOT_RUN'",
+  "test":"if(Test-Path 'C:/3EN-Agent/executor-contract/HIGH_RISK_SHOULD_NOT_EXIST.txt'){throw 'HIGH_RISK_SIDE_EFFECT_DETECTED'};Write-Output 'V42_057Z_TEST=PASS'",
+  "rollback":"Remove-Item 'C:/3EN-Agent/executor-contract/HIGH_RISK_SHOULD_NOT_EXIST.txt' -Force -ErrorAction SilentlyContinue;Write-Output 'V42_057Z_ROLLBACK=PASS'"
+}
