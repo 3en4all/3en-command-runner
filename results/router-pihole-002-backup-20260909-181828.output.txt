@@ -1,0 +1,20 @@
+PRECHANGE_BACKUP_CHAPTER=START
+
+scp.exe : ash: /usr/libexec/sftp-server: not found
+At C:\3EN-Agent\router-pihole-finalize-v1.ps1:28 char:12
++     $out = & $Exe @nativeArgs 2>&1 | Out-String
++            ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ash: /usr/libexec/sftp-server: not found:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+scp.exe : ash: /usr/libexec/sftp-server: not found
+At C:\3EN-Agent\router-pihole-finalize-v1.ps1:28 char:12
++     $out = & $Exe @nativeArgs 2>&1 | Out-String
++            ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ash: /usr/libexec/sftp-server: not found:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+BACKUP_ONLY_NO_ROLLBACK_REQUIRED
+
