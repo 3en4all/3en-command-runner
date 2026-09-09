@@ -1,0 +1,8 @@
+{
+  "name":"@3en4all/openclaw-3en-job-executor",
+  "version":"0.1.0",
+  "type":"module",
+  "dependencies":{"typebox":"1.1.39"},
+  "peerDependencies":{"openclaw":">=2026.5.17"},
+  "openclaw":{"extensions":["./index.js"],"compat":{"pluginApi":">=2026.5.17","minGatewayVersion":"2026.5.17"}}
+}
