@@ -18,13 +18,13 @@
                       "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
                       "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
                       "processedRevision":  "",
-                      "status":  "RUNNING",
-                      "attempts":  2,
-                      "lastError":  "",
-                      "nextRetryUtc":  "2026-09-09T22:49:43.3762002Z",
+                      "status":  "RETRY_PENDING",
+                      "attempts":  3,
+                      "lastError":  "RUNNER_EXIT_2",
+                      "nextRetryUtc":  "2026-09-09T22:53:09.7480829Z",
                       "runnerPid":  null,
-                      "lastExitCode":  4,
-                      "updatedUtc":  "2026-09-09T22:49:46.9094987Z"
+                      "lastExitCode":  2,
+                      "updatedUtc":  "2026-09-09T22:51:56.6665624Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,23 +39,23 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T22:49:55.3360669Z"
+                      "updatedUtc":  "2026-09-09T22:51:57.3401235Z"
                   },
                   {
                       "lane":  "openclaw",
                       "workerRunning":  true,
                       "workerPid":  31120,
-                      "pointerRevision":  "2026-09-10T00:47:00+02:00-v444c-057m3-resilient",
-                      "pointerProject":  "project-v444c.json",
-                      "processedRevision":  "2026-09-10T00:47:00+02:00-v444c-057m3-resilient",
+                      "pointerRevision":  "2026-09-10T00:53:00+02:00-v445-057n-qwen3-e2e",
+                      "pointerProject":  "project-v445.json",
+                      "processedRevision":  "2026-09-10T00:53:00+02:00-v445-057n-qwen3-e2e",
                       "status":  "TERMINAL",
-                      "attempts":  2,
+                      "attempts":  1,
                       "lastError":  "",
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-09T22:49:58.8061707Z"
+                      "updatedUtc":  "2026-09-09T22:52:05.5138961Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T22:50:01.0628484Z"
+    "updatedUtc":  "2026-09-09T22:52:12.1762134Z"
 }
