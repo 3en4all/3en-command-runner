@@ -110,37 +110,20 @@ function Invoke-Discovery {
     if (-not (Test-DnsPi)) { throw 'Pi-hole DNS is not answering correctly' }
     $routerProbe = Invoke-Router "printf 3EN_ROUTER_SSH_OK; echo; uci -q show dhcp.lan; echo __NETWORK__; uci -q show network.wan; echo __SYSTEM__; uci -q show system.@system[0]; echo __RESOLV__; cat /tmp/resolv.conf.d/resolv.conf.auto 2>/dev/null || true"
     if ($routerProbe -notmatch '3EN_ROUTER_SSH_OK') { throw 'Router SSH validation failed' }
-
     $pi = Discover-PiSsh
     $state = [pscustomobject][ordered]@{
-        schema = 1
-        discoveredUtc = (Get-Date).ToUniversalTime().ToString('o')
-        updatedUtc = $null
-        router = $Router
-        pihole = $PiHole
-        routerSsh = $true
-        piholeDns = $true
-        piholeWeb80 = (Test-Tcp $PiHole 80)
-        piholeWeb443 = (Test-Tcp $PiHole 443)
-        piSsh = [bool]$pi.ok
-        piUser = [string]$pi.user
-        piKey = [string]$pi.key
-        dhcpAdvertisesPi = ($routerProbe -match [regex]::Escape($PiHole))
-        routerProbe = $routerProbe
-        piUpstreamEvidence = ''
-        safeRouterDnsSwitch = $false
-        routerDnsSwitchApplied = $false
-        dnsChanged = $false
-        loggingChanged = $false
-        backupReady = $false
-        logVerifiedOnPi = $false
+        schema = 1; discoveredUtc = (Get-Date).ToUniversalTime().ToString('o'); updatedUtc = $null
+        router = $Router; pihole = $PiHole; routerSsh = $true; piholeDns = $true
+        piholeWeb80 = (Test-Tcp $PiHole 80); piholeWeb443 = (Test-Tcp $PiHole 443)
+        piSsh = [bool]$pi.ok; piUser = [string]$pi.user; piKey = [string]$pi.key
+        dhcpAdvertisesPi = ($routerProbe -match [regex]::Escape($PiHole)); routerProbe = $routerProbe
+        piUpstreamEvidence = ''; safeRouterDnsSwitch = $false; routerDnsSwitchApplied = $false
+        dnsChanged = $false; loggingChanged = $false; backupReady = $false; logVerifiedOnPi = $false
     }
     if ($state.piSsh) {
         $ev = Get-PiUpstreamEvidence $state
         $state.piUpstreamEvidence = [string]$ev
-        if (-not [string]::IsNullOrWhiteSpace($ev) -and $ev -notmatch [regex]::Escape($Router)) {
-            $state.safeRouterDnsSwitch = $true
-        }
+        if (-not [string]::IsNullOrWhiteSpace($ev) -and $ev -notmatch [regex]::Escape($Router)) { $state.safeRouterDnsSwitch = $true }
     }
     Save-State $state
     Write-Marker ('DISCOVERY_PASS;PI_SSH='+$state.piSsh+';DHCP_PI='+$state.dhcpAdvertisesPi+';ROUTER_DNS_SWITCH_SAFE='+$state.safeRouterDnsSwitch)
@@ -153,13 +136,13 @@ function Invoke-Backup {
     New-Item -ItemType Directory -Force -Path $local | Out-Null
     Invoke-Router ("rm -rf $RemoteBackup; mkdir -p $RemoteBackup; uci export dhcp > $RemoteBackup/dhcp.uci; uci export network > $RemoteBackup/network.uci; uci export system > $RemoteBackup/system.uci; cp /etc/config/dhcp $RemoteBackup/dhcp.config; cp /etc/config/network $RemoteBackup/network.config; cp /etc/config/system $RemoteBackup/system.config; sha256sum $RemoteBackup/* 2>/dev/null || true") | Set-Content -LiteralPath (Join-Path $local 'router-checksums.txt') -Encoding UTF8
     foreach ($f in @('dhcp.uci','network.uci','system.uci','dhcp.config','network.config','system.config')) {
-        $scpArgs = @('-i',$RouterKey,'-o','BatchMode=yes','-o','ConnectTimeout=6','-o','StrictHostKeyChecking=accept-new',($RouterUser+'@'+$Router+':'+$RemoteBackup+'/'+$f),(Join-Path $local $f))
+        $scpArgs = @('-O','-i',$RouterKey,'-o','BatchMode=yes','-o','ConnectTimeout=6','-o','StrictHostKeyChecking=accept-new',($RouterUser+'@'+$Router+':'+$RemoteBackup+'/'+$f),(Join-Path $local $f))
         [void](Invoke-NativeCapture -Exe 'scp.exe' -ArgumentList $scpArgs)
     }
     if ($state.piSsh) {
         try {
             [void](Invoke-Pi "tar -czf /tmp/3en-pihole-config-backup.tgz /etc/pihole /etc/rsyslog.conf /etc/rsyslog.d 2>/dev/null || true; test -s /tmp/3en-pihole-config-backup.tgz" $state)
-            $scpArgs = @('-i',[string]$state.piKey,'-o','BatchMode=yes','-o','ConnectTimeout=6','-o','StrictHostKeyChecking=accept-new',([string]$state.piUser+'@'+$PiHole+':/tmp/3en-pihole-config-backup.tgz'),(Join-Path $local 'pihole-config-backup.tgz'))
+            $scpArgs = @('-O','-i',[string]$state.piKey,'-o','BatchMode=yes','-o','ConnectTimeout=6','-o','StrictHostKeyChecking=accept-new',([string]$state.piUser+'@'+$PiHole+':/tmp/3en-pihole-config-backup.tgz'),(Join-Path $local 'pihole-config-backup.tgz'))
             [void](Invoke-NativeCapture -Exe 'scp.exe' -ArgumentList $scpArgs)
         } catch {}
     }
@@ -178,15 +161,13 @@ function Invoke-ApplyDns {
         [void](Invoke-Router "uci add_list dhcp.lan.dhcp_option='6,$PiHole'; uci commit dhcp; /etc/init.d/dnsmasq restart")
         $state.dnsChanged = $true
     }
-
     if ($state.safeRouterDnsSwitch) {
         $wan = Invoke-Router "uci -q show network.wan"
         $already = ($wan -match "dns='?$([regex]::Escape($PiHole))'?") -and ($wan -match "peerdns='?0'?")
         if (-not $already) {
             [void](Invoke-Router "uci set network.wan.peerdns='0'; uci -q delete network.wan.dns; uci add_list network.wan.dns='$PiHole'; uci commit network; ifup wan >/dev/null 2>&1 &")
             Start-Sleep -Seconds 6
-            $state.routerDnsSwitchApplied = $true
-            $state.dnsChanged = $true
+            $state.routerDnsSwitchApplied = $true; $state.dnsChanged = $true
         }
     }
     Save-State $state
@@ -233,8 +214,7 @@ function Invoke-TestLogging {
         $cmd = "grep -R -F '$m' /var/log/3en-remote/3en-blocked.log /var/log/3en-remote/banip.log /var/log/3en-remote/wan-reject.log /var/log/3en-remote/3EN002.log 2>/dev/null | head -n 20 || true"
         $hits = Invoke-Pi $cmd $state
         if ([string]::IsNullOrWhiteSpace($hits)) { throw 'Remote log marker not observed on collector' }
-        $state.logVerifiedOnPi = $true
-        Save-State $state
+        $state.logVerifiedOnPi = $true; Save-State $state
     }
     Write-Marker ('LOGGING_TEST_PASS;COLLECTOR_VERIFIED='+$state.logVerifiedOnPi)
 }
@@ -249,36 +229,21 @@ function Invoke-Rollback {
 }
 
 function Invoke-Final {
-    Invoke-TestDns
-    Invoke-TestLogging
+    Invoke-TestDns; Invoke-TestLogging
     $state = Load-State
-    $lines = @(
-        '3EN ROUTER + PI-HOLE INTEGRATION FINAL REPORT',
-        ('UTC='+(Get-Date).ToUniversalTime().ToString('o')),
-        ('Router='+$Router),
-        ('PiHole='+$PiHole),
-        ('PiHoleDNS=PASS'),
-        ('DHCP advertises Pi-hole=PASS'),
-        ('Router DNS switch applied='+$state.routerDnsSwitchApplied),
-        ('Router DNS switch safety evidence='+$state.safeRouterDnsSwitch),
-        ('Remote syslog target=PASS'),
-        ('Collector-side log verification='+$state.logVerifiedOnPi),
-        ('Pi-hole SSH auto-discovered='+$state.piSsh),
-        ('Backup ready='+$state.backupReady),
-        'FINAL_STATUS=SUCCESS'
-    )
+    $lines = @('3EN ROUTER + PI-HOLE INTEGRATION FINAL REPORT',('UTC='+(Get-Date).ToUniversalTime().ToString('o')),('Router='+$Router),('PiHole='+$PiHole),('PiHoleDNS=PASS'),('DHCP advertises Pi-hole=PASS'),('Router DNS switch applied='+$state.routerDnsSwitchApplied),('Router DNS switch safety evidence='+$state.safeRouterDnsSwitch),('Remote syslog target=PASS'),('Collector-side log verification='+$state.logVerifiedOnPi),('Pi-hole SSH auto-discovered='+$state.piSsh),('Backup ready='+$state.backupReady),'FINAL_STATUS=SUCCESS')
     $lines | Set-Content -LiteralPath $ReportPath -Encoding UTF8
     $lines | ForEach-Object { Write-Host $_ }
     Write-Marker 'FINAL_SUCCESS'
 }
 
 switch ($Phase) {
-    'Discovery'    { Invoke-Discovery }
-    'Backup'       { Invoke-Backup }
-    'ApplyDns'     { Invoke-ApplyDns }
-    'TestDns'      { Invoke-TestDns }
+    'Discovery' { Invoke-Discovery }
+    'Backup' { Invoke-Backup }
+    'ApplyDns' { Invoke-ApplyDns }
+    'TestDns' { Invoke-TestDns }
     'ApplyLogging' { Invoke-ApplyLogging }
-    'TestLogging'  { Invoke-TestLogging }
-    'Final'        { Invoke-Final }
-    'Rollback'     { Invoke-Rollback }
+    'TestLogging' { Invoke-TestLogging }
+    'Final' { Invoke-Final }
+    'Rollback' { Invoke-Rollback }
 }
