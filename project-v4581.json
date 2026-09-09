@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-10-v4581-openclaw-http-tool-surface-r2",
+  "title":"OpenClaw HTTP tool-surface diagnostic r2",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-10-057x2","path":"tasks/2026-09-10-057x2.json","expectedStatus":"SUCCESS"}]
+}
