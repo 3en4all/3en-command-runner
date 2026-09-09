@@ -1,0 +1,9 @@
+{
+  "id": "2026-09-09-052s",
+  "title": "v4.0.4 controlled failure regression",
+  "risk": "low",
+  "backup": "Write-Output 'V404_052S_BACKUP=PASS'",
+  "script": "throw 'V404_CONTROLLED_FAILURE'",
+  "test": "Write-Output 'UNREACHABLE'",
+  "rollback": "Write-Output 'V404_052S_ROLLBACK=PASS'"
+}
