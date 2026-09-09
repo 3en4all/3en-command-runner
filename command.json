@@ -1,0 +1,4 @@
+{
+  "id": "2026-09-09-001",
+  "command": "Get-Date; Get-ComputerInfo | Select-Object CsName, WindowsProductName, WindowsVersion"
+}
