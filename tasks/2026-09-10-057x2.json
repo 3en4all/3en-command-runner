@@ -1,0 +1,10 @@
+{
+  "id": "2026-09-10-057x2",
+  "title": "OpenClaw HTTP tool-surface diagnostic r2",
+  "description": "Corrected read-only configuration diagnostic of Gateway /tools/invoke. Verify endpoint/auth with session_status, then compare controlled write and fs_write probes without changing OpenClaw configuration.",
+  "risk": "low",
+  "backup": "Write-Output 'V458_057X2_BACKUP=NO_CONFIG_CHANGE'",
+  "script": "$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/6d4658e2d57ecc83c760445d23b5ea89b9d53b83/scripts/openclaw-http-tool-surface-057x.ps1';$d='C:/3EN-Agent/openclaw-http-tool-surface-057x2.ps1';Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d -Phase Run",
+  "test": "& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/openclaw-http-tool-surface-057x2.ps1 -Phase Test",
+  "rollback": "Write-Output 'V458_057X2_ROLLBACK=NO_CONFIG_CHANGE'"
+}
