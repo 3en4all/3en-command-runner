@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-049u",
+  "title":"v4.1.4 compact OpenClaw configuration recovery",
+  "risk":"medium",
+  "backup":"$root='C:/3EN-Agent/openclaw-bridge'; New-Item -ItemType Directory -Force -Path $root | Out-Null; $cfg=Join-Path $env:USERPROFILE '.openclaw/openclaw.json'; $snap=Join-Path $root ('pre-049u-'+(Get-Date -Format 'yyyyMMdd-HHmmss')+'.json'); if(Test-Path $cfg){Copy-Item -LiteralPath $cfg -Destination $snap -Force}; Write-Output 'V414_049U_BACKUP=PASS'",
+  "script":"$dst='C:/3EN-Agent/openclaw-bridge/openclaw-v414-recover-config.ps1'; Invoke-WebRequest -UseBasicParsing -Uri ('https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/openclaw-v414-recover-config.ps1?ts='+[DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()) -OutFile $dst; $t=$null;$e=$null; [System.Management.Automation.Language.Parser]::ParseFile($dst,[ref]$t,[ref]$e)|Out-Null; if(@($e).Count -gt 0){throw ('V414_CONFIG_SCRIPT_SYNTAX_FAILED count='+@($e).Count)}; & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $dst; if($LASTEXITCODE -ne 0){throw ('V414_CONFIG_SCRIPT_FAILED code='+$LASTEXITCODE)}",
+  "test":"$root='C:/3EN-Agent/openclaw-bridge'; $cfg=Join-Path $env:USERPROFILE '.openclaw/openclaw.json'; if(-not(Test-Path $cfg)){throw 'OPENCLAW_CONFIG_MISSING'}; $o=Get-Content $cfg -Raw|ConvertFrom-Json; if([string]$o.gateway.mode -ne 'local'){throw 'GATEWAY_MODE_NOT_LOCAL'}; if([string]$o.models.providers.ollama.baseUrl -match '/v1'){throw 'OLLAMA_V1_FORBIDDEN'}; $m=(Get-Content (Join-Path $root 'selected-model.txt') -Raw).Trim(); if([string]::IsNullOrWhiteSpace($m)){throw 'SELECTED_MODEL_MISSING'}; $j=Get-Content (Join-Path $root 'ollama-endpoint-v414.json') -Raw|ConvertFrom-Json; $null=Invoke-RestMethod -Uri ($j.baseUrl+'/api/tags') -TimeoutSec 3 -ErrorAction Stop; Write-Output 'V414_049U_TEST=PASS'",
+  "rollback":"Write-Output 'V414_049U_ROLLBACK=NO_RECURSIVE_TREE_RESTORE'"
+}
