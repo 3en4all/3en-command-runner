@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-062a",
+  "title":"OpenClaw coding tool profile repair",
+  "risk":"medium",
+  "backup":"$cfg=Join-Path $env:USERPROFILE '.openclaw/openclaw.json';$root='C:/3EN-Agent/openclaw-bridge';$bk=Join-Path $root ('v434-tools-'+(Get-Date -Format 'yyyyMMdd-HHmmss')+'.json');Copy-Item $cfg $bk -Force;Write-Output ('V434_062A_BACKUP='+$bk)",
+  "script":"$ErrorActionPreference='Stop';& openclaw.cmd config set tools.profile coding 2>&1|Out-Null;if($LASTEXITCODE -ne 0){throw 'TOOLS_PROFILE_SET_FAILED'};& openclaw.cmd gateway restart 2>&1|Out-Null;if($LASTEXITCODE -ne 0){throw 'GATEWAY_RESTART_FAILED'};$ok=$false;for($i=0;$i -lt 15;$i++){Start-Sleep -Seconds 2;$g=& openclaw.cmd gateway status --json 2>&1;if($LASTEXITCODE -eq 0){try{$j=$g|Out-String|ConvertFrom-Json;if($j.service.runtime.status -eq 'running'){$ok=$true;break}}catch{}}};if(-not $ok){throw 'GATEWAY_NOT_RUNNING'};$cfg=Join-Path $env:USERPROFILE '.openclaw/openclaw.json';$c=Get-Content $cfg -Raw|ConvertFrom-Json;if(-not($c.PSObject.Properties.Name -contains 'tools')){throw 'TOOLS_OBJECT_MISSING'};if($c.tools.profile -ne 'coding'){throw 'TOOLS_PROFILE_NOT_CODING'};Write-Output 'V434_062A_TOOLS=CODING'",
+  "test":"$cfg=Join-Path $env:USERPROFILE '.openclaw/openclaw.json';$c=Get-Content $cfg -Raw|ConvertFrom-Json;if($c.tools.profile -ne 'coding'){throw 'TOOLS_PROFILE_TEST_FAILED'};Write-Output 'V434_062A_TEST=PASS'",
+  "rollback":"$root='C:/3EN-Agent/openclaw-bridge';$bk=Get-ChildItem $root -Filter 'v434-tools-*.json'|Sort-Object LastWriteTime -Descending|Select-Object -First 1;if($bk){Copy-Item $bk.FullName (Join-Path $env:USERPROFILE '.openclaw/openclaw.json') -Force;& openclaw.cmd gateway restart 2>&1|Out-Null;Write-Output 'V434_062A_ROLLBACK=RESTORED'}"
+}
