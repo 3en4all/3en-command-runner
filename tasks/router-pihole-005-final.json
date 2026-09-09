@@ -1,10 +1,10 @@
 {
   "id": "router-pihole-005-final",
-  "title": "Router + Pi-hole 5/5 - end-to-end acceptance",
-  "description": "Run final DNS and remote logging acceptance tests, self-repair once if necessary, and publish a concise integration report. Roll back router changes if final acceptance still fails.",
+  "title": "Router + Pi-hole 5/5 - end-to-end acceptance + privacy handover",
+  "description": "Run final DNS and remote logging acceptance tests, self-repair once if necessary, publish a concise integration report, and arm the autonomous Security & Privacy Stack handover after terminal SUCCESS.",
   "backup": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase Backup",
-  "script": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase Final",
-  "test": "$ErrorActionPreference='Stop';$r='C:/3EN-Agent/router-pihole-final/FINAL-REPORT.txt';if(-not(Test-Path $r)){throw 'final report missing'};$c=Get-Content $r -Raw;if($c -notmatch 'FINAL_STATUS=SUCCESS'){throw 'final status not success'};Write-Host 'ROUTER_PIHOLE_PROJECT_ACCEPTANCE=PASS'",
+  "script": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase Final;$h='C:/3EN-Agent/handover-router-to-privacy-v1.ps1';Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/handover-router-to-privacy-v1.ps1' -OutFile $h;$t=$null;$e=$null;[System.Management.Automation.Language.Parser]::ParseFile($h,[ref]$t,[ref]$e)|Out-Null;if(@($e).Count-ne0){throw 'privacy handover helper syntax invalid'};Start-Process powershell.exe -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File',$h) -WindowStyle Hidden|Out-Null;Write-Host 'PRIVACY_STACK_HANDOVER_ARMED=TRUE'",
+  "test": "$ErrorActionPreference='Stop';$r='C:/3EN-Agent/router-pihole-final/FINAL-REPORT.txt';if(-not(Test-Path $r)){throw 'final report missing'};$c=Get-Content $r -Raw;if($c -notmatch 'FINAL_STATUS=SUCCESS'){throw 'final status not success'};if(-not(Test-Path 'C:/3EN-Agent/handover-router-to-privacy-v1.ps1')){throw 'privacy handover helper missing'};Write-Host 'ROUTER_PIHOLE_PROJECT_ACCEPTANCE=PASS'",
   "repair": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase ApplyDns;& $p -Phase ApplyLogging;& $p -Phase Final",
-  "rollback": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase Rollback"
+  "rollback": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase Rollback;Write-Host 'PRIVACY_HANDOVER_WILL_NOT_START_WITHOUT_TERMINAL_SUCCESS'"
 }
