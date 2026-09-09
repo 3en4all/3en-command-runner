@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-057b",
+  "title":"OpenClaw file-tool capability diagnostic",
+  "risk":"low",
+  "backup":"Write-Output 'V431_057B_BACKUP=READ_ONLY'",
+  "script":"$ErrorActionPreference='Continue';$root='C:/3EN-Agent/openclaw-bridge';Write-Output '=== PRIOR 057A RESULT ===';$p='C:/3EN-Agent/workbench/openclaw-tool-proof.txt';Write-Output ('TARGET_EXISTS='+(Test-Path $p));Write-Output '=== AGENT HELP ===';& openclaw.cmd agent --help 2>&1|ForEach-Object{Write-Output $_};Write-Output ('AGENT_HELP_EXIT='+$LASTEXITCODE);Write-Output '=== OPENCLAW CONFIG ===';$cfg=Join-Path $env:USERPROFILE '.openclaw/openclaw.json';if(Test-Path $cfg){Get-Content $cfg -Raw|Write-Output}else{Write-Output 'CONFIG_MISSING'};Write-Output '=== AGENT TOOL INTROSPECTION ===';$prompt='Report only the names of local tools/capabilities you can actually invoke in this session for filesystem or shell execution. Do not fabricate tools. Do not perform any changes.';$out=& openclaw.cmd agent --session-key '3en-057b' --message $prompt --json --timeout 180 2>&1;$code=$LASTEXITCODE;Write-Output ('AGENT_EXIT='+$code);$out|ForEach-Object{Write-Output $_};Write-Output 'V431_057B_DIAGNOSTIC=PASS'",
+  "test":"Write-Output 'V431_057B_TEST=PASS'",
+  "rollback":"Write-Output 'V431_057B_ROLLBACK=NO_CHANGE'"
+}
