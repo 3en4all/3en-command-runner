@@ -12,11 +12,11 @@
   "chapters": [
     {
       "id": "2026-09-09-039",
-      "taskPath": "tasks/2026-09-09-039.json"
+      "path": "tasks/2026-09-09-039.json"
     },
     {
       "id": "2026-09-09-040",
-      "taskPath": "tasks/2026-09-09-040.json"
+      "path": "tasks/2026-09-09-040.json"
     }
   ]
 }
