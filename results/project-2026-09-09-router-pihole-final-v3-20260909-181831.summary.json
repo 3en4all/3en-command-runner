@@ -1,0 +1,48 @@
+{
+    "schemaVersion":  1,
+    "projectId":  "2026-09-09-router-pihole-final-v3",
+    "runnerVersion":  "3.10.1",
+    "verdict":  "NEEDS_DECISION",
+    "accepted":  false,
+    "counts":  {
+                   "success":  1,
+                   "recovered":  0,
+                   "rejected":  0,
+                   "expectedFailures":  1,
+                   "unexpected":  0,
+                   "remaining":  3
+               },
+    "chapters":  [
+                     {
+                         "id":  "router-pihole-001-discovery",
+                         "expected":  "",
+                         "actual":  "SUCCESS",
+                         "match":  true
+                     },
+                     {
+                         "id":  "router-pihole-002-backup",
+                         "expected":  "",
+                         "actual":  "FAILED_REPAIR",
+                         "match":  true
+                     },
+                     {
+                         "id":  "router-pihole-003-dns",
+                         "expected":  "",
+                         "actual":  null,
+                         "match":  false
+                     },
+                     {
+                         "id":  "router-pihole-004-logging",
+                         "expected":  "",
+                         "actual":  null,
+                         "match":  false
+                     },
+                     {
+                         "id":  "router-pihole-005-final",
+                         "expected":  "",
+                         "actual":  null,
+                         "match":  false
+                     }
+                 ],
+    "completedUtc":  "2026-09-09T16:18:31.1560076Z"
+}
