@@ -1,0 +1,48 @@
+{
+    "schemaVersion":  1,
+    "projectId":  "2026-09-09-ai-media-local-v2",
+    "runnerVersion":  "3.10.1",
+    "verdict":  "NEEDS_DECISION",
+    "accepted":  false,
+    "counts":  {
+                   "success":  0,
+                   "recovered":  0,
+                   "rejected":  0,
+                   "expectedFailures":  1,
+                   "unexpected":  0,
+                   "remaining":  4
+               },
+    "chapters":  [
+                     {
+                         "id":  "ai-media-001-discovery",
+                         "expected":  "",
+                         "actual":  "FAILED_REPAIR",
+                         "match":  true
+                     },
+                     {
+                         "id":  "ai-media-002-storage",
+                         "expected":  "",
+                         "actual":  null,
+                         "match":  false
+                     },
+                     {
+                         "id":  "ai-media-003-acquire",
+                         "expected":  "",
+                         "actual":  null,
+                         "match":  false
+                     },
+                     {
+                         "id":  "ai-media-004-runtime",
+                         "expected":  "",
+                         "actual":  null,
+                         "match":  false
+                     },
+                     {
+                         "id":  "ai-media-005-acceptance",
+                         "expected":  "",
+                         "actual":  null,
+                         "match":  false
+                     }
+                 ],
+    "completedUtc":  "2026-09-09T13:56:02.6235398Z"
+}
