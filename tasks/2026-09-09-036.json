@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-036",
+  "title":"QUEUE TEST 06/10 - recover after FAILED_TEST",
+  "description":"Automated queue validation chapter 6 of 10. Verifies queue advanced after intentional FAILED_TEST in 035 and state preserved that terminal status.",
+  "backup":"Write-Host 'QUEUE036_BACKUP=PASS'",
+  "script":"$ErrorActionPreference='Stop';$s=Get-Content 'C:/3EN-Agent/3en-agent.state.json' -Raw|ConvertFrom-Json;Write-Host ('PREVIOUS_ID='+$s.lastExecutedId);Write-Host ('PREVIOUS_STATUS='+$s.lastTerminalStatus);if($s.lastExecutedId -ne '2026-09-09-035'){throw '035 state continuity missing'};if($s.lastTerminalStatus -ne 'FAILED_TEST'){throw '035 FAILED_TEST status missing'};Write-Host 'QUEUE036_SCRIPT=PASS'",
+  "test":"Write-Host 'QUEUE036_TEST=PASS'",
+  "rollback":"Write-Host 'QUEUE036_ROLLBACK_NOT_REQUIRED'"
+}
