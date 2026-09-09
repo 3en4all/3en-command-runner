@@ -1,9 +1,9 @@
 {
-  "id": "2026-09-09-002",
-  "title": "3EN Agent v2 smoke test",
+  "id": "2026-09-09-003",
+  "title": "3EN Agent v2.2 smoke test",
   "description": "Create a backup directory, write a test file, verify it exists, and provide rollback.",
   "backup": "$BackupDir = 'C:\\3EN-Agent\\backup'; New-Item -ItemType Directory -Force -Path $BackupDir | Out-Null; Write-Host \"Backup directory ready: $BackupDir\"",
-  "script": "$TestFile = 'C:\\3EN-Agent\\agent-v2-test.txt'; \"3EN Agent v2 OK - $(Get-Date -Format o)\" | Set-Content -Path $TestFile -Encoding UTF8; Write-Host \"Created: $TestFile\"",
+  "script": "$TestFile = 'C:\\3EN-Agent\\agent-v2-test.txt'; \"3EN Agent v2.2 OK - $(Get-Date -Format o)\" | Set-Content -Path $TestFile -Encoding UTF8; Write-Host \"Created: $TestFile\"",
   "test": "$TestFile = 'C:\\3EN-Agent\\agent-v2-test.txt'; if (-not (Test-Path $TestFile)) { throw 'Test file does not exist' }; Get-Content $TestFile",
   "rollback": "$TestFile = 'C:\\3EN-Agent\\agent-v2-test.txt'; Remove-Item $TestFile -Force -ErrorAction SilentlyContinue; Write-Host \"Rollback complete\""
 }
