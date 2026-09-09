@@ -1,0 +1,13 @@
+HEALTH=FAIL listenPort=8088 expectedPort=8099
+V457_057W_BACKUP=PASS;BASELINE_HEALTH=42
+
+powershell.exe : 057W_TOOLS_INVOKE_HTTP_404
+At line:1 char:1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (057W_TOOLS_INVOKE_HTTP_404:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+V457_057W_ROLLBACK=PASS
+
