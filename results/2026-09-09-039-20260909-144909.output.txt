@@ -1,0 +1,10 @@
+QUEUE039_BACKUP_SHOULD_NOT_RUN_ON_REJECT
+QUEUE039_SCRIPT_EXECUTED_BUT_SHOULD_HAVE_BEEN_REJECTED
+At line:1 char:1
++ throw 'QUEUE039_SCRIPT_EXECUTED_BUT_SHOULD_HAVE_BEEN_REJECTED'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (QUEUE039_SCRIPT...E_BEEN_REJECTED:String) [], RuntimeException
+    + FullyQualifiedErrorId : QUEUE039_SCRIPT_EXECUTED_BUT_SHOULD_HAVE_BEEN_REJECTED
+ 
+
+QUEUE039_ROLLBACK_NOT_REQUIRED
