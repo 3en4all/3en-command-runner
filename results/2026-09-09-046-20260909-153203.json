@@ -1,0 +1,35 @@
+{
+    "projectId":  "2026-09-09-v40-autonomous-core-acceptance",
+    "chapterId":  "2026-09-09-046",
+    "risk":  "low",
+    "status":  "SUCCESS_RECOVERED",
+    "stage":  "TERMINAL",
+    "attempts":  2,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "FAILED",
+                      "error":  "RECOVERY_REQUIRED"
+                  },
+                  {
+                      "name":  "REPAIR_1",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_2",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "TEST_2",
+                      "status":  "OK",
+                      "error":  null
+                  }
+              ]
+}
