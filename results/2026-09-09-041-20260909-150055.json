@@ -1,0 +1,33 @@
+{
+    "projectId":  "2026-09-09-v39-autonomy-acceptance",
+    "chapterId":  "2026-09-09-041",
+    "status":  "SUCCESS_RECOVERED",
+    "attempts":  2,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "FAILED",
+                      "error":  "RECOVERY_REQUIRED"
+                  },
+                  {
+                      "name":  "REPAIR_1",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_2",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "TEST_2",
+                      "status":  "OK",
+                      "error":  null
+                  }
+              ]
+}
