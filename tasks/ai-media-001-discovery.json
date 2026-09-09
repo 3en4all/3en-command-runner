@@ -1,0 +1,10 @@
+{
+  "id": "ai-media-001-discovery",
+  "title": "AI Media 1/5 - autonomous software/model inventory",
+  "description": "Read-only audit of 3EN035. Detect GPU/RAM/disks, ComfyUI, FFmpeg, Python, Jan, Ollama and existing visual/audio/voice models. No installs and no production changes.",
+  "backup": "Write-Host 'READ_ONLY_DISCOVERY_NO_BACKUP_REQUIRED'",
+  "script": "$ErrorActionPreference='Stop';$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/ai-media-local-v1.ps1';$p='C:/3EN-Agent/ai-media-local-v1.ps1';Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $p;& $p -Phase Discovery -Root 'D:/AI-Media'",
+  "test": "$ErrorActionPreference='Stop';$p='D:/AI-Media/state/inventory.json';if(-not(Test-Path $p)){throw 'inventory missing'};$i=Get-Content $p -Raw|ConvertFrom-Json;if(-not $i.gpu){throw 'GPU not detected'};if(-not $i.disks){throw 'disk inventory missing'};Write-Host ('COMFY='+$i.comfyUI);Write-Host ('FFMPEG='+$i.ffmpeg);Write-Host ('PYTHON='+$i.python);Write-Host ('OLLAMA='+$i.ollama);Write-Host ('JAN='+$i.jan);Write-Host 'AI_MEDIA_DISCOVERY_TEST=PASS'",
+  "repair": "$ErrorActionPreference='Stop';& 'C:/3EN-Agent/ai-media-local-v1.ps1' -Phase Discovery -Root 'D:/AI-Media'",
+  "rollback": "Write-Host 'DISCOVERY_READ_ONLY_NO_ROLLBACK'"
+}
