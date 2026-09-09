@@ -1,0 +1,15 @@
+BACKUP_ROOT=C:/3EN-Agent/backups/028/20260909-140415
+CHAPTER_028_BACKUP=PASS
+Set-Content : A positional parameter cannot be found that accepts argument '+3EN_AGENT_V36=ACCEPTED ACCEPTED_AT=2026-09-09 1
+4:04:15 RUNNER_SHA256=57233841FF0F7F6BF78E5EBEB77D0ECCDC2EA07634A81595F31E88B85E8B4B54 VALIDATED_TASK=2026-09-09-027 VALIDAT
+ED_TERMINAL_STATUS=SUCCESS POSTFINALIZE_RESULT=PASS_NO_RETRY ACTIVE_PID=24056'.
+At line:1 char:2953
++ ... lue $lines; Set-Content -LiteralPath $report -Encoding UTF8 -Value @( ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Content], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SetContentCommand
+ 
+
+ROLLBACK_BACKUP_ROOT=C:/3EN-Agent/backups/028/20260909-140415
+Rollback is intentionally manual-by-agent only if acceptance test fails; current runner/state are not replaced by this chapt
+er.
