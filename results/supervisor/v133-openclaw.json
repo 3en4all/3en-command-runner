@@ -4,7 +4,7 @@
     "pointerRevision":  "2026-09-10T01:43:00+02:00-v453b-057s-manifest-fixed",
     "pointerProject":  "project-v453.json",
     "processedRevision":  "2026-09-10T01:27:00+02:00-v451-057q2-read-diagnostic",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
@@ -13,5 +13,5 @@
     "lastExitCode":  null,
     "workerPid":  31120,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T23:13:19.1589584Z"
+    "updatedUtc":  "2026-09-09T23:13:20.6339985Z"
 }
