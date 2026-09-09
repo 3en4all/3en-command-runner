@@ -1,0 +1,14 @@
+BACKUP_ROOT=C:/3EN-Agent/backups/044/20260909-143114
+CHAPTER_044_BACKUP=PASS
+Exception calling "Create" with "1" argument(s): "At line:1 char:973
++ ... oject must contain 10 chapters'};$oldPid=$PID;$helperText=@"`n`$Error ...
++                                                                 ~
+No characters are allowed after a here-string header but before the end of the line."
+At C:\3EN-Agent\3en-agent-runner-v3.6.ps1:121 char:9
++         $out=& ([ScriptBlock]::Create($Code)) *>&1
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : ParseException
+ 
+
+Rollback: v3.6 remains active until 044 reaches SUCCESS; backup preserved under C:/3EN-Agent/backups/044.
