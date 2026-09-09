@@ -1,0 +1,9 @@
+{
+  "id": "2026-09-09-045",
+  "title": "v4.0 rejected dependency state acceptance",
+  "risk": "low",
+  "backup": "Write-Output 'V40_045_BACKUP=PASS'",
+  "script": "$s=Get-Content 'C:/3EN-Agent/3en-agent.state.json' -Raw | ConvertFrom-Json; if($s.lastExecutedId -ne '2026-09-09-044'){throw 'DEPENDENCY_STATE_ID_INVALID'}; if($s.lastTerminalStatus -ne 'REJECTED'){throw 'DEPENDENCY_STATE_STATUS_INVALID'}; Write-Output 'V40_045_REJECTED_DEPENDENCY_VISIBLE=PASS'",
+  "test": "Write-Output 'V40_045_TEST=PASS'",
+  "rollback": "Write-Output 'V40_045_ROLLBACK=PASS'"
+}
