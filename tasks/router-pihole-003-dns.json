@@ -2,7 +2,7 @@
   "id": "router-pihole-003-dns",
   "title": "Router + Pi-hole 3/5 - DNS integration",
   "description": "Ensure LAN clients receive Pi-hole as DNS. Change router-own upstream DNS to Pi-hole only when discovery has independently proved that doing so cannot create a router/Pi-hole DNS loop.",
-  "backup": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase Backup",
+  "backup": "$ErrorActionPreference='Stop';$rev='066e17bdb1f312c5c0c6932e436b3cb0158ee096';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/'+$rev+'/scripts/router-pihole-finalize-v1.ps1';Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $p;& $p -Phase Backup",
   "script": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase ApplyDns",
   "test": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase TestDns",
   "repair": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase ApplyDns",
