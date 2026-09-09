@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-09-v435-openclaw-tools-profile",
+  "title":"3EN v4.3.5 OpenClaw tools profile repair",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-09-062a","path":"tasks/2026-09-09-062a.json","expectedStatus":"SUCCESS"}]
+}
