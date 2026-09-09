@@ -1,0 +1,12 @@
+BACKUP_ROOT=C:/3EN-Agent/backups/024/20260909-135728
+CHAPTER_024_BACKUP=PASS
+Expected exactly one active v3.5 process, found 0
+At line:1 char:999
++ ... ount -ne 1){throw ('Expected exactly one active v3.5 process, found ' ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Expected exactl...rocess, found 0:String) [], RuntimeException
+    + FullyQualifiedErrorId : Expected exactly one active v3.5 process, found 0
+ 
+
+No destructive rollback needed before delayed handover. Captured v3.5 is stopped only after v3.6 is verified running. Backup
+ is under C:/3EN-Agent/backups/024.
