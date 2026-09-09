@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-09-v442-qwen-native-tool-diagnostic",
+  "title":"3EN v4.4.2 Qwen native tool-call diagnostic",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-09-057k","path":"tasks/2026-09-09-057k.json","expectedStatus":"SUCCESS"}]
+}
