@@ -1,0 +1,22 @@
+READ_ONLY_DISCOVERY_NO_BACKUP_REQUIRED
+
+if : The term 'if' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling
+ of the name, or if a path was included, verify that the path is correct and try again.
+At C:\3EN-Agent\ai-media-local-v1.ps1:63 char:19
++     llmModelRoot=(if(Test-Path 'D:\AI-Free3\models'){'D:\AI-Free3\mod ...
++                   ~~
+    + CategoryInfo          : ObjectNotFound: (if:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+if : The term 'if' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling
+ of the name, or if a path was included, verify that the path is correct and try again.
+At C:\3EN-Agent\ai-media-local-v1.ps1:63 char:19
++     llmModelRoot=(if(Test-Path 'D:\AI-Free3\models'){'D:\AI-Free3\mod ...
++                   ~~
+    + CategoryInfo          : ObjectNotFound: (if:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+DISCOVERY_READ_ONLY_NO_ROLLBACK
+
