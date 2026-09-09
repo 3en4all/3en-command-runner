@@ -4,7 +4,7 @@
     "pointerRevision":  "2026-09-10T01:32:00+02:00-v452-057r-verified-admin-repair",
     "pointerProject":  "project-v452.json",
     "processedRevision":  "2026-09-10T01:27:00+02:00-v451-057q2-read-diagnostic",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
@@ -13,5 +13,5 @@
     "lastExitCode":  null,
     "workerPid":  31120,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T23:08:55.1757829Z"
+    "updatedUtc":  "2026-09-09T23:08:56.7383966Z"
 }
