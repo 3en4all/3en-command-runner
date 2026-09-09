@@ -1,0 +1,13 @@
+V434_057E_BACKUP=READ_ONLY
+
+=== 057D MODEL TOOL EVIDENCE ===
+MODEL=d89ftekb7/mistral-nemo-uncensored:12b-q4_0 EXIT=0 FILE=False PASS=False
+MODEL=dolphin-mistral:7b-v2.8-q4_K_M EXIT=0 FILE=False PASS=False
+=== OPENCLAW TOOL LIST SNAPSHOT ===
+AGENT_EXIT=0
+TOOLS=read,edit,write,apply_patch,exec,process,message,tts,image_generate,music_generate,video_generate,agents_list,get_goal,create_goal,update_goal,skill_workshop,sessions_list,sessions_history,sessions_send,sessions_spawn,sessions_yield,subagents,session_status,web_search,web_fetch,image,pdf,browser,canvas,file_fetch,dir_list,dir_fetch,file_write,memory_search,memory_get,node_inference
+PAYLOAD=[TOOL_CALLS]{"name":"subagents","arguments":{"action":"list"}}
+V434_057E_DIAG=PASS
+
+V434_057E_TEST=PASS models=2
+
