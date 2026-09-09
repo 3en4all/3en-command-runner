@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-051v",
+  "title":"v4.1.4 OpenClaw end-to-end acceptance",
+  "risk":"low",
+  "backup":"Write-Output 'V414_051V_BACKUP=READ_ONLY'",
+  "script":"$root='C:/3EN-Agent/openclaw-bridge';$so=Join-Path $root 'agent-smoke-051v.stdout.json';$se=Join-Path $root 'agent-smoke-051v.stderr.txt';Remove-Item $so,$se -Force -ErrorAction SilentlyContinue;$p=Start-Process -FilePath 'openclaw.cmd' -ArgumentList @('agent','--session-key','3en-v414-smoke-v2','--message','Reply with exactly OPENCLAW_BRIDGE_OK','--json','--timeout','180') -Wait -PassThru -NoNewWindow -RedirectStandardOutput $so -RedirectStandardError $se;if($p.ExitCode -ne 0){throw ('OPENCLAW_AGENT_TURN_FAILED code='+$p.ExitCode)};$raw=Get-Content $so -Raw;$null=$raw|ConvertFrom-Json;if($raw -notmatch 'OPENCLAW_BRIDGE_OK'){throw 'OPENCLAW_AGENT_MARKER_MISSING'};Write-Output 'V414_051V_AGENT=PASS'",
+  "test":"$root='C:/3EN-Agent/openclaw-bridge';$a=Join-Path $root 'agent-smoke-051v.stdout.json';if(-not(Test-Path $a)){throw 'AGENT_SMOKE_ARTIFACT_MISSING'};$raw=Get-Content $a -Raw;$null=$raw|ConvertFrom-Json;if($raw -notmatch 'OPENCLAW_BRIDGE_OK'){throw 'AGENT_SMOKE_MARKER_MISSING'};$so=Join-Path $root 'gateway-after-051v.stdout.json';$se=Join-Path $root 'gateway-after-051v.stderr.txt';Remove-Item $so,$se -Force -ErrorAction SilentlyContinue;$p=Start-Process -FilePath 'openclaw.cmd' -ArgumentList @('gateway','status','--json') -Wait -PassThru -NoNewWindow -RedirectStandardOutput $so -RedirectStandardError $se;if($p.ExitCode -ne 0){throw 'GATEWAY_LOST_AFTER_AGENT_TURN'};$null=Get-Content $so -Raw|ConvertFrom-Json;Write-Output 'V414_051V_TEST=PASS'",
+  "rollback":"Write-Output 'V414_051V_ROLLBACK=NO_CHANGE'"
+}
