@@ -1,0 +1,13 @@
+HEALTH=FAIL listenPort=8088 expectedPort=8099
+V454_057T_BACKUP=PASS baseline=42
+
+powershell.exe : 057T_DIAGNOSIS_NOT_VERIFIED
+At line:1 char:146
++ ... R_MISSING'};& powershell.exe -NoProfile -ExecutionPolicy Bypass -File ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (057T_DIAGNOSIS_NOT_VERIFIED:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+V454_057T_ROLLBACK=PASS_CONFIG_RESTORED
+
