@@ -1,0 +1,10 @@
+{
+  "id": "router-pihole-002-backup",
+  "title": "Router + Pi-hole 2/5 - verified backup",
+  "description": "Create and verify router UCI/config backups and, when SSH is available, Pi-hole/rsyslog backup before any integration changes.",
+  "backup": "$ErrorActionPreference='Stop';Write-Host 'PRECHANGE_BACKUP_CHAPTER=START'",
+  "script": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';if(-not(Test-Path $p)){Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/router-pihole-finalize-v1.ps1' -OutFile $p};& $p -Phase Backup",
+  "test": "$ErrorActionPreference='Stop';$b='C:/3EN-Agent/router-pihole-final/backup';foreach($f in @('dhcp.config','network.config','system.config')){if(-not(Test-Path (Join-Path $b $f))){throw ('missing backup '+$f)}};$s=Get-Content 'C:/3EN-Agent/router-pihole-final/state.json' -Raw|ConvertFrom-Json;if(-not $s.backupReady){throw 'backup state false'};Write-Host 'BACKUP_TEST=PASS'",
+  "repair": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/router-pihole-finalize-v1.ps1';& $p -Phase Backup",
+  "rollback": "Write-Host 'BACKUP_ONLY_NO_ROLLBACK_REQUIRED'"
+}
