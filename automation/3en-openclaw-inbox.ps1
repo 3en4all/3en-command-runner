@@ -47,7 +47,8 @@ try{
       $projectLocal=Sync-Project $project
       Log ('SYNC OK project='+$project+' local='+$projectLocal)
       Save-State $rev 'RUNNING' $project $null
-      $p=Start-Process powershell.exe -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File',$runner,'-ProjectPath',$projectLocal) -WorkingDirectory $Root -Wait -PassThru -NoNewWindow
+      Log ('RUNNER START projectArg='+$project)
+      $p=Start-Process powershell.exe -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File',$runner,'-ProjectPath',$project) -WorkingDirectory $Root -Wait -PassThru -NoNewWindow
       Save-State $rev 'TERMINAL' $project $p.ExitCode
       Log ('TERMINAL revision='+$rev+' exit='+$p.ExitCode)
     }
