@@ -1,0 +1,16 @@
+V40_046_BACKUP=PASS
+
+RECOVERY_REQUIRED
+At line:1 char:72
++ ... air46.flag'; if(-not(Test-Path $p)){throw 'RECOVERY_REQUIRED'}; Write ...
++                                         ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (RECOVERY_REQUIRED:String) [], RuntimeException
+    + FullyQualifiedErrorId : RECOVERY_REQUIRED
+ 
+
+V40_046_REPAIR=PASS
+
+V40_046_SCRIPT_RECOVERED=PASS
+
+V40_046_TEST=PASS
+
