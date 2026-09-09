@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-09-v436-openclaw-transport-recovery",
+  "title":"3EN v4.3.6 OpenClaw transport recovery",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"automation-core-004-openclaw-inbox-sync-replay","path":"task.json","expectedStatus":"SUCCESS"}]
+}
