@@ -1,0 +1,59 @@
+{
+    "schemaVersion":  4,
+    "version":  "1.3.2",
+    "architecture":  "independent-lane-workers",
+    "status":  "HEALTHY",
+    "coordinatorPid":  36692,
+    "runner":  "C:\\3EN-Agent\\3en-agent-runner-v4.0.3.ps1",
+    "pollSeconds":  15,
+    "publishSeconds":  60,
+    "tokenAvailable":  true,
+    "lanes":  [
+                  {
+                      "lane":  "network-privacy",
+                      "workerRunning":  true,
+                      "workerPid":  46668,
+                      "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
+                      "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
+                      "processedRevision":  "",
+                      "status":  "RETRY_PENDING",
+                      "attempts":  2,
+                      "lastError":  "RUNNER_EXIT_",
+                      "nextRetryUtc":  "2026-09-09T22:44:33.6943358Z",
+                      "runnerPid":  null,
+                      "lastExitCode":  null,
+                      "updatedUtc":  "2026-09-09T22:43:33.6943358Z"
+                  },
+                  {
+                      "lane":  "security-monitor",
+                      "workerRunning":  true,
+                      "workerPid":  42116,
+                      "pointerRevision":  "bootstrap-0",
+                      "pointerProject":  "",
+                      "processedRevision":  "",
+                      "status":  "IDLE",
+                      "attempts":  0,
+                      "lastError":  "",
+                      "nextRetryUtc":  "",
+                      "runnerPid":  null,
+                      "lastExitCode":  null,
+                      "updatedUtc":  "2026-09-09T22:43:41.8223070Z"
+                  },
+                  {
+                      "lane":  "openclaw",
+                      "workerRunning":  true,
+                      "workerPid":  532,
+                      "pointerRevision":  "2026-09-10T00:35:00+02:00-v444b-057m2-observable",
+                      "pointerProject":  "project-v444b.json",
+                      "processedRevision":  "",
+                      "status":  "RETRY_PENDING",
+                      "attempts":  2,
+                      "lastError":  "RUNNER_EXIT_",
+                      "nextRetryUtc":  "2026-09-09T22:44:39.3831793Z",
+                      "runnerPid":  null,
+                      "lastExitCode":  null,
+                      "updatedUtc":  "2026-09-09T22:43:39.3846902Z"
+                  }
+              ],
+    "updatedUtc":  "2026-09-09T22:43:48.3492539Z"
+}
