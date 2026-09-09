@@ -1,5 +1,5 @@
-$ErrorActionPreference='Stop'
 param([string]$Source,[string]$Destination)
+$ErrorActionPreference='Stop'
 if(-not(Test-Path $Source)){throw 'SOURCE_MISSING'}
 $c=Get-Content -LiteralPath $Source -Raw -Encoding UTF8
 $old=@'
