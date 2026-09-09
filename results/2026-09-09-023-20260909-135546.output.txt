@@ -1,0 +1,217 @@
+BACKUP_ROOT=C:\3EN-Agent\backups\023\20260909-135546
+CHAPTER_023_BACKUP=PASS
+Add-Content : A positional parameter cannot be found that accepts argument '+[2026-09-09 13:50:21][INFO] UPLOAD AUTH OK repo
+=3en4all/3en-command-runner [2026-09-09 13:50:22][INFO] UPLOAD OK results/2026-09-09-021-20260909-135020.json commit=92c2709
+772c2f08e728dbbe45b300562278b0801 [2026-09-09 13:50:23][INFO] UPLOAD OK results/2026-09-09-021-20260909-135020.output.txt co
+mmit=5174733fae9b05ed35cee4a9da182bbe8c73f014 [2026-09-09 13:50:23][INFO] FINALIZE 3/4: RESULT + OUTPUT UPLOADED [2026-09-09
+ 13:50:23][ERROR] FINALIZE 4/4: task status FAILED_SCRIPT [2026-09-09 13:50:38][INFO] Fetching task... [2026-09-09 13:50:38]
+[INFO] FETCH OK API=GitHubContents [2026-09-09 13:50:38][INFO] PARSE OK ID=2026-09-09-021 [2026-09-09 13:50:38][INFO] No new
+ task. ID=2026-09-09-021 [2026-09-09 13:50:53][INFO] Fetching task... [2026-09-09 13:50:54][INFO] FETCH OK API=GitHubContent
+s [2026-09-09 13:50:54][INFO] PARSE OK ID=2026-09-09-021 [2026-09-09 13:50:54][INFO] No new task. ID=2026-09-09-021 [2026-09
+-09 13:51:09][INFO] Fetching task... [2026-09-09 13:51:09][INFO] FETCH OK API=GitHubContents [2026-09-09 13:51:09][INFO] PAR
+SE OK ID=2026-09-09-021 [2026-09-09 13:51:09][INFO] No new task. ID=2026-09-09-021 [2026-09-09 13:51:24][INFO] Fetching task
+... [2026-09-09 13:51:24][INFO] FETCH OK API=GitHubContents [2026-09-09 13:51:24][INFO] PARSE OK ID=2026-09-09-021 [2026-09-
+09 13:51:24][INFO] No new task. ID=2026-09-09-021 [2026-09-09 13:51:39][INFO] Fetching task... [2026-09-09 13:51:39][INFO] F
+ETCH OK API=GitHubContents [2026-09-09 13:51:39][INFO] PARSE OK ID=2026-09-09-021 [2026-09-09 13:51:39][INFO] No new task. I
+D=2026-09-09-021 [2026-09-09 13:51:54][INFO] Fetching task... [2026-09-09 13:51:55][INFO] FETCH OK API=GitHubContents [2026-
+09-09 13:51:55][INFO] PARSE OK ID=2026-09-09-021 [2026-09-09 13:51:55][INFO] No new task. ID=2026-09-09-021 [2026-09-09 13:5
+2:10][INFO] Fetching task... [2026-09-09 13:52:10][INFO] FETCH OK API=GitHubContents [2026-09-09 13:52:10][INFO] PARSE OK ID
+=2026-09-09-021 [2026-09-09 13:52:10][INFO] No new task. ID=2026-09-09-021 [2026-09-09 13:52:25][INFO] Fetching task... [202
+6-09-09 13:52:25][INFO] FETCH OK API=GitHubContents [2026-09-09 13:52:25][INFO] PARSE OK ID=2026-09-09-021 [2026-09-09 13:52
+:25][INFO] No new task. ID=2026-09-09-021 [2026-09-09 13:52:40][INFO] Fetching task... [2026-09-09 13:52:40][INFO] FETCH OK 
+API=GitHubContents [2026-09-09 13:52:40][INFO] PARSE OK ID=2026-09-09-021 [2026-09-09 13:52:40][INFO] No new task. ID=2026-0
+9-09-021 [2026-09-09 13:52:55][INFO] Fetching task... [2026-09-09 13:52:56][INFO] FETCH OK API=GitHubContents [2026-09-09 13
+:52:56][INFO] PARSE OK ID=2026-09-09-021 [2026-09-09 13:52:56][INFO] No new task. ID=2026-09-09-021 [2026-09-09 13:53:11][IN
+FO] Fetching task... [2026-09-09 13:53:11][INFO] FETCH OK API=GitHubContents [2026-09-09 13:53:11][INFO] PARSE OK ID=2026-09
+-09-021 [2026-09-09 13:53:11][INFO] No new task. ID=2026-09-09-021 [2026-09-09 13:53:26][INFO] Fetching task... [2026-09-09 
+13:53:26][INFO] FETCH OK API=GitHubContents [2026-09-09 13:53:26][ERROR] Poll failed: Nierozpoznana sekwencja specjalna. (26
+00): {   "id": "2026-09-09-022",   "title": "CHAPTER 022 - Finalize v3.5 and hand over to v3.6",   "description": "One compl
+ete automated handover chapter. READ/EVIDENCE verifies the exact v3.6 candidate and current v3.5 process; BACKUP preserves r
+unners/state/helper; ONE LOGICAL CHANGE creates and arms a delayed handover helper; TEST validates helper syntax and confirm
+s it is running. After v3.5 finalizes task 022 into state, the helper starts v3.6, verifies it is alive, then stops only the
+ captured v3.5 PID. No manual PowerShell is required.",   "backup": "$ErrorActionPreference='Stop'; $root='C:\\3EN-Agent'; $
+stamp=Get-Date -Format 'yyyyMMdd-HHmmss'; $bk=Join-Path $root ('backups\\022\\'+$stamp); New-Item -ItemType Directory -Force
+ -Path $bk|Out-Null; foreach($name in @('3en-agent-runner-v3.5.ps1','3en-agent-runner-v3.6.ps1','3en-agent.state.json','swit
+ch-to-v36-022.ps1','3en-agent.log')){$src=Join-Path $root $name;if(Test-Path $src){Copy-Item -LiteralPath $src -Destination 
+(Join-Path $bk $name) -Force}}; Write-Host ('BACKUP_ROOT='+$bk); Write-Host 'CHAPTER_022_BACKUP=PASS'",   "script": "$ErrorA
+ctionPreference='Stop'; $root='C:\\3EN-Agent'; $v36=Join-Path $root '3en-agent-runner-v3.6.ps1'; $stateFile=Join-Path $root 
+'3en-agent.state.json'; $helper=Join-Path $root 'switch-to-v36-022.ps1'; $report=Join-Path $root 'chapter-022-v36-handover.t
+xt'; $expected='57233841FF0F7F6BF78E5EBEB77D0ECCDC2EA07634A81595F31E88B85E8B4B54'; Write-Host '=== READ / EVIDENCE ==='; if(
+-not(Test-Path $v36)){throw 'v3.6 candidate missing'}; $actual=(Get-FileHash -LiteralPath $v36 -Algorithm SHA256).Hash; Writ
+e-Host ('V36_SHA256='+$actual); if($actual -ne $expected){throw 'v3.6 SHA256 mismatch'}; $tok=$null;$err=$null;[System.Manag
+ement.Automation.Language.Parser]::ParseFile($v36,[ref]$tok,[ref]$err)|Out-Null; Write-Host ('V36_SYNTAX_ERROR_COUNT='+@($er
+r).Count); if(@($err).Count -ne 0){throw 'v3.6 syntax check failed'}; $old=@(Get-CimInstance Win32_Process | Where-Object { 
+$_.CommandLine -and $_.CommandLine -like '*3en-agent-runner-v3.5.ps1*' } | Select-Object -ExpandProperty ProcessId); Write-H
+ost ('ACTIVE_V35_COUNT='+@($old).Count); if(@($old).Count -ne 1){throw ('Expected exactly one active v3.5 process, found '+@
+($old).Count)}; $oldPid=[int]$old[0]; Write-Host ('CAPTURED_V35_PID='+$oldPid); Write-Host '=== CONCLUSION ==='; Write-Host 
+'PRECHECK_022=PASS'; Write-Host '=== ONE LOGICAL CHANGE ==='; $taskUrl='https://api.github.com/repos/3en4all/3en-command-run
+ner/contents/task.json?ref=main'; $lines=[string[]]@('$ErrorActionPreference=''Continue''',('$oldPid='+$oldPid),'$root=''C:\
+3EN-Agent''','$stateFile=Join-Path $root ''3en-agent.state.json''','$v36=Join-Path $root ''3en-agent-runner-v3.6.ps1''','$re
+port=Join-Path $root ''chapter-022-v36-handover.txt''',('$taskUrl='''+$taskUrl+''''),'function WriteReport([string]$text){Ad
+d-Content -LiteralPath $report -Encoding UTF8 -Value ((Get-Date -Format ''yyyy-MM-dd HH:mm:ss'')+'' ''+$text)}','Set-Content
+ -LiteralPath $report -Encoding UTF8 -Value ''=== CHAPTER 022 DELAYED HANDOVER ===''','WriteReport (''CAPTURED_V35_PID=''+$o
+ldPid)','$deadline=(Get-Date).AddSeconds(120)','$finalized=$false','while((Get-Date)-lt $deadline){try{if(Test-Path $stateFi
+le){$state=Get-Content -LiteralPath $stateFile -Raw|ConvertFrom-Json;if($state.lastExecutedId -eq ''2026-09-09-022''){$final
+ized=$true;WriteReport (''STATE_FINALIZED=TRUE STATUS=''+$state.lastTerminalStatus);break}}}catch{WriteReport (''STATE_READ_
+RETRY=''+$_.Exception.Message)};Start-Sleep -Seconds 2}','if(-not $finalized){WriteReport ''HANDOVER_RESULT=ABORT_STATE_TIME
+OUT'';exit 22}','try{$new=Start-Process -FilePath ''powershell.exe'' -ArgumentList @(''-NoProfile'',''-ExecutionPolicy'',''B
+ypass'',''-File'',$v36,''-TaskUrl'',$taskUrl) -PassThru;WriteReport (''V36_START_PID=''+$new.Id)}catch{WriteReport (''HANDOV
+ER_RESULT=FAIL_START ''+$_.Exception.Message);exit 23}','Start-Sleep -Seconds 8','$newProcs=@(Get-CimInstance Win32_Process 
+-ErrorAction SilentlyContinue|Where-Object{$_.CommandLine -and $_.CommandLine -like ''*3en-agent-runner-v3.6.ps1*''})','if($
+newProcs.Count -lt 1){WriteReport ''HANDOVER_RESULT=FAIL_V36_NOT_RUNNING'';exit 24}','WriteReport (''V36_PROCESS_COUNT=''+$n
+ewProcs.Count)','try{Stop-Process -Id $oldPid -Force -ErrorAction Stop;WriteReport ''OLD_V35_STOPPED=TRUE''}catch{WriteRepor
+t (''OLD_V35_STOP_ERROR=''+$_.Exception.Message)}','Start-Sleep -Seconds 3','$v35Left=@(Get-CimInstance Win32_Process -Error
+Action SilentlyContinue|Where-Object{$_.ProcessId -eq $oldPid})','$v36Left=@(Get-CimInstance Win32_Process -ErrorAction Sile
+ntlyContinue|Where-Object{$_.CommandLine -and $_.CommandLine -like ''*3en-agent-runner-v3.6.ps1*''})','WriteReport (''FINAL_
+V35_CAPTURED_PID_PRESENT=''+($v35Left.Count -gt 0))','WriteReport (''FINAL_V36_PROCESS_COUNT=''+$v36Left.Count)','if(($v35Le
+ft.Count -eq 0)-and($v36Left.Count -ge 1)){WriteReport ''HANDOVER_RESULT=PASS'';exit 0}else{WriteReport ''HANDOVER_RESULT=FA
+IL_FINAL_STATE'';exit 25}'); Set-Content -LiteralPath $helper -Value $lines -Encoding UTF8; $ht=$null;$he=$null;[System.Mana
+gement.Automation.Language.Parser]::ParseFile($helper,[ref]$ht,[ref]$he)|Out-Null; Write-Host ('HELPER_SYNTAX_ERROR_COUNT='+
+@($he).Count); if(@($he).Count -ne 0){throw 'Generated handover helper has syntax errors'}; $hp=Start-Process -FilePath 'pow
+ershell.exe' -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File',$helper) -PassThru; Write-Host ('HANDOVER_HELP
+ER_PID='+$hp.Id); Write-Host 'HANDOVER_HELPER_ARMED=TRUE'",   "test": "$ErrorActionPreference='Stop'; $helper='C:\\3EN-Agent
+\\switch-to-v36-022.ps1'; if(-not(Test-Path $helper)){throw 'handover helper missing'}; $tok=$null;$err=$null;[System.Manage
+ment.Automation.Language.Parser]::ParseFile($helper,[ref]$tok,[ref]$err)|Out-Null; Write-Host ('HELPER_SYNTAX_ERROR_COUNT='+
+@($err).Count); if(@($err).Count -ne 0){throw 'handover helper syntax invalid'}; $armed=@(Get-CimInstance Win32_Process | Wh
+ere-Object { $_.CommandLine -and $_.CommandLine -like '*switch-to-v36-022.ps1*' }); Write-Host ('HANDOVER_HELPER_PROCESS_COU
+NT='+@($armed).Count); if(@($armed).Count -lt 1){throw 'handover helper is not running'}; Write-Host 'CHAPTER_022_PRE_FINALI
+ZE_TEST=PASS'; Write-Host 'After FINALIZE, helper will verify state=022, start v3.6, verify it, and retire captured v3.5.'",
+   "rollback": "$ErrorActionPreference='Continue'; Write-Host 'No destructive rollback required before handover finalization
+. v3.5 is stopped only after v3.6 is verified running. Backups are under C:\\3EN-Agent\\backups\\022.'" } [2026-09-09 13:53:
+41][INFO] Fetching task... [2026-09-09 13:53:41][INFO] FETCH OK API=GitHubContents [2026-09-09 13:53:41][ERROR] Poll failed:
+ Nierozpoznana sekwencja specjalna. (2600): {   "id": "2026-09-09-022",   "title": "CHAPTER 022 - Finalize v3.5 and hand ove
+r to v3.6",   "description": "One complete automated handover chapter. READ/EVIDENCE verifies the exact v3.6 candidate and c
+urrent v3.5 process; BACKUP preserves runners/state/helper; ONE LOGICAL CHANGE creates and arms a delayed handover helper; T
+EST validates helper syntax and confirms it is running. After v3.5 finalizes task 022 into state, the helper starts v3.6, ve
+rifies it is alive, then stops only the captured v3.5 PID. No manual PowerShell is required.",   "backup": "$ErrorActionPref
+erence='Stop'; $root='C:\\3EN-Agent'; $stamp=Get-Date -Format 'yyyyMMdd-HHmmss'; $bk=Join-Path $root ('backups\\022\\'+$stam
+p); New-Item -ItemType Directory -Force -Path $bk|Out-Null; foreach($name in @('3en-agent-runner-v3.5.ps1','3en-agent-runner
+-v3.6.ps1','3en-agent.state.json','switch-to-v36-022.ps1','3en-agent.log')){$src=Join-Path $root $name;if(Test-Path $src){Co
+py-Item -LiteralPath $src -Destination (Join-Path $bk $name) -Force}}; Write-Host ('BACKUP_ROOT='+$bk); Write-Host 'CHAPTER_
+022_BACKUP=PASS'",   "script": "$ErrorActionPreference='Stop'; $root='C:\\3EN-Agent'; $v36=Join-Path $root '3en-agent-runner
+-v3.6.ps1'; $stateFile=Join-Path $root '3en-agent.state.json'; $helper=Join-Path $root 'switch-to-v36-022.ps1'; $report=Join
+-Path $root 'chapter-022-v36-handover.txt'; $expected='57233841FF0F7F6BF78E5EBEB77D0ECCDC2EA07634A81595F31E88B85E8B4B54'; Wr
+ite-Host '=== READ / EVIDENCE ==='; if(-not(Test-Path $v36)){throw 'v3.6 candidate missing'}; $actual=(Get-FileHash -Literal
+Path $v36 -Algorithm SHA256).Hash; Write-Host ('V36_SHA256='+$actual); if($actual -ne $expected){throw 'v3.6 SHA256 mismatch
+'}; $tok=$null;$err=$null;[System.Management.Automation.Language.Parser]::ParseFile($v36,[ref]$tok,[ref]$err)|Out-Null; Writ
+e-Host ('V36_SYNTAX_ERROR_COUNT='+@($err).Count); if(@($err).Count -ne 0){throw 'v3.6 syntax check failed'}; $old=@(Get-CimI
+nstance Win32_Process | Where-Object { $_.CommandLine -and $_.CommandLine -like '*3en-agent-runner-v3.5.ps1*' } | Select-Obj
+ect -ExpandProperty ProcessId); Write-Host ('ACTIVE_V35_COUNT='+@($old).Count); if(@($old).Count -ne 1){throw ('Expected exa
+ctly one active v3.5 process, found '+@($old).Count)}; $oldPid=[int]$old[0]; Write-Host ('CAPTURED_V35_PID='+$oldPid); Write
+-Host '=== CONCLUSION ==='; Write-Host 'PRECHECK_022=PASS'; Write-Host '=== ONE LOGICAL CHANGE ==='; $taskUrl='https://api.g
+ithub.com/repos/3en4all/3en-command-runner/contents/task.json?ref=main'; $lines=[string[]]@('$ErrorActionPreference=''Contin
+ue''',('$oldPid='+$oldPid),'$root=''C:\3EN-Agent''','$stateFile=Join-Path $root ''3en-agent.state.json''','$v36=Join-Path $r
+oot ''3en-agent-runner-v3.6.ps1''','$report=Join-Path $root ''chapter-022-v36-handover.txt''',('$taskUrl='''+$taskUrl+''''),
+'function WriteReport([string]$text){Add-Content -LiteralPath $report -Encoding UTF8 -Value ((Get-Date -Format ''yyyy-MM-dd 
+HH:mm:ss'')+'' ''+$text)}','Set-Content -LiteralPath $report -Encoding UTF8 -Value ''=== CHAPTER 022 DELAYED HANDOVER ==='''
+,'WriteReport (''CAPTURED_V35_PID=''+$oldPid)','$deadline=(Get-Date).AddSeconds(120)','$finalized=$false','while((Get-Date)-
+lt $deadline){try{if(Test-Path $stateFile){$state=Get-Content -LiteralPath $stateFile -Raw|ConvertFrom-Json;if($state.lastEx
+ecutedId -eq ''2026-09-09-022''){$finalized=$true;WriteReport (''STATE_FINALIZED=TRUE STATUS=''+$state.lastTerminalStatus);b
+reak}}}catch{WriteReport (''STATE_READ_RETRY=''+$_.Exception.Message)};Start-Sleep -Seconds 2}','if(-not $finalized){WriteRe
+port ''HANDOVER_RESULT=ABORT_STATE_TIMEOUT'';exit 22}','try{$new=Start-Process -FilePath ''powershell.exe'' -ArgumentList @(
+''-NoProfile'',''-ExecutionPolicy'',''Bypass'',''-File'',$v36,''-TaskUrl'',$taskUrl) -PassThru;WriteReport (''V36_START_PID=
+''+$new.Id)}catch{WriteReport (''HANDOVER_RESULT=FAIL_START ''+$_.Exception.Message);exit 23}','Start-Sleep -Seconds 8','$ne
+wProcs=@(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue|Where-Object{$_.CommandLine -and $_.CommandLine -like '
+'*3en-agent-runner-v3.6.ps1*''})','if($newProcs.Count -lt 1){WriteReport ''HANDOVER_RESULT=FAIL_V36_NOT_RUNNING'';exit 24}',
+'WriteReport (''V36_PROCESS_COUNT=''+$newProcs.Count)','try{Stop-Process -Id $oldPid -Force -ErrorAction Stop;WriteReport ''
+OLD_V35_STOPPED=TRUE''}catch{WriteReport (''OLD_V35_STOP_ERROR=''+$_.Exception.Message)}','Start-Sleep -Seconds 3','$v35Left
+=@(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue|Where-Object{$_.ProcessId -eq $oldPid})','$v36Left=@(Get-CimI
+nstance Win32_Process -ErrorAction SilentlyContinue|Where-Object{$_.CommandLine -and $_.CommandLine -like ''*3en-agent-runne
+r-v3.6.ps1*''})','WriteReport (''FINAL_V35_CAPTURED_PID_PRESENT=''+($v35Left.Count -gt 0))','WriteReport (''FINAL_V36_PROCES
+S_COUNT=''+$v36Left.Count)','if(($v35Left.Count -eq 0)-and($v36Left.Count -ge 1)){WriteReport ''HANDOVER_RESULT=PASS'';exit 
+0}else{WriteReport ''HANDOVER_RESULT=FAIL_FINAL_STATE'';exit 25}'); Set-Content -LiteralPath $helper -Value $lines -Encoding
+ UTF8; $ht=$null;$he=$null;[System.Management.Automation.Language.Parser]::ParseFile($helper,[ref]$ht,[ref]$he)|Out-Null; Wr
+ite-Host ('HELPER_SYNTAX_ERROR_COUNT='+@($he).Count); if(@($he).Count -ne 0){throw 'Generated handover helper has syntax err
+ors'}; $hp=Start-Process -FilePath 'powershell.exe' -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File',$helper
+) -PassThru; Write-Host ('HANDOVER_HELPER_PID='+$hp.Id); Write-Host 'HANDOVER_HELPER_ARMED=TRUE'",   "test": "$ErrorActionPr
+eference='Stop'; $helper='C:\\3EN-Agent\\switch-to-v36-022.ps1'; if(-not(Test-Path $helper)){throw 'handover helper missing'
+}; $tok=$null;$err=$null;[System.Management.Automation.Language.Parser]::ParseFile($helper,[ref]$tok,[ref]$err)|Out-Null; Wr
+ite-Host ('HELPER_SYNTAX_ERROR_COUNT='+@($err).Count); if(@($err).Count -ne 0){throw 'handover helper syntax invalid'}; $arm
+ed=@(Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -and $_.CommandLine -like '*switch-to-v36-022.ps1*' }); W
+rite-Host ('HANDOVER_HELPER_PROCESS_COUNT='+@($armed).Count); if(@($armed).Count -lt 1){throw 'handover helper is not runnin
+g'}; Write-Host 'CHAPTER_022_PRE_FINALIZE_TEST=PASS'; Write-Host 'After FINALIZE, helper will verify state=022, start v3.6, 
+verify it, and retire captured v3.5.'",   "rollback": "$ErrorActionPreference='Continue'; Write-Host 'No destructive rollbac
+k required before handover finalization. v3.5 is stopped only after v3.6 is verified running. Backups are under C:\\3EN-Agen
+t\\backups\\022.'" } [2026-09-09 13:53:56][INFO] Fetching task... [2026-09-09 13:53:57][INFO] FETCH OK API=GitHubContents [2
+026-09-09 13:53:57][ERROR] Poll failed: Nierozpoznana sekwencja specjalna. (2600): {   "id": "2026-09-09-022",   "title": "C
+HAPTER 022 - Finalize v3.5 and hand over to v3.6",   "description": "One complete automated handover chapter. READ/EVIDENCE 
+verifies the exact v3.6 candidate and current v3.5 process; BACKUP preserves runners/state/helper; ONE LOGICAL CHANGE create
+s and arms a delayed handover helper; TEST validates helper syntax and confirms it is running. After v3.5 finalizes task 022
+ into state, the helper starts v3.6, verifies it is alive, then stops only the captured v3.5 PID. No manual PowerShell is re
+quired.",   "backup": "$ErrorActionPreference='Stop'; $root='C:\\3EN-Agent'; $stamp=Get-Date -Format 'yyyyMMdd-HHmmss'; $bk=
+Join-Path $root ('backups\\022\\'+$stamp); New-Item -ItemType Directory -Force -Path $bk|Out-Null; foreach($name in @('3en-a
+gent-runner-v3.5.ps1','3en-agent-runner-v3.6.ps1','3en-agent.state.json','switch-to-v36-022.ps1','3en-agent.log')){$src=Join
+-Path $root $name;if(Test-Path $src){Copy-Item -LiteralPath $src -Destination (Join-Path $bk $name) -Force}}; Write-Host ('B
+ACKUP_ROOT='+$bk); Write-Host 'CHAPTER_022_BACKUP=PASS'",   "script": "$ErrorActionPreference='Stop'; $root='C:\\3EN-Agent';
+ $v36=Join-Path $root '3en-agent-runner-v3.6.ps1'; $stateFile=Join-Path $root '3en-agent.state.json'; $helper=Join-Path $roo
+t 'switch-to-v36-022.ps1'; $report=Join-Path $root 'chapter-022-v36-handover.txt'; $expected='57233841FF0F7F6BF78E5EBEB77D0E
+CCDC2EA07634A81595F31E88B85E8B4B54'; Write-Host '=== READ / EVIDENCE ==='; if(-not(Test-Path $v36)){throw 'v3.6 candidate mi
+ssing'}; $actual=(Get-FileHash -LiteralPath $v36 -Algorithm SHA256).Hash; Write-Host ('V36_SHA256='+$actual); if($actual -ne
+ $expected){throw 'v3.6 SHA256 mismatch'}; $tok=$null;$err=$null;[System.Management.Automation.Language.Parser]::ParseFile($
+v36,[ref]$tok,[ref]$err)|Out-Null; Write-Host ('V36_SYNTAX_ERROR_COUNT='+@($err).Count); if(@($err).Count -ne 0){throw 'v3.6
+ syntax check failed'}; $old=@(Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -and $_.CommandLine -like '*3en
+-agent-runner-v3.5.ps1*' } | Select-Object -ExpandProperty ProcessId); Write-Host ('ACTIVE_V35_COUNT='+@($old).Count); if(@(
+$old).Count -ne 1){throw ('Expected exactly one active v3.5 process, found '+@($old).Count)}; $oldPid=[int]$old[0]; Write-Ho
+st ('CAPTURED_V35_PID='+$oldPid); Write-Host '=== CONCLUSION ==='; Write-Host 'PRECHECK_022=PASS'; Write-Host '=== ONE LOGIC
+AL CHANGE ==='; $taskUrl='https://api.github.com/repos/3en4all/3en-command-runner/contents/task.json?ref=main'; $lines=[stri
+ng[]]@('$ErrorActionPreference=''Continue''',('$oldPid='+$oldPid),'$root=''C:\3EN-Agent''','$stateFile=Join-Path $root ''3en
+-agent.state.json''','$v36=Join-Path $root ''3en-agent-runner-v3.6.ps1''','$report=Join-Path $root ''chapter-022-v36-handove
+r.txt''',('$taskUrl='''+$taskUrl+''''),'function WriteReport([string]$text){Add-Content -LiteralPath $report -Encoding UTF8 
+-Value ((Get-Date -Format ''yyyy-MM-dd HH:mm:ss'')+'' ''+$text)}','Set-Content -LiteralPath $report -Encoding UTF8 -Value ''
+=== CHAPTER 022 DELAYED HANDOVER ===''','WriteReport (''CAPTURED_V35_PID=''+$oldPid)','$deadline=(Get-Date).AddSeconds(120)'
+,'$finalized=$false','while((Get-Date)-lt $deadline){try{if(Test-Path $stateFile){$state=Get-Content -LiteralPath $stateFile
+ -Raw|ConvertFrom-Json;if($state.lastExecutedId -eq ''2026-09-09-022''){$finalized=$true;WriteReport (''STATE_FINALIZED=TRUE
+ STATUS=''+$state.lastTerminalStatus);break}}}catch{WriteReport (''STATE_READ_RETRY=''+$_.Exception.Message)};Start-Sleep -S
+econds 2}','if(-not $finalized){WriteReport ''HANDOVER_RESULT=ABORT_STATE_TIMEOUT'';exit 22}','try{$new=Start-Process -FileP
+ath ''powershell.exe'' -ArgumentList @(''-NoProfile'',''-ExecutionPolicy'',''Bypass'',''-File'',$v36,''-TaskUrl'',$taskUrl) 
+-PassThru;WriteReport (''V36_START_PID=''+$new.Id)}catch{WriteReport (''HANDOVER_RESULT=FAIL_START ''+$_.Exception.Message);
+exit 23}','Start-Sleep -Seconds 8','$newProcs=@(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue|Where-Object{$_.
+CommandLine -and $_.CommandLine -like ''*3en-agent-runner-v3.6.ps1*''})','if($newProcs.Count -lt 1){WriteReport ''HANDOVER_R
+ESULT=FAIL_V36_NOT_RUNNING'';exit 24}','WriteReport (''V36_PROCESS_COUNT=''+$newProcs.Count)','try{Stop-Process -Id $oldPid 
+-Force -ErrorAction Stop;WriteReport ''OLD_V35_STOPPED=TRUE''}catch{WriteReport (''OLD_V35_STOP_ERROR=''+$_.Exception.Messag
+e)}','Start-Sleep -Seconds 3','$v35Left=@(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue|Where-Object{$_.Proces
+sId -eq $oldPid})','$v36Left=@(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue|Where-Object{$_.CommandLine -and 
+$_.CommandLine -like ''*3en-agent-runner-v3.6.ps1*''})','WriteReport (''FINAL_V35_CAPTURED_PID_PRESENT=''+($v35Left.Count -g
+t 0))','WriteReport (''FINAL_V36_PROCESS_COUNT=''+$v36Left.Count)','if(($v35Left.Count -eq 0)-and($v36Left.Count -ge 1)){Wri
+teReport ''HANDOVER_RESULT=PASS'';exit 0}else{WriteReport ''HANDOVER_RESULT=FAIL_FINAL_STATE'';exit 25}'); Set-Content -Lite
+ralPath $helper -Value $lines -Encoding UTF8; $ht=$null;$he=$null;[System.Management.Automation.Language.Parser]::ParseFile(
+$helper,[ref]$ht,[ref]$he)|Out-Null; Write-Host ('HELPER_SYNTAX_ERROR_COUNT='+@($he).Count); if(@($he).Count -ne 0){throw 'G
+enerated handover helper has syntax errors'}; $hp=Start-Process -FilePath 'powershell.exe' -ArgumentList @('-NoProfile','-Ex
+ecutionPolicy','Bypass','-File',$helper) -PassThru; Write-Host ('HANDOVER_HELPER_PID='+$hp.Id); Write-Host 'HANDOVER_HELPER_
+ARMED=TRUE'",   "test": "$ErrorActionPreference='Stop'; $helper='C:\\3EN-Agent\\switch-to-v36-022.ps1'; if(-not(Test-Path $h
+elper)){throw 'handover helper missing'}; $tok=$null;$err=$null;[System.Management.Automation.Language.Parser]::ParseFile($h
+elper,[ref]$tok,[ref]$err)|Out-Null; Write-Host ('HELPER_SYNTAX_ERROR_COUNT='+@($err).Count); if(@($err).Count -ne 0){throw 
+'handover helper syntax invalid'}; $armed=@(Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -and $_.CommandLin
+e -like '*switch-to-v36-022.ps1*' }); Write-Host ('HANDOVER_HELPER_PROCESS_COUNT='+@($armed).Count); if(@($armed).Count -lt 
+1){throw 'handover helper is not running'}; Write-Host 'CHAPTER_022_PRE_FINALIZE_TEST=PASS'; Write-Host 'After FINALIZE, hel
+per will verify state=022, start v3.6, verify it, and retire captured v3.5.'",   "rollback": "$ErrorActionPreference='Contin
+ue'; Write-Host 'No destructive rollback required before handover finalization. v3.5 is stopped only after v3.6 is verified 
+running. Backups are under C:\\3EN-Agent\\backups\\022.'" } [2026-09-09 13:54:41][INFO] 3EN Agent Runner v3.6 started. [2026
+-09-09 13:54:41][INFO] Task URL: https://api.github.com/repos/3en4all/3en-command-runner/contents/task.json?ref=main [2026-0
+9-09 13:54:41][INFO] Polling every 15 seconds. [2026-09-09 13:54:41][INFO] Fetching task... [2026-09-09 13:54:41][INFO] FETC
+H OK API=GitHubContents [2026-09-09 13:54:41][INFO] PARSE OK ID=2026-09-09-019a [2026-09-09 13:54:41][INFO] TASK DETECTED ID
+=2026-09-09-019a SHA256=e2a76122c4850b3732e3c2e02c67189d95b0536bd3488eeda8565937699c392b [2026-09-09 13:54:44][INFO] BACKUP 
+START [2026-09-09 13:54:44][INFO] BACKUP STEP RETURNED [2026-09-09 13:54:44][INFO] SCRIPT START [2026-09-09 13:54:44][INFO] 
+SCRIPT STEP RETURNED [2026-09-09 13:54:44][INFO] TEST START [2026-09-09 13:54:45][INFO] TEST STEP RETURNED [2026-09-09 13:54
+:45][INFO] FINALIZE 2/4: writing result.json [2026-09-09 13:54:45][INFO] FINALIZE 2/4: result.json written [2026-09-09 13:54
+:45][INFO] FINALIZE 1/4: saving state [2026-09-09 13:54:45][INFO] FINALIZE 1/4: state saved status=SUCCESS [2026-09-09 13:54
+:45][INFO] FINALIZE 3/4: preparing GitHub uploads [2026-09-09 13:54:45][INFO] UPLOAD AUTH OK repo=3en4all/3en-command-runner
+ [2026-09-09 13:54:47][INFO] UPLOAD OK results/2026-09-09-019a-20260909-135444.json commit=9f37aaf56866ac228e0d34a77d0482e24
+7c154ba [2026-09-09 13:54:48][INFO] UPLOAD OK results/2026-09-09-019a-20260909-135444.output.txt commit=3768d30ee524b401110c
+52a97d1856a00c3cc3a2 [2026-09-09 13:54:48][INFO] FINALIZE 3/4: RESULT + OUTPUT UPLOADED [2026-09-09 13:54:48][INFO] FINALIZE
+ 4/4: COMPLETE [2026-09-09 13:55:03][INFO] Fetching task... [2026-09-09 13:55:03][INFO] FETCH OK API=GitHubContents [2026-09
+-09 13:55:03][INFO] PARSE OK ID=2026-09-09-019a [2026-09-09 13:55:03][INFO] No new task. ID=2026-09-09-019a [2026-09-09 13:5
+5:18][INFO] Fetching task... [2026-09-09 13:55:18][INFO] FETCH OK API=GitHubContents [2026-09-09 13:55:18][INFO] PARSE OK ID
+=2026-09-09-019a [2026-09-09 13:55:18][INFO] No new task. ID=2026-09-09-019a [2026-09-09 13:55:33][INFO] Fetching task... [2
+026-09-09 13:55:34][INFO] FETCH OK API=GitHubContents [2026-09-09 13:55:34][INFO] PARSE OK ID=2026-09-09-023 [2026-09-09 13:
+55:34][INFO] TASK DETECTED ID=2026-09-09-023 SHA256=eefb39df93ab766064f750c7fc0bdd95e3036e9f0e40f9822a7a3923944040d5 [2026-0
+9-09 13:55:46][INFO] BACKUP START [2026-09-09 13:55:46][INFO] BACKUP STEP RETURNED [2026-09-09 13:55:46][INFO] SCRIPT START'
+.
+At line:1 char:927
++ ... e-Host $_}; Add-Content -LiteralPath $report -Encoding UTF8 -Value @( ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Add-Content], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.AddContentCommand
+ 
+
+READ-ONLY CHAPTER: no rollback required; only backup copies and diagnostic report were created.
