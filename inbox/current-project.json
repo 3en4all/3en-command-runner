@@ -1,6 +1,6 @@
 {
   "schemaVersion":1,
-  "revision":"2026-09-09T19:03:05+02:00-privacy-degraded-terminal-recovery",
+  "revision":"2026-09-09T19:08:00+02:00-security-monitor-integration-v1",
   "enabled":true,
-  "projectPath":"project-security-privacy-stack-v1.json"
+  "projectPath":"project-security-monitor-integration-v1.json"
 }
