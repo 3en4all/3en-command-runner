@@ -1,0 +1,11 @@
+BACKUP_ROOT=C:\3EN-Agent\backups\016a\20260909-130114
+BACKUP_016A_READY
+Where-Object : analizowanie "(?i)\3EN-Agent\(runs|backups)\" - Odwołanie do niezdefiniowanego numeru grupy 3.
+At line:1 char:856
++ ... yContinue | Where-Object { $_.FullName -notmatch '(?i)\3EN-Agent\(run ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (:) [Where-Object], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException,Microsoft.PowerShell.Commands.WhereObjectCommand
+ 
+
+READ-ONLY DISCOVERY TASK: no rollback required; backup copies only.
