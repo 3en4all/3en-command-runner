@@ -1,0 +1,8 @@
+{
+  "id":"3en-job-executor",
+  "name":"3EN Job Executor",
+  "description":"Deterministic file-operation executor for 3EN Agent jobs. No LLM reasoning and no arbitrary shell surface.",
+  "contracts":{"tools":["3en_job"]},
+  "activation":{"onStartup":true},
+  "configSchema":{"type":"object","additionalProperties":false}
+}
