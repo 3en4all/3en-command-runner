@@ -4,9 +4,9 @@
     "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
     "processedRevision":  "",
     "status":  "SYNCING",
-    "attempts":  6,
+    "attempts":  7,
     "lastError":  "",
     "nextRetryUtc":  "2026-09-09T22:25:01.5043159Z",
     "lastExitCode":  1,
-    "updatedUtc":  "2026-09-09T22:25:14.9279826Z"
+    "updatedUtc":  "2026-09-09T22:25:20.5153481Z"
 }
