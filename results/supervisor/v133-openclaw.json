@@ -3,15 +3,15 @@
     "lane":  "openclaw",
     "pointerRevision":  "v460-057z-r1-0c794b99",
     "pointerProject":  "project-v460.json",
-    "processedRevision":  "v4581-057x2-r1-6d4658e2",
-    "status":  "RUNNING",
+    "processedRevision":  "v460-057z-r1-0c794b99",
+    "status":  "TERMINAL",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
     "lastStartedUtc":  "2026-09-09T23:44:57.6610529Z",
-    "lastTerminalUtc":  "2026-09-09T23:44:26.1675829Z",
-    "lastExitCode":  null,
+    "lastTerminalUtc":  "2026-09-09T23:45:13.2217405Z",
+    "lastExitCode":  0,
     "workerPid":  31120,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T23:44:59.1888716Z"
+    "updatedUtc":  "2026-09-09T23:45:13.2217405Z"
 }
