@@ -1,8 +1,8 @@
 {
-  "generation": 1,
+  "generation": 2,
   "enabled": true,
   "finalizerRevision": "066e17bdb1f312c5c0c6932e436b3cb0158ee096",
   "privacyProjectPath": "project-security-privacy-stack-v1.json",
   "pollSeconds": 15,
-  "description": "Control plane for persistent router/Pi-hole -> Privacy autopilot. Increment generation and change revision/path to repair a failed stage without restarting the local supervisor."
+  "description": "Control plane for persistent router/Pi-hole -> Privacy autopilot. Generation 2 forces the installed supervisor to refresh the corrected finalizer and resume its current failed or pending stage automatically."
 }
