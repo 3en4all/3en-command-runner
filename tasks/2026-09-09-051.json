@@ -1,0 +1,9 @@
+{
+  "id": "2026-09-09-051",
+  "title": "v4.1 OpenClaw end-to-end Gateway agent smoke test",
+  "risk": "low",
+  "backup": "Write-Output 'V41_051_BACKUP=READ_ONLY'",
+  "script": "$root='C:/3EN-Agent/openclaw-bridge'; $out=& openclaw agent --session-key '3en-v41-smoke' --message 'Reply with exactly OPENCLAW_BRIDGE_OK' --json --timeout 180 2>&1 | Out-String; $out | Set-Content -LiteralPath (Join-Path $root 'agent-smoke-051.json') -Encoding UTF8; if($LASTEXITCODE -ne 0){throw 'OPENCLAW_AGENT_TURN_FAILED'}; try{$null=$out | ConvertFrom-Json}catch{throw 'OPENCLAW_AGENT_JSON_INVALID'}; if($out -notmatch 'OPENCLAW_BRIDGE_OK'){throw 'OPENCLAW_AGENT_MARKER_MISSING'}; Write-Output 'V41_051_AGENT=PASS'",
+  "test": "$p='C:/3EN-Agent/openclaw-bridge/agent-smoke-051.json'; if(-not(Test-Path $p)){throw 'AGENT_SMOKE_ARTIFACT_MISSING'}; $raw=Get-Content $p -Raw; if($raw -notmatch 'OPENCLAW_BRIDGE_OK'){throw 'AGENT_SMOKE_MARKER_MISSING'}; $s=& openclaw gateway status --json 2>&1 | Out-String; if($LASTEXITCODE -ne 0){throw 'GATEWAY_LOST_AFTER_AGENT_TURN'}; Write-Output 'V41_051_TEST=PASS'",
+  "rollback": "Write-Output 'V41_051_ROLLBACK=NO_CHANGE'"
+}
