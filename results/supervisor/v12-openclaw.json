@@ -1,12 +1,12 @@
 {
     "lane":  "openclaw",
-    "pointerRevision":  "",
-    "pointerProject":  "",
+    "pointerRevision":  "2026-09-09T23:58:00+02:00-v444-057m-resume",
+    "pointerProject":  "project-v444.json",
     "processedRevision":  "",
-    "status":  "NEW",
-    "attempts":  0,
+    "status":  "SYNCING",
+    "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
     "lastExitCode":  null,
-    "updatedUtc":  "2026-09-09T22:10:56.7091958Z"
+    "updatedUtc":  "2026-09-09T22:11:16.2627574Z"
 }
