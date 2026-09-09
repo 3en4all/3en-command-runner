@@ -1,0 +1,29 @@
+3EN v4.0.1 bootstrap diagnostic
+RUNNER_SYNTAX_FAILED count=23
+
+--- LOCAL LOG ---
+[2026-09-09 15:26:24][INFO] BOOTSTRAP START
+[2026-09-09 15:26:24][INFO] Runner downloaded
+[2026-09-09 15:26:24][ERROR] Parser: Missing 'in' after variable in foreach loop.
+[2026-09-09 15:26:24][ERROR] Parser: Missing closing '}' in statement block or type definition.
+[2026-09-09 15:26:24][ERROR] Parser: The Try statement is missing its Catch or Finally block.
+[2026-09-09 15:26:24][ERROR] Parser: Unexpected token ')' in expression or statement.
+[2026-09-09 15:26:24][ERROR] Parser: Missing 'in' after variable in foreach loop.
+[2026-09-09 15:26:24][ERROR] Parser: Missing closing '}' in statement block or type definition.
+[2026-09-09 15:26:24][ERROR] Parser: Unexpected token ')' in expression or statement.
+[2026-09-09 15:26:24][ERROR] Parser: Unexpected token '}' in expression or statement.
+[2026-09-09 15:26:24][ERROR] Parser: Missing 'in' after variable in foreach loop.
+[2026-09-09 15:26:24][ERROR] Parser: Unexpected token ')' in expression or statement.
+[2026-09-09 15:26:24][ERROR] Parser: Missing 'in' after variable in foreach loop.
+[2026-09-09 15:26:24][ERROR] Parser: Missing closing '}' in statement block or type definition.
+[2026-09-09 15:26:24][ERROR] Parser: Unexpected token ')' in expression or statement.
+[2026-09-09 15:26:24][ERROR] Parser: Unexpected token '}' in expression or statement.
+[2026-09-09 15:26:24][ERROR] Parser: Missing 'in' after variable in foreach loop.
+[2026-09-09 15:26:24][ERROR] Parser: Unexpected token ')' in expression or statement.
+[2026-09-09 15:26:24][ERROR] Parser: Missing 'in' after variable in foreach loop.
+[2026-09-09 15:26:24][ERROR] Parser: Missing closing '}' in statement block or type definition.
+[2026-09-09 15:26:24][ERROR] Parser: Unexpected token ')' in expression or statement.
+[2026-09-09 15:26:24][ERROR] Parser: Unexpected token '}' in expression or statement.
+[2026-09-09 15:26:24][ERROR] Parser: Missing 'in' after variable in foreach loop.
+[2026-09-09 15:26:24][ERROR] Parser: Unexpected token ')' in expression or statement.
+[2026-09-09 15:26:24][ERROR] Parser: Unexpected token '}' in expression or statement.
