@@ -1,0 +1,12 @@
+V435_057F_BACKUP=READ_ONLY
+
+The property 'tool_calls' cannot be found on this object. Verify that the property exists.
+At line:1 char:1228
++ ... ody $chatBody -TimeoutSec 180;$tc=@($resp.message.tool_calls);$txt=[s ...
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], PropertyNotFoundException
+    + FullyQualifiedErrorId : PropertyNotFoundStrict
+ 
+
+V435_057F_ROLLBACK=NOT_REQUIRED
+
