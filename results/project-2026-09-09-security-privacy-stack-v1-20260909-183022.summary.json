@@ -1,0 +1,42 @@
+{
+    "schemaVersion":  1,
+    "projectId":  "2026-09-09-security-privacy-stack-v1",
+    "runnerVersion":  "3.10.1",
+    "verdict":  "NEEDS_DECISION",
+    "accepted":  false,
+    "counts":  {
+                   "success":  0,
+                   "recovered":  0,
+                   "rejected":  0,
+                   "expectedFailures":  1,
+                   "unexpected":  0,
+                   "remaining":  3
+               },
+    "chapters":  [
+                     {
+                         "id":  "privacy-stack-001-discovery",
+                         "expected":  "",
+                         "actual":  "FAILED_TEST",
+                         "match":  true
+                     },
+                     {
+                         "id":  "privacy-stack-002-gui",
+                         "expected":  "",
+                         "actual":  null,
+                         "match":  false
+                     },
+                     {
+                         "id":  "privacy-stack-003-filters",
+                         "expected":  "",
+                         "actual":  null,
+                         "match":  false
+                     },
+                     {
+                         "id":  "privacy-stack-004-final",
+                         "expected":  "",
+                         "actual":  null,
+                         "match":  false
+                     }
+                 ],
+    "completedUtc":  "2026-09-09T16:30:22.0387796Z"
+}
