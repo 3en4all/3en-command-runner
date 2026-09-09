@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "projectId": "2026-09-10-v445-openclaw-qwen3-e2e",
+  "title": "OpenClaw Qwen3 14B primary and end-to-end tool proof",
+  "policy": {
+    "showErrors": false,
+    "maxAttempts": 1,
+    "publishRetries": 3,
+    "autoRollbackOnFinalFailure": true,
+    "highRiskAction": "reject"
+  },
+  "chapters": [
+    {
+      "id": "2026-09-10-057n",
+      "path": "tasks/2026-09-10-057n.json",
+      "expectedStatus": "SUCCESS"
+    }
+  ]
+}
