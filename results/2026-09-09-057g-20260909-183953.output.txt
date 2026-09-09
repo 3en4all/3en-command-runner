@@ -1,0 +1,12 @@
+V436_057G_BACKUP=READ_ONLY
+
+Invoke-RestMethod : {"error":"registry.ollama.ai/library/dolphin-mistral:7b-v2.8-q4_K_M does not support tools"}
+At line:1 char:1108
++ ... th 20;$resp=Invoke-RestMethod -Method Post -Uri ($base+'/api/chat') - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebExc 
+   eption
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+
+V436_057G_ROLLBACK=NOT_REQUIRED
+
