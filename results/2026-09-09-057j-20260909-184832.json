@@ -1,0 +1,25 @@
+{
+    "projectId":  "2026-09-09-v441-qwen-agent-deployment-http",
+    "chapterId":  "2026-09-09-057j",
+    "risk":  "medium",
+    "status":  "FAILED",
+    "stage":  "TERMINAL",
+    "attempts":  1,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "FAILED",
+                      "error":  "QWEN_NATIVE_TOOL_CALL_FAILED"
+                  },
+                  {
+                      "name":  "ROLLBACK",
+                      "status":  "OK",
+                      "error":  null
+                  }
+              ]
+}
