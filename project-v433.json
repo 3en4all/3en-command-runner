@@ -1,0 +1,9 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-09-v433-openclaw-tool-model-repair",
+  "title":"3EN v4.3.3 OpenClaw model allowlist repair and tool model selection",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[
+    {"id":"2026-09-09-057d","path":"tasks/2026-09-09-057d.json","expectedStatus":"SUCCESS"}
+  ]
+}
