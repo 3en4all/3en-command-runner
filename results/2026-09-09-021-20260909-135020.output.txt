@@ -1,0 +1,12 @@
+BACKUP_ROOT=C:\3EN-Agent\backups\021\20260909-135020
+CHAPTER_021_BACKUP=PASS
+R : Cannot locate the history for command line --- READ / EVIDENCE ---.
+At line:1 char:306
++ ... g UTF8 -Value $s; Write-Host $s}; R '--- READ / EVIDENCE ---'; $v36Ex ...
++                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (--- READ / EVIDENCE ---:String) [Invoke-History], ArgumentException
+    + FullyQualifiedErrorId : InvokeHistoryNoHistoryForCommandline,Microsoft.PowerShell.Commands.InvokeHistoryCommand
+ 
+
+Rollback is intentionally not automatic in Chapter 021 because this task is designed to terminate safely even when handover 
+verification fails. Backup path is recorded in the report.
