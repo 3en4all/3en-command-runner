@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-037",
+  "title":"QUEUE TEST 07/10 - second SUCCESS path",
+  "description":"Automated queue validation chapter 7 of 10. Confirms queue remains healthy after both intentional failure paths.",
+  "backup":"Write-Host 'QUEUE037_BACKUP=PASS'",
+  "script":"$ErrorActionPreference='Stop';Write-Host 'QUEUE037_SCRIPT=PASS'",
+  "test":"Write-Host 'QUEUE037_TEST=PASS'",
+  "rollback":"Write-Host 'QUEUE037_ROLLBACK_NOT_REQUIRED'"
+}
