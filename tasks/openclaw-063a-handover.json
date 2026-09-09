@@ -1,0 +1,11 @@
+{
+  "id":"openclaw-063a-handover",
+  "title":"3EN OpenClaw v4.3.4 handover",
+  "description":"Start the OpenClaw coding tools profile repair as an independent project while leaving the active Security/Privacy inbox untouched.",
+  "risk":"low",
+  "backup":"Write-Host 'OPENCLAW_063A_BACKUP=HANDOVER_ONLY'",
+  "script":"$ErrorActionPreference='Stop';$root='C:/3EN-Agent';$runner=$root+'/3en-agent-runner-v4.0.3.ps1';$project='project-v434-openclaw-tools-profile-repair.json';if(-not(Test-Path $runner)){throw 'RUNNER403_MISSING'};$p=Get-CimInstance Win32_Process -Filter \"Name='powershell.exe'\" -ErrorAction SilentlyContinue|Where-Object{$_.CommandLine -match '3en-agent-runner-v4\\.0\\.3\\.ps1' -and $_.CommandLine -match 'project-v434-openclaw-tools-profile-repair\\.json'};if(-not $p){Start-Process powershell.exe -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File',$runner,'-ProjectPath',$project) -WorkingDirectory $root|Out-Null;Write-Host 'OPENCLAW_V434_STARTED'}else{Write-Host 'OPENCLAW_V434_ALREADY_RUNNING'}",
+  "test":"$ErrorActionPreference='Stop';Start-Sleep 3;$p=Get-CimInstance Win32_Process -Filter \"Name='powershell.exe'\" -ErrorAction SilentlyContinue|Where-Object{$_.CommandLine -match '3en-agent-runner-v4\\.0\\.3\\.ps1' -and $_.CommandLine -match 'project-v434-openclaw-tools-profile-repair\\.json'};$state='C:/3EN-Agent/3en-project.state.json';$ok=$false;if($p){$ok=$true};if(Test-Path $state){$raw=Get-Content $state -Raw;if($raw -match '2026-09-09-v434-openclaw-tools-profile-repair'){$ok=$true}};if(-not $ok){throw 'OPENCLAW_V434_HANDOVER_NOT_OBSERVED'};Write-Host 'OPENCLAW_V434_HANDOVER=PASS'",
+  "repair":"$ErrorActionPreference='Stop';$root='C:/3EN-Agent';Start-Process powershell.exe -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File',$root+'/3en-agent-runner-v4.0.3.ps1','-ProjectPath','project-v434-openclaw-tools-profile-repair.json') -WorkingDirectory $root|Out-Null;Write-Host 'OPENCLAW_V434_REPAIR_STARTED'",
+  "rollback":"Write-Host 'HANDOVER_ONLY_NO_CONFIG_ROLLBACK'"
+}
