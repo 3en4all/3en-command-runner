@@ -24,7 +24,7 @@
                       "nextRetryUtc":  "2026-09-09T23:07:51.8871873Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "updatedUtc":  "2026-09-09T23:06:11.1996040Z"
+                      "updatedUtc":  "2026-09-09T23:07:27.3976685Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,23 +39,23 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T23:06:11.1666855Z"
+                      "updatedUtc":  "2026-09-09T23:07:27.4439613Z"
                   },
                   {
                       "lane":  "openclaw",
                       "workerRunning":  true,
                       "workerPid":  31120,
-                      "pointerRevision":  "2026-09-10T01:22:00+02:00-v450-057q-tool-surface",
-                      "pointerProject":  "project-v450.json",
+                      "pointerRevision":  "2026-09-10T01:27:00+02:00-v451-057q2-read-diagnostic",
+                      "pointerProject":  "project-v451.json",
                       "processedRevision":  "2026-09-10T01:17:00+02:00-v449-runner-pipeline-isolation",
-                      "status":  "RETRY_PENDING",
+                      "status":  "RUNNING",
                       "attempts":  1,
-                      "lastError":  "RUNNER_EXIT_4",
-                      "nextRetryUtc":  "2026-09-09T23:06:30.6628127Z",
+                      "lastError":  "",
+                      "nextRetryUtc":  "",
                       "runnerPid":  null,
-                      "lastExitCode":  4,
-                      "updatedUtc":  "2026-09-09T23:06:17.2724494Z"
+                      "lastExitCode":  null,
+                      "updatedUtc":  "2026-09-09T23:07:26.3255968Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T23:06:25.2953048Z"
+    "updatedUtc":  "2026-09-09T23:07:30.9067601Z"
 }
