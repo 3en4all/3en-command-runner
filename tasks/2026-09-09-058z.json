@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-09-058z",
+  "title":"v4.2 delegated failure evidence and repair retry",
+  "risk":"low",
+  "backup":"$root='C:/3EN-Agent/executor-contract';New-Item -ItemType Directory -Force -Path $root|Out-Null;Remove-Item (Join-Path $root 'repair-ready.flag'),(Join-Path $root 'repair-marker.txt') -Force -ErrorAction SilentlyContinue;Write-Output 'V42_058Z_BACKUP=PASS'",
+  "script":"$root='C:/3EN-Agent/executor-contract';$flag=Join-Path $root 'repair-ready.flag';if(-not(Test-Path $flag)){throw 'DELEGATED_RECOVERY_REQUIRED'};$out=Join-Path $root '058z-openclaw.json';$err=Join-Path $root '058z-openclaw.err.txt';Remove-Item $out,$err -Force -ErrorAction SilentlyContinue;$msg='Use your available shell or exec tool to run PowerShell and create C:/3EN-Agent/executor-contract/repair-marker.txt containing exactly OPENCLAW_REPAIR_OK. Do not merely describe the command. After the tool succeeds, reply exactly OPENCLAW_REPAIR_OK.';$args=@('agent','--session-key','3en-v42-058z','--message',$msg,'--json','--timeout','180');$raw=& openclaw.cmd @args 2>$err;$ec=$LASTEXITCODE;$txt=($raw|Out-String);$txt|Set-Content $out -Encoding UTF8;if($ec -ne 0){$e=if(Test-Path $err){Get-Content $err -Raw}else{''};throw ('OPENCLAW_REPAIR_EXEC_FAILED code='+$ec+' stderr='+$e)};$null=$txt|ConvertFrom-Json;$p=Join-Path $root 'repair-marker.txt';if(-not(Test-Path $p)){throw 'REPAIR_MARKER_MISSING'};if((Get-Content $p -Raw).Trim() -ne 'OPENCLAW_REPAIR_OK'){throw 'REPAIR_MARKER_INVALID'};Write-Output 'V42_058Z_SCRIPT=PASS'",
+  "repair":"Set-Content -LiteralPath 'C:/3EN-Agent/executor-contract/repair-ready.flag' -Value 'READY' -Encoding ASCII;Write-Output 'V42_058Z_REPAIR=PASS'",
+  "test":"$p='C:/3EN-Agent/executor-contract/repair-marker.txt';if(-not(Test-Path $p)){throw 'REPAIR_MARKER_MISSING'};if((Get-Content $p -Raw).Trim() -ne 'OPENCLAW_REPAIR_OK'){throw 'REPAIR_MARKER_INVALID'};Write-Output 'V42_058Z_TEST=PASS'",
+  "rollback":"Remove-Item 'C:/3EN-Agent/executor-contract/repair-ready.flag','C:/3EN-Agent/executor-contract/repair-marker.txt' -Force -ErrorAction SilentlyContinue;Write-Output 'V42_058Z_ROLLBACK=PASS'"
+}
