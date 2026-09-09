@@ -1,0 +1,345 @@
+BACKUP_ROOT=C:\3EN-Agent\backups\016b2\20260909-130736
+BACKUP_016B2_READY
+=== 3EN SECURITY MONITOR SOURCE DISCOVERY 016B2 ===
+=== RUNNING CANDIDATE PROCESSES ===
+
+
+ProcessId      : 11768
+Name           : powershell.exe
+ExecutablePath : C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+CommandLine    : "C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe" -ExecutionPolicy Bypass -File C:\3EN-Agent
+\3en-agent-runner-v3.5.ps1 -TaskUrl https://api.github.com/repos/3en4all/3en-command-runner/contents/task.json?ref=main
+ -PollSeconds 15
+
+
+
+
+=== CANDIDATE FILES ===
+
+FullName                                                                                           Length LastWriteTime
+      
+--------                                                                                           ------ -------------
+      
+C:\3EN-Agent\3en-agent.log                                                                         157343 9.09.2026 13:
+07:36 
+C:\3EN-Agent\3en-agent.state.json                                                                     196 9.09.2026 12:
+48:54 
+C:\3EN-Agent\3en-agent-runner-v3.5.ps1                                                              10825 9.09.2026 12:
+19:57 
+C:\3EN-Agent\3en-agent-runner-v3.4.backup-20260909-121957.ps1                                       10384 9.09.2026 12:
+11:30 
+C:\3EN-Agent\3en-agent-runner-v3.3.ps1                                                              10919 9.09.2026 12:
+01:19 
+C:\3EN-Agent\3en-agent-runner-v3.2.ps1                                                              11089 9.09.2026 11:
+59:05 
+C:\3EN-Agent\3en-agent-runner-v3.1.ps1                                                               9639 9.09.2026 11:
+53:26 
+C:\3EN-Agent\3en-agent-runner-v3.ps1                                                                10384 9.09.2026 10:
+27:43 
+C:\3EN-Agent\3en-agent-runner-v2.2.ps1                                                              10666 9.09.2026 10:
+22:35 
+C:\3EN-Agent\3en-agent-runner-v2.1.ps1                                                              10387 9.09.2026 10:
+15:34 
+C:\3EN-Agent\3en-agent-runner-v2.ps1                                                                10076 9.09.2026 10:
+10:19 
+C:\3EN-Agent\3en-command-runner.log                                                                  2623 9.09.2026 10:
+08:54 
+C:\3EN-Agent\3en-github-command-runner.ps1                                                           5569 9.09.2026 10:
+05:52 
+E:\skrypty\3en-github-command-runner.ps1                                                             5563 9.09.2026 09:
+50:25 
+E:\skrypty\3en-threats (1).json                                                                     66774 9.09.2026 04:
+10:00 
+E:\skrypty\3en-threats.json                                                                         46947 9.09.2026 03:
+56:18 
+E:\skrypty\patch-3en-security-monitor-v5.1.ps1                                                      10954 9.09.2026 02:
+43:39 
+E:\skrypty\3en-openwrt-full-provisioner.sh                                                          22890 8.09.2026 22:
+19:23 
+E:\skrypty\3en-openwrt-monitoring-v3.sh                                                             13647 8.09.2026 22:
+16:23 
+E:\skrypty\3en-openwrt-infrastructure-v2.sh                                                         11474 8.09.2026 22:
+13:12 
+E:\skrypty\3en-openwrt-provisioner.sh                                                                7815 8.09.2026 22:
+07:16 
+E:\skrypty\diagnose-3EN002-rootfs-readonly.ps1                                                        954 8.09.2026 18:
+48:35 
+E:\skrypty\diagnose-3EN002-storage.ps1                                                                991 8.09.2026 18:
+47:29 
+E:\skrypty\install-3EN002-security-monitor-v8.ps1                                                   13662 8.09.2026 18:
+46:25 
+E:\skrypty\install-3EN002-security-monitor-v7.ps1                                                   13663 8.09.2026 18:
+45:08 
+E:\skrypty\install-3EN002-security-monitor-v6.ps1                                                   13668 8.09.2026 18:
+42:34 
+E:\skrypty\install-3EN002-security-monitor-v5.ps1                                                   17255 8.09.2026 18:
+37:05 
+E:\skrypty\install-3EN002-security-monitor-v4.ps1                                                   14804 8.09.2026 18:
+28:30 
+E:\skrypty\install-3EN002-security-monitor-v3.ps1                                                   10790 8.09.2026 18:
+23:47 
+E:\skrypty\install-3EN002-security-monitor-v2.ps1                                                   10694 8.09.2026 18:
+22:10 
+E:\skrypty\install-3EN002-security-monitor.ps1                                                      10691 8.09.2026 18:
+19:21 
+C:\Users\wi3lk\Desktop\Tor Browser\Browser\TorBrowser\Data\Browser\profile.default\prefs.js          8024 6.09.2026 06:
+46:44 
+C:\Users\wi3lk\Desktop\Tor Browser\Browser\TorBrowser\Data\Browser\profile.default\extensions.json  18305 6.09.2026 06:
+46:43 
+C:\Users\wi3lk\Documents\uci-export-3EN002.txt                                                      21618 19.07.2026 03
+:12:55
+C:\Users\wi3lk\Documents\backup-openwrt-3EN002.tar.gz                                               19218 19.07.2026 03
+:10:30
+
+
+
+=== BACKUP CANDIDATE SOURCES ===
+BACKUP_COUNT=28
+=== SYMBOL SEARCH ===
+--- FILE E:\skrypty\patch-3en-security-monitor-v5.1.ps1 ---
+
+Line Text                                                                                                   
+---- ----                                                                                                   
+   8 $tmp = Join-Path $env:TEMP "3en-security-monitor-v51-$stamp"                                           
+  16 BACKUP="/root/backup-3en-security-monitor-v5.1-$STAMP"                                                 
+  19 [ -e /www/security-monitor/index.html ] && cp -a /www/security-monitor/index.html "$BACKUP/" || true   
+ 135 cat > /www/security-monitor/index.html <<'HTML'                                                        
+ 174 chmod 644 /www/security-monitor/index.html                                                             
+ 178 echo "URL=http://192.168.1.2/security-monitor/"                                                        
+ 185 scp $localPatch "${User}@${Router}:/tmp/3en-security-monitor-v51.sh"                                   
+ 189 ssh "${User}@${Router}" "chmod +x /tmp/3en-security-monitor-v51.sh && /tmp/3en-security-monitor-v51.sh"
+ 193 $Url = "http://$Router/security-monitor/"                                                              
+
+
+
+--- FILE E:\skrypty\install-3EN002-security-monitor-v8.ps1 ---
+
+Line Text                                                                                       
+---- ----                                                                                       
+ 351 mkdir -p /www/security-monitor-v6                                                          
+ 363 cp /tmp/3enmon-v6-index.html /www/security-monitor-v6/index.html                           
+ 364 chmod 0644 /www/security-monitor-v6/index.html                                             
+ 377 test -f /www/security-monitor-v6/index.html && echo "DASHBOARD=OK" || echo "DASHBOARD=FAIL"
+ 381 echo "DASHBOARD=http://192.168.1.2/security-monitor-v6/"                                   
+ 416 Write-Host " Dashboard: http://$Router/security-monitor-v6/" -ForegroundColor Green        
+
+
+
+--- FILE E:\skrypty\install-3EN002-security-monitor-v7.ps1 ---
+
+Line Text                                                                                       
+---- ----                                                                                       
+ 351 mkdir -p /www/security-monitor-v6                                                          
+ 363 cp /tmp/3enmon-v6-index.html /www/security-monitor-v6/index.html                           
+ 364 chmod 0644 /www/security-monitor-v6/index.html                                             
+ 377 test -f /www/security-monitor-v6/index.html && echo "DASHBOARD=OK" || echo "DASHBOARD=FAIL"
+ 381 echo "DASHBOARD=http://192.168.1.2/security-monitor-v6/"                                   
+ 416 Write-Host " Dashboard: http://$Router/security-monitor-v6/" -ForegroundColor Green        
+
+
+
+--- FILE E:\skrypty\install-3EN002-security-monitor-v6.ps1 ---
+
+Line Text                                                                                       
+---- ----                                                                                       
+ 351 mkdir -p /www/security-monitor-v6                                                          
+ 363 cp /tmp/3enmon-v6-index.html /www/security-monitor-v6/index.html                           
+ 364 chmod 0644 /www/security-monitor-v6/index.html                                             
+ 377 test -f /www/security-monitor-v6/index.html && echo "DASHBOARD=OK" || echo "DASHBOARD=FAIL"
+ 381 echo "DASHBOARD=http://192.168.1.2/security-monitor-v6/"                                   
+ 416 Write-Host " Dashboard: http://$Router/security-monitor-v6/" -ForegroundColor Green        
+
+
+
+--- FILE E:\skrypty\install-3EN002-security-monitor-v5.ps1 ---
+
+Line Text                                                                                                              
+  
+---- ----                                                                                                              
+  
+ 195 unblock)                                                                                                          
+  
+ 240 button.block{border-color:#7b3b3b} button.unblock{border-color:#3f6f4d}                                           
+  
+ 256 <div class="sub">Pasywny monitoring + ręczne BLOCK / UNBLOCK dla źródłowych IPv4</div>                            
+  
+ 269 <select id="limit"><option>50</option><option selected>100</option><option>250</option><option>500</option></selec
+t>
+ 365 <td><button class="${b?'unblock':'block'}" onclick="toggleIp('${e.src}',${b})">${b?'UNBLOCK':'BLOCK'}</button></td
+> 
+ 373 const body=new URLSearchParams({action:blocked?'unblock':'block',ip,token});                                      
+  
+ 440 mkdir -p /www/security-monitor                                                                                    
+  
+ 441 cp /tmp/3enmon-index.html /www/security-monitor/index.html                                                        
+  
+ 442 chmod 0644 /www/security-monitor/index.html                                                                       
+  
+ 457 test -f /www/security-monitor/index.html && echo "DASHBOARD_FILE=OK" || echo "DASHBOARD_FILE=FAIL"                
+  
+ 462 echo "DASHBOARD=http://192.168.1.2/security-monitor/"                                                             
+  
+ 503 Write-Host " Dashboard: http://$Router/security-monitor/" -ForegroundColor Green                                  
+  
+
+
+
+--- FILE E:\skrypty\install-3EN002-security-monitor-v4.ps1 ---
+
+Line Text                                                                                                              
+  
+---- ----                                                                                                              
+  
+ 195 unblock)                                                                                                          
+  
+ 240 button.block{border-color:#7b3b3b} button.unblock{border-color:#3f6f4d}                                           
+  
+ 252 <div class="sub">Pasywny monitoring + ręczne BLOCK / UNBLOCK dla źródłowych IPv4</div>                            
+  
+ 265 <select id="limit"><option>50</option><option selected>100</option><option>250</option><option>500</option></selec
+t>
+ 312 <td><button class="${b?'unblock':'block'}" onclick="toggleIp('${e.src}',${b})">${b?'UNBLOCK':'BLOCK'}</button></td
+> 
+ 318 const action=blocked?'unblock':'block';                                                                           
+  
+ 376 mkdir -p /www/security-monitor                                                                                    
+  
+ 377 cp /tmp/3enmon-index.html /www/security-monitor/index.html                                                        
+  
+ 378 chmod 0644 /www/security-monitor/index.html                                                                       
+  
+ 393 test -f /www/security-monitor/index.html && echo "DASHBOARD_FILE=OK" || echo "DASHBOARD_FILE=FAIL"                
+  
+ 398 echo "DASHBOARD=http://192.168.1.2/security-monitor/"                                                             
+  
+ 439 Write-Host " Dashboard: http://$Router/security-monitor/" -ForegroundColor Green                                  
+  
+
+
+
+--- FILE E:\skrypty\install-3EN002-security-monitor-v3.ps1 ---
+
+Line Text                                                                                                              
+  
+---- ----                                                                                                              
+  
+ 177 <select id="limit"><option>50</option><option selected>100</option><option>250</option><option>500</option></selec
+t>
+ 260 mkdir -p /www/security-monitor                                                                                    
+  
+ 261 cp /tmp/3enmon-index.html /www/security-monitor/index.html                                                        
+  
+ 262 chmod 0644 /www/security-monitor/index.html                                                                       
+  
+ 278 test -f /www/security-monitor/index.html && echo "DASHBOARD_FILE=OK" || echo "DASHBOARD_FILE=FAIL"                
+  
+ 283 echo "DASHBOARD=http://192.168.1.2/security-monitor/"                                                             
+  
+ 324 Write-Host " Dashboard: http://$Router/security-monitor/" -ForegroundColor Green                                  
+  
+
+
+
+--- FILE E:\skrypty\install-3EN002-security-monitor-v2.ps1 ---
+
+Line Text                                                                                                              
+  
+---- ----                                                                                                              
+  
+ 177 <select id="limit"><option>50</option><option selected>100</option><option>250</option><option>500</option></selec
+t>
+ 258 mkdir -p /www/security-monitor                                                                                    
+  
+ 259 install -m 0644 /tmp/3enmon-index.html /www/security-monitor/index.html                                           
+  
+ 274 test -f /www/security-monitor/index.html && echo "DASHBOARD_FILE=OK" || echo "DASHBOARD_FILE=FAIL"                
+  
+ 279 echo "DASHBOARD=http://192.168.1.2/security-monitor/"                                                             
+  
+ 320 Write-Host " Dashboard: http://$Router/security-monitor/" -ForegroundColor Green                                  
+  
+
+
+
+--- FILE E:\skrypty\install-3EN002-security-monitor.ps1 ---
+
+Line Text                                                                                                              
+  
+---- ----                                                                                                              
+  
+ 177 <select id="limit"><option>50</option><option selected>100</option><option>250</option><option>500</option></selec
+t>
+ 258 mkdir -p /www/security-monitor                                                                                    
+  
+ 259 install -m 0644 /tmp/3enmon-index.html /www/security-monitor/index.html                                           
+  
+ 274 test -f /www/security-monitor/index.html && echo "DASHBOARD_FILE=OK" || echo "DASHBOARD_FILE=FAIL"                
+  
+ 279 echo "DASHBOARD=http://192.168.1.2/security-monitor/"                                                             
+  
+ 320 Write-Host " Dashboard: http://$Router/security-monitor/" -ForegroundColor Green                                  
+  
+
+
+
+--- FILE C:\Users\wi3lk\Desktop\Tor Browser\Browser\TorBrowser\Data\Browser\profile.default\prefs.js ---
+
+Line Text                                                   
+---- ----                                                   
+  57 user_pref("extensions.blocklist.pingCountVersion", -1);
+  89 user_pref("privacy.history.custom", true);             
+
+
+
+--- FILE C:\Users\wi3lk\Desktop\Tor Browser\Browser\TorBrowser\Data\Browser\profile.default\extensions.json ---
+
+Line Text                                                                                                              
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                        
+---- ----                                                                                                              
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                        
+   1 {"schemaVersion":37,"addons":[{"id":"default-theme@mozilla.org","syncGUID":"{5da47de4-a08f-4130-89e0-1002c18f2cf3}
+","version":"1.4.1","type":"theme","loader":null,"updateURL":null,"installOrigins":null,"manifestVersion":2,"optionsURL
+":null,"optionsType":null,"optionsBrowserStyle":true,"aboutURL":null,"defaultLocale":{"name":"System theme â€” auto","d
+escription":"Follow the operating system setting for buttons, menus, and windows.","creator":"Mozilla","developers":nul
+l,"translators":null,...
+
+
+
+--- FILE C:\Users\wi3lk\Documents\uci-export-3EN002.txt ---
+
+Line Text                                                                    
+---- ----                                                                    
+ 386 option IgnoreSelected '0'                                               
+ 396 option IgnoreSelected '0'                                               
+ 412 option IgnoreSelected '0'                                               
+ 454 option IgnoreSelected '0'                                               
+ 486 option IgnoreSelected '0'                                               
+ 498 option IgnoreSelected '0'                                               
+ 674 option _description 'Server configuration for a routed multi-client VPN'
+ 688 option _description 'Client configuration for a routed multi-client VPN'
+ 784 option blocklist_enabled 'false'                                        
+
+
+
+=== EXACT DATA FILE SEARCH ===
+
+
+FullName      : E:\skrypty\3en-threats.json
+Length        : 46947
+LastWriteTime : 9.09.2026 03:56:18
+
+
+
+
+
+
+
+DISCOVERY_016B2=PASS
+BACKUP_EXISTS=C:\3EN-Agent\backups\016b2\20260909-130736
+VALIDATION_016B2=PASS
