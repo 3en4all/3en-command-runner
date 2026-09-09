@@ -1,0 +1,10 @@
+{
+  "id": "2026-09-10-057w",
+  "title": "OpenClaw model-free direct tool API executor acceptance",
+  "description": "Use the Gateway loopback /tools/invoke API to invoke OpenClaw write directly without an LLM turn. Verify exact bytes, preserve backup and verifier hashes, run independent health test, and rollback automatically on failure.",
+  "risk": "medium",
+  "backup": "$url='https://raw.githubusercontent.com/3en4all/3en-command-runner/23cd95f5083af775c645720837ce0a248e477312/scripts/openclaw-direct-tool-executor-057w.ps1';$dst='C:/3EN-Agent/openclaw-direct-tool-executor-057w.ps1';Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile $dst;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $dst -Phase Backup",
+  "script": "& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/openclaw-direct-tool-executor-057w.ps1 -Phase Execute",
+  "test": "& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/openclaw-direct-tool-executor-057w.ps1 -Phase Test",
+  "rollback": "& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/openclaw-direct-tool-executor-057w.ps1 -Phase Rollback"
+}
