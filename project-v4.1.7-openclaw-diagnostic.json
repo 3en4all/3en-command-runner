@@ -1,0 +1,9 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-09-v417-openclaw-diagnostic",
+  "title":"3EN v4.1.7 OpenClaw agent failure evidence diagnostic",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":false,"highRiskAction":"reject"},
+  "chapters":[
+    {"id":"2026-09-09-054x","path":"tasks/2026-09-09-054x.json","expectedStatus":"SUCCESS"}
+  ]
+}
