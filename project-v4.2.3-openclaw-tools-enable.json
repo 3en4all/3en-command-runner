@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-09-v423-openclaw-tools-enable",
+  "title":"OpenClaw tools verification",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-09-061a","path":"tasks/2026-09-09-061a.json","expectedStatus":"SUCCESS"}]
+}
