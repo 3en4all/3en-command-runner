@@ -1,0 +1,12 @@
+V430_057A_BACKUP=C:\3EN-Agent\workbench\openclaw-tool-proof.20260909-181047.bak
+
+OPENCLAW_FILE_NOT_CREATED
+At line:1 char:741
++ ... if(-not(Test-Path $target)){throw 'OPENCLAW_FILE_NOT_CREATED'};$conte ...
++                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (OPENCLAW_FILE_NOT_CREATED:String) [], RuntimeException
+    + FullyQualifiedErrorId : OPENCLAW_FILE_NOT_CREATED
+ 
+
+V430_057A_ROLLBACK=REMOVED_TEST_FILE
+
