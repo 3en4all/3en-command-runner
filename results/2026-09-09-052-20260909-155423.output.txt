@@ -1,0 +1,13 @@
+V403_052_BACKUP=PASS
+
+powershell.exe : param : The term 'param' is not recognized as the name of a cmdlet, function, script file, or operable
+ program. Check t
+At line:1 char:439
++ ... ile $patch; & powershell.exe -NoProfile -ExecutionPolicy Bypass -File ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (param : The ter...rogram. Check t:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+V403_052_ROLLBACK=PASS
+
