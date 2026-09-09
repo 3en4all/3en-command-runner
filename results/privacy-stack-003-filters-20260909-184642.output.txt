@@ -1,0 +1,21 @@
+REMOTE_GRAVITY_BACKUP_HANDLED_BY_GUI_BACKEND
+
+Invoke-RestMethod : {"error": "Pi-hole SSH was not auto-discovered"}
+At C:\3EN-Agent\3en-security-privacy-deploy-v1.ps1:65 char:3
++   Invoke-RestMethod -Method Post -Uri ($UiUrl+'/api/action') -Content ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebExceptio 
+   n
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+
+Invoke-RestMethod : {"error": "Pi-hole SSH was not auto-discovered"}
+At C:\3EN-Agent\3en-security-privacy-deploy-v1.ps1:65 char:3
++   Invoke-RestMethod -Method Post -Uri ($UiUrl+'/api/action') -Content ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebExceptio 
+   n
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+
+Filter backend preserves timestamped gravity.db backups under /var/backups/3en-security-privacy; automatic restore is execut
+ed if gravity rebuild fails.
+
