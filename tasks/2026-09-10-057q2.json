@@ -1,0 +1,10 @@
+{
+  "id": "2026-09-10-057q2",
+  "title": "Precise OpenClaw read-tool diagnostic",
+  "description": "Re-test only OpenClaw read behavior with raw agent output emitted directly into the runner transcript. No system changes. This corrects the previous diagnostic where function output capture obscured the raw read response.",
+  "risk": "low",
+  "backup": "$ErrorActionPreference='Stop';$root='C:/3EN-Agent/workbench/diag-057q2';if(Test-Path $root){Remove-Item $root -Recurse -Force};New-Item -ItemType Directory -Force -Path $root|Out-Null;'READ_PROBE_CONTENT=GAMMA_057Q2'|Set-Content (Join-Path $root 'read-source.txt') -Encoding ASCII;Write-Output 'V451_057Q2_BACKUP=PASS'",
+  "script": "$ErrorActionPreference='Stop';$root='C:/3EN-Agent/workbench/diag-057q2';$session='3en-057q2-read-'+[guid]::NewGuid().ToString('N');$prompt='Read exactly C:/3EN-Agent/workbench/diag-057q2/read-source.txt using the existing read/file-reading tool. Do not write or modify any file. Do not create or propose skills. After reading it, reply with exactly: READ_PROBE_CONTENT=GAMMA_057Q2';$raw=@(& openclaw.cmd agent --session-key $session --message $prompt --json --timeout 180 2>&1);$ec=$LASTEXITCODE;Write-Output ('V451_057Q2_AGENT_EXIT='+$ec);foreach($line in $raw){Write-Output ('V451_057Q2_AGENT_RAW='+[string]$line)};$txt=($raw|ForEach-Object{[string]$_}) -join [Environment]::NewLine;$txt|Set-Content (Join-Path $root 'agent-read-raw.txt') -Encoding UTF8;if($ec -ne 0){throw ('057Q2_AGENT_EXIT_'+$ec)};$match=($txt -match 'READ_PROBE_CONTENT=GAMMA_057Q2');[pscustomobject]@{testedAt=(Get-Date).ToString('o');session=$session;exitCode=$ec;readMatch=$match;rawLength=$txt.Length}|ConvertTo-Json|Set-Content (Join-Path $root 'diagnostic.json') -Encoding UTF8;Write-Output ('V451_057Q2_READ_MATCH='+$match)",
+  "test": "$ErrorActionPreference='Stop';$d=Get-Content 'C:/3EN-Agent/workbench/diag-057q2/diagnostic.json' -Raw|ConvertFrom-Json;if([int]$d.exitCode -ne 0){throw '057Q2_EXIT_NONZERO'};if(-not [bool]$d.readMatch){throw '057Q2_READ_TOOL_FAILED'};Write-Output 'V451_057Q2_TEST=PASS read=PASS'",
+  "rollback": "Write-Output 'V451_057Q2_ROLLBACK=NO_SYSTEM_CHANGE'"
+}
