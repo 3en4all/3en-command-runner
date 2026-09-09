@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-055w",
+  "title":"OpenClaw corrected end-to-end agent smoke",
+  "risk":"low",
+  "backup":"Write-Output 'V418_055W_BACKUP=READ_ONLY'",
+  "script":"$ErrorActionPreference='Stop';$root='C:/3EN-Agent/openclaw-bridge';$so=Join-Path $root '055w-agent.json';$se=Join-Path $root '055w-agent.err.txt';Remove-Item $so,$se -Force -ErrorAction SilentlyContinue;$out=& openclaw.cmd agent --session-key '3en-055w' --message 'Reply with exactly OPENCLAW_BRIDGE_OK' --json --timeout 180 2>$se;$code=$LASTEXITCODE;$out|Set-Content -LiteralPath $so -Encoding UTF8;if($code -ne 0){$err='';if(Test-Path $se){$err=Get-Content $se -Raw};throw ('AGENT_FAILED code='+$code+' stderr='+$err)};$raw=Get-Content $so -Raw;$null=$raw|ConvertFrom-Json;if($raw -notmatch 'OPENCLAW_BRIDGE_OK'){throw 'AGENT_MARKER_MISSING'};Write-Output 'V418_055W_AGENT=PASS'",
+  "test":"$root='C:/3EN-Agent/openclaw-bridge';$so=Join-Path $root '055w-gateway.json';$se=Join-Path $root '055w-gateway.err.txt';Remove-Item $so,$se -Force -ErrorAction SilentlyContinue;$out=& openclaw.cmd gateway status --json 2>$se;$code=$LASTEXITCODE;$out|Set-Content -LiteralPath $so -Encoding UTF8;if($code -ne 0){throw ('GATEWAY_STATUS_FAILED code='+$code)};$null=Get-Content $so -Raw|ConvertFrom-Json;Write-Output 'V418_055W_TEST=PASS'",
+  "rollback":"Write-Output 'V418_055W_ROLLBACK=NO_CHANGE'"
+}
