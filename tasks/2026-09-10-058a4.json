@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-10-058a4",
+  "title":"Diagnose OpenClaw plugin install failure",
+  "description":"Collect OpenClaw version, plugin doctor/list state, local plugin syntax/dependency status, and the full non-secret output of one controlled install attempt so the next repair is evidence-driven.",
+  "risk":"low",
+  "backup":"Write-Output 'V4613_058A4_BACKUP=DIAGNOSTIC_ONLY_OPENCLAW_INSTALL_IS_TRANSACTIONAL'",
+  "script":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/13ea28e05084201710683585b9cdafdf210cc638/scripts/diagnose-openclaw-plugin-install-058a4.ps1';$d='C:/3EN-Agent/diagnose-openclaw-plugin-install-058a4.ps1';Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d -Phase Run",
+  "test":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/diagnose-openclaw-plugin-install-058a4.ps1 -Phase Test",
+  "rollback":"Write-Output 'V4613_058A4_ROLLBACK=NO_DESTRUCTIVE_CHANGE'"
+}
