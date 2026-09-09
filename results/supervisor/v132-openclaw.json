@@ -4,7 +4,7 @@
     "pointerRevision":  "2026-09-10T00:35:00+02:00-v444b-057m2-observable",
     "pointerProject":  "project-v444b.json",
     "processedRevision":  "",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  4,
     "lastError":  "",
     "nextRetryUtc":  "2026-09-09T22:46:43.2566981Z",
@@ -12,6 +12,6 @@
     "lastTerminalUtc":  "2026-09-09T22:44:43.2566981Z",
     "lastExitCode":  null,
     "workerPid":  532,
-    "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T22:46:44.7899578Z"
+    "runnerPid":  24104,
+    "updatedUtc":  "2026-09-09T22:46:46.4766418Z"
 }
