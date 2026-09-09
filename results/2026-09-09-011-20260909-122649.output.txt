@@ -1,0 +1,476 @@
+READ-ONLY TASK: no backup required.
+=== WINDOWS ROUTING + DNS PATH AUDIT 011 ===
+Time=2026-09-09T12:26:49.0210818+02:00
+
+=== NET ADAPTERS ===
+
+ifIndex Name                               InterfaceDescription                         Status       MacAddress        
+LinkSpeed
+------- ----                               --------------------                         ------       ----------        
+---------
+      9 Wi-Fi                              Realtek 8852BE Wireless LAN WiFi 6 PCI-E NIC Disconnected F8-3D-C6-85-D5-0E 
+1.2 Gbps 
+     16 LAN                                Realtek Gaming 2.5GbE Family Controller      Up           30-C5-99-AF-0F-A7 
+1 Gbps   
+     17 Połączenie sieciowe Bluetooth      Bluetooth Device (Personal Area Network)     Not Present  F8-3D-C6-85-D5-0F 
+0 bps    
+     21 VMware Network Adapter VMnet1      VMware Virtual Ethernet Adapter for VMnet1   Up           00-50-56-C0-00-01 
+100 Mbps 
+     23 VMware Network Adapter VMnet8      VMware Virtual Ethernet Adapter for VMnet8   Up           00-50-56-C0-00-08 
+100 Mbps 
+     47 vEthernet (WSL (Hyper-V firewall)) Hyper-V Virtual Ethernet Adapter             Up           00-15-5D-E8-22-B2 
+10 Gbps  
+
+
+
+=== IP CONFIGURATION ===
+
+
+InterfaceAlias     : LAN
+InterfaceIndex     : 16
+NetProfile         : MSFT_NetConnectionProfile (InstanceID = "{AF632DF8-7DB6-4FCD-B938-3346F22ED7C2}")
+IPv4Address        : {192.168.1.35}
+IPv4DefaultGateway : {MSFT_NetRoute (InstanceID = ":8:8:8:9:55;@55;C?8;@B8;8?55;")}
+DNSServer          : {MSFT_DNSClientServerAddress (Name = "16", CreationClassName = "", SystemCreationClassName = "", S
+ystemName = "23"), MSFT_DNSClientServerAddress (Name = "16", CreationClassName = "", SystemCreationClassName = "", Syst
+em
+                     Name = "2")}
+
+InterfaceAlias     : VMware Network Adapter VMnet1
+InterfaceIndex     : 21
+NetProfile         : 
+IPv4Address        : {192.168.105.1}
+IPv4DefaultGateway : 
+DNSServer          : {MSFT_DNSClientServerAddress (Name = "21", CreationClassName = "", SystemCreationClassName = "", S
+ystemName = "23"), MSFT_DNSClientServerAddress (Name = "21", CreationClassName = "", SystemCreationClassName = "", Syst
+em
+                     Name = "2")}
+
+InterfaceAlias     : VMware Network Adapter VMnet8
+InterfaceIndex     : 23
+NetProfile         : 
+IPv4Address        : {192.168.188.1}
+IPv4DefaultGateway : 
+DNSServer          : {MSFT_DNSClientServerAddress (Name = "23", CreationClassName = "", SystemCreationClassName = "", S
+ystemName = "23"), MSFT_DNSClientServerAddress (Name = "23", CreationClassName = "", SystemCreationClassName = "", Syst
+em
+                     Name = "2")}
+
+InterfaceAlias     : vEthernet (WSL (Hyper-V firewall))
+InterfaceIndex     : 47
+NetProfile         : 
+IPv4Address        : {172.22.112.1}
+IPv4DefaultGateway : 
+DNSServer          : {MSFT_DNSClientServerAddress (Name = "47", CreationClassName = "", SystemCreationClassName = "", S
+ystemName = "23"), MSFT_DNSClientServerAddress (Name = "47", CreationClassName = "", SystemCreationClassName = "", Syst
+em
+                     Name = "2")}
+
+InterfaceAlias     : Wi-Fi
+InterfaceIndex     : 9
+NetProfile         : 
+IPv4Address        : {10.131.32.224}
+IPv4DefaultGateway : {MSFT_NetRoute (InstanceID = ":8:8:8:9:55C55;:8;?;8??8;55;")}
+DNSServer          : {MSFT_DNSClientServerAddress (Name = "9", CreationClassName = "", SystemCreationClassName = "", Sy
+stemName = "23"), MSFT_DNSClientServerAddress (Name = "9", CreationClassName = "", SystemCreationClassName = "", System
+Na
+                     me = "2")}
+
+
+
+
+=== IPV4 INTERFACES ===
+
+InterfaceIndex InterfaceAlias                     ConnectionState     Dhcp AutomaticMetric InterfaceMetric      NlMtu
+-------------- --------------                     ---------------     ---- --------------- ---------------      -----
+             6 Połączenie lokalne* 10                Disconnected  Enabled         Enabled              25       1500
+            10 Połączenie lokalne* 9                 Disconnected  Enabled         Enabled              25       1500
+            16 LAN                                      Connected Disabled         Enabled              25       1500
+             9 Wi-Fi                                 Disconnected  Enabled         Enabled              30       1500
+            21 VMware Network Adapter VMnet1            Connected  Enabled         Enabled              35       1500
+            23 VMware Network Adapter VMnet8            Connected  Enabled         Enabled              35       1500
+             1 Loopback Pseudo-Interface 1              Connected Disabled         Enabled              75 4294967295
+            47 vEthernet (WSL (Hyper-V firewall))       Connected Disabled        Disabled            5000       1500
+
+
+
+=== IPV4 ADDRESSES ===
+
+InterfaceIndex InterfaceAlias                     IPAddress       PrefixLength AddressState PrefixOrigin SuffixOrigin
+-------------- --------------                     ---------       ------------ ------------ ------------ ------------
+             1 Loopback Pseudo-Interface 1        127.0.0.1                  8    Preferred    WellKnown    WellKnown
+             6 Połączenie lokalne* 10             169.254.84.171            16    Tentative    WellKnown         Link
+             9 Wi-Fi                              10.131.32.224             20   Deprecated         Dhcp         Dhcp
+            10 Połączenie lokalne* 9              169.254.121.245           16    Tentative    WellKnown         Link
+            16 LAN                                192.168.1.35              24    Preferred       Manual       Manual
+            21 VMware Network Adapter VMnet1      192.168.105.1             24    Preferred         Dhcp         Dhcp
+            23 VMware Network Adapter VMnet8      192.168.188.1             24    Preferred         Dhcp         Dhcp
+            47 vEthernet (WSL (Hyper-V firewall)) 172.22.112.1              20    Preferred       Manual       Manual
+
+
+
+=== DNS PER INTERFACE ===
+IFINDEX=1 ALIAS=Loopback Pseudo-Interface 1 DNS=
+IFINDEX=6 ALIAS=Połączenie lokalne* 10 DNS=
+IFINDEX=9 ALIAS=Wi-Fi DNS=217.113.224.135,217.113.224.134
+IFINDEX=10 ALIAS=Połączenie lokalne* 9 DNS=
+IFINDEX=16 ALIAS=LAN DNS=192.168.1.3
+IFINDEX=21 ALIAS=VMware Network Adapter VMnet1 DNS=
+IFINDEX=23 ALIAS=VMware Network Adapter VMnet8 DNS=
+IFINDEX=47 ALIAS=vEthernet (WSL (Hyper-V firewall)) DNS=
+
+=== DEFAULT ROUTES ===
+
+InterfaceIndex InterfaceAlias NextHop     RouteMetric InterfaceMetric State Protocol
+-------------- -------------- -------     ----------- --------------- ----- --------
+             9 Wi-Fi          10.131.32.1           0              30 Alive  NetMgmt
+            16 LAN            192.168.1.2         256              25 Alive  NetMgmt
+
+
+
+=== FULL IPV4 ROUTE TABLE ===
+
+InterfaceIndex InterfaceAlias                     DestinationPrefix  NextHop     RouteMetric InterfaceMetric State Prot
+ocol
+-------------- --------------                     -----------------  -------     ----------- --------------- ----- ----
+----
+             9 Wi-Fi                              0.0.0.0/0          10.131.32.1           0              30 Alive  Net
+Mgmt
+            16 LAN                                0.0.0.0/0          192.168.1.2         256              25 Alive  Net
+Mgmt
+             9 Wi-Fi                              10.131.32.0/20     0.0.0.0             256              30 Alive    L
+ocal
+             9 Wi-Fi                              10.131.32.224/32   0.0.0.0             256              30 Alive    L
+ocal
+             9 Wi-Fi                              10.131.47.255/32   0.0.0.0             256              30 Alive    L
+ocal
+             1 Loopback Pseudo-Interface 1        127.0.0.0/8        0.0.0.0             256              75 Alive    L
+ocal
+             1 Loopback Pseudo-Interface 1        127.0.0.1/32       0.0.0.0             256              75 Alive    L
+ocal
+             1 Loopback Pseudo-Interface 1        127.255.255.255/32 0.0.0.0             256              75 Alive    L
+ocal
+            47 vEthernet (WSL (Hyper-V firewall)) 172.22.112.0/20    0.0.0.0             256            5000 Alive    L
+ocal
+            47 vEthernet (WSL (Hyper-V firewall)) 172.22.112.1/32    0.0.0.0             256            5000 Alive    L
+ocal
+            47 vEthernet (WSL (Hyper-V firewall)) 172.22.127.255/32  0.0.0.0             256            5000 Alive    L
+ocal
+            16 LAN                                192.168.1.0/24     0.0.0.0             256              25 Alive    L
+ocal
+            16 LAN                                192.168.1.255/32   0.0.0.0             256              25 Alive    L
+ocal
+            16 LAN                                192.168.1.35/32    0.0.0.0             256              25 Alive    L
+ocal
+            21 VMware Network Adapter VMnet1      192.168.105.0/24   0.0.0.0             256              35 Alive    L
+ocal
+            21 VMware Network Adapter VMnet1      192.168.105.1/32   0.0.0.0             256              35 Alive    L
+ocal
+            21 VMware Network Adapter VMnet1      192.168.105.255/32 0.0.0.0             256              35 Alive    L
+ocal
+            23 VMware Network Adapter VMnet8      192.168.188.0/24   0.0.0.0             256              35 Alive    L
+ocal
+            23 VMware Network Adapter VMnet8      192.168.188.1/32   0.0.0.0             256              35 Alive    L
+ocal
+            23 VMware Network Adapter VMnet8      192.168.188.255/32 0.0.0.0             256              35 Alive    L
+ocal
+            10 Połączenie lokalne* 9              224.0.0.0/4        0.0.0.0             256              25 Alive    L
+ocal
+             6 Połączenie lokalne* 10             224.0.0.0/4        0.0.0.0             256              25 Alive    L
+ocal
+            16 LAN                                224.0.0.0/4        0.0.0.0             256              25 Alive    L
+ocal
+             9 Wi-Fi                              224.0.0.0/4        0.0.0.0             256              30 Alive    L
+ocal
+            23 VMware Network Adapter VMnet8      224.0.0.0/4        0.0.0.0             256              35 Alive    L
+ocal
+            21 VMware Network Adapter VMnet1      224.0.0.0/4        0.0.0.0             256              35 Alive    L
+ocal
+             1 Loopback Pseudo-Interface 1        224.0.0.0/4        0.0.0.0             256              75 Alive    L
+ocal
+            47 vEthernet (WSL (Hyper-V firewall)) 224.0.0.0/4        0.0.0.0             256            5000 Alive    L
+ocal
+             6 Połączenie lokalne* 10             255.255.255.255/32 0.0.0.0             256              25 Alive    L
+ocal
+            16 LAN                                255.255.255.255/32 0.0.0.0             256              25 Alive    L
+ocal
+            10 Połączenie lokalne* 9              255.255.255.255/32 0.0.0.0             256              25 Alive    L
+ocal
+             9 Wi-Fi                              255.255.255.255/32 0.0.0.0             256              30 Alive    L
+ocal
+            23 VMware Network Adapter VMnet8      255.255.255.255/32 0.0.0.0             256              35 Alive    L
+ocal
+            21 VMware Network Adapter VMnet1      255.255.255.255/32 0.0.0.0             256              35 Alive    L
+ocal
+             1 Loopback Pseudo-Interface 1        255.255.255.255/32 0.0.0.0             256              75 Alive    L
+ocal
+            47 vEthernet (WSL (Hyper-V firewall)) 255.255.255.255/32 0.0.0.0             256            5000 Alive    L
+ocal
+
+
+
+=== EFFECTIVE ROUTE LOOKUPS ===
+--- DEST=192.168.1.2 ---
+
+
+IPAddress         : 192.168.1.35
+InterfaceIndex    : 16
+InterfaceAlias    : LAN
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 24
+PrefixOrigin      : Manual
+SuffixOrigin      : Manual
+AddressState      : Preferred
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+
+Caption            : 
+Description        : 
+ElementName        : 
+InstanceID         : ;C<8;@B8;8:9<>55;@55:8:8:8:55;
+AdminDistance      : 
+DestinationAddress : 
+IsStatic           : 
+RouteMetric        : 256
+TypeOfRoute        : 3
+AddressFamily      : IPv4
+CompartmentId      : 1
+DestinationPrefix  : 192.168.1.0/24
+InterfaceAlias     : LAN
+InterfaceIndex     : 16
+InterfaceMetric    : 25
+NextHop            : 0.0.0.0
+PreferredLifetime  : 10675199.02:48:05.4775807
+Protocol           : Local
+Publish            : No
+State              : Alive
+Store              : ActiveStore
+ValidLifetime      : 10675199.02:48:05.4775807
+PSComputerName     : 
+ifIndex            : 16
+
+
+
+
+PING=True
+SOURCE=MSFT_NetIPAddress (Name = ";C?8;@B8;8??55;@55;55;", CreationClassName = "", SystemCreationClassName = "", System
+Name = "")
+IF_ALIAS=LAN
+IF_INDEX=16
+NEXT_HOP=0.0.0.0
+--- DEST=192.168.1.3 ---
+
+
+IPAddress         : 192.168.1.35
+InterfaceIndex    : 16
+InterfaceAlias    : LAN
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 24
+PrefixOrigin      : Manual
+SuffixOrigin      : Manual
+AddressState      : Preferred
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+
+Caption            : 
+Description        : 
+ElementName        : 
+InstanceID         : ;C<8;@B8;8:9<>55;@55:8:8:8:55;
+AdminDistance      : 
+DestinationAddress : 
+IsStatic           : 
+RouteMetric        : 256
+TypeOfRoute        : 3
+AddressFamily      : IPv4
+CompartmentId      : 1
+DestinationPrefix  : 192.168.1.0/24
+InterfaceAlias     : LAN
+InterfaceIndex     : 16
+InterfaceMetric    : 25
+NextHop            : 0.0.0.0
+PreferredLifetime  : 10675199.02:48:05.4775807
+Protocol           : Local
+Publish            : No
+State              : Alive
+Store              : ActiveStore
+ValidLifetime      : 10675199.02:48:05.4775807
+PSComputerName     : 
+ifIndex            : 16
+
+
+
+
+PING=True
+SOURCE=MSFT_NetIPAddress (Name = ";C?8;@B8;8??55;@55;55;", CreationClassName = "", SystemCreationClassName = "", System
+Name = "")
+IF_ALIAS=LAN
+IF_INDEX=16
+NEXT_HOP=0.0.0.0
+--- DEST=1.1.1.1 ---
+
+
+IPAddress         : 192.168.1.35
+InterfaceIndex    : 16
+InterfaceAlias    : LAN
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 24
+PrefixOrigin      : Manual
+SuffixOrigin      : Manual
+AddressState      : Preferred
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+
+Caption            : 
+Description        : 
+ElementName        : 
+InstanceID         : :8:8:8:9:55;@55;C<8;@B8;8<55;
+AdminDistance      : 
+DestinationAddress : 
+IsStatic           : 
+RouteMetric        : 256
+TypeOfRoute        : 3
+AddressFamily      : IPv4
+CompartmentId      : 1
+DestinationPrefix  : 0.0.0.0/0
+InterfaceAlias     : LAN
+InterfaceIndex     : 16
+InterfaceMetric    : 25
+NextHop            : 192.168.1.2
+PreferredLifetime  : 10675199.02:48:05.4775807
+Protocol           : NetMgmt
+Publish            : No
+State              : Alive
+Store              : ActiveStore
+ValidLifetime      : 10675199.02:48:05.4775807
+PSComputerName     : 
+ifIndex            : 16
+
+
+
+
+PING=True
+SOURCE=MSFT_NetIPAddress (Name = ";C?8;@B8;8??55;@55;55;", CreationClassName = "", SystemCreationClassName = "", System
+Name = "")
+IF_ALIAS=LAN
+IF_INDEX=16
+NEXT_HOP=192.168.1.2
+--- DEST=8.8.8.8 ---
+
+
+IPAddress         : 192.168.1.35
+InterfaceIndex    : 16
+InterfaceAlias    : LAN
+AddressFamily     : IPv4
+Type              : Unicast
+PrefixLength      : 24
+PrefixOrigin      : Manual
+SuffixOrigin      : Manual
+AddressState      : Preferred
+ValidLifetime     : Infinite ([TimeSpan]::MaxValue)
+PreferredLifetime : Infinite ([TimeSpan]::MaxValue)
+SkipAsSource      : False
+PolicyStore       : ActiveStore
+
+
+Caption            : 
+Description        : 
+ElementName        : 
+InstanceID         : :8:8:8:9:55;@55;C<8;@B8;8<55;
+AdminDistance      : 
+DestinationAddress : 
+IsStatic           : 
+RouteMetric        : 256
+TypeOfRoute        : 3
+AddressFamily      : IPv4
+CompartmentId      : 1
+DestinationPrefix  : 0.0.0.0/0
+InterfaceAlias     : LAN
+InterfaceIndex     : 16
+InterfaceMetric    : 25
+NextHop            : 192.168.1.2
+PreferredLifetime  : 10675199.02:48:05.4775807
+Protocol           : NetMgmt
+Publish            : No
+State              : Alive
+Store              : ActiveStore
+ValidLifetime      : 10675199.02:48:05.4775807
+PSComputerName     : 
+ifIndex            : 16
+
+
+
+
+PING=True
+SOURCE=MSFT_NetIPAddress (Name = ";C?8;@B8;8??55;@55;55;", CreationClassName = "", SystemCreationClassName = "", System
+Name = "")
+IF_ALIAS=LAN
+IF_INDEX=16
+NEXT_HOP=192.168.1.2
+
+=== DNS TESTS ===
+pi.hole=192.168.1.3
+google.com=142.250.130.100,142.250.130.139,142.250.130.102,142.250.130.101,142.250.130.138,142.250.130.113
+
+=== ROUTE PRINT ===
+===========================================================================
+Interface List
+ 16...30 c5 99 af 0f a7 ......Realtek Gaming 2.5GbE Family Controller
+ 10...fa 3d c6 85 d5 0e ......Microsoft Wi-Fi Direct Virtual Adapter
+  6...fe 3d c6 85 d5 0e ......Microsoft Wi-Fi Direct Virtual Adapter #2
+  9...f8 3d c6 85 d5 0e ......Realtek 8852BE Wireless LAN WiFi 6 PCI-E NIC
+ 21...00 50 56 c0 00 01 ......VMware Virtual Ethernet Adapter for VMnet1
+ 23...00 50 56 c0 00 08 ......VMware Virtual Ethernet Adapter for VMnet8
+  1...........................Software Loopback Interface 1
+ 47...00 15 5d e8 22 b2 ......Hyper-V Virtual Ethernet Adapter
+===========================================================================
+
+IPv4 Route Table
+===========================================================================
+Active Routes:
+Network Destination        Netmask          Gateway       Interface  Metric
+          0.0.0.0          0.0.0.0      192.168.1.2     192.168.1.35    281
+        127.0.0.0        255.0.0.0         On-link         127.0.0.1    331
+        127.0.0.1  255.255.255.255         On-link         127.0.0.1    331
+  127.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+     172.22.112.0    255.255.240.0         On-link      172.22.112.1   5256
+     172.22.112.1  255.255.255.255         On-link      172.22.112.1   5256
+   172.22.127.255  255.255.255.255         On-link      172.22.112.1   5256
+      192.168.1.0    255.255.255.0         On-link      192.168.1.35    281
+     192.168.1.35  255.255.255.255         On-link      192.168.1.35    281
+    192.168.1.255  255.255.255.255         On-link      192.168.1.35    281
+    192.168.105.0    255.255.255.0         On-link     192.168.105.1    291
+    192.168.105.1  255.255.255.255         On-link     192.168.105.1    291
+  192.168.105.255  255.255.255.255         On-link     192.168.105.1    291
+    192.168.188.0    255.255.255.0         On-link     192.168.188.1    291
+    192.168.188.1  255.255.255.255         On-link     192.168.188.1    291
+  192.168.188.255  255.255.255.255         On-link     192.168.188.1    291
+        224.0.0.0        240.0.0.0         On-link         127.0.0.1    331
+        224.0.0.0        240.0.0.0         On-link      192.168.1.35    281
+        224.0.0.0        240.0.0.0         On-link      172.22.112.1   5256
+        224.0.0.0        240.0.0.0         On-link     192.168.188.1    291
+        224.0.0.0        240.0.0.0         On-link     192.168.105.1    291
+  255.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+  255.255.255.255  255.255.255.255         On-link      192.168.1.35    281
+  255.255.255.255  255.255.255.255         On-link      172.22.112.1   5256
+  255.255.255.255  255.255.255.255         On-link     192.168.188.1    291
+  255.255.255.255  255.255.255.255         On-link     192.168.105.1    291
+===========================================================================
+Persistent Routes:
+  Network Address          Netmask  Gateway Address  Metric
+          0.0.0.0          0.0.0.0      192.168.1.2  Default 
+===========================================================================
+
+=== AUDIT END ===
+WINDOWS ROUTING + DNS AUDIT 011 COLLECTION PASS
