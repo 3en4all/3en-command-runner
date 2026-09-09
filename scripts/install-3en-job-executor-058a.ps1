@@ -36,13 +36,14 @@ switch($Phase){
 'Install'{
   if(Test-Path $PluginRoot){Remove-Item $PluginRoot -Recurse -Force};New-Item -ItemType Directory -Force -Path $PluginRoot|Out-Null
   foreach($f in @('package.json','openclaw.plugin.json','index.js')){$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/'+$SourceRef+'/openclaw-plugins/3en-job-executor/'+$f;Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile (Join-Path $PluginRoot $f)}
-  Push-Location $PluginRoot;try{$npm=Invoke-CapturedCmd '058A_NPM' 'npm.cmd install --omit=dev --no-audit --no-fund'}finally{Pop-Location}
-  $validate=Invoke-CapturedCmd '058A_VALIDATE' ('openclaw.cmd plugins validate --entry "'+$PluginRoot+'"')
+  Push-Location $PluginRoot;try{$npm=Invoke-CapturedCmd '058A_NPM' 'npm.cmd install --omit=dev --no-audit --no-fund';$syntax=Invoke-CapturedCmd '058A_NODE_CHECK' 'node.exe --check index.js'}finally{Pop-Location}
+  $manifest=Get-Content (Join-Path $PluginRoot 'openclaw.plugin.json') -Raw|ConvertFrom-Json
+  if([string]$manifest.id-ne'3en-job-executor' -or @($manifest.contracts.tools) -notcontains '3en_job'){throw '058A_MANIFEST_CONTRACT_BAD'}
   $list=Invoke-CapturedCmd '058A_LIST' 'openclaw.cmd plugins list --json'
   $already=$list.Text -match '3en-job-executor'
   if($already){$un=Invoke-CapturedCmd '058A_UNINSTALL' 'openclaw.cmd plugins uninstall 3en-job-executor --keep-files --force' $true}
-  $ins=Invoke-CapturedCmd '058A_INSTALL' ('openclaw.cmd plugins install -l "'+$PluginRoot+'" --force --acknowledge-install-policy-warning')
-  $en=Invoke-CapturedCmd '058A_ENABLE' 'openclaw.cmd plugins enable 3en-job-executor'
+  $ins=Invoke-CapturedCmd '058A_INSTALL' ('openclaw.cmd plugins install -l "'+$PluginRoot+'" --force --accept-capabilities --acknowledge-install-policy-warning')
+  $en=Invoke-CapturedCmd '058A_ENABLE' 'openclaw.cmd plugins enable 3en-job-executor --accept-capabilities'
   Restart-Gateway
   $inspect=Invoke-CapturedCmd '058A_INSPECT' 'openclaw.cmd plugins inspect 3en-job-executor --runtime --json'
   $inspect.Text|Set-Content (Join-Path $Work 'plugin-inspect.json') -Encoding UTF8
