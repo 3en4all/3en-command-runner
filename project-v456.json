@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "projectId": "2026-09-10-v456-openclaw-staged-executor",
+  "title": "OpenClaw staged-payload deterministic executor acceptance",
+  "policy": {
+    "showErrors": false,
+    "maxAttempts": 1,
+    "publishRetries": 3,
+    "autoRollbackOnFinalFailure": true,
+    "highRiskAction": "reject"
+  },
+  "chapters": [
+    {
+      "id": "2026-09-10-057v",
+      "path": "tasks/2026-09-10-057v.json",
+      "expectedStatus": "SUCCESS"
+    }
+  ]
+}
