@@ -1,0 +1,18 @@
+SEC_MON_DEPLOY_BACKUP=HANDLED_BY_DEPLOYER_AND_ROUTER_FIREWALL_BACKUP
+
+SEC_MON_DEPLOY=PASS;URL=http://127.0.0.1:8766
+
+Invoke-RestMethod : {"error": "command failed"}
+At line:1 char:140
++ ... on -Depth 5;Invoke-RestMethod -Method Post -Uri ($u+'/api/action') -C ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebExceptio 
+   n
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+
+SEC_MON_DEPLOY=PASS;URL=http://127.0.0.1:8766
+
+SEC_MON_DEPLOY=PASS;URL=http://127.0.0.1:8766
+
+SEC_MON_BLOCK_UNBLOCK_TEST=PASS;THREATS=160;BLOCKED=0
+
