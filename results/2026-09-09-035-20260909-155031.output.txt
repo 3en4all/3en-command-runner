@@ -1,0 +1,14 @@
+QUEUE035_BACKUP=PASS
+
+QUEUE035_SCRIPT=PASS
+
+INTENTIONAL_QUEUE_TEST_FAILED_TEST
+At line:1 char:83
++ ... NTIONAL_FAILED_TEST=BEGIN';throw 'INTENTIONAL_QUEUE_TEST_FAILED_TEST'
++                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (INTENTIONAL_QUEUE_TEST_FAILED_TEST:String) [], RuntimeException
+    + FullyQualifiedErrorId : INTENTIONAL_QUEUE_TEST_FAILED_TEST
+ 
+
+QUEUE035_ROLLBACK_SAFE_NO_CHANGES
+
