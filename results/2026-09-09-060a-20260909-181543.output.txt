@@ -1,0 +1,214 @@
+V422_060A_BACKUP=READ_ONLY
+
+=== OPENCLAW VERSION ===
+OpenClaw 2026.7.1-2 (0790d9f)
+=== AGENT HELP ===
+
+OpenClaw 2026.7.1-2 (0790d9f) ÔÇö All your chats, one OpenClaw.
+
+Usage: openclaw agent [options]
+
+Run an agent turn via the Gateway (use --local for embedded)
+
+Options:
+  --agent <id>               Agent id (overrides routing bindings)
+  --channel <channel>        Delivery channel:
+                             last|telegram|whatsapp|discord|irc|googlechat|slack|signal|imessage|feishu|nostr|msteams|mattermost|nextcloud-talk|matrix|raft|line|zalo|clickclack|zalouser|sms|synology-chat|tlon|qa-channel|qqbot|twitch
+                             (omit to use the main session channel)
+  --deliver                  Send the agent's reply back to the selected channel
+                             (default: false)
+  -h, --help                 Display help for command
+  --json                     Output result as JSON (default: false)
+  --local                    Run the embedded agent locally (requires model
+                             provider API keys in your shell) (default: false)
+  -m, --message <text>       Message body for the agent
+  --message-file <path>      Read the agent message body from a UTF-8 file
+  --model <id>               Model override for this run (provider/model or
+                             model id)
+  --reply-account <id>       Delivery account id override
+  --reply-channel <channel>  Delivery channel override (separate from routing)
+  --reply-to <target>        Delivery target override (separate from session
+                             routing)
+  --session-id <id>          Use an explicit session id
+  --session-key <key>        Explicit session key (agent:<id>:<key>, or scoped
+                             to --agent)
+  -t, --to <number>          Recipient number in E.164 used to derive the
+                             session key
+  --thinking <level>         Thinking level: off | minimal | low | medium | high
+                             | xhigh | adaptive | max where supported
+  --timeout <seconds>        Override agent command timeout (seconds, default
+                             600 or config value)
+  --verbose <on|off>         Persist agent verbose level for the session
+
+Examples:
+  openclaw agent --to +15555550123 --message "status update"
+    Start a new session.
+  openclaw agent --agent ops --message "Summarize logs"
+    Use a specific agent.
+  openclaw agent --agent ops --message-file ./task.md
+    Read a multiline message file.
+  openclaw agent --session-key agent:ops:incident-42 --message "Summarize status"
+    Target an exact session key.
+  openclaw agent --session-id 1234 --message "Summarize inbox" --thinking medium
+    Target a session with explicit thinking level.
+  openclaw agent --to +15555550123 --message "Trace logs" --verbose on --json
+    Enable verbose logging and JSON output.
+  openclaw agent --to +15555550123 --message "Summon reply" --deliver
+    Deliver reply.
+  openclaw agent --agent ops --message "Generate report" --deliver --reply-channel slack --reply-to "#reports"
+    Send reply to a different channel/target.
+
+Docs: https://docs.openclaw.ai/cli/agent
+=== CONFIG ===
+{
+  "agents": {
+    "defaults": {
+      "workspace": "C:\\Users\\wi3lk\\.openclaw\\workspace",
+      "model": {
+        "primary": "ollama/d89ftekb7/mistral-nemo-uncensored:12b-q4_0"
+      },
+      "models": {
+        "ollama/d89ftekb7/mistral-nemo-uncensored:12b-q4_0": {}
+      }
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "7fb45000a0e4b576993b895928946fd7532f5129e1f088ca"
+    }
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.7.1-2",
+    "lastTouchedAt": "2026-09-09T14:17:11.691Z"
+  },
+  "models": {
+    "providers": {
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11443",
+        "api": "ollama",
+        "apiKey": "ollama-local"
+      }
+    }
+  }
+}
+
+=== 059A STDOUT ===
+MISSING_059A_STDOUT
+=== 059A STDERR ===
+MISSING_059A_STDERR
+=== 057A STDOUT ===
+MISSING_057A_STDOUT
+=== GATEWAY STATUS ===
+{
+  "cli": {
+    "version": "2026.7.1-2",
+    "entrypoint": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\openclaw.mjs"
+  },
+  "logFile": "D:\\TEMP\\openclaw\\openclaw-2026-09-09.log",
+  "service": {
+    "label": "Scheduled Task",
+    "loaded": true,
+    "loadedText": "registered",
+    "notLoadedText": "missing",
+    "command": {
+      "programArguments": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\index.js",
+        "gateway",
+        "--port",
+        "18789"
+      ],
+      "environment": {
+        "OPENCLAW_GATEWAY_PORT": "18789"
+      },
+      "environmentValueSources": {
+        "TMPDIR": "inline",
+        "OPENCLAW_GATEWAY_PORT": "inline",
+        "OPENCLAW_SYSTEMD_UNIT": "inline",
+        "OPENCLAW_WINDOWS_TASK_NAME": "inline",
+        "OPENCLAW_WINDOWS_TASK_HIDDEN_LAUNCHER": "inline",
+        "OPENCLAW_SERVICE_MARKER": "inline",
+        "OPENCLAW_SERVICE_KIND": "inline",
+        "OPENCLAW_SERVICE_VERSION": "inline"
+      },
+      "sourcePath": "C:\\Users\\wi3lk\\.openclaw\\gateway.cmd"
+    },
+    "runtime": {
+      "status": "running",
+      "pid": 21296,
+      "detail": "Gateway process detected for gateway port 18789.",
+      "state": "Ready",
+      "lastRunTime": "9.09.2026 16:35:53",
+      "lastRunResult": "0"
+    },
+    "configAudit": {
+      "ok": true,
+      "issues": []
+    }
+  },
+  "config": {
+    "cli": {
+      "path": "C:\\Users\\wi3lk\\.openclaw\\openclaw.json",
+      "exists": true,
+      "valid": true
+    },
+    "daemon": {
+      "path": "C:\\Users\\wi3lk\\.openclaw\\openclaw.json",
+      "exists": true,
+      "valid": true
+    }
+  },
+  "gateway": {
+    "bindMode": "loopback",
+    "bindHost": "127.0.0.1",
+    "port": 18789,
+    "portSource": "service args",
+    "probeUrl": "ws://127.0.0.1:18789",
+    "controlUiLinks": {
+      "httpUrl": "http://127.0.0.1:18789/",
+      "wsUrl": "ws://127.0.0.1:18789"
+    },
+    "probeNote": "Loopback-only gateway; only local clients can connect.",
+    "version": "2026.7.1-2"
+  },
+  "port": {
+    "port": 18789,
+    "status": "busy",
+    "listeners": [
+      {
+        "pid": 21296,
+        "address": "127.0.0.1:18789",
+        "command": "node.exe",
+        "commandLine": "\"C:\\Program Files\\nodejs\\node.exe\"  C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\index.js gateway --port 18789"
+      }
+    ],
+    "hints": []
+  },
+  "rpc": {
+    "ok": true,
+    "kind": "connect",
+    "capability": "connected_no_operator_scope",
+    "auth": {
+      "role": "operator",
+      "scopes": [],
+      "capability": "connected_no_operator_scope"
+    },
+    "server": {
+      "version": "2026.7.1-2",
+      "connId": "cb73a3e1-496e-4a4a-93ef-f94d6d951f64"
+    },
+    "version": "2026.7.1-2",
+    "url": "ws://127.0.0.1:18789"
+  },
+  "extraServices": [],
+  "pluginVersionDrift": {
+    "gatewayVersion": "2026.7.1-2",
+    "drifts": []
+  }
+}
+V422_060A_DIAGNOSTIC=PASS
+
+V422_060A_TEST=PASS
+
