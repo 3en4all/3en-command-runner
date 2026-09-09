@@ -18,13 +18,13 @@
                       "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
                       "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
                       "processedRevision":  "",
-                      "status":  "RUNNING",
+                      "status":  "RETRY_PENDING",
                       "attempts":  12,
-                      "lastError":  "",
-                      "nextRetryUtc":  "2026-09-09T23:34:33.6490567Z",
+                      "lastError":  "RUNNER_EXIT_4",
+                      "nextRetryUtc":  "2026-09-09T23:40:01.3451979Z",
                       "runnerPid":  null,
-                      "lastExitCode":  2,
-                      "updatedUtc":  "2026-09-09T23:34:41.4278086Z"
+                      "lastExitCode":  4,
+                      "updatedUtc":  "2026-09-09T23:35:48.3022834Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,7 +39,7 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T23:34:54.6090840Z"
+                      "updatedUtc":  "2026-09-09T23:35:56.1718121Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -48,14 +48,14 @@
                       "pointerRevision":  "v456-057v-r1-1f0afc8a",
                       "pointerProject":  "project-v456.json",
                       "processedRevision":  "2026-09-10T01:27:00+02:00-v451-057q2-read-diagnostic",
-                      "status":  "RETRY_PENDING",
-                      "attempts":  1,
-                      "lastError":  "RUNNER_EXIT_2",
+                      "status":  "RUNNING",
+                      "attempts":  2,
+                      "lastError":  "",
                       "nextRetryUtc":  "2026-09-09T23:35:21.7353445Z",
                       "runnerPid":  null,
                       "lastExitCode":  2,
-                      "updatedUtc":  "2026-09-09T23:34:51.7368598Z"
+                      "updatedUtc":  "2026-09-09T23:35:24.9130694Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T23:34:55.8010643Z"
+    "updatedUtc":  "2026-09-09T23:36:01.4527504Z"
 }
