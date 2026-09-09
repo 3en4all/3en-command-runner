@@ -25,11 +25,18 @@ function Discover-Monitor{
   foreach($r in $roots){Get-ChildItem $r -File -Recurse -ErrorAction SilentlyContinue|Where-Object{$_.Name -match '(?i)3en.*(security|threat|monitor)|(security|threat).*3en' -and $_.Extension -in @('.ps1','.py','.exe','.json')}|Select-Object -First 50|ForEach-Object{[void]$hits.Add($_.FullName)}}
   return @($hits|Select-Object -Unique)
 }
+function Get-ManagementMode{
+  $rp='C:\3EN-Agent\router-pihole-final\state.json'
+  if(-not(Test-Path $rp)){return 'DEGRADED_READ_ONLY'}
+  try{$x=Get-Content $rp -Raw|ConvertFrom-Json;if([bool]$x.piSsh -and $x.piKey){return 'FULL'}}catch{}
+  return 'DEGRADED_READ_ONLY'
+}
 function Do-Discover{
   $py=Find-Python;if(-not $py){throw 'Python 3 not found after local environment audit'}
   $rp='C:\3EN-Agent\router-pihole-final\state.json';$rpok=$false;if(Test-Path $rp){try{$x=Get-Content $rp -Raw|ConvertFrom-Json;$rpok=[bool]$x.piholeDns}catch{}}
-  $s=[pscustomobject][ordered]@{updatedUtc=$null;python=$py;monitorCandidates=@(Discover-Monitor);routerPiState=$rp;routerPiReady=$rpok;ui=$UiUrl;backup=$null;deployed=$false;filtersApplied=$false;taskCreated=$false}
-  Save $s;Write-Host ('PRIVACY_DISCOVERY=PASS;PYTHON='+$py+';MONITOR_CANDIDATES='+@($s.monitorCandidates).Count+';ROUTER_PI_READY='+$rpok)
+  $mode=Get-ManagementMode
+  $s=[pscustomobject][ordered]@{updatedUtc=$null;python=$py;monitorCandidates=@(Discover-Monitor);routerPiState=$rp;routerPiReady=$rpok;ui=$UiUrl;backup=$null;deployed=$false;filtersApplied=$false;managementMode=$mode;taskCreated=$false}
+  Save $s;Write-Host ('PRIVACY_DISCOVERY=PASS;PYTHON='+$py+';MONITOR_CANDIDATES='+@($s.monitorCandidates).Count+';ROUTER_PI_READY='+$rpok+';MANAGEMENT_MODE='+$mode)
 }
 function Do-Deploy{
   if(-not(Test-Path $State)){Do-Discover};$s=Load
@@ -45,7 +52,7 @@ function Do-Deploy{
   Get-CimInstance Win32_Process -ErrorAction SilentlyContinue|Where-Object{$_.CommandLine -and $_.CommandLine -like '*3en-security-privacy-web.py*'}|ForEach-Object{Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue}
   Start-Process -FilePath ([string]$s.python) -ArgumentList @($UiPy) -WindowStyle Hidden
   Start-Sleep 3
-  $s.backup=$bk;$s.deployed=$true;$s.taskCreated=$true;Save $s;Write-Host ('PRIVACY_GUI_DEPLOY=PASS;URL='+$UiUrl)
+  $s.backup=$bk;$s.deployed=$true;$s.taskCreated=$true;$s.managementMode=Get-ManagementMode;Save $s;Write-Host ('PRIVACY_GUI_DEPLOY=PASS;URL='+$UiUrl+';MANAGEMENT_MODE='+$s.managementMode)
 }
 function Do-Test{
   $s=Load
@@ -55,12 +62,17 @@ function Do-Test{
   $h=Invoke-WebRequest -UseBasicParsing -Uri $UiUrl -TimeoutSec 10
   if($h.Content -notmatch '3EN Security'){throw 'GUI HTML validation failed'}
   $t=Get-ScheduledTask -TaskName $TaskName -ErrorAction Stop;if($t.State -eq 'Disabled'){throw 'GUI scheduled task disabled'}
-  Write-Host ('PRIVACY_GUI_TEST=PASS;SEC_EVENTS='+$r.security.total+';GRAVITY='+$r.pihole.gravity)
+  Write-Host ('PRIVACY_GUI_TEST=PASS;SEC_EVENTS='+$r.security.total+';GRAVITY='+$r.pihole.gravity+';MANAGEMENT_MODE='+(Get-ManagementMode))
 }
 function Do-Filters{
   $s=Load
   if(-not $s.deployed){Do-Deploy;$s=Load}
-  $before=Invoke-RestMethod -Uri ($UiUrl+'/api/status') -TimeoutSec 12
+  $mode=Get-ManagementMode
+  if($mode -ne 'FULL'){
+    $s.filtersApplied=$false;$s.managementMode=$mode;Save $s
+    Write-Host 'PRIVACY_FILTER_POLICY=SKIPPED_DEGRADED;MANAGEMENT_MODE=DEGRADED_READ_ONLY;REASON=PIHOLE_SSH_NOT_AVAILABLE'
+    return
+  }
   $body=@{action='apply_policy'}|ConvertTo-Json
   Invoke-RestMethod -Method Post -Uri ($UiUrl+'/api/action') -ContentType 'application/json' -Body $body -TimeoutSec 240|Out-Null
   Start-Sleep 2
@@ -71,13 +83,15 @@ function Do-Filters{
   $urls=@($lists.items|Select-Object -Expand address)
   if($urls -notcontains 'https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/pro.txt'){throw 'HaGeZi Pro missing'}
   if($urls -notcontains 'https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/tif.txt'){throw 'HaGeZi TIF missing'}
-  $s.filtersApplied=$true;Save $s;Write-Host ('PRIVACY_FILTER_POLICY=PASS;GRAVITY='+$after.pihole.gravity+';ADLISTS='+$after.pihole.adlists)
+  $s.filtersApplied=$true;$s.managementMode='FULL';Save $s;Write-Host ('PRIVACY_FILTER_POLICY=PASS;GRAVITY='+$after.pihole.gravity+';ADLISTS='+$after.pihole.adlists)
 }
 function Do-Final{
   Do-Test;$s=Load
   $st=Invoke-RestMethod -Uri ($UiUrl+'/api/status') -TimeoutSec 12
-  if(-not $s.filtersApplied){throw 'recommended filter policy not applied'}
-  $report=@('3EN SECURITY & PRIVACY STACK FINAL','UTC='+((Get-Date).ToUniversalTime().ToString('o')),'UI='+$UiUrl,'ROUTER='+$st.router.ok,'PIHOLE_DNS='+$st.pihole.dns,'FILTERING='+$st.pihole.blocking,'GRAVITY='+$st.pihole.gravity,'ADLISTS='+$st.pihole.adlists,'SECURITY_EVENTS='+$st.security.total,'FINAL_STATUS=SUCCESS')
+  $mode=Get-ManagementMode
+  $final='SUCCESS';$filterState='APPLIED'
+  if($mode -ne 'FULL'){$final='SUCCESS_DEGRADED_READ_ONLY';$filterState='PENDING_MANAGEMENT_SSH'}elseif(-not $s.filtersApplied){throw 'recommended filter policy not applied'}
+  $report=@('3EN SECURITY & PRIVACY STACK FINAL','UTC='+((Get-Date).ToUniversalTime().ToString('o')),'UI='+$UiUrl,'ROUTER='+$st.router.ok,'PIHOLE_DNS='+$st.pihole.dns,'FILTERING='+$st.pihole.blocking,'GRAVITY='+$st.pihole.gravity,'ADLISTS='+$st.pihole.adlists,'SECURITY_EVENTS='+$st.security.total,'MANAGEMENT_MODE='+$mode,'FILTER_POLICY='+$filterState,'FINAL_STATUS='+$final)
   $report|Set-Content (Join-Path $Work 'FINAL-REPORT.txt') -Encoding UTF8;$report|ForEach-Object{Write-Host $_}
 }
 function Do-Rollback{
