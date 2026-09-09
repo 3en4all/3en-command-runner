@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-10-057y",
+  "title":"OpenClaw model-free direct exec acceptance",
+  "description":"Verify Gateway /tools/invoke without an LLM turn, invoke the documented exec tool directly against a controlled local file, verify exact bytes and independent health, and rollback automatically on failure.",
+  "risk":"medium",
+  "backup":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/5bd9faedbf94a43c8e78751c0779b070439c751c/scripts/openclaw-direct-exec-057y.ps1';$d='C:/3EN-Agent/openclaw-direct-exec-057y.ps1';Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d -Phase Backup",
+  "script":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/openclaw-direct-exec-057y.ps1 -Phase Execute",
+  "test":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/openclaw-direct-exec-057y.ps1 -Phase Test",
+  "rollback":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/openclaw-direct-exec-057y.ps1 -Phase Rollback"
+}
