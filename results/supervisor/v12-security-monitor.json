@@ -1,12 +1,12 @@
 {
     "lane":  "security-monitor",
-    "pointerRevision":  "",
+    "pointerRevision":  "bootstrap-0",
     "pointerProject":  "",
     "processedRevision":  "",
-    "status":  "NEW",
+    "status":  "IDLE",
     "attempts":  0,
     "lastError":  "",
     "nextRetryUtc":  "",
     "lastExitCode":  null,
-    "updatedUtc":  "2026-09-09T22:10:56.6990232Z"
+    "updatedUtc":  "2026-09-09T22:11:16.2323496Z"
 }
