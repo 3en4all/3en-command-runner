@@ -4,7 +4,7 @@
     "pointerRevision":  "2026-09-10T01:27:00+02:00-v451-057q2-read-diagnostic",
     "pointerProject":  "project-v451.json",
     "processedRevision":  "2026-09-10T01:17:00+02:00-v449-runner-pipeline-isolation",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
@@ -13,5 +13,5 @@
     "lastExitCode":  null,
     "workerPid":  31120,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T23:07:24.5940692Z"
+    "updatedUtc":  "2026-09-09T23:07:26.3255968Z"
 }
