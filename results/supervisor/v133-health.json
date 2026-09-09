@@ -24,7 +24,7 @@
                       "nextRetryUtc":  "2026-09-09T23:13:23.0054572Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "updatedUtc":  "2026-09-09T23:11:42.3821130Z"
+                      "updatedUtc":  "2026-09-09T23:12:43.3428119Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,7 +39,7 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T23:11:46.8322908Z"
+                      "updatedUtc":  "2026-09-09T23:12:47.8181129Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -49,13 +49,13 @@
                       "pointerProject":  "project-v453.json",
                       "processedRevision":  "2026-09-10T01:27:00+02:00-v451-057q2-read-diagnostic",
                       "status":  "RETRY_PENDING",
-                      "attempts":  1,
+                      "attempts":  2,
                       "lastError":  "The property \u0027path\u0027 cannot be found on this object. Verify that the property exists.",
-                      "nextRetryUtc":  "2026-09-09T23:12:14.3458369Z",
+                      "nextRetryUtc":  "2026-09-09T23:13:17.0804946Z",
                       "runnerPid":  null,
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T23:11:44.3458369Z"
+                      "updatedUtc":  "2026-09-09T23:12:48.5822160Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T23:11:53.1906065Z"
+    "updatedUtc":  "2026-09-09T23:12:58.5558885Z"
 }
