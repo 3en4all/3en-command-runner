@@ -1,0 +1,17 @@
+{
+  "projectId": "2026-09-09-v403-resume-verdict-hardening-r4",
+  "policy": {
+    "showErrors": false,
+    "maxAttempts": 1,
+    "publishRetries": 3,
+    "autoRollbackOnFinalFailure": true,
+    "highRiskAction": "reject"
+  },
+  "chapters": [
+    {
+      "id": "2026-09-09-052d",
+      "path": "tasks/2026-09-09-052d.json",
+      "expectedStatus": "SUCCESS"
+    }
+  ]
+}
