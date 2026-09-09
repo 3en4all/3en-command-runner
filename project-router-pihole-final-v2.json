@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "projectId": "2026-09-09-router-pihole-final-v2",
+  "title": "3EN002 + Pi-hole end-to-end integration finalization v2",
+  "description": "Retry of the autonomous OpenWrt 3EN002 and Pi-hole integration after fixing native ssh/scp argument splatting. Runs the complete five-chapter chain from discovery through final acceptance.",
+  "repo": "3en4all/3en-command-runner",
+  "branch": "main",
+  "policy": {
+    "defaultApproval": "approve",
+    "maxAttempts": 2,
+    "showErrors": false,
+    "autoRollbackOnFinalFailure": true,
+    "continueOnFailure": false,
+    "publishRetries": 3
+  },
+  "chapters": [
+    {"id":"router-pihole-001-discovery","path":"tasks/router-pihole-001-discovery.json","approval":"approve","maxAttempts":2},
+    {"id":"router-pihole-002-backup","path":"tasks/router-pihole-002-backup.json","approval":"approve","maxAttempts":2},
+    {"id":"router-pihole-003-dns","path":"tasks/router-pihole-003-dns.json","approval":"approve","maxAttempts":2},
+    {"id":"router-pihole-004-logging","path":"tasks/router-pihole-004-logging.json","approval":"approve","maxAttempts":2},
+    {"id":"router-pihole-005-final","path":"tasks/router-pihole-005-final.json","approval":"approve","maxAttempts":2}
+  ]
+}
