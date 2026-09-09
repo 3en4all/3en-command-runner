@@ -1,0 +1,17 @@
+HEALTH=FAIL listenPort=8088 expectedPort=8099
+V447_057O2_BACKUP=PASS root=C:/3EN-Agent/workbench/admin-057o2 baselineExit=42
+
+V447_057O2_AGENT_EXIT=0
+V447_057O2_AGENT_OUTPUT=The content has been successfully written to the file `output.txt`. Let me know if you need anything else!
+V447_057O2_AGENT=PASS session=3en-057o2-admin-c9a6e05747f245589cb01123311e2df8
+
+057O2_OPENCLAW_BACKUP_MISSING
+At line:1 char:410
++ ... not(Test-Path $before)){throw '057O2_OPENCLAW_BACKUP_MISSING'};if(-no ...
++                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (057O2_OPENCLAW_BACKUP_MISSING:String) [], RuntimeException
+    + FullyQualifiedErrorId : 057O2_OPENCLAW_BACKUP_MISSING
+ 
+
+V447_057O2_ROLLBACK=PASS_CONFIG_RESTORED
+
