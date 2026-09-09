@@ -13,17 +13,41 @@ $Hashes=Join-Path $Root 'immutable-hashes.json'
 $AgentRaw=Join-Path $Root 'openclaw-write-raw.txt'
 $Verification=Join-Path $Root 'independent-verification.json'
 
+function Test-DesiredConfig {
+    param([string]$Path)
+    try {
+        $c=Get-Content $Path -Raw | ConvertFrom-Json
+        return ([string]$c.service -eq '3EN-DemoCollector' -and [int]$c.listenPort -eq 8099 -and [int]$c.expectedPort -eq 8099 -and [bool]$c.enabled -and [string]$c.drill -eq 'v455-executor-only')
+    } catch { return $false }
+}
+
 function Invoke-OpenClawWrite {
     param([string]$ExactContent)
-    $session='3en-057u-write-'+[guid]::NewGuid().ToString('N')
-    $prompt="EXECUTOR-ONLY JOB. Do not diagnose, explain, plan, read, browse, or create skills. Perform exactly one operation: use the write tool to replace exactly C:/3EN-Agent/workbench/admin-057u/service-config.json with exactly the content between BEGIN_CONTENT and END_CONTENT. Do not modify or create any other file. BEGIN_CONTENT`n$ExactContent`nEND_CONTENT"
-    $raw=@(& openclaw.cmd agent --session-key $session --message $prompt --json --timeout 180 2>&1)
-    $ec=$LASTEXITCODE
-    $rawText=($raw|ForEach-Object{[string]$_}) -join [Environment]::NewLine
-    $rawText|Set-Content $AgentRaw -Encoding UTF8
-    Write-Output ('V455_057U_OPENCLAW_EXIT='+$ec)
-    Write-Output ('V455_057U_OPENCLAW_SESSION='+$session)
-    if($ec -ne 0){throw ('057U_OPENCLAW_EXIT_'+$ec)}
+    $allRaw=@()
+    for($attempt=1;$attempt -le 3;$attempt++){
+        $session='3en-057u-write-'+$attempt+'-'+[guid]::NewGuid().ToString('N')
+        if($attempt -eq 1){
+            $prompt='EXECUTOR ONLY. Use the write tool exactly once. Replace the entire file C:/3EN-Agent/workbench/admin-057u/service-config.json with this exact single-line JSON and nothing else: '+$ExactContent
+        } elseif($attempt -eq 2){
+            $prompt='NO ANALYSIS. NO PLACEHOLDERS. WRITE TOOL ONLY. Target: C:/3EN-Agent/workbench/admin-057u/service-config.json. The COMPLETE literal file content is exactly: '+$ExactContent+' Do not write words such as CONTENT, BEGIN, END, ellipsis, markdown, or explanation.'
+        } else {
+            $prompt='Perform one filesystem write. Path C:/3EN-Agent/workbench/admin-057u/service-config.json. Exact bytes as UTF-8 text: '+$ExactContent
+        }
+        $raw=@(& openclaw.cmd agent --session-key $session --message $prompt --json --timeout 180 2>&1)
+        $ec=$LASTEXITCODE
+        $rawText=($raw|ForEach-Object{[string]$_}) -join [Environment]::NewLine
+        $allRaw += ('=== ATTEMPT '+$attempt+' SESSION '+$session+' EXIT '+$ec+' ===')
+        $allRaw += $rawText
+        Write-Output ('V455_057U_OPENCLAW_ATTEMPT='+$attempt+';EXIT='+$ec+';SESSION='+$session)
+        if($ec -eq 0 -and (Test-DesiredConfig -Path $Config)){
+            $allRaw|Set-Content $AgentRaw -Encoding UTF8
+            Write-Output ('V455_057U_OPENCLAW_WRITE_VERIFIED=PASS;ATTEMPT='+$attempt)
+            return
+        }
+        Write-Output ('V455_057U_OPENCLAW_WRITE_VERIFIED=FAIL;ATTEMPT='+$attempt+';AUTO_REPAIR=RETRY_EXACT_WRITE')
+    }
+    $allRaw|Set-Content $AgentRaw -Encoding UTF8
+    throw '057U_OPENCLAW_EXACT_WRITE_FAILED_AFTER_3_ATTEMPTS'
 }
 
 switch($Phase){
@@ -72,23 +96,12 @@ switch($Phase){
     $before=Get-Content $Config -Raw|ConvertFrom-Json
     if([int]$before.listenPort -ne 8088 -or [int]$before.expectedPort -ne 8099){throw '057U_UNEXPECTED_BASELINE'}
 
-    # The decision is already made by the upstream assistant/job contract.
-    # OpenClaw receives no diagnosis task: it is only the physical WRITE executor.
-    $desired=([ordered]@{
-        service='3EN-DemoCollector'
-        listenPort=8099
-        expectedPort=8099
-        enabled=$true
-        drill='v455-executor-only'
-    }|ConvertTo-Json).Trim()
-
+    # Upstream assistant/job contract already made the decision.
+    # OpenClaw receives only exact deterministic WRITE instructions.
+    $desired='{"service":"3EN-DemoCollector","listenPort":8099,"expectedPort":8099,"enabled":true,"drill":"v455-executor-only"}'
     Invoke-OpenClawWrite -ExactContent $desired
 
-    if(-not(Test-Path $Config)){throw '057U_EXECUTOR_TARGET_MISSING'}
-    $after=Get-Content $Config -Raw|ConvertFrom-Json
-    if([int]$after.listenPort -ne 8099 -or [int]$after.expectedPort -ne 8099 -or -not [bool]$after.enabled -or [string]$after.drill -ne 'v455-executor-only'){
-        throw '057U_EXECUTOR_WRITE_NOT_OBSERVED'
-    }
+    if(-not(Test-DesiredConfig -Path $Config){throw '057U_EXECUTOR_WRITE_NOT_OBSERVED'})
     Write-Output 'V455_057U_EXECUTOR_WRITE=PASS physicalFileStateObserved=true'
 }
 'Test'{
