@@ -1,0 +1,12 @@
+BACKUP_ROOT=C:\3EN-Agent\backups\016\20260909-125409
+BACKUP_016_READY
+Copy-Item : Nie można odnaleźć części ścieżki „C:\3EN-Agent\backups\016\20260909-125409\C_\3EN-Agent\runs\20260909-1254
+09-2026-09-09-016\task.json”.
+At line:1 char:2145
++ ... :\/]','_'); Copy-Item -LiteralPath $f.FullName -Destination (Join-Pat ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Copy-Item], DirectoryNotFoundException
+    + FullyQualifiedErrorId : System.IO.DirectoryNotFoundException,Microsoft.PowerShell.Commands.CopyItemCommand
+ 
+
+READ-ONLY DISCOVERY TASK: no rollback required; backup copies only.
