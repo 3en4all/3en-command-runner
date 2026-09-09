@@ -1,34 +1,9 @@
 {
-  "id": "2026-09-09-019b",
-  "title": "Build 3EN Agent Runner v3.6 side-by-side",
-  "description": "Create Runner v3.6 from the active v3.5 source without replacing or restarting the active runner. Patch terminal-state persistence so SUCCESS, FAILED_BACKUP, FAILED_SCRIPT and FAILED_TEST are all recorded with ID+SHA+status, preventing automatic re-execution of an identical failed task. Add explicit retry metadata support while preserving manual approval. Syntax-validate and statically verify the new file. No active process switch occurs in this task.",
-  "backup": "$ErrorActionPreference='Stop'; $src='C:\\3EN-Agent\\3en-agent-runner-v3.5.ps1'; if(-not(Test-Path -LiteralPath $src)){throw 'Expected v3.5 source missing'}; $stamp=Get-Date -Format 'yyyyMMdd-HHmmss'; $b=Join-Path 'C:\\3EN-Agent\\backups\\019b' $stamp; New-Item -ItemType Directory -Force -Path $b|Out-Null; Copy-Item -LiteralPath $src -Destination (Join-Path $b '3en-agent-runner-v3.5.ps1') -Force; Set-Content -LiteralPath 'C:\\3EN-Agent\\backup-019b-current.txt' -Value $b -Encoding UTF8; Write-Host ('SOURCE_SHA256='+(Get-FileHash -LiteralPath $src -Algorithm SHA256).Hash); Write-Host ('BACKUP_ROOT='+$b); Write-Host 'BACKUP_019B_READY'",
-  "script": "$ErrorActionPreference='Stop'; $src='C:\\3EN-Agent\\3en-agent-runner-v3.5.ps1'; $dst='C:\\3EN-Agent\\3en-agent-runner-v3.6.ps1'; $c=Get-Content -LiteralPath $src -Raw -Encoding UTF8; $c=$c -replace '# 3EN Agent Runner v3\\.5','# 3EN Agent Runner v3.6'; $c=$c -replace '3EN Agent Runner v3\\.5 started\\.','3EN Agent Runner v3.6 started.'; $c=$c -replace '3EN AGENT v3\\.5 - NEW TASK','3EN AGENT v3.6 - NEW TASK'; $old=@'function Save-State([string]$Id,[string]$Hash) {
-    Log 'FINALIZE 1/4: saving state'
-    [ordered]@{lastExecutedId=$Id;lastExecutedHash=$Hash;updatedUtc=(Get-Date).ToUniversalTime().ToString('o')} |
-        ConvertTo-Json | Set-Content -LiteralPath $StateFile -Encoding UTF8
-    Log 'FINALIZE 1/4: state saved'
-}'@; $new=@'function Save-State([string]$Id,[string]$Hash,[string]$Status) {
-    Log 'FINALIZE 1/4: saving state'
-    [ordered]@{lastExecutedId=$Id;lastExecutedHash=$Hash;lastTerminalStatus=$Status;updatedUtc=(Get-Date).ToUniversalTime().ToString('o')} |
-        ConvertTo-Json | Set-Content -LiteralPath $StateFile -Encoding UTF8
-    Log ("FINALIZE 1/4: state saved status="+$Status)
-}'@; if(-not $c.Contains($old)){throw 'Save-State block signature not found'}; $c=$c.Replace($old,$new); $old2=@'        if($state.lastExecutedId -eq [string]$task.id -and $state.lastExecutedHash -eq $hash){
-            Log "No new task. ID=$($task.id)"
-        } else {'@; $new2=@'        $retryRequested=$false
-        if($task.PSObject.Properties.Name.Contains('retry')){$retryRequested=[bool]$task.retry}
-        if($state.lastExecutedId -eq [string]$task.id -and $state.lastExecutedHash -eq $hash -and -not $retryRequested){
-            $s=if($state.PSObject.Properties.Name.Contains('lastTerminalStatus')){[string]$state.lastTerminalStatus}else{'UNKNOWN'}
-            Log ("No new task. ID=$($task.id) terminalStatus=$s")
-        } else {'@; if(-not $c.Contains($old2)){throw 'Task decision block not found'}; $c=$c.Replace($old2,$new2); $old3=@'                if($overall-eq'SUCCESS'){
-                    Save-State ([string]$task.id) $hash
-                    $state=Load-State
-                }
-
-                Publish-Run ([string]$task.id) $stamp $resultFile $transcript'@; $new3=@'                Save-State ([string]$task.id) $hash $overall
-                $state=Load-State
-
-                Publish-Run ([string]$task.id) $stamp $resultFile $transcript'@; if(-not $c.Contains($old3)){throw 'Terminal Save-State block not found'}; $c=$c.Replace($old3,$new3); Set-Content -LiteralPath $dst -Value $c -Encoding UTF8; Write-Host ('V36_PATH='+$dst); Write-Host ('V36_SHA256='+(Get-FileHash -LiteralPath $dst -Algorithm SHA256).Hash); Write-Host 'V36_BUILD_COMPLETE'",
-  "test": "$ErrorActionPreference='Stop'; $f='C:\\3EN-Agent\\3en-agent-runner-v3.6.ps1'; if(-not(Test-Path -LiteralPath $f)){throw 'v3.6 file missing'}; $tokens=$null;$errs=$null; [System.Management.Automation.Language.Parser]::ParseFile($f,[ref]$tokens,[ref]$errs)|Out-Null; if(@($errs).Count -gt 0){$errs|ForEach-Object{Write-Host ('SYNTAX='+$_.Message)}; throw ('v3.6 syntax errors='+@($errs).Count)}; $c=Get-Content -LiteralPath $f -Raw; foreach($m in @('3EN Agent Runner v3.6','lastTerminalStatus','Save-State ([string]$task.id) $hash $overall','retryRequested','terminalStatus=')){if($c -notmatch [regex]::Escape($m)){throw ('Missing v3.6 marker: '+$m)}}; if($c -match "if\\(\\$overall-eq'SUCCESS'\\)\\{\\s*Save-State"){throw 'Old success-only state persistence still present'}; Write-Host 'SYNTAX_ERROR_COUNT=0'; Write-Host 'LOOP_FIX_STATIC_VALIDATION=PASS'; Write-Host ('V36_SIZE='+(Get-Item -LiteralPath $f).Length); Write-Host 'VALIDATION_019B=PASS'",
-  "rollback": "$ErrorActionPreference='Continue'; $f='C:\\3EN-Agent\\3en-agent-runner-v3.6.ps1'; if(Test-Path -LiteralPath $f){Remove-Item -LiteralPath $f -Force; Write-Host 'V36_REMOVED=TRUE'}; Write-Host 'ACTIVE_V35_WAS_NOT_MODIFIED'"
+  "id": "2026-09-09-019a",
+  "title": "HOLD - last completed task",
+  "description": "Safety hold. Matches the last successfully completed task ID so the active v3.5 runner treats this as already processed while 019b is reviewed.",
+  "backup": "Write-Host 'HOLD: no action.'",
+  "script": "Write-Host 'HOLD: no action.'",
+  "test": "Write-Host 'HOLD: no action.'",
+  "rollback": "Write-Host 'HOLD: no action.'"
 }
