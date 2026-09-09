@@ -1,0 +1,12 @@
+V403_RESUME_SENTINEL_BACKUP=PASS
+
+EXPECTED_RESUME_SENTINEL_FAILURE
+At line:1 char:1
++ throw 'EXPECTED_RESUME_SENTINEL_FAILURE'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (EXPECTED_RESUME_SENTINEL_FAILURE:String) [], RuntimeException
+    + FullyQualifiedErrorId : EXPECTED_RESUME_SENTINEL_FAILURE
+ 
+
+V403_RESUME_SENTINEL_ROLLBACK=PASS
+
