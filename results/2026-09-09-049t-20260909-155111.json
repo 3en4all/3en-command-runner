@@ -1,0 +1,20 @@
+{
+    "projectId":  "2026-09-09-v413-openclaw-recovery",
+    "chapterId":  "2026-09-09-049t",
+    "risk":  "medium",
+    "status":  "FAILED",
+    "stage":  "TERMINAL",
+    "attempts":  0,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "FAILED",
+                      "error":  "Nie można odnaleźć części ścieżki „C:\\3EN-Agent\\openclaw-bridge\\openclaw-config-before-049t\\openclaw-config-before-049s\\openclaw-config-before-049r\\tools\\node\\npm\\node_modules\\@steipete\\oracle\\node_modules\\toasted-notifier\\vendor\\mac.noindex\\terminal-notifier.app\\Contents\\MacOS\\terminal-notifier”."
+                  },
+                  {
+                      "name":  "ROLLBACK",
+                      "status":  "OK",
+                      "error":  null
+                  }
+              ]
+}
