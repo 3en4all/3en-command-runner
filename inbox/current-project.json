@@ -1,6 +1,6 @@
 {
   "schemaVersion":1,
-  "revision":"2026-09-09T23:46:00+02:00-multiproject-supervisor-v1",
+  "revision":"2026-09-10T00:02:00+02:00-multiproject-supervisor-v1.1",
   "enabled":true,
-  "projectPath":"project-multiproject-supervisor-v1.json"
+  "projectPath":"project-multiproject-supervisor-v1.1.json"
 }
