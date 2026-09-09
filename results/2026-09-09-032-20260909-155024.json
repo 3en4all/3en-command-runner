@@ -1,0 +1,27 @@
+{
+    "projectId":  "2026-09-09-v3101-full-regression",
+    "chapterId":  "2026-09-09-032",
+    "expectedStatus":  "SUCCESS",
+    "status":  "SUCCESS",
+    "attempts":  1,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "failureClass":  "NONE",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "OK",
+                      "failureClass":  "NONE",
+                      "error":  null
+                  },
+                  {
+                      "name":  "TEST_1",
+                      "status":  "OK",
+                      "failureClass":  "NONE",
+                      "error":  null
+                  }
+              ]
+}
