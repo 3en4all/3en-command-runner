@@ -1,9 +1,9 @@
 {
     "schemaVersion":  3,
     "version":  "1.2",
-    "status":  "RUNNING",
-    "activeLane":  "openclaw",
-    "activeProject":  "project-v444.json",
+    "status":  "IDLE",
+    "activeLane":  "",
+    "activeProject":  "",
     "pid":  35440,
     "runner":  "C:\\3EN-Agent\\3en-agent-runner-v4.0.3.ps1",
     "pollSeconds":  15,
@@ -39,13 +39,13 @@
                       "pointerRevision":  "2026-09-10T00:10:30+02:00-v444-057m-v11-requeue",
                       "pointerProject":  "project-v444.json",
                       "processedRevision":  "",
-                      "status":  "RUNNING",
+                      "status":  "RETRY_PENDING",
                       "attempts":  3,
-                      "lastError":  "",
-                      "nextRetryUtc":  "2026-09-09T22:13:26.3443205Z",
+                      "lastError":  "RUNNER_EXIT_1",
+                      "nextRetryUtc":  "2026-09-09T22:15:46.1559067Z",
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-09T22:13:40.5112624Z"
+                      "updatedUtc":  "2026-09-09T22:13:46.1575252Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T22:13:40.5158010Z"
+    "updatedUtc":  "2026-09-09T22:13:46.1610581Z"
 }
