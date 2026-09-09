@@ -1,0 +1,17 @@
+[
+    {
+        "name":  "BACKUP",
+        "status":  "OK",
+        "error":  null
+    },
+    {
+        "name":  "SCRIPT",
+        "status":  "FAILED",
+        "error":  "Exception calling \"Create\" with \"1\" argument(s): \"At line:1 char:973\r\n+ ... oject must contain 10 chapters\u0027};$oldPid=$PID;$helperText=@\"`n`$Error ...\r\n+                                                                 ~\nNo characters are allowed after a here-string header but before the end of the line.\""
+    },
+    {
+        "name":  "ROLLBACK",
+        "status":  "OK",
+        "error":  null
+    }
+]
