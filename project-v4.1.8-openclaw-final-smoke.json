@@ -1,0 +1,9 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-09-v418-openclaw-final-smoke",
+  "title":"3EN v4.1.8 OpenClaw corrected end-to-end smoke",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[
+    {"id":"2026-09-09-055w","path":"tasks/2026-09-09-055w.json","expectedStatus":"SUCCESS"}
+  ]
+}
