@@ -1,12 +1,12 @@
 {
     "lane":  "openclaw",
-    "pointerRevision":  "2026-09-10T00:10:30+02:00-v444-057m-v11-requeue",
-    "pointerProject":  "project-v444.json",
+    "pointerRevision":  "2026-09-10T00:35:00+02:00-v444b-057m2-observable",
+    "pointerProject":  "project-v444b.json",
     "processedRevision":  "",
-    "status":  "RETRY_PENDING",
-    "attempts":  6,
-    "lastError":  "RUNNER_EXIT_-1",
+    "status":  "SYNCING",
+    "attempts":  7,
+    "lastError":  "",
     "nextRetryUtc":  "2026-09-09T22:40:06.2988846Z",
     "lastExitCode":  -1,
-    "updatedUtc":  "2026-09-09T22:35:06.3003947Z"
+    "updatedUtc":  "2026-09-09T22:40:07.6930738Z"
 }
