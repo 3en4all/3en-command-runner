@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-039",
+  "title":"QUEUE TEST 09/10 - REJECTED terminal path",
+  "description":"Automated queue validation chapter 9 of 10. USER ACTION FOR THIS TEST: press N at the approval prompt. The script must not run. Queue controller should advance after v3.6 persists REJECTED.",
+  "backup":"Write-Host 'QUEUE039_BACKUP_SHOULD_NOT_RUN_ON_REJECT'",
+  "script":"throw 'QUEUE039_SCRIPT_EXECUTED_BUT_SHOULD_HAVE_BEEN_REJECTED'",
+  "test":"throw 'QUEUE039_TEST_EXECUTED_BUT_SHOULD_HAVE_BEEN_REJECTED'",
+  "rollback":"Write-Host 'QUEUE039_ROLLBACK_NOT_REQUIRED'"
+}
