@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "projectId": "2026-09-09-v39-autonomy-acceptance",
+  "description": "Autonomous acceptance of declarative rejection, self-healing recovery, resume-safe execution and hidden technical errors.",
+  "branch": "main",
+  "policy": {
+    "defaultApproval": "approve",
+    "maxAttempts": 2,
+    "autoRollbackOnFinalFailure": true,
+    "continueOnFailure": true,
+    "showErrors": false
+  },
+  "chapters": [
+    {
+      "id": "2026-09-09-039",
+      "path": "tasks/2026-09-09-039.json",
+      "approval": "reject",
+      "expectedStatus": "REJECTED"
+    },
+    {
+      "id": "2026-09-09-040",
+      "path": "tasks/2026-09-09-040.json",
+      "approval": "approve",
+      "expectedStatus": "SUCCESS"
+    },
+    {
+      "id": "2026-09-09-041",
+      "path": "tasks/2026-09-09-041.json",
+      "approval": "approve",
+      "maxAttempts": 2,
+      "expectedStatus": "SUCCESS_RECOVERED"
+    }
+  ]
+}
