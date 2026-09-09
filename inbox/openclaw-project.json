@@ -1,6 +1,6 @@
 {
   "schemaVersion":1,
-  "revision":"2026-09-09T21:01:00+02:00-v442-qwen-native-tool-diagnostic",
+  "revision":"2026-09-09T21:27:00+02:00-v443-native-tool-model-audit",
   "enabled":true,
-  "projectPath":"project-v442.json"
+  "projectPath":"project-v443.json"
 }
