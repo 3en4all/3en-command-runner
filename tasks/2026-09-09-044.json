@@ -1,0 +1,9 @@
+{
+  "id": "2026-09-09-044",
+  "title": "v4.0 high-risk automatic rejection acceptance",
+  "risk": "high",
+  "backup": "Write-Output 'V40_044_BACKUP_SHOULD_NOT_RUN'",
+  "script": "throw 'V40_044_SCRIPT_SHOULD_NEVER_EXECUTE'",
+  "test": "throw 'V40_044_TEST_SHOULD_NEVER_EXECUTE'",
+  "rollback": "Write-Output 'V40_044_ROLLBACK_SHOULD_NOT_RUN'"
+}
