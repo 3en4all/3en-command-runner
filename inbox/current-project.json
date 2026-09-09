@@ -1,6 +1,6 @@
 {
   "schemaVersion":1,
-  "revision":"2026-09-09T21:08:00+02:00-openclaw-transport-005",
+  "revision":"2026-09-09T21:24:00+02:00-security-monitor-openclaw-recovery",
   "enabled":true,
-  "projectPath":"project-openclaw-transport-005.json"
+  "projectPath":"project-security-monitor-integration-v1.json"
 }
