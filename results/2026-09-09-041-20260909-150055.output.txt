@@ -1,0 +1,16 @@
+V39_BACKUP_READY
+
+RECOVERY_REQUIRED
+At line:1 char:104
++ ... y.flag'; if(-not(Test-Path $flag)){ throw 'RECOVERY_REQUIRED' }; Writ ...
++                                         ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (RECOVERY_REQUIRED:String) [], RuntimeException
+    + FullyQualifiedErrorId : RECOVERY_REQUIRED
+ 
+
+V39_REPAIR_APPLIED
+
+V39_SCRIPT_RECOVERED
+
+V39_RECOVERY_TEST=PASS
+
