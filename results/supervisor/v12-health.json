@@ -1,9 +1,9 @@
 {
     "schemaVersion":  3,
     "version":  "1.2",
-    "status":  "IDLE",
-    "activeLane":  "",
-    "activeProject":  "",
+    "status":  "SYNCING",
+    "activeLane":  "network-privacy",
+    "activeProject":  "project-security-privacy-merge-monitor-v1.json",
     "pid":  35440,
     "runner":  "C:\\3EN-Agent\\3en-agent-runner-v4.0.3.ps1",
     "pollSeconds":  15,
@@ -15,12 +15,12 @@
                       "pointerRevision":  "2026-09-10T00:07:30+02:00-security-monitor-merge-v11-requeue",
                       "pointerProject":  "project-security-privacy-merge-monitor-v1.json",
                       "processedRevision":  "",
-                      "status":  "RETRY_PENDING",
-                      "attempts":  2,
-                      "lastError":  "RUNNER_EXIT_1",
+                      "status":  "SYNCING",
+                      "attempts":  3,
+                      "lastError":  "",
                       "nextRetryUtc":  "2026-09-09T22:12:56.2723202Z",
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-09T22:11:56.2739464Z"
+                      "updatedUtc":  "2026-09-09T22:13:05.4015321Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -32,7 +32,7 @@
                       "lastError":  "",
                       "nextRetryUtc":  "",
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T22:12:16.0405142Z"
+                      "updatedUtc":  "2026-09-09T22:12:50.1522925Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -47,5 +47,5 @@
                       "updatedUtc":  "2026-09-09T22:12:26.3459375Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T22:12:30.7043202Z"
+    "updatedUtc":  "2026-09-09T22:13:05.4060778Z"
 }
