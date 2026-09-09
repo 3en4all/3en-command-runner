@@ -1,0 +1,13 @@
+V432_057C_BACKUP=C:\3EN-Agent\openclaw-bridge\selected-tool-model.20260909-182714.bak
+
+openclaw.cmd : GatewayClientRequestError: Error: Model override "ollama/dolphin-mistral:7b-v2.8-q4_K_M" is not allowed 
+for agent "main".
+At line:1 char:1219
++ ... _DONE';$out=& openclaw.cmd agent --session-key ('3en-057c-'+$i) --mod ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (GatewayClientRe...r agent "main".:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+V432_057C_ROLLBACK=NO_SYSTEM_CONFIG_CHANGE
+
