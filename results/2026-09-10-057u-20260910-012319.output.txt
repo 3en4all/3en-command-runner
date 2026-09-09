@@ -1,0 +1,14 @@
+HEALTH=FAIL listenPort=8088 expectedPort=8099
+V455_057U_READ_EVIDENCE=PASS listenPort=8088 expectedPort=8099 healthExit=42
+V455_057U_BACKUP=PASS original=service-config.original.json
+
+powershell.exe : ConvertFrom-Json : Nieprawidłowy element pierwotny JSON: BEGIN_CONTENT...END_CONTENT.
+At line:1 char:1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ConvertFrom-Jso......END_CONTENT.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+V455_057U_ROLLBACK=PASS baselineRestored=true
+
