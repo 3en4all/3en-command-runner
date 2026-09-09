@@ -1,0 +1,17 @@
+3EN v4.1.2 recovery diagnostic
+MUTEX_STILL_OWNED_AFTER_PROCESS_TREE_RECOVERY
+
+--- LOCAL LOG ---
+[2026-09-09 15:43:47][INFO] RECOVERY START
+[2026-09-09 15:43:48][INFO] Mutex free; resuming project from persisted state
+[2026-09-09 15:45:39][INFO] RECOVERY START
+[2026-09-09 15:45:40][ERROR] Cannot overwrite variable Pid because it is read-only or constant.
+At line:51 char:5
++     Walk $RootPid
++     ~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (Pid:String) [], SessionStateUnauthorizedAccessException
+    + FullyQualifiedErrorId : VariableNotWritable
+ 
+
+[2026-09-09 15:46:56][INFO] Runner returned code=-1
+[2026-09-09 15:47:38][INFO] RECOVERY START
