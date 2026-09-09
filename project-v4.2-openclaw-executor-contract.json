@@ -1,0 +1,31 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-09-v42-openclaw-executor-contract",
+  "title":"3EN v4.2 OpenClaw Executor Contract acceptance",
+  "policy":{
+    "showErrors":false,
+    "maxAttempts":2,
+    "publishRetries":3,
+    "autoRollbackOnFinalFailure":true,
+    "highRiskAction":"reject"
+  },
+  "chapters":[
+    {
+      "id":"2026-09-09-056z",
+      "path":"tasks/2026-09-09-056z.json",
+      "expectedStatus":"SUCCESS"
+    },
+    {
+      "id":"2026-09-09-057z",
+      "path":"tasks/2026-09-09-057z.json",
+      "dependsOn":[{"id":"2026-09-09-056z","status":"SUCCESS"}],
+      "expectedStatus":"REJECTED"
+    },
+    {
+      "id":"2026-09-09-058z",
+      "path":"tasks/2026-09-09-058z.json",
+      "dependsOn":[{"id":"2026-09-09-057z","status":"REJECTED"}],
+      "expectedStatus":"SUCCESS_RECOVERED"
+    }
+  ]
+}
