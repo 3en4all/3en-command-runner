@@ -1,22 +1,27 @@
 {
   "schemaVersion": 1,
-  "projectId": "2026-09-09-stress-retry2-039-040",
-  "description": "Final acceptance retry for REJECTED continuity. Reject 039, then approve 040.",
+  "projectId": "2026-09-09-stress-final-039-040-v38",
+  "description": "Final automated acceptance for REJECTED continuity. Chapter 039 is declaratively rejected; chapter 040 is declaratively approved and must succeed.",
   "branch": "main",
   "policy": {
     "continueOnSuccess": true,
     "continueOnFailure": true,
     "continueOnRejected": true,
-    "requireApprovalEachChapter": true
+    "requireApprovalEachChapter": false,
+    "autoRollbackOnFailure": true
   },
   "chapters": [
     {
       "id": "2026-09-09-039",
-      "path": "tasks/2026-09-09-039.json"
+      "path": "tasks/2026-09-09-039.json",
+      "approval": "reject",
+      "expectedStatus": "REJECTED"
     },
     {
       "id": "2026-09-09-040",
-      "path": "tasks/2026-09-09-040.json"
+      "path": "tasks/2026-09-09-040.json",
+      "approval": "approve",
+      "expectedStatus": "SUCCESS"
     }
   ]
 }
