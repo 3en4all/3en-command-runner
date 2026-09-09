@@ -4,7 +4,7 @@
     "pointerRevision":  "2026-09-10T01:03:00+02:00-v447-057o2-direct-tools",
     "pointerProject":  "project-v447.json",
     "processedRevision":  "2026-09-10T00:53:00+02:00-v445-057n-qwen3-e2e",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
@@ -13,5 +13,5 @@
     "lastExitCode":  null,
     "workerPid":  31120,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T22:56:59.5588761Z"
+    "updatedUtc":  "2026-09-09T22:57:01.1078146Z"
 }
