@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-10-057z",
+  "title":"OpenClaw local plugin runtime discovery",
+  "description":"Discover exact installed OpenClaw version, plugin CLI/runtime availability, and non-secret Gateway settings before installing the narrow 3EN job executor plugin.",
+  "risk":"low",
+  "backup":"Write-Output 'V460_057Z_BACKUP=READ_ONLY'",
+  "script":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/0c794b99ea9488ff5b16d512cfaebf763ea31792/scripts/openclaw-plugin-runtime-discovery-057y.ps1';$d='C:/3EN-Agent/openclaw-plugin-runtime-discovery-057z.ps1';Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d",
+  "test":"$p='C:/3EN-Agent/workbench/plugin-discovery-057y/discovery.json';if(-not(Test-Path $p)){throw '057Z_DISCOVERY_FILE_MISSING'};$e=Get-Content $p -Raw|ConvertFrom-Json;if($e.versionExit -ne 0 -or $e.pluginsHelpExit -ne 0 -or [bool]$e.secretsCaptured){throw '057Z_DISCOVERY_INVALID'};Write-Output 'V460_057Z_TEST=PASS'",
+  "rollback":"Write-Output 'V460_057Z_ROLLBACK=READ_ONLY'"
+}
