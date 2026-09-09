@@ -11,7 +11,7 @@ $Health=Join-Path $Root 'health-test.ps1'
 $Hashes=Join-Path $Root 'immutable-hashes.json'
 $ApiEvidence=Join-Path $Root 'tools-invoke-evidence.json'
 $Verification=Join-Path $Root 'independent-verification.json'
-$Desired='{"service":"3EN-DemoCollector","listenPort":8099,"expectedPort":8099,"enabled":true,"drill":"v457-direct-tool-api"}'
+$Desired='{"service":"3EN-DemoCollector","listenPort":8099,"expectedPort":8099,"enabled":true,"drill":"v457-direct-tool-api"}'.Replace('\"','"')
 
 function Get-Sha([string]$Path){(Get-FileHash $Path -Algorithm SHA256).Hash}
 function Get-GatewayContext {
@@ -76,7 +76,8 @@ switch($Phase){
     }
     $ok=$false
     if($null -ne $r -and $null -ne $r.ok){$ok=[bool]$r.ok}
-    [ordered]@{schemaVersion=1;status=if($ok){'PASS'}else{'API_REJECT'};gatewayPort=$g.Port;authMode=$g.Mode;secretLogged=$false;modelUsed=$false;tool='write';target=$target}|ConvertTo-Json|Set-Content $ApiEvidence -Encoding UTF8
+    $apiStatus=if($ok){'PASS'}else{'API_REJECT'}
+    [ordered]@{schemaVersion=1;status=$apiStatus;gatewayPort=$g.Port;authMode=$g.Mode;secretLogged=$false;modelUsed=$false;tool='write';target=$target}|ConvertTo-Json|Set-Content $ApiEvidence -Encoding UTF8
     if(-not $ok){throw '057W_TOOLS_INVOKE_OK_FALSE'}
     if(-not(Test-Path $Config)){throw '057W_TARGET_MISSING_AFTER_DIRECT_WRITE'}
     if((Get-Content $Config -Raw).Trim() -ne $Desired){throw '057W_DIRECT_WRITE_CONTENT_MISMATCH'}
