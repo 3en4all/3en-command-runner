@@ -1,0 +1,9 @@
+{
+  "id": "2026-09-09-053",
+  "title": "v4.1.3 atomic OpenClaw Ollama configuration",
+  "risk": "medium",
+  "backup": "$root='C:/3EN-Agent/openclaw-bridge'; New-Item -ItemType Directory -Force -Path $root|Out-Null; $cfg=Join-Path $env:USERPROFILE '.openclaw/openclaw.json'; if(Test-Path $cfg){Copy-Item $cfg (Join-Path $root 'openclaw-before-v413.json') -Force}; Write-Output 'V413_053_BACKUP=PASS'",
+  "script": "$s='C:/3EN-Agent/openclaw-v413-config.ps1'; Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/openclaw-v413-config.ps1' -OutFile $s; & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $s; if($LASTEXITCODE -ne 0){throw 'V413_CONFIG_SCRIPT_FAILED'}; Write-Output 'V413_053_SCRIPT=PASS'",
+  "test": "$root='C:/3EN-Agent/openclaw-bridge'; $e=Get-Content (Join-Path $root 'ollama-endpoint-v413.json') -Raw | ConvertFrom-Json; $null=Invoke-RestMethod -Uri ($e.baseUrl+'/api/tags') -TimeoutSec 3 -ErrorAction Stop; $cfg=Get-Content (Join-Path $env:USERPROFILE '.openclaw/openclaw.json') -Raw | ConvertFrom-Json; if([string]$cfg.gateway.mode -ne 'local'){throw 'GATEWAY_MODE_INVALID'}; if([string]$cfg.models.providers.ollama.baseUrl -ne [string]$e.baseUrl){throw 'OLLAMA_BASEURL_INVALID'}; if(([string]$cfg.models.providers.ollama.baseUrl) -match '/v1'){throw 'OLLAMA_V1_FORBIDDEN'}; Write-Output 'V413_053_TEST=PASS'",
+  "rollback": "$root='C:/3EN-Agent/openclaw-bridge'; $b=Join-Path $root 'openclaw-before-v413.json'; $cfg=Join-Path $env:USERPROFILE '.openclaw/openclaw.json'; if(Test-Path $b){Copy-Item $b $cfg -Force}; Write-Output 'V413_053_ROLLBACK=PASS'"
+}
