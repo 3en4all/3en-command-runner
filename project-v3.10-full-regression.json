@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "projectId": "2026-09-09-v3101-full-regression",
+  "description": "Zero-touch cumulative regression using declarative approval, expected terminal states, resume, self-healing, rollback, failure classification, publish retry and project summary.",
+  "branch": "main",
+  "policy": {
+    "defaultApproval": "approve",
+    "maxAttempts": 2,
+    "autoRollbackOnFinalFailure": true,
+    "continueOnFailure": true,
+    "showErrors": false,
+    "publishRetries": 3
+  },
+  "chapters": [
+    {"id":"2026-09-09-031","path":"tasks/2026-09-09-031.json","approval":"approve","expectedStatus":"SUCCESS"},
+    {"id":"2026-09-09-032","path":"tasks/2026-09-09-032.json","approval":"approve","expectedStatus":"SUCCESS"},
+    {"id":"2026-09-09-033","path":"tasks/2026-09-09-033.json","approval":"approve","expectedStatus":"FAILED_SCRIPT"},
+    {"id":"2026-09-09-034","path":"tasks/2026-09-09-034.json","approval":"approve","expectedStatus":"SUCCESS"},
+    {"id":"2026-09-09-035","path":"tasks/2026-09-09-035.json","approval":"approve","expectedStatus":"FAILED_TEST"},
+    {"id":"2026-09-09-036","path":"tasks/2026-09-09-036.json","approval":"approve","expectedStatus":"SUCCESS"},
+    {"id":"2026-09-09-037","path":"tasks/2026-09-09-037.json","approval":"approve","expectedStatus":"SUCCESS"},
+    {"id":"2026-09-09-038","path":"tasks/2026-09-09-038.json","approval":"approve","expectedStatus":"SUCCESS"},
+    {"id":"2026-09-09-039","path":"tasks/2026-09-09-039.json","approval":"reject","expectedStatus":"REJECTED"},
+    {"id":"2026-09-09-040","path":"tasks/2026-09-09-040.json","approval":"approve","expectedStatus":"SUCCESS"},
+    {"id":"2026-09-09-041","path":"tasks/2026-09-09-041.json","approval":"approve","maxAttempts":2,"expectedStatus":"SUCCESS_RECOVERED"}
+  ]
+}
