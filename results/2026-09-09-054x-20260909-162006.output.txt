@@ -1,0 +1,186 @@
+V414_054X_BACKUP=READ_ONLY
+
+=== OPENCLAW VERSION ===
+OpenClaw 2026.7.1-2 (0790d9f)
+=== 053W STDERR ===
+Too many arguments for this command.
+Try: openclaw agent 3en-053w --help
+
+=== 053W STDOUT ===
+=== SELECTED MODEL ===
+d89ftekb7/mistral-nemo-uncensored:12b-q4_0
+
+=== OLLAMA ENDPOINT ===
+{
+    "baseUrl":  "http://127.0.0.1:11443",
+    "model":  "d89ftekb7/mistral-nemo-uncensored:12b-q4_0"
+}
+
+=== OPENCLAW CONFIG MODEL/OLLAMA ===
+{
+    "gatewayMode":  "local",
+    "defaultModel":  "ollama/d89ftekb7/mistral-nemo-uncensored:12b-q4_0",
+    "ollamaBaseUrl":  "http://127.0.0.1:11443"
+}
+=== GATEWAY STATUS ===
+{
+  "cli": {
+    "version": "2026.7.1-2",
+    "entrypoint": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\openclaw.mjs"
+  },
+  "logFile": "D:\\TEMP\\openclaw\\openclaw-2026-09-09.log",
+  "service": {
+    "label": "Scheduled Task",
+    "loaded": true,
+    "loadedText": "registered",
+    "notLoadedText": "missing",
+    "command": {
+      "programArguments": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\index.js",
+        "gateway",
+        "--port",
+        "18789"
+      ],
+      "environment": {
+        "OPENCLAW_GATEWAY_PORT": "18789"
+      },
+      "environmentValueSources": {
+        "TMPDIR": "inline",
+        "OPENCLAW_GATEWAY_PORT": "inline",
+        "OPENCLAW_SYSTEMD_UNIT": "inline",
+        "OPENCLAW_WINDOWS_TASK_NAME": "inline",
+        "OPENCLAW_WINDOWS_TASK_HIDDEN_LAUNCHER": "inline",
+        "OPENCLAW_SERVICE_MARKER": "inline",
+        "OPENCLAW_SERVICE_KIND": "inline",
+        "OPENCLAW_SERVICE_VERSION": "inline"
+      },
+      "sourcePath": "C:\\Users\\wi3lk\\.openclaw\\gateway.cmd"
+    },
+    "runtime": {
+      "status": "running",
+      "pid": 9464,
+      "detail": "Gateway process detected for gateway port 18789.",
+      "state": "Ready",
+      "lastRunTime": "9.09.2026 16:17:28",
+      "lastRunResult": "0"
+    },
+    "configAudit": {
+      "ok": true,
+      "issues": []
+    }
+  },
+  "config": {
+    "cli": {
+      "path": "C:\\Users\\wi3lk\\.openclaw\\openclaw.json",
+      "exists": true,
+      "valid": true
+    },
+    "daemon": {
+      "path": "C:\\Users\\wi3lk\\.openclaw\\openclaw.json",
+      "exists": true,
+      "valid": true
+    }
+  },
+  "gateway": {
+    "bindMode": "loopback",
+    "bindHost": "127.0.0.1",
+    "port": 18789,
+    "portSource": "service args",
+    "probeUrl": "ws://127.0.0.1:18789",
+    "controlUiLinks": {
+      "httpUrl": "http://127.0.0.1:18789/",
+      "wsUrl": "ws://127.0.0.1:18789"
+    },
+    "probeNote": "Loopback-only gateway; only local clients can connect.",
+    "version": "2026.7.1-2"
+  },
+  "port": {
+    "port": 18789,
+    "status": "busy",
+    "listeners": [
+      {
+        "pid": 9464,
+        "address": "127.0.0.1:18789",
+        "command": "node.exe",
+        "commandLine": "\"C:\\Program Files\\nodejs\\node.exe\"  C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\index.js gateway --port 18789"
+      }
+    ],
+    "hints": []
+  },
+  "rpc": {
+    "ok": true,
+    "kind": "connect",
+    "capability": "connected_no_operator_scope",
+    "auth": {
+      "role": "operator",
+      "scopes": [],
+      "capability": "connected_no_operator_scope"
+    },
+    "server": {
+      "version": "2026.7.1-2",
+      "connId": "2130c670-f180-40a2-be22-17ec0310fcfa"
+    },
+    "version": "2026.7.1-2",
+    "url": "ws://127.0.0.1:18789"
+  },
+  "extraServices": [],
+  "pluginVersionDrift": {
+    "gatewayVersion": "2026.7.1-2",
+    "drifts": []
+  }
+}
+=== OLLAMA TAGS ===
+{
+    "models":  [
+                   {
+                       "name":  "d89ftekb7/mistral-nemo-uncensored:12b-q4_0",
+                       "model":  "d89ftekb7/mistral-nemo-uncensored:12b-q4_0",
+                       "modified_at":  "2026-09-08T10:54:47.4014548+02:00",
+                       "size":  7071715308,
+                       "digest":  "9378e33ea2e4198a572d34dddb143d929ac79fd4a4462d30941061088702d622",
+                       "details":  {
+                                       "parent_model":  "HammerAI/mistral-nemo-uncensored:12b-q4_0",
+                                       "format":  "gguf",
+                                       "family":  "llama",
+                                       "families":  [
+                                                        "llama"
+                                                    ],
+                                       "parameter_size":  "12.2B",
+                                       "quantization_level":  "Q4_0",
+                                       "context_length":  1024000,
+                                       "embedding_length":  5120
+                                   },
+                       "capabilities":  [
+                                            "completion",
+                                            "tools"
+                                        ]
+                   },
+                   {
+                       "name":  "dolphin-mistral:7b-v2.8-q4_K_M",
+                       "model":  "dolphin-mistral:7b-v2.8-q4_K_M",
+                       "modified_at":  "2026-09-08T06:11:42.5509779+02:00",
+                       "size":  4368462885,
+                       "digest":  "9664319c8300b475fb4aa2ee7c67c415bbb9dff7034c3fcf4e85937cdaaa2584",
+                       "details":  {
+                                       "parent_model":  "",
+                                       "format":  "gguf",
+                                       "family":  "llama",
+                                       "families":  [
+                                                        "llama"
+                                                    ],
+                                       "parameter_size":  "7B",
+                                       "quantization_level":  "Q4_K_M",
+                                       "context_length":  32768,
+                                       "embedding_length":  4096
+                                   },
+                       "capabilities":  [
+                                            "completion"
+                                        ]
+                   }
+               ]
+}
+V414_054X_DIAGNOSTIC=PASS
+
+V414_054X_TEST=PASS
+
