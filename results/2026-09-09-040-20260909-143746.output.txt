@@ -1,0 +1,10 @@
+QUEUE040_BACKUP=PASS
+039 REJECTED status missing
+At line:1 char:326
++ ... nalStatus -ne 'REJECTED'){throw '039 REJECTED status missing'};Write- ...
++                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (039 REJECTED status missing:String) [], RuntimeException
+    + FullyQualifiedErrorId : 039 REJECTED status missing
+ 
+
+QUEUE040_ROLLBACK_NOT_REQUIRED
