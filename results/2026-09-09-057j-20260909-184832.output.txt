@@ -1,0 +1,12 @@
+V441_057J_BACKUP=C:\3EN-Agent\openclaw-bridge\openclaw-before-qwen-agent-http-20260909-184832.json
+
+QWEN_NATIVE_TOOL_CALL_FAILED
+At line:2 char:11
++ ]+',' '));throw 'QWEN_NATIVE_TOOL_CALL_FAILED'};$fn=$tc[0].function;$ ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (QWEN_NATIVE_TOOL_CALL_FAILED:String) [], RuntimeException
+    + FullyQualifiedErrorId : QWEN_NATIVE_TOOL_CALL_FAILED
+ 
+
+V441_057J_ROLLBACK=CONFIG_RESTORED
+
