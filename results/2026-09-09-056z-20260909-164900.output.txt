@@ -1,0 +1,12 @@
+V42_056Z_BACKUP=PASS
+
+DELEGATED_MARKER_MISSING
+At line:1 char:894
++ ... .txt';if(-not(Test-Path $p)){throw 'DELEGATED_MARKER_MISSING'};if((Ge ...
++                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (DELEGATED_MARKER_MISSING:String) [], RuntimeException
+    + FullyQualifiedErrorId : DELEGATED_MARKER_MISSING
+ 
+
+V42_056Z_ROLLBACK=PASS
+
