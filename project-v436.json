@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-09-v436-native-ollama-tool-isolation-v2",
+  "title":"3EN v4.3.6 Native Ollama tool-call isolation v2",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-09-057g","path":"tasks/2026-09-09-057g.json","expectedStatus":"SUCCESS"}]
+}
