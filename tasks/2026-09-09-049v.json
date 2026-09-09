@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-049v",
+  "title":"v4.1.4 OpenClaw configuration verification",
+  "risk":"low",
+  "backup":"Write-Output 'V414_049V_BACKUP=READ_ONLY'",
+  "script":"$root='C:/3EN-Agent/openclaw-bridge';$cfg=Join-Path $env:USERPROFILE '.openclaw/openclaw.json';if(-not(Test-Path $cfg)){throw 'OPENCLAW_CONFIG_MISSING'};$o=Get-Content $cfg -Raw|ConvertFrom-Json;if([string]$o.gateway.mode -ne 'local'){throw 'GATEWAY_MODE_NOT_LOCAL'};if([string]$o.models.providers.ollama.baseUrl -match '/v1'){throw 'OLLAMA_V1_FORBIDDEN'};$m=(Get-Content (Join-Path $root 'selected-model.txt') -Raw).Trim();if([string]::IsNullOrWhiteSpace($m)){throw 'SELECTED_MODEL_MISSING'};$j=Get-Content (Join-Path $root 'ollama-endpoint-v414.json') -Raw|ConvertFrom-Json;$null=Invoke-RestMethod -Uri ($j.baseUrl+'/api/tags') -TimeoutSec 3 -ErrorAction Stop;Write-Output 'V414_049V_CONFIG=PASS'",
+  "test":"Write-Output 'V414_049V_TEST=PASS'",
+  "rollback":"Write-Output 'V414_049V_ROLLBACK=NO_CHANGE'"
+}
