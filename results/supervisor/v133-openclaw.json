@@ -4,14 +4,14 @@
     "pointerRevision":  "2026-09-10T01:48:00+02:00-v454-057t-evidence-injected-admin-repair",
     "pointerProject":  "project-v454.json",
     "processedRevision":  "2026-09-10T01:27:00+02:00-v451-057q2-read-diagnostic",
-    "status":  "RUNNING",
+    "status":  "RETRY_PENDING",
     "attempts":  4,
-    "lastError":  "",
-    "nextRetryUtc":  "2026-09-09T23:20:06.3267211Z",
+    "lastError":  "RUNNER_EXIT_4",
+    "nextRetryUtc":  "2026-09-09T23:24:26.9707588Z",
     "lastStartedUtc":  "2026-09-09T23:20:09.3179421Z",
-    "lastTerminalUtc":  "2026-09-09T23:18:06.3252103Z",
+    "lastTerminalUtc":  "2026-09-09T23:20:26.9707588Z",
     "lastExitCode":  4,
     "workerPid":  31120,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T23:20:10.8190362Z"
+    "updatedUtc":  "2026-09-09T23:20:26.9722805Z"
 }
