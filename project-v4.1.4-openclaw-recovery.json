@@ -1,0 +1,30 @@
+{
+  "projectId":"2026-09-09-v414-openclaw-recovery",
+  "title":"3EN v4.1.4 OpenClaw compact recovery and acceptance",
+  "policy":{
+    "showErrors":false,
+    "maxAttempts":1,
+    "publishRetries":3,
+    "autoRollbackOnFinalFailure":true,
+    "highRiskAction":"reject"
+  },
+  "chapters":[
+    {
+      "id":"2026-09-09-049u",
+      "path":"tasks/2026-09-09-049u.json",
+      "expectedStatus":"SUCCESS"
+    },
+    {
+      "id":"2026-09-09-050u",
+      "path":"tasks/2026-09-09-050u.json",
+      "dependsOn":[{"id":"2026-09-09-049u","status":"SUCCESS"}],
+      "expectedStatus":"SUCCESS"
+    },
+    {
+      "id":"2026-09-09-051u",
+      "path":"tasks/2026-09-09-051u.json",
+      "dependsOn":[{"id":"2026-09-09-050u","status":"SUCCESS"}],
+      "expectedStatus":"SUCCESS"
+    }
+  ]
+}
