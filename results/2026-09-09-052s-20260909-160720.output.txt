@@ -1,0 +1,12 @@
+V404_052S_BACKUP=PASS
+
+V404_CONTROLLED_FAILURE
+At line:1 char:1
++ throw 'V404_CONTROLLED_FAILURE'
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (V404_CONTROLLED_FAILURE:String) [], RuntimeException
+    + FullyQualifiedErrorId : V404_CONTROLLED_FAILURE
+ 
+
+V404_052S_ROLLBACK=PASS
+
