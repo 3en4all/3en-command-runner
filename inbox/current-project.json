@@ -1,6 +1,6 @@
 {
   "schemaVersion":1,
-  "revision":"2026-09-09T21:24:00+02:00-security-monitor-openclaw-recovery",
+  "revision":"2026-09-09T23:46:00+02:00-multiproject-supervisor-v1",
   "enabled":true,
-  "projectPath":"project-security-monitor-integration-v1.json"
+  "projectPath":"project-multiproject-supervisor-v1.json"
 }
