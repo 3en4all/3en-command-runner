@@ -1,6 +1,6 @@
 {
   "schemaVersion":1,
-  "revision":"2026-09-09T18:34:00+02:00-v433-model-allowlist-repair",
+  "revision":"2026-09-09T18:36:00+02:00-privacy-gui-recovery",
   "enabled":true,
-  "projectPath":"project-v433.json"
+  "projectPath":"project-security-privacy-stack-v1.json"
 }
