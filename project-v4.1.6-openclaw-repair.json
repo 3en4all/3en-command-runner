@@ -1,10 +1,27 @@
 {
-  "schemaVersion":1,
-  "projectId":"2026-09-09-v416-openclaw-repair",
-  "title":"3EN v4.1.6 OpenClaw clean repair and end-to-end acceptance",
-  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
-  "chapters":[
-    {"id":"2026-09-09-052w","task":"tasks/2026-09-09-052w.json","dependsOn":[],"expectedStatus":"SUCCESS"},
-    {"id":"2026-09-09-053w","task":"tasks/2026-09-09-053w.json","dependsOn":["2026-09-09-052w"],"expectedStatus":"SUCCESS"}
+  "schemaVersion": 1,
+  "projectId": "2026-09-09-v416-openclaw-repair",
+  "title": "3EN v4.1.6 OpenClaw clean repair and end-to-end acceptance",
+  "policy": {
+    "showErrors": false,
+    "maxAttempts": 1,
+    "publishRetries": 3,
+    "autoRollbackOnFinalFailure": true,
+    "highRiskAction": "reject"
+  },
+  "chapters": [
+    {
+      "id": "2026-09-09-052w",
+      "path": "tasks/2026-09-09-052w.json",
+      "expectedStatus": "SUCCESS"
+    },
+    {
+      "id": "2026-09-09-053w",
+      "path": "tasks/2026-09-09-053w.json",
+      "dependsOn": [
+        {"id": "2026-09-09-052w", "status": "SUCCESS"}
+      ],
+      "expectedStatus": "SUCCESS"
+    }
   ]
 }
