@@ -4,7 +4,7 @@
     "pointerRevision":  "2026-09-10T00:47:00+02:00-v444c-057m3-resilient",
     "pointerProject":  "project-v444c.json",
     "processedRevision":  "",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
@@ -13,5 +13,5 @@
     "lastExitCode":  null,
     "workerPid":  31120,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T22:48:55.0306642Z"
+    "updatedUtc":  "2026-09-09T22:48:56.6350134Z"
 }
