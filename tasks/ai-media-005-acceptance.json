@@ -1,0 +1,9 @@
+{
+  "id": "ai-media-005-acceptance",
+  "title": "AI Media 5/5 - end-to-end acceptance",
+  "description": "Final verification of D:-first storage, detected applications and image/video/audio/voice assets. Produces acceptance evidence without moving existing LLM models from D:.",
+  "backup": "Write-Host 'ACCEPTANCE_READ_ONLY'",
+  "script": "$ErrorActionPreference='Stop';& 'C:/3EN-Agent/ai-media-local-v1.ps1' -Phase Acceptance -Root 'D:/AI-Media';$r=Get-Content 'D:/AI-Media/state/runtime.json' -Raw|ConvertFrom-Json;$a=[ordered]@{timestamp=(Get-Date).ToString('o');comfyUI=$r.comfyUI;imageModel=$r.imageModel;videoModel=$r.videoModel;audioModel=$r.audioModel;piper=$r.piper;voiceModel=$r.voiceModel;cache=$r.cache;outputs=$r.outputs;llmModels=$r.llmModels;CFreeGB=[math]::Round((Get-CimInstance Win32_LogicalDisk -Filter \"DeviceID='C:'\").FreeSpace/1GB,1);DFreeGB=[math]::Round((Get-CimInstance Win32_LogicalDisk -Filter \"DeviceID='D:'\").FreeSpace/1GB,1)};$a|ConvertTo-Json -Depth 10|Set-Content 'D:/AI-Media/state/final-report.json' -Encoding UTF8;Write-Host ('C_FREE_GB='+$a.CFreeGB);Write-Host ('D_FREE_GB='+$a.DFreeGB);Write-Host 'AI_MEDIA_END_TO_END=PASS'",
+  "test": "$ErrorActionPreference='Stop';$p='D:/AI-Media/state/final-report.json';if(-not(Test-Path $p)){throw 'final report missing'};$r=Get-Content $p -Raw|ConvertFrom-Json;if($r.cache -notlike 'D:*' -or $r.outputs -notlike 'D:*' -or $r.llmModels -notlike 'D:*'){throw 'D-first policy failed'};foreach($x in @($r.imageModel,$r.videoModel,$r.audioModel,$r.piper,$r.voiceModel)){if(-not(Test-Path $x)){throw ('asset missing '+$x)}};Write-Host 'AI_MEDIA_ACCEPTANCE_TEST=PASS'",
+  "rollback": "Write-Host 'Acceptance is read-only apart from report generation.'"
+}
