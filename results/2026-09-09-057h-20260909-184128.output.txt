@@ -1,0 +1,9 @@
+V437_057H_BACKUP=READ_ONLY
+
+MODEL=d89ftekb7/mistral-nemo-uncensored:12b-q4_0 CAPS=completion,tools STATUS=NO_TOOL_CALL NATIVE_TOOL_CALLS=0
+CONTENT=[{"name": "write_probe", "arguments": {"path": "C:\\3EN-Agent\\workbench\\native-tool-probe.txt", "content": "NATIVE_TOOL_OK"}}]
+MODEL=dolphin-mistral:7b-v2.8-q4_K_M CAPS=completion STATUS=UNSUPPORTED
+V437_057H_DIAG=PASS
+
+V437_057H_TEST=PASS models=2
+
