@@ -1,0 +1,18 @@
+{
+  "projectId":"2026-09-09-v414-openclaw-agent-diagnostic-v1",
+  "title":"OpenClaw agent failure diagnostics",
+  "policy":{
+    "showErrors":false,
+    "maxAttempts":1,
+    "publishRetries":3,
+    "autoRollbackOnFinalFailure":false,
+    "highRiskAction":"reject"
+  },
+  "chapters":[
+    {
+      "id":"2026-09-09-054x",
+      "path":"tasks/2026-09-09-054x.json",
+      "expectedStatus":"SUCCESS"
+    }
+  ]
+}
