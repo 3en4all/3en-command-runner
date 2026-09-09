@@ -1,0 +1,12 @@
+V444C_057M3_BACKUP=PASS preExisting=True artifact=C:\3EN-Agent\openclaw-bridge\v444c-057m3-pre.json
+
+V444C_057M3_PULL=SKIP_ALREADY_PRESENT model=qwen3:14b
+V444C_057M3_CAPS=completion,tools,thinking
+V444C_057M3_MESSAGE_PROPS=role,content,thinking,tool_calls
+V444C_057M3_TOOL_CALL_COUNT=1
+V444C_057M3_TOOL_CALL=write_probe args={"path":"C:/3EN-Agent/workbench/qwen3-native-tool-probe.txt","content":"QWEN3_NATIVE_TOOL_OK"}
+V444C_057M3_STRUCTURED=True
+V444C_057M3_ARTIFACT=C:\3EN-Agent\openclaw-bridge\qwen3-14b-native-tool-validation-v444c.json
+
+V444C_057M3_TEST=PASS model=qwen3:14b structured=True toolCalls=1
+
