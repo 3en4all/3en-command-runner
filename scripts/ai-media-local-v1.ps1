@@ -57,10 +57,11 @@ if($Phase -eq 'Discovery'){
   $jan=$null; foreach($p in @('D:\Jan\Jan.exe','C:\Users\'+$env:USERNAME+'\AppData\Local\Programs\Jan\Jan.exe')){if(Test-Path $p){$jan=$p;break}}
   $ffmpeg=CmdPath 'ffmpeg.exe'
   $python=CmdPath 'python.exe'
+  $llmModelRoot=$null; if(Test-Path 'D:\AI-Free3\models'){$llmModelRoot='D:\AI-Free3\models'}
   $inv=[ordered]@{
     timestamp=(Get-Date).ToString('o'); computer=$env:COMPUTERNAME; gpu=$gpuText.Trim(); ramGB=$ram; disks=$disks;
     comfyUI=$comfy; ffmpeg=$ffmpeg; python=$python; ollama=$ollama; jan=$jan;
-    llmModelRoot=(if(Test-Path 'D:\AI-Free3\models'){'D:\AI-Free3\models'}else{$null});
+    llmModelRoot=$llmModelRoot;
     comfyModels=$models
   }
   $inv|ConvertTo-Json -Depth 20|Set-Content $InventoryFile -Encoding UTF8
@@ -74,7 +75,7 @@ if($Phase -eq 'Discovery'){
   }
   if((CmdPath 'piper.exe') -or (Get-ChildItem 'D:\' -Filter 'kokoro*.py' -Recurse -ErrorAction SilentlyContinue|Select-Object -First 1)){ $s.voiceReady=$true }
   Write-State $s
-  Write-Host ('COMFY='+$comfy);Write-Host ('FFMPEG='+$ffmpeg);Write-Host ('PYTHON='+$python);Write-Host ('OLLAMA='+$ollama);Write-Host ('JAN='+$jan);Write-Host ('GPU='+$gpuText.Trim());Write-Host ('RAM_GB='+$ram)
+  Write-Host ('COMFY='+$comfy);Write-Host ('FFMPEG='+$ffmpeg);Write-Host ('PYTHON='+$python);Write-Host ('OLLAMA='+$ollama);Write-Host ('JAN='+$jan);Write-Host ('GPU='+$gpuText.Trim());Write-Host ('RAM_GB='+$ram);Write-Host ('LLM_MODEL_ROOT='+$llmModelRoot)
   Write-Host 'DISCOVERY=PASS'; exit 0
 }
 
