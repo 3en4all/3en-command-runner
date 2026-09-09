@@ -1,0 +1,27 @@
+{
+    "projectId":  "2026-09-09-network-autopilot-bootstrap-v1",
+    "chapterId":  "network-autopilot-001-bootstrap",
+    "expectedStatus":  "",
+    "status":  "SUCCESS",
+    "attempts":  1,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "failureClass":  "NONE",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "OK",
+                      "failureClass":  "NONE",
+                      "error":  null
+                  },
+                  {
+                      "name":  "TEST_1",
+                      "status":  "OK",
+                      "failureClass":  "NONE",
+                      "error":  null
+                  }
+              ]
+}
