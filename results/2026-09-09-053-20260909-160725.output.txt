@@ -1,0 +1,13 @@
+V413_053_BACKUP=PASS
+
+powershell.exe : node.exe : Config observe anomaly: C:\Users\wi3lk\.openclaw\openclaw.json (size-drop-vs-last-good:1420
+->612)
+At line:1 char:209
++ ... OutFile $s; & powershell.exe -NoProfile -ExecutionPolicy Bypass -File ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (node.exe : Conf...good:1420->612):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+V413_053_ROLLBACK=PASS
+
