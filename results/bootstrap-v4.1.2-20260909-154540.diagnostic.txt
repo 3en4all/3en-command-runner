@@ -1,0 +1,15 @@
+3EN v4.1.2 recovery diagnostic
+RECOVERY_EXCEPTION=Cannot overwrite variable Pid because it is read-only or constant.
+
+--- LOCAL LOG ---
+[2026-09-09 15:43:47][INFO] RECOVERY START
+[2026-09-09 15:43:48][INFO] Mutex free; resuming project from persisted state
+[2026-09-09 15:45:39][INFO] RECOVERY START
+[2026-09-09 15:45:40][ERROR] Cannot overwrite variable Pid because it is read-only or constant.
+At line:51 char:5
++     Walk $RootPid
++     ~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (Pid:String) [], SessionStateUnauthorizedAccessException
+    + FullyQualifiedErrorId : VariableNotWritable
+ 
+
