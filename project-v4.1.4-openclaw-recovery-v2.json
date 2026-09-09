@@ -1,0 +1,30 @@
+{
+  "projectId":"2026-09-09-v414-openclaw-recovery-v2",
+  "title":"3EN v4.1.4 OpenClaw recovery v2",
+  "policy":{
+    "showErrors":false,
+    "maxAttempts":1,
+    "publishRetries":3,
+    "autoRollbackOnFinalFailure":true,
+    "highRiskAction":"reject"
+  },
+  "chapters":[
+    {
+      "id":"2026-09-09-049v",
+      "path":"tasks/2026-09-09-049v.json",
+      "expectedStatus":"SUCCESS"
+    },
+    {
+      "id":"2026-09-09-050v",
+      "path":"tasks/2026-09-09-050v.json",
+      "dependsOn":[{"id":"2026-09-09-049v","status":"SUCCESS"}],
+      "expectedStatus":"SUCCESS"
+    },
+    {
+      "id":"2026-09-09-051v",
+      "path":"tasks/2026-09-09-051v.json",
+      "dependsOn":[{"id":"2026-09-09-050v","status":"SUCCESS"}],
+      "expectedStatus":"SUCCESS"
+    }
+  ]
+}
