@@ -1,0 +1,9 @@
+{
+  "id": "2026-09-09-052d",
+  "title": "v4.0.3 resume verdict hardening JSON safe",
+  "risk": "medium",
+  "backup": "$r='C:/3EN-Agent/3en-agent-runner-v4.0.2.ps1'; $b='C:/3EN-Agent/backups/v403d'; New-Item -ItemType Directory -Force -Path $b|Out-Null; if(Test-Path $r){Copy-Item $r (Join-Path $b '3en-agent-runner-v4.0.2.ps1') -Force}; Write-Output 'V403D_BACKUP=PASS'",
+  "script": "$src='C:/3EN-Agent/3en-agent-runner-v4.0.2.ps1'; if(-not(Test-Path $src)){Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.githubusercontent.com/3en4all/3en-command-runner/v403-hardening/3en-agent-runner-v4.0.2.ps1' -OutFile $src}; $patch='C:/3EN-Agent/patch-v4.0.3-resume-verdict.ps1'; Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.githubusercontent.com/3en4all/3en-command-runner/v403-hardening/patch-v4.0.3-resume-verdict.ps1' -OutFile $patch; & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $patch -Source $src -Destination 'C:/3EN-Agent/3en-agent-runner-v4.0.3.ps1'; if($LASTEXITCODE -ne 0){throw 'V403_PATCH_FAILED'}; Write-Output 'V403D_SCRIPT=PASS'",
+  "test": "$r='C:/3EN-Agent/3en-agent-runner-v4.0.3.ps1'; if(-not(Test-Path $r)){throw 'V403_RUNNER_MISSING'}; $c=Get-Content $r -Raw; foreach($x in @('$resumeStatus = [string]$existing.status','$counts.failed++','$counts.blocked++','if ($expected -ne $resumeStatus) { $mismatch = $true }','4.0.3')){if(-not $c.Contains($x)){throw ('V403_LOGIC_MARKER_MISSING '+$x)}}; $t=$null;$e=$null;[System.Management.Automation.Language.Parser]::ParseFile($r,[ref]$t,[ref]$e)|Out-Null; if(@($e).Count -gt 0){throw ('V403_SYNTAX_FAILED='+@($e).Count)}; Write-Output 'V403D_TEST=PASS'",
+  "rollback": "$b='C:/3EN-Agent/backups/v403d/3en-agent-runner-v4.0.2.ps1'; if(Test-Path $b){Copy-Item $b 'C:/3EN-Agent/3en-agent-runner-v4.0.2.ps1' -Force}; Remove-Item 'C:/3EN-Agent/3en-agent-runner-v4.0.3.ps1' -Force -ErrorAction SilentlyContinue; Write-Output 'V403D_ROLLBACK=PASS'"
+}
