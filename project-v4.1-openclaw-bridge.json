@@ -1,0 +1,42 @@
+{
+  "projectId": "2026-09-09-v41-openclaw-bridge",
+  "description": "Autonomous Windows OpenClaw bridge acceptance: discovery, install, native Ollama configuration, Gateway autostart and end-to-end agent turn.",
+  "policy": {
+    "showErrors": false,
+    "maxAttempts": 1,
+    "publishRetries": 3,
+    "autoRollbackOnFinalFailure": true,
+    "highRiskAction": "reject"
+  },
+  "chapters": [
+    {
+      "id": "2026-09-09-047",
+      "path": "tasks/2026-09-09-047.json",
+      "expectedStatus": "SUCCESS"
+    },
+    {
+      "id": "2026-09-09-048",
+      "path": "tasks/2026-09-09-048.json",
+      "dependsOn": [{"id":"2026-09-09-047","status":"SUCCESS"}],
+      "expectedStatus": "SUCCESS"
+    },
+    {
+      "id": "2026-09-09-049",
+      "path": "tasks/2026-09-09-049.json",
+      "dependsOn": [{"id":"2026-09-09-048","status":"SUCCESS"}],
+      "expectedStatus": "SUCCESS"
+    },
+    {
+      "id": "2026-09-09-050",
+      "path": "tasks/2026-09-09-050.json",
+      "dependsOn": [{"id":"2026-09-09-049","status":"SUCCESS"}],
+      "expectedStatus": "SUCCESS"
+    },
+    {
+      "id": "2026-09-09-051",
+      "path": "tasks/2026-09-09-051.json",
+      "dependsOn": [{"id":"2026-09-09-050","status":"SUCCESS"}],
+      "expectedStatus": "SUCCESS"
+    }
+  ]
+}
