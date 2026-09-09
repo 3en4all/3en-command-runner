@@ -1,0 +1,11 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-09-v415-openclaw-final",
+  "title":"3EN v4.1.5 OpenClaw final acceptance",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[
+    {"id":"2026-09-09-049v","task":"tasks/2026-09-09-049v.json","dependsOn":[],"expectedStatus":"SUCCESS"},
+    {"id":"2026-09-09-050v","task":"tasks/2026-09-09-050v.json","dependsOn":["2026-09-09-049v"],"expectedStatus":"SUCCESS"},
+    {"id":"2026-09-09-051v","task":"tasks/2026-09-09-051v.json","dependsOn":["2026-09-09-050v"],"expectedStatus":"SUCCESS"}
+  ]
+}
