@@ -1,0 +1,12 @@
+V443_057L_BACKUP=READ_ONLY_NO_CONFIG_CHANGE
+
+V443_057L_MODELS=d89ftekb7/mistral-nemo-uncensored:12b-q4_0,dolphin-mistral:7b-v2.8-q4_K_M,qwen2.5-coder:14b-instruct-q4_K_S
+V443_057L_MODEL=d89ftekb7/mistral-nemo-uncensored:12b-q4_0 tools=True structured=False toolCalls=0
+V443_057L_MODEL=dolphin-mistral:7b-v2.8-q4_K_M tools=False structured=False toolCalls=0
+V443_057L_MODEL=qwen2.5-coder:14b-instruct-q4_K_S tools=True structured=False toolCalls=0
+V443_057L_WINNER=
+V443_057L_ARTIFACT=C:\3EN-Agent\openclaw-bridge\native-tool-model-audit.json
+V443_057L_CAPTURE=PASS
+
+V443_057L_TEST=PASS models=3 winner= found=False
+
