@@ -1,0 +1,10 @@
+{
+  "id": "ai-media-002-storage",
+  "title": "AI Media 2/5 - D: storage and cache isolation",
+  "description": "Create project, cache, model, input/output and venv directories on D:. Generate an environment launcher that redirects AI caches away from C:. Reuse detected applications; no model downloads.",
+  "backup": "$ErrorActionPreference='Stop';$b='C:/3EN-Agent/backups/ai-media-storage/'+(Get-Date -Format 'yyyyMMdd-HHmmss');New-Item -ItemType Directory -Force -Path $b|Out-Null;if(Test-Path 'D:/AI-Media/state'){Copy-Item 'D:/AI-Media/state' $b -Recurse -Force};Write-Host ('BACKUP='+$b)",
+  "script": "$ErrorActionPreference='Stop';& 'C:/3EN-Agent/ai-media-local-v1.ps1' -Phase Storage -Root 'D:/AI-Media'",
+  "test": "$ErrorActionPreference='Stop';foreach($p in @('D:/AI-Media/cache','D:/AI-Media/models','D:/AI-Media/output','D:/AI-Media/Start-3EN-AI-Media.ps1')){if(-not(Test-Path $p)){throw ('missing '+$p)}};Write-Host 'AI_MEDIA_STORAGE_TEST=PASS'",
+  "repair": "$ErrorActionPreference='Stop';& 'C:/3EN-Agent/ai-media-local-v1.ps1' -Phase Storage -Root 'D:/AI-Media'",
+  "rollback": "Write-Host 'Storage chapter is additive only; existing software/models were not removed or overwritten.'"
+}
