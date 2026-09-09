@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-054x",
+  "title":"OpenClaw agent failure diagnostics",
+  "risk":"low",
+  "backup":"Write-Output 'V414_054X_BACKUP=READ_ONLY'",
+  "script":"$root='C:/3EN-Agent/openclaw-bridge';Write-Output '=== OPENCLAW VERSION ===';& openclaw.cmd --version 2>&1|ForEach-Object{Write-Output $_};Write-Output '=== 053W STDERR ===';$e=Join-Path $root '053w-agent.err.txt';if(Test-Path $e){Get-Content $e -Raw|Write-Output}else{Write-Output 'MISSING'};Write-Output '=== 053W STDOUT ===';$o=Join-Path $root '053w-agent.json';if(Test-Path $o){Get-Content $o -Raw|Write-Output}else{Write-Output 'MISSING'};Write-Output '=== SELECTED MODEL ===';$m=Join-Path $root 'selected-model.txt';if(Test-Path $m){Get-Content $m -Raw|Write-Output}else{Write-Output 'MISSING'};Write-Output '=== OLLAMA ENDPOINT ===';$j=Join-Path $root 'ollama-endpoint-v414.json';if(Test-Path $j){Get-Content $j -Raw|Write-Output}else{Write-Output 'MISSING'};Write-Output '=== OPENCLAW CONFIG MODEL/OLLAMA ===';$cfg=Join-Path $env:USERPROFILE '.openclaw/openclaw.json';if(Test-Path $cfg){$c=Get-Content $cfg -Raw|ConvertFrom-Json;[pscustomobject]@{gatewayMode=$c.gateway.mode;defaultModel=$c.agents.defaults.model.primary;ollamaBaseUrl=$c.models.providers.ollama.baseUrl}|ConvertTo-Json -Depth 5|Write-Output}else{Write-Output 'CONFIG_MISSING'};Write-Output '=== GATEWAY STATUS ===';& openclaw.cmd gateway status --json 2>&1|ForEach-Object{Write-Output $_};Write-Output '=== OLLAMA TAGS ===';if(Test-Path $j){$ep=Get-Content $j -Raw|ConvertFrom-Json;try{Invoke-RestMethod -Uri ($ep.baseUrl+'/api/tags') -TimeoutSec 5|ConvertTo-Json -Depth 8|Write-Output}catch{Write-Output $_.Exception.Message}};Write-Output 'V414_054X_DIAGNOSTIC=PASS'",
+  "test":"Write-Output 'V414_054X_TEST=PASS'",
+  "rollback":"Write-Output 'V414_054X_ROLLBACK=NO_CHANGE'"
+}
