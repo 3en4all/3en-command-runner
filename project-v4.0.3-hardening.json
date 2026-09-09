@@ -1,0 +1,6 @@
+{
+  "projectId": "2026-09-09-v403-resume-verdict-hardening",
+  "title": "3EN v4.0.3 resume and verdict hardening",
+  "policy": {"showErrors": false,"maxAttempts": 1,"publishRetries": 3,"autoRollbackOnFinalFailure": true,"highRiskAction": "reject"},
+  "chapters": [{"id":"2026-09-09-052","path":"tasks/2026-09-09-052.json","expectedStatus":"SUCCESS"}]
+}
