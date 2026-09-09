@@ -41,8 +41,7 @@ foreach ($p in $old) {
     catch { HLog ('STOP_V36_WARN=' + $_.Exception.Message) }
 }
 Start-Sleep -Seconds 2
-$projectUrl = 'https://api.github.com/repos/3en4all/3en-command-runner/contents/project.json?ref=main'
-$p37 = Start-Process -FilePath 'powershell.exe' -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File',$runner37,'-ProjectUrl',$projectUrl) -PassThru
+$p37 = Start-Process -FilePath 'powershell.exe' -ArgumentList @('-NoProfile','-ExecutionPolicy','Bypass','-File',$runner37,'-ProjectPath',$project) -PassThru
 Start-Sleep -Seconds 3
 if ($p37.HasExited) { HLog ('FATAL=V37_EXITED_EARLY_CODE_' + $p37.ExitCode); exit 65 }
 HLog ('STARTED_V37_PID=' + $p37.Id)
