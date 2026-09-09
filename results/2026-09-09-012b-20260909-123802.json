@@ -1,0 +1,17 @@
+[
+    {
+        "name":  "BACKUP",
+        "status":  "OK",
+        "error":  null
+    },
+    {
+        "name":  "SCRIPT",
+        "status":  "FAILED",
+        "error":  "ash: base64: not found"
+    },
+    {
+        "name":  "ROLLBACK",
+        "status":  "OK",
+        "error":  null
+    }
+]
