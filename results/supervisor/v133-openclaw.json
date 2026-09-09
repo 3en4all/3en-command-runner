@@ -1,17 +1,17 @@
 {
     "schemaVersion":  3,
     "lane":  "openclaw",
-    "pointerRevision":  "2026-09-10T01:40:00+02:00-v453-057s-externalized-admin-repair",
+    "pointerRevision":  "2026-09-10T01:43:00+02:00-v453b-057s-manifest-fixed",
     "pointerProject":  "project-v453.json",
     "processedRevision":  "2026-09-10T01:27:00+02:00-v451-057q2-read-diagnostic",
-    "status":  "RETRY_PENDING",
-    "attempts":  2,
-    "lastError":  "The property \u0027path\u0027 cannot be found on this object. Verify that the property exists.",
-    "nextRetryUtc":  "2026-09-09T23:13:17.0804946Z",
-    "lastStartedUtc":  "2026-09-09T23:12:15.8758221Z",
+    "status":  "SYNCING",
+    "attempts":  1,
+    "lastError":  "",
+    "nextRetryUtc":  "",
+    "lastStartedUtc":  "2026-09-09T23:13:19.1589584Z",
     "lastTerminalUtc":  "2026-09-09T23:10:40.8805408Z",
     "lastExitCode":  null,
     "workerPid":  31120,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T23:12:17.0804946Z"
+    "updatedUtc":  "2026-09-09T23:13:19.1589584Z"
 }
