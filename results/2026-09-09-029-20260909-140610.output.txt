@@ -1,0 +1,13 @@
+BACKUP_ROOT=C:/3EN-Agent/backups/029/20260909-140610
+CHAPTER_029_BACKUP=PASS
+Where-Object : The property 'CommandLine' cannot be found on this object. Verify that the property exists.
+At line:1 char:3842
++ ... nd ($patterns|Where-Object{$_.CommandLine -like ('*'+$_+'*')})}); for ...
++                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Where-Object], PropertyNotFoundException
+    + FullyQualifiedErrorId : PropertyNotFoundStrict,Microsoft.PowerShell.Commands.WhereObjectCommand
+ 
+
+ROLLBACK_BACKUP_ROOT=C:/3EN-Agent/backups/029/20260909-140610
+Rollback is intentionally manual-by-agent only if acceptance test fails; current runner/state are not replaced by this chapt
+er.
