@@ -1,0 +1,12 @@
+V423_061A_BACKUP=C:\3EN-Agent\openclaw-bridge\v423-tools-20260909-182229
+
+The property 'tools' cannot be found on this object. Verify that the property exists.
+At line:1 char:171
++ ... =Get-Content $cfg -Raw|ConvertFrom-Json;if($null -eq $j.tools){$j|Add ...
++                                                ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], PropertyNotFoundException
+    + FullyQualifiedErrorId : PropertyNotFoundStrict
+ 
+
+V423_061A_ROLLBACK=PASS
+
