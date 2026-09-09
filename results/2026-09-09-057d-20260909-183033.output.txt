@@ -1,0 +1,12 @@
+V433_057D_BACKUP=C:\3EN-Agent\openclaw-bridge\openclaw-models-20260909-183033.json
+
+NO_LOCAL_MODEL_PASSED_TOOL_CALL
+At line:1 char:2171
++ ... rWhiteSpace($winner)){throw 'NO_LOCAL_MODEL_PASSED_TOOL_CALL'};$winne ...
++                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (NO_LOCAL_MODEL_PASSED_TOOL_CALL:String) [], RuntimeException
+    + FullyQualifiedErrorId : NO_LOCAL_MODEL_PASSED_TOOL_CALL
+ 
+
+V433_057D_ROLLBACK=RESTORED
+
