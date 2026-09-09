@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "projectId": "2026-09-09-ai-media-local-v1",
+  "title": "3EN035 local AI media studio",
+  "description": "Automation-first local generation stack for images, ~3s video, sound and voice on the weaker station. Reuses installed software, keeps new caches/assets on D:, and asks only once before acquiring missing components.",
+  "repo": "3en4all/3en-command-runner",
+  "branch": "main",
+  "policy": {
+    "defaultApproval": "approve",
+    "maxAttempts": 2,
+    "showErrors": false,
+    "autoRollbackOnFinalFailure": true,
+    "continueOnFailure": false,
+    "publishRetries": 3
+  },
+  "chapters": [
+    {"id":"ai-media-001-discovery","path":"tasks/ai-media-001-discovery.json","approval":"approve","maxAttempts":2},
+    {"id":"ai-media-002-storage","path":"tasks/ai-media-002-storage.json","approval":"approve","maxAttempts":2},
+    {"id":"ai-media-003-acquire","path":"tasks/ai-media-003-acquire.json","approval":"prompt","maxAttempts":2},
+    {"id":"ai-media-004-runtime","path":"tasks/ai-media-004-runtime.json","approval":"approve","maxAttempts":2},
+    {"id":"ai-media-005-acceptance","path":"tasks/ai-media-005-acceptance.json","approval":"approve","maxAttempts":2}
+  ]
+}
