@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-060a",
+  "title":"OpenClaw tool execution diagnostics",
+  "risk":"low",
+  "backup":"Write-Output 'V422_060A_BACKUP=READ_ONLY'",
+  "script":"$root='C:/3EN-Agent';$bridge=Join-Path $root 'openclaw-bridge';Write-Output '=== OPENCLAW VERSION ===';& openclaw.cmd --version 2>&1;Write-Output '=== AGENT HELP ===';& openclaw.cmd agent --help 2>&1;Write-Output '=== CONFIG ===';$cfg=Join-Path $env:USERPROFILE '.openclaw/openclaw.json';if(Test-Path $cfg){Get-Content $cfg -Raw};Write-Output '=== 059A STDOUT ===';$p=Join-Path $bridge '059a-openclaw.json';if(Test-Path $p){Get-Content $p -Raw}else{Write-Output 'MISSING_059A_STDOUT'};Write-Output '=== 059A STDERR ===';$e=Join-Path $bridge '059a-openclaw.err.txt';if(Test-Path $e){Get-Content $e -Raw}else{Write-Output 'MISSING_059A_STDERR'};Write-Output '=== 057A STDOUT ===';$p2=Join-Path $bridge '057a-openclaw.json';if(Test-Path $p2){Get-Content $p2 -Raw}else{Write-Output 'MISSING_057A_STDOUT'};Write-Output '=== GATEWAY STATUS ===';& openclaw.cmd gateway status --json 2>&1;Write-Output 'V422_060A_DIAGNOSTIC=PASS'",
+  "test":"Write-Output 'V422_060A_TEST=PASS'",
+  "rollback":"Write-Output 'V422_060A_ROLLBACK=NO_CHANGE'"
+}
