@@ -5,6 +5,7 @@ $dst=Join-Path $Root '3en-agent-runner-v4.0.3-openclaw.ps1'
 $poller=Join-Path $Root '3en-openclaw-inbox.ps1'
 $state=Join-Path $Root '3en-openclaw-inbox.state.json'
 $log=Join-Path $Root '3en-openclaw-selfheal.log'
+$procPattern=[regex]::Escape('3en-openclaw-inbox.ps1')
 function Log([string]$m){Add-Content -LiteralPath $log -Value ('['+(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')+'] '+$m) -Encoding UTF8}
 if(-not(Test-Path $src)){throw 'RUNNER403_SOURCE_MISSING'}
 $bk=Join-Path $Root ('backups\openclaw-selfheal\'+(Get-Date -Format 'yyyyMMdd-HHmmss'))
@@ -21,11 +22,13 @@ $ts=[DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()
 Invoke-WebRequest -UseBasicParsing -Uri ('https://raw.githubusercontent.com/3en4all/3en-command-runner/main/automation/3en-openclaw-inbox.ps1?ts='+$ts) -OutFile $poller -TimeoutSec 30
 $t=$null;$e=$null;[System.Management.Automation.Language.Parser]::ParseFile($poller,[ref]$t,[ref]$e)|Out-Null
 if(@($e).Count -gt 0){throw ('OPENCLAW_INBOX_SYNTAX_ERRORS='+@($e).Count)}
-Get-CimInstance Win32_Process -Filter "Name='powershell.exe'" -ErrorAction SilentlyContinue|Where-Object{$_.CommandLine -match '3en-openclaw-inbox\\.ps1'}|ForEach-Object{Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue}
+Get-CimInstance Win32_Process -Filter "Name='powershell.exe'" -ErrorAction SilentlyContinue|Where-Object{$_.CommandLine -match $procPattern}|ForEach-Object{Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue}
 if(Test-Path $state){Remove-Item $state -Force}
 Start-Process powershell.exe -ArgumentList @('-NoProfile','-WindowStyle','Hidden','-ExecutionPolicy','Bypass','-File',$poller) -WorkingDirectory $Root|Out-Null
 Start-Sleep 5
-$p=Get-CimInstance Win32_Process -Filter "Name='powershell.exe'" -ErrorAction SilentlyContinue|Where-Object{$_.CommandLine -match '3en-openclaw-inbox\\.ps1'}
+$p=Get-CimInstance Win32_Process -Filter "Name='powershell.exe'" -ErrorAction SilentlyContinue|Where-Object{$_.CommandLine -match $procPattern}
 if(-not $p){throw 'OPENCLAW_INBOX_NOT_RUNNING'}
+Log ('OPENCLAW_INBOX_PID='+(@($p).ProcessId -join ','))
 Log 'OPENCLAW_SELFHEAL=PASS'
+Write-Host ('OPENCLAW_INBOX_PID='+(@($p).ProcessId -join ','))
 Write-Host 'OPENCLAW_SELFHEAL=PASS'
