@@ -1,0 +1,9 @@
+{
+  "id": "2026-09-09-047",
+  "title": "v4.1 OpenClaw environment discovery",
+  "risk": "low",
+  "backup": "Write-Output 'V41_047_BACKUP=READ_ONLY'",
+  "script": "$root='C:/3EN-Agent/openclaw-bridge'; New-Item -ItemType Directory -Force -Path $root | Out-Null; $report=[ordered]@{}; $report.openclawPresent=[bool](Get-Command openclaw -ErrorAction SilentlyContinue); $report.nodePresent=[bool](Get-Command node -ErrorAction SilentlyContinue); $report.ollamaPresent=[bool](Get-Command ollama -ErrorAction SilentlyContinue); try{$report.ollamaTags=(Invoke-RestMethod -Uri 'http://127.0.0.1:11434/api/tags' -TimeoutSec 5).models.name}catch{$report.ollamaTags=@()}; $report | ConvertTo-Json -Depth 10 | Set-Content -LiteralPath (Join-Path $root 'discovery.json') -Encoding UTF8; Write-Output 'V41_047_DISCOVERY=PASS'",
+  "test": "$p='C:/3EN-Agent/openclaw-bridge/discovery.json'; if(-not(Test-Path $p)){throw 'DISCOVERY_MISSING'}; $d=Get-Content $p -Raw | ConvertFrom-Json; if($null -eq $d.ollamaTags){throw 'DISCOVERY_INVALID'}; Write-Output 'V41_047_TEST=PASS'",
+  "rollback": "Write-Output 'V41_047_ROLLBACK=NO_CHANGE'"
+}
