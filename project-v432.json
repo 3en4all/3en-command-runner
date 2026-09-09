@@ -1,0 +1,1 @@
+{"schemaVersion":1,"projectId":"2026-09-09-v432-openclaw-modeltest","title":"3EN v4.3.2 OpenClaw model tool-calling selection","policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},"chapters":[{"id":"2026-09-09-057c","path":"tasks/2026-09-09-057c.json","expectedStatus":"SUCCESS"}]}
