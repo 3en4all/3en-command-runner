@@ -1,0 +1,19 @@
+V440_057I_BACKUP=C:\3EN-Agent\openclaw-bridge\openclaw-before-qwen-agent-20260909-184359.json
+
+ollama.exe : [?2026h[?25l[1Gpulling manifest Ôáő [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ÔáÖ [K[?25h[
+?2026l[?2026h[?25l[1Gpulling manifest Ôá╣ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ÔáŞ [K[?25h[?2026l
+[?2026h[?25l[1Gpulling manifest Ôá╝ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest Ôá┤ [K[?25h[?2026l[?2026h
+[?25l[1Gpulling manifest ÔáŽ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest Ôáž [K[?25h[?2026l[?2026h[?25l
+[1Gpulling manifest Ôáç [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ÔáĆ [K[?25h[?2026l[?2026h[?25l[1Gpull
+ing manifest Ôáő [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ÔáÖ [K[?25h[?2026l[?2026h[?25l[1Gpulling man
+ifest Ôá╣ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest ÔáŞ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest Ô
+á╝ [K[?25h[?2026l[?2026h[?25l[1Gpulling manifest [K
+At line:1 char:638
++ ... ut ('V440_057I_PULL_START='+$model);& ollama pull $model 2>&1|ForEach ...
++                                         ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([?2026h[?25l...ng manifest [K:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+V440_057I_ROLLBACK=CONFIG_RESTORED
+
