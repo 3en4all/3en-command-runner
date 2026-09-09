@@ -1,0 +1,16 @@
+{
+    "schemaVersion":  3,
+    "projectId":  "2026-09-09-v403-resume-verdict-hardening-r4",
+    "runnerVersion":  "4.0.2",
+    "verdict":  "SUCCESS",
+    "accepted":  true,
+    "counts":  {
+                   "success":  1,
+                   "recovered":  0,
+                   "rejected":  0,
+                   "failed":  0,
+                   "blocked":  0
+               },
+    "remaining":  0,
+    "completedUtc":  "2026-09-09T14:04:28.8976592Z"
+}
