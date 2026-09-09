@@ -1,9 +1,9 @@
 {
-  "id": "2026-09-09-006",
-  "title": "3EN Agent safe config patch simulation",
-  "description": "Simulate a real configuration change on a harmless local test file: create baseline config, back it up, apply a patch, validate exact expected values, and keep rollback ready.",
-  "backup": "$Dir='C:\\3EN-Agent\\sandbox'; New-Item -ItemType Directory -Force -Path $Dir | Out-Null; $Cfg=Join-Path $Dir 'service.conf'; if(-not (Test-Path $Cfg)){ @('mode=baseline','enabled=false','threshold=10') | Set-Content -Path $Cfg -Encoding UTF8; Write-Host 'Created baseline config.' }; Copy-Item $Cfg \"$Cfg.bak\" -Force; Write-Host \"Backup created: $Cfg.bak\"",
-  "script": "$Dir='C:\\3EN-Agent\\sandbox'; $Cfg=Join-Path $Dir 'service.conf'; $content=Get-Content $Cfg; $content=$content -replace '^mode=.*$','mode=agent-tested'; $content=$content -replace '^enabled=.*$','enabled=true'; $content=$content -replace '^threshold=.*$','threshold=42'; $content | Set-Content -Path $Cfg -Encoding UTF8; Write-Host \"Patched: $Cfg\"; Get-Content $Cfg",
-  "test": "$Cfg='C:\\3EN-Agent\\sandbox\\service.conf'; $lines=Get-Content $Cfg; $required=@('mode=agent-tested','enabled=true','threshold=42'); foreach($r in $required){ if($lines -notcontains $r){ throw \"Validation failed: missing $r\" } }; if($lines.Count -ne 3){ throw \"Validation failed: expected 3 lines, got $($lines.Count)\" }; Write-Host 'CONFIG VALIDATION PASS'; Get-Content $Cfg",
-  "rollback": "$Cfg='C:\\3EN-Agent\\sandbox\\service.conf'; $Bak=\"$Cfg.bak\"; if(Test-Path $Bak){ Copy-Item $Bak $Cfg -Force; Write-Host 'Rollback restored original config.'; Get-Content $Cfg } else { throw 'Rollback backup not found.' }"
+  "id": "2026-09-09-007",
+  "title": "3EN Agent full round-trip test",
+  "description": "Verify the complete workflow: approved local execution, test validation, result.json creation, and automatic upload of the execution result back to GitHub.",
+  "backup": "$Dir='C:\\3EN-Agent\\roundtrip'; New-Item -ItemType Directory -Force -Path $Dir | Out-Null; $File=Join-Path $Dir 'roundtrip.txt'; if(Test-Path $File){ Copy-Item $File \"$File.bak\" -Force; Write-Host \"Backup created: $File.bak\" } else { Write-Host 'No previous roundtrip file.' }",
+  "script": "$File='C:\\3EN-Agent\\roundtrip\\roundtrip.txt'; @('3EN ROUNDTRIP PASS',\"Generated=$(Get-Date -Format o)\",\"Computer=$env:COMPUTERNAME\") | Set-Content -Path $File -Encoding UTF8; Write-Host \"Created $File\"; Get-Content $File",
+  "test": "$File='C:\\3EN-Agent\\roundtrip\\roundtrip.txt'; if(-not(Test-Path $File)){throw 'Roundtrip file missing.'}; $c=Get-Content $File; if($c[0] -ne '3EN ROUNDTRIP PASS'){throw 'Unexpected roundtrip marker.'}; Write-Host 'ROUNDTRIP LOCAL TEST PASS'; Get-Content $File",
+  "rollback": "$File='C:\\3EN-Agent\\roundtrip\\roundtrip.txt'; $Bak=\"$File.bak\"; if(Test-Path $Bak){Copy-Item $Bak $File -Force; Write-Host 'Previous roundtrip file restored.'}else{Remove-Item $File -Force -ErrorAction SilentlyContinue; Write-Host 'Roundtrip file removed.'}"
 }
