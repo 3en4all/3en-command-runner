@@ -4,7 +4,7 @@
     "pointerRevision":  "2026-09-10T01:22:00+02:00-v450-057q-tool-surface",
     "pointerProject":  "project-v450.json",
     "processedRevision":  "2026-09-10T01:17:00+02:00-v449-runner-pipeline-isolation",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  2,
     "lastError":  "",
     "nextRetryUtc":  "2026-09-09T23:06:30.6628127Z",
@@ -13,5 +13,5 @@
     "lastExitCode":  4,
     "workerPid":  31120,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T23:06:32.5313331Z"
+    "updatedUtc":  "2026-09-09T23:06:34.4399694Z"
 }
