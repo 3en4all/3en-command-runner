@@ -4,7 +4,7 @@
     "status":  "IDLE",
     "activeLane":  "",
     "activeProject":  "",
-    "pid":  35440,
+    "pid":  22756,
     "runner":  "C:\\3EN-Agent\\3en-agent-runner-v4.0.3.ps1",
     "pollSeconds":  15,
     "publishSeconds":  60,
@@ -32,7 +32,7 @@
                       "lastError":  "",
                       "nextRetryUtc":  "",
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T22:20:20.9472366Z"
+                      "updatedUtc":  "2026-09-09T22:21:11.0530574Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -47,5 +47,5 @@
                       "updatedUtc":  "2026-09-09T22:20:31.7873191Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T22:20:36.4760672Z"
+    "updatedUtc":  "2026-09-09T22:21:19.7265474Z"
 }
