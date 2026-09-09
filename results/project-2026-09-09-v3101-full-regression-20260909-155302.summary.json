@@ -1,0 +1,84 @@
+{
+    "schemaVersion":  1,
+    "projectId":  "2026-09-09-v3101-full-regression",
+    "runnerVersion":  "3.10.1",
+    "verdict":  "NEEDS_DECISION",
+    "accepted":  false,
+    "counts":  {
+                   "success":  7,
+                   "recovered":  0,
+                   "rejected":  1,
+                   "expectedFailures":  2,
+                   "unexpected":  1,
+                   "remaining":  0
+               },
+    "chapters":  [
+                     {
+                         "id":  "2026-09-09-031",
+                         "expected":  "SUCCESS",
+                         "actual":  "SUCCESS",
+                         "match":  true
+                     },
+                     {
+                         "id":  "2026-09-09-032",
+                         "expected":  "SUCCESS",
+                         "actual":  "SUCCESS",
+                         "match":  true
+                     },
+                     {
+                         "id":  "2026-09-09-033",
+                         "expected":  "FAILED_SCRIPT",
+                         "actual":  "FAILED_SCRIPT",
+                         "match":  true
+                     },
+                     {
+                         "id":  "2026-09-09-034",
+                         "expected":  "SUCCESS",
+                         "actual":  "SUCCESS",
+                         "match":  true
+                     },
+                     {
+                         "id":  "2026-09-09-035",
+                         "expected":  "FAILED_TEST",
+                         "actual":  "FAILED_TEST",
+                         "match":  true
+                     },
+                     {
+                         "id":  "2026-09-09-036",
+                         "expected":  "SUCCESS",
+                         "actual":  "SUCCESS",
+                         "match":  true
+                     },
+                     {
+                         "id":  "2026-09-09-037",
+                         "expected":  "SUCCESS",
+                         "actual":  "SUCCESS",
+                         "match":  true
+                     },
+                     {
+                         "id":  "2026-09-09-038",
+                         "expected":  "SUCCESS",
+                         "actual":  "SUCCESS",
+                         "match":  true
+                     },
+                     {
+                         "id":  "2026-09-09-039",
+                         "expected":  "REJECTED",
+                         "actual":  "REJECTED",
+                         "match":  true
+                     },
+                     {
+                         "id":  "2026-09-09-040",
+                         "expected":  "SUCCESS",
+                         "actual":  "SUCCESS",
+                         "match":  true
+                     },
+                     {
+                         "id":  "2026-09-09-041",
+                         "expected":  "SUCCESS_RECOVERED",
+                         "actual":  "SUCCESS",
+                         "match":  false
+                     }
+                 ],
+    "completedUtc":  "2026-09-09T13:53:02.4919262Z"
+}
