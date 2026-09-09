@@ -1,0 +1,12 @@
+V414_050V_BACKUP=PASS
+
+GATEWAY_RESTART_FAILED code=1
+At line:1 char:790
++ ... estart -ne 0){throw ('GATEWAY_RESTART_FAILED code='+$restart)};$ok=$f ...
++                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (GATEWAY_RESTART_FAILED code=1:String) [], RuntimeException
+    + FullyQualifiedErrorId : GATEWAY_RESTART_FAILED code=1
+ 
+
+V414_050V_ROLLBACK=PASS
+
