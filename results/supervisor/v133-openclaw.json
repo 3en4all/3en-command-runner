@@ -1,17 +1,17 @@
 {
     "schemaVersion":  3,
     "lane":  "openclaw",
-    "pointerRevision":  "2026-09-10T01:27:00+02:00-v451-057q2-read-diagnostic",
-    "pointerProject":  "project-v451.json",
+    "pointerRevision":  "2026-09-10T01:32:00+02:00-v452-057r-verified-admin-repair",
+    "pointerProject":  "project-v452.json",
     "processedRevision":  "2026-09-10T01:27:00+02:00-v451-057q2-read-diagnostic",
-    "status":  "TERMINAL",
+    "status":  "SYNCING",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
-    "lastStartedUtc":  "2026-09-09T23:07:24.5940692Z",
+    "lastStartedUtc":  "2026-09-09T23:08:55.1757829Z",
     "lastTerminalUtc":  "2026-09-09T23:07:53.1269860Z",
-    "lastExitCode":  0,
+    "lastExitCode":  null,
     "workerPid":  31120,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T23:07:53.1269860Z"
+    "updatedUtc":  "2026-09-09T23:08:55.1757829Z"
 }
