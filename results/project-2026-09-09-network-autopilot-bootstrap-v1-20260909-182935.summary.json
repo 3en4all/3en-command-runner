@@ -1,0 +1,24 @@
+{
+    "schemaVersion":  1,
+    "projectId":  "2026-09-09-network-autopilot-bootstrap-v1",
+    "runnerVersion":  "3.10.1",
+    "verdict":  "SUCCESS",
+    "accepted":  true,
+    "counts":  {
+                   "success":  1,
+                   "recovered":  0,
+                   "rejected":  0,
+                   "expectedFailures":  0,
+                   "unexpected":  0,
+                   "remaining":  0
+               },
+    "chapters":  [
+                     {
+                         "id":  "network-autopilot-001-bootstrap",
+                         "expected":  "",
+                         "actual":  "SUCCESS",
+                         "match":  true
+                     }
+                 ],
+    "completedUtc":  "2026-09-09T16:29:35.3031555Z"
+}
