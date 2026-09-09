@@ -1,0 +1,24 @@
+{
+  "projectId":"2026-09-09-v414-openclaw-gateway-repair-v1",
+  "title":"OpenClaw Windows Gateway clean repair and acceptance",
+  "policy":{
+    "showErrors":false,
+    "maxAttempts":1,
+    "publishRetries":3,
+    "autoRollbackOnFinalFailure":false,
+    "highRiskAction":"reject"
+  },
+  "chapters":[
+    {
+      "id":"2026-09-09-052w",
+      "path":"tasks/2026-09-09-052w.json",
+      "expectedStatus":"SUCCESS"
+    },
+    {
+      "id":"2026-09-09-053w",
+      "path":"tasks/2026-09-09-053w.json",
+      "dependsOn":[{"id":"2026-09-09-052w","status":"SUCCESS"}],
+      "expectedStatus":"SUCCESS"
+    }
+  ]
+}
