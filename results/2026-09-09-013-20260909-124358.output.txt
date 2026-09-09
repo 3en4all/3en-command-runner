@@ -1,0 +1,42 @@
+BACKUP_013_OK
+=== APPLY 3EN002 HARDENING 013 ===
+--- SSH HARDENING ---
+--- LUCI/UHTTPD HARDENING ---
+--- SYSCTL HARDENING ---
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.all.accept_redirects = 0
+net.ipv4.conf.default.accept_redirects = 0
+net.ipv4.conf.all.send_redirects = 0
+net.ipv4.conf.default.send_redirects = 0
+net.ipv6.conf.all.accept_redirects = 0
+net.ipv6.conf.default.accept_redirects = 0
+--- RESTART SERVICES ---
+--- POST STATE ---
+dropbear.main=dropbear
+dropbear.main.enable='1'
+dropbear.main.PasswordAuth='off'
+dropbear.main.RootPasswordAuth='off'
+dropbear.main.Port='22'
+uhttpd.main.redirect_https='1'
+uhttpd.main.listen_http='192.168.1.2:80'
+uhttpd.main.listen_https='192.168.1.2:443'
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.all.accept_redirects = 0
+net.ipv4.conf.default.accept_redirects = 0
+net.ipv4.conf.all.send_redirects = 0
+net.ipv4.conf.default.send_redirects = 0
+net.ipv6.conf.all.accept_redirects = 0
+net.ipv6.conf.default.accept_redirects = 0
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      10878/dropbear
+tcp        0      0 192.168.1.2:443         0.0.0.0:*               LISTEN      10744/uhttpd
+tcp        0      0 192.168.1.2:80          0.0.0.0:*               LISTEN      10744/uhttpd
+tcp        0      0 :::22                   :::*                    LISTEN      10878/dropbear
+HARDENING_013_APPLY_OK
+=== VALIDATE HARDENING 013 ===
+SSH_KEY_OK
+off
+off
+1
+VALIDATION_013=PASS
