@@ -1,0 +1,10 @@
+{
+  "id": "2026-09-09-046",
+  "title": "v4.0 self-healing checkpoint acceptance",
+  "risk": "low",
+  "backup": "$root='C:/3EN-Agent/v40-acceptance'; New-Item -ItemType Directory -Force -Path $root | Out-Null; Remove-Item (Join-Path $root 'repair46.flag') -Force -ErrorAction SilentlyContinue; Write-Output 'V40_046_BACKUP=PASS'",
+  "script": "$p='C:/3EN-Agent/v40-acceptance/repair46.flag'; if(-not(Test-Path $p)){throw 'RECOVERY_REQUIRED'}; Write-Output 'V40_046_SCRIPT_RECOVERED=PASS'",
+  "test": "$p='C:/3EN-Agent/v40-acceptance/repair46.flag'; if((Get-Content $p -Raw) -notmatch 'REPAIRED'){throw 'RECOVERY_INVALID'}; Write-Output 'V40_046_TEST=PASS'",
+  "repair": "Set-Content -LiteralPath 'C:/3EN-Agent/v40-acceptance/repair46.flag' -Value 'REPAIRED' -Encoding ASCII; Write-Output 'V40_046_REPAIR=PASS'",
+  "rollback": "Remove-Item 'C:/3EN-Agent/v40-acceptance/repair46.flag' -Force -ErrorAction SilentlyContinue; Write-Output 'V40_046_ROLLBACK=PASS'"
+}
