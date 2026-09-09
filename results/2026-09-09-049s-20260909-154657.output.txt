@@ -1,0 +1,13 @@
+V412_049S_BACKUP=PASS
+
+node.exe : Config observe anomaly: C:\Users\wi3lk\.openclaw\openclaw.json (size-drop-vs-last-good:9475->222, gateway-mo
+de-missing-vs-last-good)
+At C:\Users\wi3lk\AppData\Roaming\npm\openclaw.ps1:24 char:5
++     & "node$exe"  "$basedir/node_modules/openclaw/openclaw.mjs" $args
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Config observe ...g-vs-last-good):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+V412_049S_ROLLBACK=PASS
+
