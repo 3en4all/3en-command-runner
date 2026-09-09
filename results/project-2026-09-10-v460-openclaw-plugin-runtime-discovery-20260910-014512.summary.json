@@ -1,0 +1,16 @@
+{
+    "schemaVersion":  3,
+    "projectId":  "2026-09-10-v460-openclaw-plugin-runtime-discovery",
+    "runnerVersion":  "4.0.2",
+    "verdict":  "SUCCESS",
+    "accepted":  true,
+    "counts":  {
+                   "success":  1,
+                   "recovered":  0,
+                   "rejected":  0,
+                   "failed":  0,
+                   "blocked":  0
+               },
+    "remaining":  0,
+    "completedUtc":  "2026-09-09T23:45:12.3877810Z"
+}
