@@ -1,0 +1,17 @@
+HEALTH=FAIL listenPort=8088 expectedPort=8099
+V446_057O_BACKUP=PASS root=C:/3EN-Agent/workbench/admin-057o baselineExit=42
+
+V446_057O_AGENT_EXIT=0
+V446_057O_AGENT_OUTPUT=Skill proposal `admin-incident-handling-20260909-b9a5c7818e` has been created and is currently pending. Let me know if you'd like to review or take further action on this proposal.
+V446_057O_AGENT=PASS session=3en-057o-admin-6644e03007ed47c99522047c0c696ee7
+
+057O_OPENCLAW_BACKUP_MISSING
+At line:1 char:409
++ ... -not(Test-Path $before)){throw '057O_OPENCLAW_BACKUP_MISSING'};if(-no ...
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (057O_OPENCLAW_BACKUP_MISSING:String) [], RuntimeException
+    + FullyQualifiedErrorId : 057O_OPENCLAW_BACKUP_MISSING
+ 
+
+V446_057O_ROLLBACK=PASS_CONFIG_RESTORED
+
