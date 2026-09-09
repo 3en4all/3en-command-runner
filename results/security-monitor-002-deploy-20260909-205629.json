@@ -1,0 +1,40 @@
+{
+    "projectId":  "2026-09-09-security-monitor-integration-v1",
+    "chapterId":  "security-monitor-002-deploy",
+    "risk":  "low",
+    "status":  "SUCCESS_RECOVERED",
+    "stage":  "TERMINAL",
+    "attempts":  2,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "TEST_1",
+                      "status":  "FAILED",
+                      "error":  "Serwer zdalny zwrócił błąd: (500) Wewnętrzny błąd serwera."
+                  },
+                  {
+                      "name":  "REPAIR_1",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_2",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "TEST_2",
+                      "status":  "OK",
+                      "error":  null
+                  }
+              ]
+}
