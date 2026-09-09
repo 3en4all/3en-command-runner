@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-053w",
+  "title":"OpenClaw post-repair end-to-end smoke",
+  "risk":"low",
+  "backup":"Write-Output 'V414_053W_BACKUP=READ_ONLY'",
+  "script":"$root='C:/3EN-Agent/openclaw-bridge';$so=Join-Path $root '053w-agent.json';$se=Join-Path $root '053w-agent.err.txt';Remove-Item $so,$se -Force -ErrorAction SilentlyContinue;$p=Start-Process -FilePath 'openclaw.cmd' -ArgumentList @('agent','--session-key','3en-053w','--message','Reply with exactly OPENCLAW_BRIDGE_OK','--json','--timeout','180') -Wait -PassThru -NoNewWindow -RedirectStandardOutput $so -RedirectStandardError $se;if($p.ExitCode -ne 0){throw ('AGENT_FAILED code='+$p.ExitCode)};$raw=Get-Content $so -Raw;$null=$raw|ConvertFrom-Json;if($raw -notmatch 'OPENCLAW_BRIDGE_OK'){throw 'AGENT_MARKER_MISSING'};Write-Output 'V414_053W_AGENT=PASS'",
+  "test":"$root='C:/3EN-Agent/openclaw-bridge';$raw=& openclaw.cmd gateway status --json 2>&1;if($LASTEXITCODE -ne 0){throw 'GATEWAY_STATUS_FAILED_AFTER_AGENT'};$null=($raw|Out-String)|ConvertFrom-Json;Write-Output 'V414_053W_TEST=PASS'",
+  "rollback":"Write-Output 'V414_053W_ROLLBACK=NO_CHANGE'"
+}
