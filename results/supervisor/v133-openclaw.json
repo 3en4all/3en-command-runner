@@ -4,14 +4,14 @@
     "pointerRevision":  "2026-09-10T01:40:00+02:00-v453-057s-externalized-admin-repair",
     "pointerProject":  "project-v453.json",
     "processedRevision":  "2026-09-10T01:27:00+02:00-v451-057q2-read-diagnostic",
-    "status":  "RETRY_PENDING",
-    "attempts":  1,
-    "lastError":  "The property \u0027path\u0027 cannot be found on this object. Verify that the property exists.",
+    "status":  "SYNCING",
+    "attempts":  2,
+    "lastError":  "",
     "nextRetryUtc":  "2026-09-09T23:12:14.3458369Z",
-    "lastStartedUtc":  "2026-09-09T23:11:43.0632162Z",
+    "lastStartedUtc":  "2026-09-09T23:12:15.8758221Z",
     "lastTerminalUtc":  "2026-09-09T23:10:40.8805408Z",
     "lastExitCode":  null,
     "workerPid":  31120,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T23:11:44.3458369Z"
+    "updatedUtc":  "2026-09-09T23:12:15.8758221Z"
 }
