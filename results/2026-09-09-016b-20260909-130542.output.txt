@@ -1,0 +1,11 @@
+BACKUP_ROOT=C:\3EN-Agent\backups\016b\20260909-130542
+BACKUP_016B_READY
+The property 'Count' cannot be found on this object. Verify that the property exists.
+At line:1 char:2696
++ ... Stop}catch{continue}; $hits=@(); for($i=0;$i -lt $lines.Count;$i++){  ...
++                                               ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], PropertyNotFoundException
+    + FullyQualifiedErrorId : PropertyNotFoundStrict
+ 
+
+READ-ONLY DISCOVERY TASK: no rollback required; backup copies only.
