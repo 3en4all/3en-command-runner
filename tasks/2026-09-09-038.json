@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-038",
+  "title":"QUEUE TEST 08/10 - continuity after recovery",
+  "description":"Automated queue validation chapter 8 of 10. Verifies previous SUCCESS state and continued queue progression.",
+  "backup":"Write-Host 'QUEUE038_BACKUP=PASS'",
+  "script":"$ErrorActionPreference='Stop';$s=Get-Content 'C:/3EN-Agent/3en-agent.state.json' -Raw|ConvertFrom-Json;Write-Host ('PREVIOUS_ID='+$s.lastExecutedId);Write-Host ('PREVIOUS_STATUS='+$s.lastTerminalStatus);if($s.lastExecutedId -ne '2026-09-09-037'){throw '037 state continuity missing'};if($s.lastTerminalStatus -ne 'SUCCESS'){throw '037 SUCCESS status missing'};Write-Host 'QUEUE038_SCRIPT=PASS'",
+  "test":"Write-Host 'QUEUE038_TEST=PASS'",
+  "rollback":"Write-Host 'QUEUE038_ROLLBACK_NOT_REQUIRED'"
+}
