@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-034",
+  "title":"QUEUE TEST 04/10 - recover after FAILED_SCRIPT",
+  "description":"Automated queue validation chapter 4 of 10. Verifies queue advanced after intentional FAILED_SCRIPT in 033 and state preserved that terminal status.",
+  "backup":"Write-Host 'QUEUE034_BACKUP=PASS'",
+  "script":"$ErrorActionPreference='Stop';$s=Get-Content 'C:/3EN-Agent/3en-agent.state.json' -Raw|ConvertFrom-Json;Write-Host ('PREVIOUS_ID='+$s.lastExecutedId);Write-Host ('PREVIOUS_STATUS='+$s.lastTerminalStatus);if($s.lastExecutedId -ne '2026-09-09-033'){throw '033 state continuity missing'};if($s.lastTerminalStatus -ne 'FAILED_SCRIPT'){throw '033 FAILED_SCRIPT status missing'};Write-Host 'QUEUE034_SCRIPT=PASS'",
+  "test":"Write-Host 'QUEUE034_TEST=PASS'",
+  "rollback":"Write-Host 'QUEUE034_ROLLBACK_NOT_REQUIRED'"
+}
