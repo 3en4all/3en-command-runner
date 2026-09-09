@@ -1,0 +1,8 @@
+V445_057N_BACKUP=PASS oldPrimary=ollama/d89ftekb7/mistral-nemo-uncensored:12b-q4_0 backup=C:\3EN-Agent\openclaw-bridge\openclaw-before-v445-qwen3-20260910-005048.json
+
+V445_057N_PRIMARY_OLD=ollama/d89ftekb7/mistral-nemo-uncensored:12b-q4_0
+V445_057N_PRIMARY_NEW=ollama/qwen3:14b
+V445_057N_OPENCLAW_E2E=PASS model=qwen3:14b gatewayRestarted=False target=C:\3EN-Agent\workbench\openclaw-qwen3-e2e-proof.txt
+
+V445_057N_TEST=PASS primary=ollama/qwen3:14b file=C:/3EN-Agent/workbench/openclaw-qwen3-e2e-proof.txt gatewayRestarted=False
+
