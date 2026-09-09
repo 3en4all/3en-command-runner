@@ -1,0 +1,12 @@
+V411_049R_BACKUP=PASS
+
+NO_OLLAMA_MODELS
+At line:1 char:164
++ ... ollamaTags); if($models.Count -lt 1){throw 'NO_OLLAMA_MODELS'}; $pref ...
++                                          ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (NO_OLLAMA_MODELS:String) [], RuntimeException
+    + FullyQualifiedErrorId : NO_OLLAMA_MODELS
+ 
+
+V411_049R_ROLLBACK=PASS
+
