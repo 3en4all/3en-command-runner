@@ -1,0 +1,30 @@
+{
+    "projectId":  "2026-09-10-security-privacy-merge-recovery-v2",
+    "chapterId":  "security-privacy-007-merge-diagnostic-recovery",
+    "risk":  "low",
+    "status":  "FAILED",
+    "stage":  "TERMINAL",
+    "attempts":  1,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "FAILED",
+                      "error":  "Nie można odnaleźć określonego pliku.\r\n"
+                  },
+                  {
+                      "name":  "REPAIR_1",
+                      "status":  "FAILED",
+                      "error":  "Nie można odnaleźć określonego pliku.\r\n"
+                  },
+                  {
+                      "name":  "ROLLBACK",
+                      "status":  "OK",
+                      "error":  null
+                  }
+              ]
+}
