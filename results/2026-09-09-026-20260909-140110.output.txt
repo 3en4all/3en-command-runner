@@ -1,0 +1,13 @@
+BACKUP_ROOT=C:/3EN-Agent/backups/026/20260909-140110
+CHAPTER_026_BACKUP=PASS
+Add-Content : A positional parameter cannot be found that accepts argument '+SUCCESS=PASS FAILED_SCRIPT=PASS FAILED_TEST=PAS
+S REJECTED=PASS'.
+At line:1 char:2966
++ ... TRIP=PASS'; Add-Content -LiteralPath $report -Encoding UTF8 -Value @( ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Add-Content], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.AddContentCommand
+ 
+
+Validation chapter only. Production runner/state are not modified except normal task finalization by v3.6. Backup is under C
+:/3EN-Agent/backups/026.
