@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-033",
+  "title":"QUEUE TEST 03/10 - FAILED_SCRIPT terminal path",
+  "description":"Automated queue validation chapter 3 of 10. Intentionally produces FAILED_SCRIPT so v3.6 terminal persistence and queue advancement can be verified.",
+  "backup":"Write-Host 'QUEUE033_BACKUP=PASS'",
+  "script":"$ErrorActionPreference='Stop';Write-Host 'QUEUE033_INTENTIONAL_FAILED_SCRIPT=BEGIN';throw 'INTENTIONAL_QUEUE_TEST_FAILED_SCRIPT'",
+  "test":"Write-Host 'QUEUE033_TEST_SHOULD_NOT_RUN'",
+  "rollback":"Write-Host 'QUEUE033_ROLLBACK_SAFE_NO_CHANGES'"
+}
