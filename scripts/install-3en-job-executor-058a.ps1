@@ -7,6 +7,14 @@ $Baseline=Join-Path $Work 'target.baseline.json'
 $Evidence=Join-Path $Work 'acceptance.json'
 $BackupRoot='C:\3EN-Agent\backups\openclaw-plugin-3en-job-executor'
 $SourceRef='ca2a16b8b4dc1519cc054fb9e6a15b17628315bc'
+function Invoke-CapturedCmd([string]$Tag,[string]$Command,[bool]$AllowFail=$false){
+  $out=@(& cmd.exe /d /s /c ($Command+' 2>&1'))
+  $ec=$LASTEXITCODE
+  foreach($line in $out){Write-Host ($Tag+'='+[string]$line)}
+  $txt=($out|ForEach-Object{[string]$_})-join "`n"
+  if(-not$AllowFail -and $ec-ne0){throw ($Tag+'_EXIT_'+$ec)}
+  [pscustomobject]@{Exit=[int]$ec;Text=$txt}
+}
 function Get-GatewayContext {
   $p=Join-Path $env:USERPROFILE '.openclaw\openclaw.json';if(-not(Test-Path $p)){throw '058A_OPENCLAW_CONFIG_MISSING'}
   $c=Get-Content $p -Raw|ConvertFrom-Json;$port=18789;if($null-ne$c.gateway -and $null-ne$c.gateway.port -and [int]$c.gateway.port -gt 0){$port=[int]$c.gateway.port}
@@ -15,7 +23,7 @@ function Get-GatewayContext {
   if($mode-ne'none'-and[string]::IsNullOrWhiteSpace($secret)){throw '058A_SECRET_UNAVAILABLE'};[pscustomobject]@{Port=$port;Mode=$mode;Secret=$secret}
 }
 function Invoke-Tool([string]$Tool,[object]$Args){$g=Get-GatewayContext;$h=@{};if($g.Mode-ne'none'){$h.Authorization='Bearer '+$g.Secret};$body=[ordered]@{tool=$Tool;args=$Args;sessionKey='main';idempotencyKey=('058a-'+[guid]::NewGuid().ToString('N'))}|ConvertTo-Json -Depth 10;try{$r=Invoke-RestMethod -Method Post -Uri ('http://127.0.0.1:'+$g.Port+'/tools/invoke') -Headers $h -ContentType 'application/json' -Body $body -TimeoutSec 45;[pscustomobject]@{http=200;ok=if($null-ne$r.ok){[bool]$r.ok}else{$true};raw=$r}}catch{$s=-1;try{$s=[int]$_.Exception.Response.StatusCode}catch{};[pscustomobject]@{http=$s;ok=$false;raw=$null}}}
-function Restart-Gateway {& openclaw.cmd gateway restart 2>&1|ForEach-Object{Write-Output ('058A_GATEWAY_RESTART='+[string]$_)};if($LASTEXITCODE-ne0){throw ('058A_GATEWAY_RESTART_EXIT_'+$LASTEXITCODE)};Start-Sleep -Seconds 5}
+function Restart-Gateway {$r=Invoke-CapturedCmd '058A_GATEWAY_RESTART' 'openclaw.cmd gateway restart';Start-Sleep -Seconds 5}
 switch($Phase){
 'Backup'{
   New-Item -ItemType Directory -Force -Path $BackupRoot|Out-Null
@@ -28,14 +36,17 @@ switch($Phase){
 'Install'{
   if(Test-Path $PluginRoot){Remove-Item $PluginRoot -Recurse -Force};New-Item -ItemType Directory -Force -Path $PluginRoot|Out-Null
   foreach($f in @('package.json','openclaw.plugin.json','index.js')){$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/'+$SourceRef+'/openclaw-plugins/3en-job-executor/'+$f;Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile (Join-Path $PluginRoot $f)}
-  Push-Location $PluginRoot;try{& npm.cmd install --omit=dev --no-audit --no-fund 2>&1|ForEach-Object{Write-Output ('058A_NPM='+[string]$_)};if($LASTEXITCODE-ne0){throw ('058A_NPM_EXIT_'+$LASTEXITCODE)}}finally{Pop-Location}
-  & openclaw.cmd plugins validate --entry $PluginRoot 2>&1|ForEach-Object{Write-Output ('058A_VALIDATE='+[string]$_)};if($LASTEXITCODE-ne0){throw ('058A_VALIDATE_EXIT_'+$LASTEXITCODE)}
-  $list=@(& openclaw.cmd plugins list --json 2>&1);$already=(($list|ForEach-Object{[string]$_})-join "`n") -match '3en-job-executor'
-  if($already){& openclaw.cmd plugins uninstall 3en-job-executor --keep-files --force 2>&1|ForEach-Object{Write-Output ('058A_UNINSTALL='+[string]$_)}}
-  & openclaw.cmd plugins install -l $PluginRoot --force --acknowledge-install-policy-warning 2>&1|ForEach-Object{Write-Output ('058A_INSTALL='+[string]$_)};if($LASTEXITCODE-ne0){throw ('058A_INSTALL_EXIT_'+$LASTEXITCODE)}
-  & openclaw.cmd plugins enable 3en-job-executor 2>&1|ForEach-Object{Write-Output ('058A_ENABLE='+[string]$_)};if($LASTEXITCODE-ne0){throw ('058A_ENABLE_EXIT_'+$LASTEXITCODE)}
+  Push-Location $PluginRoot;try{$npm=Invoke-CapturedCmd '058A_NPM' 'npm.cmd install --omit=dev --no-audit --no-fund'}finally{Pop-Location}
+  $validate=Invoke-CapturedCmd '058A_VALIDATE' ('openclaw.cmd plugins validate --entry "'+$PluginRoot+'"')
+  $list=Invoke-CapturedCmd '058A_LIST' 'openclaw.cmd plugins list --json'
+  $already=$list.Text -match '3en-job-executor'
+  if($already){$un=Invoke-CapturedCmd '058A_UNINSTALL' 'openclaw.cmd plugins uninstall 3en-job-executor --keep-files --force' $true}
+  $ins=Invoke-CapturedCmd '058A_INSTALL' ('openclaw.cmd plugins install -l "'+$PluginRoot+'" --force --acknowledge-install-policy-warning')
+  $en=Invoke-CapturedCmd '058A_ENABLE' 'openclaw.cmd plugins enable 3en-job-executor'
   Restart-Gateway
-  $inspect=@(& openclaw.cmd plugins inspect 3en-job-executor --runtime --json 2>&1);$iec=$LASTEXITCODE;$itxt=($inspect|ForEach-Object{[string]$_})-join "`n";$itxt|Set-Content (Join-Path $Work 'plugin-inspect.json') -Encoding UTF8;if($iec-ne0){throw ('058A_INSPECT_EXIT_'+$iec)};if($itxt-notmatch '3en_job'){throw '058A_TOOL_NOT_REGISTERED'}
+  $inspect=Invoke-CapturedCmd '058A_INSPECT' 'openclaw.cmd plugins inspect 3en-job-executor --runtime --json'
+  $inspect.Text|Set-Content (Join-Path $Work 'plugin-inspect.json') -Encoding UTF8
+  if($inspect.Text-notmatch '3en_job'){throw '058A_TOOL_NOT_REGISTERED'}
   Write-Output 'V461_058A_INSTALL=PASS;PLUGIN=3en-job-executor;TOOL=3en_job'
 }
 'Test'{
@@ -52,7 +63,7 @@ switch($Phase){
 }
 'Rollback'{
   if(Test-Path $Baseline){Copy-Item $Baseline $Target -Force}
-  try{& openclaw.cmd plugins disable 3en-job-executor 2>&1|Out-Null}catch{}
+  try{$d=Invoke-CapturedCmd '058A_DISABLE' 'openclaw.cmd plugins disable 3en-job-executor' $true}catch{}
   Write-Output 'V461_058A_ROLLBACK=PASS;PLUGIN_DISABLED=true;BASELINE_RESTORED=true'
 }
 }
