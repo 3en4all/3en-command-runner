@@ -1,0 +1,12 @@
+V444B_057M2_BACKUP=PASS preExisting=True artifact=C:\3EN-Agent\openclaw-bridge\v444b-057m2-pre.json
+
+057M2_PULL_EXIT_
+At line:1 char:1191
++ ... ;if($p.ExitCode -ne 0){throw ('057M2_PULL_EXIT_'+$p.ExitCode)};Write- ...
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (057M2_PULL_EXIT_:String) [], RuntimeException
+    + FullyQualifiedErrorId : 057M2_PULL_EXIT_
+ 
+
+V444B_057M2_ROLLBACK=KEEP_PARTIAL_MODEL_LAYERS_FOR_RESUME
+
