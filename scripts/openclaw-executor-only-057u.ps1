@@ -101,7 +101,7 @@ switch($Phase){
     $desired='{"service":"3EN-DemoCollector","listenPort":8099,"expectedPort":8099,"enabled":true,"drill":"v455-executor-only"}'
     Invoke-OpenClawWrite -ExactContent $desired
 
-    if(-not(Test-DesiredConfig -Path $Config){throw '057U_EXECUTOR_WRITE_NOT_OBSERVED'})
+    if(-not (Test-DesiredConfig -Path $Config)){throw '057U_EXECUTOR_WRITE_NOT_OBSERVED'}
     Write-Output 'V455_057U_EXECUTOR_WRITE=PASS physicalFileStateObserved=true'
 }
 'Test'{
