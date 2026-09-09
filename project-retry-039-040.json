@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "projectId": "2026-09-09-stress-retry-039-040",
-  "description": "Acceptance retry for the final rejection/continuity path only. Reject 039, then approve 040.",
+  "projectId": "2026-09-09-stress-retry2-039-040",
+  "description": "Final acceptance retry for REJECTED continuity. Reject 039, then approve 040.",
   "branch": "main",
   "policy": {
-    "continueAfterSuccess": true,
-    "continueAfterRejected": true,
-    "continueAfterFailure": true,
+    "continueOnSuccess": true,
+    "continueOnFailure": true,
+    "continueOnRejected": true,
     "requireApprovalEachChapter": true
   },
   "chapters": [
