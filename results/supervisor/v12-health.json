@@ -1,7 +1,7 @@
 {
     "schemaVersion":  3,
     "version":  "1.2",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "activeLane":  "network-privacy",
     "activeProject":  "project-security-privacy-merge-recovery-v2.json",
     "pid":  35440,
@@ -15,12 +15,12 @@
                       "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
                       "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
                       "processedRevision":  "",
-                      "status":  "SYNCING",
+                      "status":  "RUNNING",
                       "attempts":  5,
                       "lastError":  "",
                       "nextRetryUtc":  "2026-09-09T22:19:40.9038114Z",
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-09T22:19:50.8943129Z"
+                      "updatedUtc":  "2026-09-09T22:19:56.0153211Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -47,5 +47,5 @@
                       "updatedUtc":  "2026-09-09T22:16:10.9234719Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T22:19:50.8994137Z"
+    "updatedUtc":  "2026-09-09T22:19:56.0198662Z"
 }
