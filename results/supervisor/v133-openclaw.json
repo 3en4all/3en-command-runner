@@ -4,14 +4,14 @@
     "pointerRevision":  "2026-09-10T01:22:00+02:00-v450-057q-tool-surface",
     "pointerProject":  "project-v450.json",
     "processedRevision":  "2026-09-10T01:17:00+02:00-v449-runner-pipeline-isolation",
-    "status":  "RETRY_PENDING",
-    "attempts":  1,
-    "lastError":  "RUNNER_EXIT_4",
+    "status":  "SYNCING",
+    "attempts":  2,
+    "lastError":  "",
     "nextRetryUtc":  "2026-09-09T23:06:30.6628127Z",
-    "lastStartedUtc":  "2026-09-09T23:05:05.2597217Z",
+    "lastStartedUtc":  "2026-09-09T23:06:32.5313331Z",
     "lastTerminalUtc":  "2026-09-09T23:06:00.6628127Z",
     "lastExitCode":  4,
     "workerPid":  31120,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T23:06:00.6628127Z"
+    "updatedUtc":  "2026-09-09T23:06:32.5313331Z"
 }
