@@ -1,0 +1,10 @@
+QUEUE033_BACKUP=PASS
+INTENTIONAL_QUEUE_TEST_FAILED_SCRIPT
+At line:1 char:85
++ ... NAL_FAILED_SCRIPT=BEGIN';throw 'INTENTIONAL_QUEUE_TEST_FAILED_SCRIPT'
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (INTENTIONAL_QUEUE_TEST_FAILED_SCRIPT:String) [], RuntimeException
+    + FullyQualifiedErrorId : INTENTIONAL_QUEUE_TEST_FAILED_SCRIPT
+ 
+
+QUEUE033_ROLLBACK_SAFE_NO_CHANGES
