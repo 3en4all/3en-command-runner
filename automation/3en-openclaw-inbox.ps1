@@ -7,7 +7,7 @@ param(
 $ErrorActionPreference='Stop'
 $stateFile=Join-Path $Root '3en-openclaw-inbox.state.json'
 $logFile=Join-Path $Root '3en-openclaw-inbox.log'
-$runner=Join-Path $Root '3en-agent-runner-v4.0.3.ps1'
+$runner=Join-Path $Root '3en-agent-runner-v4.0.3-openclaw.ps1'
 New-Item -ItemType Directory -Force -Path $Root|Out-Null
 function Log([string]$m){Add-Content -LiteralPath $logFile -Value ('['+(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')+'] '+$m) -Encoding UTF8}
 function Load-State{if(Test-Path $stateFile){try{return Get-Content $stateFile -Raw|ConvertFrom-Json}catch{}};return [pscustomobject]@{revision='';status='NEW';projectPath='';exitCode=$null}}
@@ -37,7 +37,7 @@ try{
  Log '3EN OPENCLAW INBOX START'
  while($true){
   try{
-   if(-not(Test-Path $runner)){throw 'RUNNER_403_MISSING'}
+   if(-not(Test-Path $runner)){throw 'OPENCLAW_RUNNER_403_MISSING'}
    $ptr=Invoke-RestMethod -UseBasicParsing -Uri ($PointerUrl+'?ts='+[DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()) -TimeoutSec 20
    $rev=[string]$ptr.revision;$project=[string]$ptr.projectPath;$enabled=[bool]$ptr.enabled
    if($enabled -and $rev -and $project){
