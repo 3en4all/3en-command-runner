@@ -1,0 +1,12 @@
+Copy-Item : Nie można odnaleźć części ścieżki „C:\3EN-Agent\openclaw-bridge\openclaw-config-before-049t\openclaw-config
+-before-049s\openclaw-config-before-049r\tools\node\npm\node_modules\@steipete\oracle\node_modules\toasted-notifier\ven
+dor\mac.noindex\terminal-notifier.app\Contents\MacOS\terminal-notifier”.
+At line:1 char:275
++ ... $bak -Recurse -Force}; Copy-Item $cfgDir $bak -Recurse -Force}; Write ...
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (terminal-notifier:FileInfo) [Copy-Item], DirectoryNotFoundException
+    + FullyQualifiedErrorId : CopyDirectoryInfoItemIOError,Microsoft.PowerShell.Commands.CopyItemCommand
+ 
+
+V413_049T_ROLLBACK=PASS
+
