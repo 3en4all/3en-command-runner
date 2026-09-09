@@ -1,0 +1,13 @@
+V461_058A_BACKUP=PASS;PLUGIN_PREEXISTING=True;BACKUP=C:\3EN-Agent\backups\openclaw-plugin-3en-job-executor\20260910-015512
+
+powershell.exe : 058A_INSTALL_EXIT_1
+At line:1 char:1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (058A_INSTALL_EXIT_1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+058A_DISABLE=Plugin not found: 3en-job-executor. Run `openclaw plugins list` to see installed plugins, or `openclaw plugins search 3en-job-executor` to look for installable plugins.
+V461_058A_ROLLBACK=PASS;PLUGIN_DISABLED=true;BASELINE_RESTORED=true
+
