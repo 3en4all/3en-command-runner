@@ -1,0 +1,17 @@
+V450_057Q_BACKUP=PASS
+
+V450_057Q_READ_MATCH=
+V450_057Q_WRITE_EXISTS=True
+V450_057Q_WRITE_CONTENT=WRITE_PROBE_CONTENT=BETA_057Q
+V450_057Q_PRIMARY=ollama/qwen3:14b
+
+057Q_READ_PROBE_FAILED
+At line:1 char:269
++ ... )};if(-not [bool]$d.readMatch){throw '057Q_READ_PROBE_FAILED'};if(-no ...
++                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (057Q_READ_PROBE_FAILED:String) [], RuntimeException
+    + FullyQualifiedErrorId : 057Q_READ_PROBE_FAILED
+ 
+
+V450_057Q_ROLLBACK=NO_SYSTEM_CHANGE
+
