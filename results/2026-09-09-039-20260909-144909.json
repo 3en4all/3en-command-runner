@@ -1,0 +1,23 @@
+{
+    "projectId":  "2026-09-09-stress-retry2-039-040",
+    "chapterId":  "2026-09-09-039",
+    "status":  "FAILED_SCRIPT",
+    "startedLocal":  "20260909-144909",
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT",
+                      "status":  "FAILED",
+                      "error":  "QUEUE039_SCRIPT_EXECUTED_BUT_SHOULD_HAVE_BEEN_REJECTED"
+                  },
+                  {
+                      "name":  "ROLLBACK",
+                      "status":  "OK",
+                      "error":  null
+                  }
+              ]
+}
