@@ -17,12 +17,12 @@
                       "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  2,
+                      "attempts":  3,
                       "lastError":  "RUNNER_EXIT_",
-                      "nextRetryUtc":  "2026-09-09T22:44:33.6943358Z",
+                      "nextRetryUtc":  "2026-09-09T22:46:52.5098409Z",
                       "runnerPid":  null,
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T22:43:33.6943358Z"
+                      "updatedUtc":  "2026-09-09T22:44:52.5113577Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -37,7 +37,7 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T22:43:41.8223070Z"
+                      "updatedUtc":  "2026-09-09T22:44:41.9993903Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -47,13 +47,13 @@
                       "pointerProject":  "project-v444b.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  2,
+                      "attempts":  3,
                       "lastError":  "RUNNER_EXIT_",
-                      "nextRetryUtc":  "2026-09-09T22:44:39.3831793Z",
+                      "nextRetryUtc":  "2026-09-09T22:46:43.2566981Z",
                       "runnerPid":  null,
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T22:43:39.3846902Z"
+                      "updatedUtc":  "2026-09-09T22:44:43.2582083Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T22:43:48.3492539Z"
+    "updatedUtc":  "2026-09-09T22:44:54.3763604Z"
 }
