@@ -1,0 +1,30 @@
+{
+  "projectId": "2026-09-09-v411-openclaw-recovery",
+  "title": "3EN v4.1.1 OpenClaw Bridge recovery",
+  "policy": {
+    "showErrors": false,
+    "maxAttempts": 2,
+    "publishRetries": 3,
+    "autoRollbackOnFinalFailure": true,
+    "highRiskAction": "reject"
+  },
+  "chapters": [
+    {
+      "id": "2026-09-09-049r",
+      "path": "tasks/2026-09-09-049r.json",
+      "expectedStatus": "SUCCESS"
+    },
+    {
+      "id": "2026-09-09-050",
+      "path": "tasks/2026-09-09-050.json",
+      "dependsOn": [{"id":"2026-09-09-049r","status":"SUCCESS"}],
+      "expectedStatus": "SUCCESS"
+    },
+    {
+      "id": "2026-09-09-051",
+      "path": "tasks/2026-09-09-051.json",
+      "dependsOn": [{"id":"2026-09-09-050","status":"SUCCESS"}],
+      "expectedStatus": "SUCCESS"
+    }
+  ]
+}
