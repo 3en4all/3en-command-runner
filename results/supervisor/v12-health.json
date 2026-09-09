@@ -1,7 +1,7 @@
 {
     "schemaVersion":  3,
     "version":  "1.2",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "activeLane":  "openclaw",
     "activeProject":  "project-v444.json",
     "pid":  35440,
@@ -39,13 +39,13 @@
                       "pointerRevision":  "2026-09-09T23:58:00+02:00-v444-057m-resume",
                       "pointerProject":  "project-v444.json",
                       "processedRevision":  "",
-                      "status":  "SYNCING",
+                      "status":  "RUNNING",
                       "attempts":  1,
                       "lastError":  "",
                       "nextRetryUtc":  "",
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T22:11:16.2627574Z"
+                      "updatedUtc":  "2026-09-09T22:11:21.0028490Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T22:11:16.2672858Z"
+    "updatedUtc":  "2026-09-09T22:11:21.0073980Z"
 }
