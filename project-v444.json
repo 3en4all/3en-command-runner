@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "projectId": "2026-09-09-v444-qwen3-14b-native-tool-validation",
+  "title": "3EN v4.4.4 Qwen3 14B native tool validation",
+  "policy": {
+    "showErrors": false,
+    "maxAttempts": 1,
+    "publishRetries": 3,
+    "autoRollbackOnFinalFailure": true,
+    "highRiskAction": "reject"
+  },
+  "chapters": [
+    {
+      "id": "2026-09-09-057m",
+      "path": "tasks/2026-09-09-057m.json",
+      "expectedStatus": "SUCCESS"
+    }
+  ]
+}
