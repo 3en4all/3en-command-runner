@@ -1,0 +1,9 @@
+{
+  "id": "2026-09-09-041",
+  "title": "v3.9 self-healing recovery acceptance",
+  "backup": "$root='C:/3EN-Agent/v39-acceptance'; New-Item -ItemType Directory -Force -Path $root | Out-Null; $target=Join-Path $root 'recovery.flag'; $backup=Join-Path $root 'recovery.flag.bak'; if(Test-Path $target){Copy-Item $target $backup -Force}; Write-Output 'V39_BACKUP_READY'",
+  "script": "$root='C:/3EN-Agent/v39-acceptance'; $flag=Join-Path $root 'recovery.flag'; if(-not(Test-Path $flag)){ throw 'RECOVERY_REQUIRED' }; Write-Output 'V39_SCRIPT_RECOVERED'",
+  "test": "$flag='C:/3EN-Agent/v39-acceptance/recovery.flag'; if(-not(Test-Path $flag)){throw 'RECOVERY_FLAG_MISSING'}; $c=Get-Content $flag -Raw; if($c -notmatch 'REPAIRED'){throw 'RECOVERY_FLAG_INVALID'}; Write-Output 'V39_RECOVERY_TEST=PASS'",
+  "repair": "$root='C:/3EN-Agent/v39-acceptance'; New-Item -ItemType Directory -Force -Path $root | Out-Null; Set-Content -LiteralPath (Join-Path $root 'recovery.flag') -Value 'REPAIRED' -Encoding ASCII; Write-Output 'V39_REPAIR_APPLIED'",
+  "rollback": "$root='C:/3EN-Agent/v39-acceptance'; $target=Join-Path $root 'recovery.flag'; $backup=Join-Path $root 'recovery.flag.bak'; if(Test-Path $backup){Copy-Item $backup $target -Force}else{Remove-Item $target -Force -ErrorAction SilentlyContinue}; Write-Output 'V39_ROLLBACK_COMPLETE'"
+}
