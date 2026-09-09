@@ -1,9 +1,9 @@
 {
-  "id": "2026-09-09-003",
-  "title": "3EN Agent v2.2 smoke test",
-  "description": "Create a backup directory, write a test file, verify it exists, and provide rollback.",
-  "backup": "$BackupDir = 'C:\\3EN-Agent\\backup'; New-Item -ItemType Directory -Force -Path $BackupDir | Out-Null; Write-Host \"Backup directory ready: $BackupDir\"",
-  "script": "$TestFile = 'C:\\3EN-Agent\\agent-v2-test.txt'; \"3EN Agent v2.2 OK - $(Get-Date -Format o)\" | Set-Content -Path $TestFile -Encoding UTF8; Write-Host \"Created: $TestFile\"",
-  "test": "$TestFile = 'C:\\3EN-Agent\\agent-v2-test.txt'; if (-not (Test-Path $TestFile)) { throw 'Test file does not exist' }; Get-Content $TestFile",
-  "rollback": "$TestFile = 'C:\\3EN-Agent\\agent-v2-test.txt'; Remove-Item $TestFile -Force -ErrorAction SilentlyContinue; Write-Host \"Rollback complete\""
+  "id": "2026-09-09-004",
+  "title": "3EN Agent system inventory",
+  "description": "Collect a basic Windows, PowerShell, network and disk inventory and save it to C:\\3EN-Agent\\system-inventory.txt.",
+  "backup": "$Report='C:\\3EN-Agent\\system-inventory.txt'; if (Test-Path $Report) { Copy-Item $Report \"$Report.bak\" -Force; Write-Host \"Previous report backed up to $Report.bak\" } else { Write-Host 'No previous report to back up.' }",
+  "script": "$Report='C:\\3EN-Agent\\system-inventory.txt'; $lines=@(); $lines += '=== 3EN AGENT SYSTEM INVENTORY ==='; $lines += \"Generated: $(Get-Date -Format o)\"; $lines += ''; $lines += '=== COMPUTER ==='; $lines += (Get-ComputerInfo | Select-Object CsName,WindowsProductName,WindowsVersion,OsArchitecture | Format-List | Out-String); $lines += '=== POWERSHELL ==='; $lines += ($PSVersionTable | Out-String); $lines += '=== IP ==='; $lines += (Get-NetIPAddress -AddressFamily IPv4 | Where-Object {$_.IPAddress -notlike '169.254*'} | Select-Object InterfaceAlias,IPAddress,PrefixLength | Format-Table -AutoSize | Out-String); $lines += '=== DISKS ==='; $lines += (Get-Volume | Where-Object {$_.DriveLetter} | Select-Object DriveLetter,FileSystemLabel,FileSystem,SizeRemaining,Size | Format-Table -AutoSize | Out-String); $lines | Set-Content -Path $Report -Encoding UTF8; Write-Host \"Inventory written to $Report\"",
+  "test": "$Report='C:\\3EN-Agent\\system-inventory.txt'; if (-not (Test-Path $Report)) { throw 'Inventory report was not created.' }; if ((Get-Item $Report).Length -lt 100) { throw 'Inventory report is unexpectedly small.' }; Get-Item $Report | Select-Object FullName,Length,LastWriteTime; Get-Content $Report -TotalCount 20",
+  "rollback": "$Report='C:\\3EN-Agent\\system-inventory.txt'; if (Test-Path \"$Report.bak\") { Copy-Item \"$Report.bak\" $Report -Force; Write-Host 'Previous report restored.' } else { Remove-Item $Report -Force -ErrorAction SilentlyContinue; Write-Host 'New report removed.' }"
 }
