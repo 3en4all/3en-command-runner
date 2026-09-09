@@ -3,7 +3,7 @@ $ErrorActionPreference='Stop'
 $root='C:\3EN-Agent'
 $state=Join-Path $root '3en-project.state.json'
 $runner=Join-Path $root '3en-agent-runner-v3.10.1.ps1'
-$acceptedProjects=@('2026-09-09-router-pihole-final-v1','2026-09-09-router-pihole-final-v2')
+$acceptedProjects=@('2026-09-09-router-pihole-final-v1','2026-09-09-router-pihole-final-v2','2026-09-09-router-pihole-final-v3')
 $deadline=(Get-Date).AddMinutes(15)
 while((Get-Date)-lt$deadline){
   try{
