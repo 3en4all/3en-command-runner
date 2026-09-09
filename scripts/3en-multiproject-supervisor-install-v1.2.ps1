@@ -20,10 +20,16 @@ function Install{
  $new="'-ProjectPath',`$project"
  if($raw -notmatch [regex]::Escape($old)){throw 'SUPERVISOR_V12_HANDOFF_MARKER_MISSING'}
  $raw=$raw.Replace($old,$new)
+ $revOld='          $rev=[string]$ptr.revision;$project=[string]$ptr.projectPath;$enabled=[bool]$ptr.enabled`n          $s.pointerRevision=$rev;$s.pointerProject=$project'
+ $revNew='          $rev=[string]$ptr.revision;$project=[string]$ptr.projectPath;$enabled=[bool]$ptr.enabled`n          $previousPointerRevision=[string]$s.pointerRevision`n          if($previousPointerRevision -ne $rev){$s.attempts=0;$s.lastError='''' ;$s.nextRetryUtc='''' ;$s.lastExitCode=$null;$s.status=''NEW'';Log (''REVISION_RESET lane=''+$lane+'' old=''+$previousPointerRevision+'' new=''+$rev)}`n          $s.pointerRevision=$rev;$s.pointerProject=$project'
+ $revOld=$revOld.Replace('`n',[Environment]::NewLine);$revNew=$revNew.Replace('`n',[Environment]::NewLine)
+ if($raw -notmatch [regex]::Escape($revOld)){throw 'SUPERVISOR_V12_REVISION_MARKER_MISSING'}
+ $raw=$raw.Replace($revOld,$revNew)
  Set-Content -LiteralPath $Sup -Value $raw -Encoding UTF8
  $tok=$null;$err=$null;[System.Management.Automation.Language.Parser]::ParseFile($Sup,[ref]$tok,[ref]$err)|Out-Null;if(@($err).Count -gt 0){throw ('SUPERVISOR_V12_SYNTAX_ERRORS='+@($err).Count)}
  $patched=Get-Content $Sup -Raw
  if($patched -notmatch [regex]::Escape($new)){throw 'SUPERVISOR_V12_HANDOFF_PATCH_FAILED'}
+ if($patched -notmatch 'REVISION_RESET lane='){throw 'SUPERVISOR_V12_REVISION_RESET_PATCH_FAILED'}
  New-Item -ItemType Directory -Force -Path $StartupDir|Out-Null
  foreach($oldStartup in @('3EN-MultiProject-Supervisor-v11.cmd','3EN-MultiProject-Supervisor.cmd')){$op=Join-Path $StartupDir $oldStartup;if(Test-Path $op){Remove-Item $op -Force}}
  $line='@echo off'+[Environment]::NewLine+'start "3EN MultiProject Supervisor v1.2" /min powershell.exe -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "'+$Sup+'"'
@@ -33,8 +39,8 @@ function Install{
  if(-not(Get-ProcByScript '3en-multiproject-supervisor-v1.2.ps1')){throw 'SUPERVISOR_V12_PROCESS_NOT_RUNNING'}
  $health=Join-Path $Root '3en-multiproject-supervisor-v12.health.json';if(-not(Test-Path $health)){throw 'SUPERVISOR_V12_HEALTH_MISSING'}
  $h=Get-Content $health -Raw|ConvertFrom-Json;if([string]$h.version -ne '1.2'){throw 'SUPERVISOR_V12_VERSION_INVALID'};if(@($h.lanes).Count -ne 3){throw 'SUPERVISOR_V12_LANES_INVALID'}
- [pscustomobject]@{installedAt=(Get-Date).ToString('o');backup=$bak;startup=$StartupNew;health=$health;version='1.2';handoff='repo-relative'}|ConvertTo-Json|Set-Content $Marker -Encoding UTF8
- Write-Host ('MULTIPROJECT_SUPERVISOR_V12_INSTALL=PASS;BACKUP='+$bak+';LANES='+@($h.lanes).Count+';TOKEN='+$h.tokenAvailable+';HANDOFF=REPO_RELATIVE')
+ [pscustomobject]@{installedAt=(Get-Date).ToString('o');backup=$bak;startup=$StartupNew;health=$health;version='1.2';handoff='repo-relative';revisionReset=$true}|ConvertTo-Json|Set-Content $Marker -Encoding UTF8
+ Write-Host ('MULTIPROJECT_SUPERVISOR_V12_INSTALL=PASS;BACKUP='+$bak+';LANES='+@($h.lanes).Count+';TOKEN='+$h.tokenAvailable+';HANDOFF=REPO_RELATIVE;REVISION_RESET=TRUE')
 }
 function Test{
  if(-not(Get-ProcByScript '3en-multiproject-supervisor-v1.2.ps1')){throw 'SUPERVISOR_V12_PROCESS_NOT_RUNNING'}
@@ -43,7 +49,8 @@ function Test{
  $names=@($h.lanes|ForEach-Object{$_.lane});foreach($n in @('network-privacy','security-monitor','openclaw')){if($names -notcontains $n){throw ('LANE_MISSING='+$n)}}
  if(-not(Test-Path $StartupNew)){throw 'SUPERVISOR_V12_STARTUP_MISSING'}
  $raw=Get-Content $Sup -Raw;if($raw -notmatch [regex]::Escape("'-ProjectPath',`$project")){throw 'SUPERVISOR_V12_REPO_RELATIVE_HANDOFF_MISSING'}
- Write-Host ('MULTIPROJECT_SUPERVISOR_V12_TEST=PASS;STATUS='+$h.status+';LANES='+$names.Count+';TOKEN='+$h.tokenAvailable+';HANDOFF=REPO_RELATIVE')
+ if($raw -notmatch 'REVISION_RESET lane='){throw 'SUPERVISOR_V12_REVISION_RESET_MISSING'}
+ Write-Host ('MULTIPROJECT_SUPERVISOR_V12_TEST=PASS;STATUS='+$h.status+';LANES='+$names.Count+';TOKEN='+$h.tokenAvailable+';HANDOFF=REPO_RELATIVE;REVISION_RESET=TRUE')
 }
 function Rollback{
  if(-not(Test-Path $Marker)){Write-Host 'ROLLBACK_NO_MARKER';return};$m=Get-Content $Marker -Raw|ConvertFrom-Json
