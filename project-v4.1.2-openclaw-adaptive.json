@@ -1,0 +1,30 @@
+{
+  "projectId": "2026-09-09-v412-openclaw-adaptive",
+  "title": "3EN v4.1.2 OpenClaw adaptive recovery",
+  "policy": {
+    "showErrors": false,
+    "maxAttempts": 2,
+    "publishRetries": 3,
+    "autoRollbackOnFinalFailure": true,
+    "highRiskAction": "reject"
+  },
+  "chapters": [
+    {
+      "id": "2026-09-09-049s",
+      "path": "tasks/2026-09-09-049s.json",
+      "expectedStatus": "SUCCESS"
+    },
+    {
+      "id": "2026-09-09-050",
+      "path": "tasks/2026-09-09-050.json",
+      "dependsOn": [{"id":"2026-09-09-049s","status":"SUCCESS"}],
+      "expectedStatus": "SUCCESS"
+    },
+    {
+      "id": "2026-09-09-051",
+      "path": "tasks/2026-09-09-051.json",
+      "dependsOn": [{"id":"2026-09-09-050","status":"SUCCESS"}],
+      "expectedStatus": "SUCCESS"
+    }
+  ]
+}
