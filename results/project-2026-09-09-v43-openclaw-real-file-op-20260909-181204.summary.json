@@ -1,0 +1,16 @@
+{
+    "schemaVersion":  3,
+    "projectId":  "2026-09-09-v43-openclaw-real-file-op",
+    "runnerVersion":  "4.0.2",
+    "verdict":  "NEEDS_DECISION",
+    "accepted":  false,
+    "counts":  {
+                   "success":  0,
+                   "recovered":  0,
+                   "rejected":  0,
+                   "failed":  1,
+                   "blocked":  0
+               },
+    "remaining":  0,
+    "completedUtc":  "2026-09-09T16:12:04.9299653Z"
+}
