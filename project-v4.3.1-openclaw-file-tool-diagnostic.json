@@ -1,0 +1,19 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-09-v431-openclaw-file-tool-diagnostic",
+  "title":"3EN v4.3.1 OpenClaw file-tool capability diagnostic",
+  "policy":{
+    "showErrors":false,
+    "maxAttempts":1,
+    "publishRetries":3,
+    "autoRollbackOnFinalFailure":true,
+    "highRiskAction":"reject"
+  },
+  "chapters":[
+    {
+      "id":"2026-09-09-057b",
+      "path":"tasks/2026-09-09-057b.json",
+      "expectedStatus":"SUCCESS"
+    }
+  ]
+}
