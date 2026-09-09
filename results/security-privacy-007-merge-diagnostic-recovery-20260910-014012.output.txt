@@ -1,0 +1,25 @@
+MERGE007_BACKUP=MERGER_MANAGED
+MERGE007_TIME=2026-09-10T01:40:12.0505571+02:00
+
+Invoke-RestMethod : The operation has timed out.
+At line:1 char:423
++ ... ECK';try{$b=Invoke-RestMethod -Uri 'http://127.0.0.1:8766/api/status' ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebExceptio 
+   n
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+ 
+
+Start-ScheduledTask : Nie można odnaleźć określonego pliku.
+
+At C:\3EN-Agent\merge-security-monitor-into-privacy-gui-v1.ps1:21 char:3
++   Start-ScheduledTask -TaskName $TaskName -ErrorAction Stop
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (PS_ScheduledTask:Root/Microsoft/...S_ScheduledTask) [Start-ScheduledTask], C 
+   imException
+    + FullyQualifiedErrorId : HRESULT 0x80070002,Start-ScheduledTask
+ 
+
+MERGE007_PHASE=ROLLBACK
+MERGE007_ROLLBACK=FAILED;ERROR=merge state missing
+
