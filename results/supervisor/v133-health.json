@@ -24,7 +24,7 @@
                       "nextRetryUtc":  "2026-09-09T23:07:51.8871873Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "updatedUtc":  "2026-09-09T23:02:51.8887848Z"
+                      "updatedUtc":  "2026-09-09T23:04:09.2194306Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,23 +39,23 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T23:03:08.2549573Z"
+                      "updatedUtc":  "2026-09-09T23:04:09.2210290Z"
                   },
                   {
                       "lane":  "openclaw",
                       "workerRunning":  true,
                       "workerPid":  31120,
-                      "pointerRevision":  "2026-09-10T01:12:00+02:00-v448-hold-after-exit1",
-                      "pointerProject":  "project-v448.json",
-                      "processedRevision":  "2026-09-10T00:53:00+02:00-v445-057n-qwen3-e2e",
-                      "status":  "IDLE",
-                      "attempts":  0,
+                      "pointerRevision":  "2026-09-10T01:17:00+02:00-v449-runner-pipeline-isolation",
+                      "pointerProject":  "project-v449.json",
+                      "processedRevision":  "2026-09-10T01:17:00+02:00-v449-runner-pipeline-isolation",
+                      "status":  "TERMINAL",
+                      "attempts":  1,
                       "lastError":  "",
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
-                      "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T23:02:55.0426370Z"
+                      "lastExitCode":  0,
+                      "updatedUtc":  "2026-09-09T23:04:04.1945283Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T23:03:08.6849019Z"
+    "updatedUtc":  "2026-09-09T23:04:14.1335315Z"
 }
