@@ -1,0 +1,20 @@
+FINAL_ACCEPTANCE_BACKUP=PREVIOUS_CHAPTERS_PRESERVED
+
+recommended filter policy not applied
+At C:\3EN-Agent\3en-security-privacy-deploy-v1.ps1:79 char:30
++ ... not $s.filtersApplied){throw 'recommended filter policy not applied'}
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (recommended filter policy not applied:String) [], RuntimeException
+    + FullyQualifiedErrorId : recommended filter policy not applied
+ 
+
+Invoke-RestMethod : {"error": "Pi-hole SSH was not auto-discovered"}
+At C:\3EN-Agent\3en-security-privacy-deploy-v1.ps1:65 char:3
++   Invoke-RestMethod -Method Post -Uri ($UiUrl+'/api/action') -Content ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebExceptio 
+   n
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+
+PRIVACY_GUI_ROLLBACK=PASS;PIHOLE_REMOTE_BACKUPS_PRESERVED
+
