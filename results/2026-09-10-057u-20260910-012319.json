@@ -1,0 +1,25 @@
+{
+    "projectId":  "2026-09-10-v455-openclaw-executor-only",
+    "chapterId":  "2026-09-10-057u",
+    "risk":  "medium",
+    "status":  "FAILED",
+    "stage":  "TERMINAL",
+    "attempts":  1,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "FAILED",
+                      "error":  "ConvertFrom-Json : Nieprawidłowy element pierwotny JSON: BEGIN_CONTENT...END_CONTENT."
+                  },
+                  {
+                      "name":  "ROLLBACK",
+                      "status":  "OK",
+                      "error":  null
+                  }
+              ]
+}
