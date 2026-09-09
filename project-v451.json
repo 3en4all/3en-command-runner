@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "projectId": "2026-09-10-v451-openclaw-read-diagnostic",
+  "title": "OpenClaw precise read-tool diagnostic",
+  "policy": {
+    "showErrors": false,
+    "maxAttempts": 1,
+    "publishRetries": 3,
+    "autoRollbackOnFinalFailure": true,
+    "highRiskAction": "reject"
+  },
+  "chapters": [
+    {
+      "id": "2026-09-10-057q2",
+      "path": "tasks/2026-09-10-057q2.json",
+      "expectedStatus": "SUCCESS"
+    }
+  ]
+}
