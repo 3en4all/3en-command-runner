@@ -1,12 +1,12 @@
 {
     "lane":  "network-privacy",
-    "pointerRevision":  "",
-    "pointerProject":  "",
+    "pointerRevision":  "2026-09-10T00:07:30+02:00-security-monitor-merge-v11-requeue",
+    "pointerProject":  "project-security-privacy-merge-monitor-v1.json",
     "processedRevision":  "",
-    "status":  "NEW",
-    "attempts":  0,
+    "status":  "SYNCING",
+    "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
     "lastExitCode":  null,
-    "updatedUtc":  "2026-09-09T22:10:36.9189856Z"
+    "updatedUtc":  "2026-09-09T22:10:41.8318736Z"
 }
