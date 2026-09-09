@@ -1,0 +1,10 @@
+{
+  "id": "2026-09-10-057p",
+  "title": "Isolate supervisor runner publish pipeline",
+  "description": "Read-only/minimal diagnostic proving that supervisor v1.3.3 can sync a new project, invoke runner v4.0.3, execute backup/script/test, and publish a normal terminal result without invoking OpenClaw.",
+  "risk": "low",
+  "backup": "$ErrorActionPreference='Stop';$root='C:/3EN-Agent/workbench/diag-057p';New-Item -ItemType Directory -Force -Path $root|Out-Null;'PIPELINE_BASELINE'|Set-Content (Join-Path $root 'baseline.txt') -Encoding ASCII;Write-Output 'V449_057P_BACKUP=PASS'",
+  "script": "$ErrorActionPreference='Stop';$root='C:/3EN-Agent/workbench/diag-057p';$p=Join-Path $root 'runner-pipeline-proof.txt';'RUNNER_PIPELINE_OK'|Set-Content $p -Encoding ASCII;if(-not(Test-Path $p)){throw '057P_PROOF_NOT_CREATED'};Write-Output 'V449_057P_SCRIPT=PASS'",
+  "test": "$ErrorActionPreference='Stop';$p='C:/3EN-Agent/workbench/diag-057p/runner-pipeline-proof.txt';if(-not(Test-Path $p)){throw '057P_PROOF_MISSING'};if((Get-Content $p -Raw).Trim() -ne 'RUNNER_PIPELINE_OK'){throw '057P_PROOF_BAD'};Write-Output 'V449_057P_TEST=PASS'",
+  "rollback": "Write-Output 'V449_057P_ROLLBACK=NO_CHANGE_REQUIRED'"
+}
