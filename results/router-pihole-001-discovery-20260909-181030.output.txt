@@ -1,0 +1,20 @@
+DISCOVERY_PREP=PASS
+
+ssh.exe : usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]
+At C:\3EN-Agent\router-pihole-finalize-v1.ps1:27 char:12
++     $out = & $Exe @Args 2>&1 | Out-String
++            ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (usage: ssh [-46...b bind_address]:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+ssh.exe : usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]
+At C:\3EN-Agent\router-pihole-finalize-v1.ps1:27 char:12
++     $out = & $Exe @Args 2>&1 | Out-String
++            ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (usage: ssh [-46...b bind_address]:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+DISCOVERY_READ_ONLY_NO_ROLLBACK
+
