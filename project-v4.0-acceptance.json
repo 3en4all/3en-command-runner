@@ -1,0 +1,47 @@
+{
+  "projectId": "2026-09-09-v40-autonomous-core-acceptance",
+  "policy": {
+    "showErrors": false,
+    "maxAttempts": 2,
+    "publishRetries": 3,
+    "autoRollbackOnFinalFailure": true,
+    "highRiskAction": "reject"
+  },
+  "chapters": [
+    {
+      "id": "2026-09-09-042",
+      "path": "tasks/2026-09-09-042.json",
+      "expectedStatus": "SUCCESS"
+    },
+    {
+      "id": "2026-09-09-043",
+      "path": "tasks/2026-09-09-043.json",
+      "dependsOn": [
+        {"id": "2026-09-09-042", "status": "SUCCESS"}
+      ],
+      "expectedStatus": "SUCCESS"
+    },
+    {
+      "id": "2026-09-09-044",
+      "path": "tasks/2026-09-09-044.json",
+      "expectedStatus": "REJECTED"
+    },
+    {
+      "id": "2026-09-09-045",
+      "path": "tasks/2026-09-09-045.json",
+      "dependsOn": [
+        {"id": "2026-09-09-044", "status": "REJECTED"}
+      ],
+      "expectedStatus": "SUCCESS"
+    },
+    {
+      "id": "2026-09-09-046",
+      "path": "tasks/2026-09-09-046.json",
+      "dependsOn": [
+        {"id": "2026-09-09-045", "status": "SUCCESS"}
+      ],
+      "maxAttempts": 2,
+      "expectedStatus": "SUCCESS_RECOVERED"
+    }
+  ]
+}
