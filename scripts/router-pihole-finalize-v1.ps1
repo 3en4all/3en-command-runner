@@ -23,8 +23,9 @@ New-Item -ItemType Directory -Force -Path $Work | Out-Null
 function Write-Marker([string]$Text) { Write-Host ('3EN_RP=' + $Text) }
 
 function Invoke-NativeCapture {
-    param([string]$Exe,[string[]]$Args)
-    $out = & $Exe @Args 2>&1 | Out-String
+    param([string]$Exe,[string[]]$ArgumentList)
+    $nativeArgs = @($ArgumentList)
+    $out = & $Exe @nativeArgs 2>&1 | Out-String
     $code = $LASTEXITCODE
     if ($code -ne 0) { throw ($Exe + ' failed exit=' + $code) }
     return $out.Trim()
@@ -32,15 +33,15 @@ function Invoke-NativeCapture {
 
 function Invoke-Router([string]$Command) {
     if (-not (Test-Path -LiteralPath $RouterKey)) { throw 'Router SSH key unavailable' }
-    $args = @('-i',$RouterKey,'-o','BatchMode=yes','-o','ConnectTimeout=6','-o','StrictHostKeyChecking=accept-new',($RouterUser+'@'+$Router),$Command)
-    return Invoke-NativeCapture 'ssh.exe' $args
+    $sshArgs = @('-i',$RouterKey,'-o','BatchMode=yes','-o','ConnectTimeout=6','-o','StrictHostKeyChecking=accept-new',($RouterUser+'@'+$Router),$Command)
+    return Invoke-NativeCapture -Exe 'ssh.exe' -ArgumentList $sshArgs
 }
 
 function Invoke-Pi {
     param([string]$Command,$State)
     if (-not $State.piSsh) { throw 'Pi-hole SSH unavailable' }
-    $args = @('-i',[string]$State.piKey,'-o','BatchMode=yes','-o','ConnectTimeout=6','-o','StrictHostKeyChecking=accept-new',([string]$State.piUser+'@'+$PiHole),$Command)
-    return Invoke-NativeCapture 'ssh.exe' $args
+    $sshArgs = @('-i',[string]$State.piKey,'-o','BatchMode=yes','-o','ConnectTimeout=6','-o','StrictHostKeyChecking=accept-new',([string]$State.piUser+'@'+$PiHole),$Command)
+    return Invoke-NativeCapture -Exe 'ssh.exe' -ArgumentList $sshArgs
 }
 
 function Test-Tcp([string]$HostName,[int]$Port,[int]$TimeoutMs=1800) {
@@ -86,8 +87,8 @@ function Discover-PiSsh {
     foreach ($key in @(Get-KeyCandidates)) {
         foreach ($u in $users) {
             try {
-                $args = @('-i',$key,'-o','BatchMode=yes','-o','ConnectTimeout=3','-o','ConnectionAttempts=1','-o','StrictHostKeyChecking=accept-new',($u+'@'+$PiHole),'printf 3EN_PI_SSH_OK')
-                $o = Invoke-NativeCapture 'ssh.exe' $args
+                $sshArgs = @('-i',$key,'-o','BatchMode=yes','-o','ConnectTimeout=3','-o','ConnectionAttempts=1','-o','StrictHostKeyChecking=accept-new',($u+'@'+$PiHole),'printf 3EN_PI_SSH_OK')
+                $o = Invoke-NativeCapture -Exe 'ssh.exe' -ArgumentList $sshArgs
                 if ($o -match '3EN_PI_SSH_OK') { return [pscustomobject]@{ok=$true;user=$u;key=$key} }
             } catch {}
         }
@@ -152,14 +153,14 @@ function Invoke-Backup {
     New-Item -ItemType Directory -Force -Path $local | Out-Null
     Invoke-Router ("rm -rf $RemoteBackup; mkdir -p $RemoteBackup; uci export dhcp > $RemoteBackup/dhcp.uci; uci export network > $RemoteBackup/network.uci; uci export system > $RemoteBackup/system.uci; cp /etc/config/dhcp $RemoteBackup/dhcp.config; cp /etc/config/network $RemoteBackup/network.config; cp /etc/config/system $RemoteBackup/system.config; sha256sum $RemoteBackup/* 2>/dev/null || true") | Set-Content -LiteralPath (Join-Path $local 'router-checksums.txt') -Encoding UTF8
     foreach ($f in @('dhcp.uci','network.uci','system.uci','dhcp.config','network.config','system.config')) {
-        $args = @('-i',$RouterKey,'-o','BatchMode=yes','-o','ConnectTimeout=6','-o','StrictHostKeyChecking=accept-new',($RouterUser+'@'+$Router+':'+$RemoteBackup+'/'+$f),(Join-Path $local $f))
-        [void](Invoke-NativeCapture 'scp.exe' $args)
+        $scpArgs = @('-i',$RouterKey,'-o','BatchMode=yes','-o','ConnectTimeout=6','-o','StrictHostKeyChecking=accept-new',($RouterUser+'@'+$Router+':'+$RemoteBackup+'/'+$f),(Join-Path $local $f))
+        [void](Invoke-NativeCapture -Exe 'scp.exe' -ArgumentList $scpArgs)
     }
     if ($state.piSsh) {
         try {
             [void](Invoke-Pi "tar -czf /tmp/3en-pihole-config-backup.tgz /etc/pihole /etc/rsyslog.conf /etc/rsyslog.d 2>/dev/null || true; test -s /tmp/3en-pihole-config-backup.tgz" $state)
-            $args = @('-i',[string]$state.piKey,'-o','BatchMode=yes','-o','ConnectTimeout=6','-o','StrictHostKeyChecking=accept-new',([string]$state.piUser+'@'+$PiHole+':/tmp/3en-pihole-config-backup.tgz'),(Join-Path $local 'pihole-config-backup.tgz'))
-            [void](Invoke-NativeCapture 'scp.exe' $args)
+            $scpArgs = @('-i',[string]$state.piKey,'-o','BatchMode=yes','-o','ConnectTimeout=6','-o','StrictHostKeyChecking=accept-new',([string]$state.piUser+'@'+$PiHole+':/tmp/3en-pihole-config-backup.tgz'),(Join-Path $local 'pihole-config-backup.tgz'))
+            [void](Invoke-NativeCapture -Exe 'scp.exe' -ArgumentList $scpArgs)
         } catch {}
     }
     foreach ($f in @('dhcp.config','network.config','system.config')) { if (-not (Test-Path -LiteralPath (Join-Path $local $f))) { throw ('Backup artifact missing: '+$f) } }
@@ -178,8 +179,6 @@ function Invoke-ApplyDns {
         $state.dnsChanged = $true
     }
 
-    # Router-own DNS is switched only when Pi-hole upstream evidence exists and excludes the router,
-    # preventing a router<->Pi-hole DNS loop. Otherwise existing router upstream remains untouched.
     if ($state.safeRouterDnsSwitch) {
         $wan = Invoke-Router "uci -q show network.wan"
         $already = ($wan -match "dns='?$([regex]::Escape($PiHole))'?") -and ($wan -match "peerdns='?0'?")
