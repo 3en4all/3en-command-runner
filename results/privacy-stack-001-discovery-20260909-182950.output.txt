@@ -1,0 +1,29 @@
+PRIVACY_DISCOVERY_PREP=PASS
+
+PRIVACY_DISCOVERY=PASS;PYTHON=C:\Users\wi3lk\AppData\Local\Programs\Python\Python311\python.exe;MONITOR_CANDIDATES=56;ROUTER
+_PI_READY=True
+
+BLOCKED: Pi-hole SSH key management path was not auto-discovered
+At line:1 char:370
++ ...  $rp.piSsh){throw 'BLOCKED: Pi-hole SSH key management path was not a ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (BLOCKED: Pi-hol...auto-discovered:String) [], RuntimeException
+    + FullyQualifiedErrorId : BLOCKED: Pi-hole SSH key management path was not auto-discovered
+ 
+
+PRIVACY_DISCOVERY=PASS;PYTHON=C:\Users\wi3lk\AppData\Local\Programs\Python\Python311\python.exe;MONITOR_CANDIDATES=56;ROUTER
+_PI_READY=True
+
+PRIVACY_DISCOVERY=PASS;PYTHON=C:\Users\wi3lk\AppData\Local\Programs\Python\Python311\python.exe;MONITOR_CANDIDATES=56;ROUTER
+_PI_READY=True
+
+BLOCKED: Pi-hole SSH key management path was not auto-discovered
+At line:1 char:370
++ ...  $rp.piSsh){throw 'BLOCKED: Pi-hole SSH key management path was not a ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (BLOCKED: Pi-hol...auto-discovered:String) [], RuntimeException
+    + FullyQualifiedErrorId : BLOCKED: Pi-hole SSH key management path was not auto-discovered
+ 
+
+DISCOVERY_ONLY_NO_ROLLBACK
+
