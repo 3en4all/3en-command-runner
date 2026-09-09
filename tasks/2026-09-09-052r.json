@@ -1,0 +1,9 @@
+{
+  "id": "2026-09-09-052r",
+  "title": "v4.0.3 resume accounting regression sentinel",
+  "risk": "low",
+  "backup": "Write-Output 'V403_RESUME_SENTINEL_BACKUP=PASS'",
+  "script": "throw 'EXPECTED_RESUME_SENTINEL_FAILURE'",
+  "test": "Write-Output 'NOT_REACHED'",
+  "rollback": "Write-Output 'V403_RESUME_SENTINEL_ROLLBACK=PASS'"
+}
