@@ -1,0 +1,51 @@
+{
+    "projectId":  "2026-09-09-security-privacy-stack-v1",
+    "chapterId":  "privacy-stack-001-discovery",
+    "expectedStatus":  "",
+    "status":  "FAILED_TEST",
+    "attempts":  2,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "failureClass":  "NONE",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "OK",
+                      "failureClass":  "NONE",
+                      "error":  null
+                  },
+                  {
+                      "name":  "TEST_1",
+                      "status":  "FAILED",
+                      "failureClass":  "VALIDATION",
+                      "error":  "BLOCKED: Pi-hole SSH key management path was not auto-discovered"
+                  },
+                  {
+                      "name":  "REPAIR_1",
+                      "status":  "OK",
+                      "failureClass":  "NONE",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_2",
+                      "status":  "OK",
+                      "failureClass":  "NONE",
+                      "error":  null
+                  },
+                  {
+                      "name":  "TEST_2",
+                      "status":  "FAILED",
+                      "failureClass":  "VALIDATION",
+                      "error":  "BLOCKED: Pi-hole SSH key management path was not auto-discovered"
+                  },
+                  {
+                      "name":  "ROLLBACK",
+                      "status":  "OK",
+                      "failureClass":  "NONE",
+                      "error":  null
+                  }
+              ]
+}
