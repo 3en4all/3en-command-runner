@@ -1,0 +1,1354 @@
+READ-ONLY TASK: no backup required.
+=== 3EN002 OPENWRT SSH AUDIT 010 ===
+Time=2026-09-09T12:25:01.4030962+02:00
+Target=root@192.168.1.2
+Key=C:\Users\wi3lk\.ssh\3en002_agent_ed25519
+
+SSH_CLIENT=C:\WINDOWS\System32\OpenSSH\ssh.exe
+--- SSH BEGIN ---
+=== SYSTEM ===
+{
+	"kernel": "6.6.141",
+	"hostname": "OpenWrt",
+	"system": "ARMv8 Processor rev 3",
+	"model": "Raspberry Pi 4 Model B Rev 1.1",
+	"board_name": "raspberrypi,4-model-b",
+	"rootfs_type": "ext4",
+	"release": {
+		"distribution": "OpenWrt",
+		"version": "24.10.7",
+		"revision": "r29197-ab4c7d6af7",
+		"target": "bcm27xx/bcm2711",
+		"description": "OpenWrt 24.10.7 r29197-ab4c7d6af7",
+		"builddate": "1779897308"
+	}
+}
+
+=== UCI_NETWORK ===
+network.loopback=interface
+network.loopback.device='lo'
+network.loopback.proto='static'
+network.loopback.ipaddr='127.0.0.1'
+network.loopback.netmask='255.0.0.0'
+network.globals=globals
+network.globals.ula_prefix='fdfa:ed82:1e85::/48'
+network.@device[0]=device
+network.@device[0].name='br-lan'
+network.@device[0].type='bridge'
+network.@device[0].ports='eth0'
+network.lan=interface
+network.lan.device='br-lan'
+network.lan.proto='static'
+network.lan.ipaddr='192.168.1.2'
+network.lan.netmask='255.255.255.0'
+network.wan=interface
+network.wan.device='eth1'
+network.wan.proto='dhcp'
+
+=== UCI_FIREWALL ===
+firewall.@defaults[0]=defaults
+firewall.@defaults[0].syn_flood='1'
+firewall.@defaults[0].input='REJECT'
+firewall.@defaults[0].output='ACCEPT'
+firewall.@defaults[0].forward='REJECT'
+firewall.@zone[0]=zone
+firewall.@zone[0].name='lan'
+firewall.@zone[0].input='ACCEPT'
+firewall.@zone[0].output='ACCEPT'
+firewall.@zone[0].forward='ACCEPT'
+firewall.@zone[0].network='lan'
+firewall.@zone[1]=zone
+firewall.@zone[1].name='wan'
+firewall.@zone[1].input='REJECT'
+firewall.@zone[1].output='ACCEPT'
+firewall.@zone[1].forward='REJECT'
+firewall.@zone[1].masq='1'
+firewall.@zone[1].mtu_fix='1'
+firewall.@zone[1].network='wan'
+firewall.@zone[1].log='1'
+firewall.@zone[1].log_limit='10/minute'
+firewall.@forwarding[0]=forwarding
+firewall.@forwarding[0].src='lan'
+firewall.@forwarding[0].dest='wan'
+firewall.@rule[0]=rule
+firewall.@rule[0].name='Allow-DHCP-Renew'
+firewall.@rule[0].src='wan'
+firewall.@rule[0].proto='udp'
+firewall.@rule[0].dest_port='68'
+firewall.@rule[0].target='ACCEPT'
+firewall.@rule[0].family='ipv4'
+firewall.@rule[1]=rule
+firewall.@rule[1].name='Allow-Ping'
+firewall.@rule[1].src='wan'
+firewall.@rule[1].proto='icmp'
+firewall.@rule[1].icmp_type='echo-request'
+firewall.@rule[1].family='ipv4'
+firewall.@rule[1].target='ACCEPT'
+firewall.@rule[2]=rule
+firewall.@rule[2].name='Allow-IGMP'
+firewall.@rule[2].src='wan'
+firewall.@rule[2].proto='igmp'
+firewall.@rule[2].family='ipv4'
+firewall.@rule[2].target='ACCEPT'
+firewall.@rule[3]=rule
+firewall.@rule[3].name='Allow-DHCPv6'
+firewall.@rule[3].src='wan'
+firewall.@rule[3].proto='udp'
+firewall.@rule[3].dest_port='546'
+firewall.@rule[3].family='ipv6'
+firewall.@rule[3].target='ACCEPT'
+firewall.@rule[4]=rule
+firewall.@rule[4].name='Allow-MLD'
+firewall.@rule[4].src='wan'
+firewall.@rule[4].proto='icmp'
+firewall.@rule[4].src_ip='fe80::/10'
+firewall.@rule[4].icmp_type='130/0' '131/0' '132/0' '143/0'
+firewall.@rule[4].family='ipv6'
+firewall.@rule[4].target='ACCEPT'
+firewall.@rule[5]=rule
+firewall.@rule[5].name='Allow-ICMPv6-Input'
+firewall.@rule[5].src='wan'
+firewall.@rule[5].proto='icmp'
+firewall.@rule[5].icmp_type='echo-request' 'echo-reply' 'destination-unreachable' 'packet-too-big' 'time-exceeded' 'bad
+-header' 'unknown-header-type' 'router-solicitation' 'neighbour-solicitation' 'router-advertisement' 'neighbour-adverti
+sement'
+firewall.@rule[5].limit='1000/sec'
+firewall.@rule[5].family='ipv6'
+firewall.@rule[5].target='ACCEPT'
+firewall.@rule[6]=rule
+firewall.@rule[6].name='Allow-ICMPv6-Forward'
+firewall.@rule[6].src='wan'
+firewall.@rule[6].dest='*'
+firewall.@rule[6].proto='icmp'
+firewall.@rule[6].icmp_type='echo-request' 'echo-reply' 'destination-unreachable' 'packet-too-big' 'time-exceeded' 'bad
+-header' 'unknown-header-type'
+firewall.@rule[6].limit='1000/sec'
+firewall.@rule[6].family='ipv6'
+firewall.@rule[6].target='ACCEPT'
+firewall.@rule[7]=rule
+firewall.@rule[7].name='Allow-IPSec-ESP'
+firewall.@rule[7].src='wan'
+firewall.@rule[7].dest='lan'
+firewall.@rule[7].proto='esp'
+firewall.@rule[7].target='ACCEPT'
+firewall.@rule[8]=rule
+firewall.@rule[8].name='Allow-ISAKMP'
+firewall.@rule[8].src='wan'
+firewall.@rule[8].dest='lan'
+firewall.@rule[8].dest_port='500'
+firewall.@rule[8].proto='udp'
+firewall.@rule[8].target='ACCEPT'
+
+=== IP_ADDR ===
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq master br-lan state UP qlen 1000
+    link/ether dc:a6:32:01:f9:80 brd ff:ff:ff:ff:ff:ff
+3: wlan0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN qlen 1000
+    link/ether dc:a6:32:01:f9:81 brd ff:ff:ff:ff:ff:ff
+5: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP qlen 1000
+    link/ether 00:e0:4c:43:47:13 brd ff:ff:ff:ff:ff:ff
+    inet 31.182.124.146/26 brd 31.182.124.191 scope global eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::2e0:4cff:fe43:4713/64 scope link 
+       valid_lft forever preferred_lft forever
+9: br-lan: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP qlen 1000
+    link/ether dc:a6:32:01:f9:80 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.2/24 brd 192.168.1.255 scope global br-lan
+       valid_lft forever preferred_lft forever
+    inet6 fe80::dea6:32ff:fe01:f980/64 scope link 
+       valid_lft forever preferred_lft forever
+
+=== IP_ROUTE ===
+default via 31.182.124.129 dev eth1  src 31.182.124.146 
+31.182.124.128/26 dev eth1 scope link  src 31.182.124.146 
+192.168.1.0/24 dev br-lan scope link  src 192.168.1.2 
+
+=== DHCP_CONFIG ===
+
+config dnsmasq
+	option domainneeded '1'
+	option boguspriv '1'
+	option filterwin2k '0'
+	option localise_queries '1'
+	option rebind_protection '1'
+	option rebind_localhost '1'
+	option local '/lan/'
+	option domain 'lan'
+	option expandhosts '1'
+	option nonegcache '0'
+	option cachesize '1000'
+	option authoritative '1'
+	option readethers '1'
+	option leasefile '/tmp/dhcp.leases'
+	option resolvfile '/tmp/resolv.conf.d/resolv.conf.auto'
+	option nonwildcard '1'
+	option localservice '1'
+	option ednspacket_max '1232'
+	option filter_aaaa '0'
+	option filter_a '0'
+	list interface 'lan'
+
+config dhcp 'lan'
+	option interface 'lan'
+	option start '100'
+	option limit '150'
+	option leasetime '12h'
+	option dhcpv4 'server'
+	option dhcpv6 'disabled'
+	option ra 'disabled'
+	option ndp 'disabled'
+	list dhcp_option '6,192.168.1.3'
+
+config dhcp 'wan'
+	option interface 'wan'
+	option ignore '1'
+
+config odhcpd 'odhcpd'
+	option maindhcp '0'
+	option leasefile '/tmp/hosts/odhcpd'
+	option leasetrigger '/usr/sbin/odhcpd-update'
+	option loglevel '4'
+	option piofolder '/tmp/odhcpd-piofolder'
+
+config host
+	option name 'pihole'
+	option mac 'b8:27:eb:b7:5b:2b'
+	option ip '192.168.1.3'
+
+config host
+	option name '3en-pc'
+	option mac '30:c5:99:af:0f:a7'
+	option ip '192.168.1.35'
+
+
+=== DNS_RUNTIME ===
+# Interface wan
+nameserver 217.113.224.135
+nameserver 217.113.224.134
+search .
+
+=== FIREWALL_RUNTIME ===
+table inet fw4 {
+	limit wan.log_limit {
+		comment "wan log limit"
+		rate 10/minute
+	}
+
+	set en3_block4 {
+		type ipv4_addr
+		flags interval
+		elements = { 5.253.84.77, 79.124.62.126,
+			     79.124.62.134, 79.124.62.230,
+			     204.76.203.4 }
+	}
+
+	chain input {
+		type filter hook input priority filter; policy drop;
+		iif "lo" accept comment "!fw4: Accept traffic from loopback"
+		ct state vmap { established : accept, related : accept } comment "!fw4: Handle inbound flows"
+		tcp flags & (fin | syn | rst | ack) == syn jump syn_flood comment "!fw4: Rate limit TCP syn packets"
+		iifname "br-lan" jump input_lan comment "!fw4: Handle lan IPv4/IPv6 input traffic"
+		iifname "eth1" jump input_wan comment "!fw4: Handle wan IPv4/IPv6 input traffic"
+		jump handle_reject
+	}
+
+	chain forward {
+		type filter hook forward priority filter; policy drop;
+		ct state vmap { established : accept, related : accept } comment "!fw4: Handle forwarded flows"
+		iifname "br-lan" jump forward_lan comment "!fw4: Handle lan IPv4/IPv6 forward traffic"
+		iifname "eth1" jump forward_wan comment "!fw4: Handle wan IPv4/IPv6 forward traffic"
+		jump handle_reject
+	}
+
+	chain output {
+		type filter hook output priority filter; policy accept;
+		oif "lo" accept comment "!fw4: Accept traffic towards loopback"
+		ct state vmap { established : accept, related : accept } comment "!fw4: Handle outbound flows"
+		oifname "br-lan" jump output_lan comment "!fw4: Handle lan IPv4/IPv6 output traffic"
+		oifname "eth1" jump output_wan comment "!fw4: Handle wan IPv4/IPv6 output traffic"
+	}
+
+	chain prerouting {
+		type filter hook prerouting priority filter; policy accept;
+		iifname "br-lan" jump helper_lan comment "!fw4: Handle lan IPv4/IPv6 helper assignment"
+	}
+
+	chain handle_reject {
+		meta l4proto tcp reject with tcp reset comment "!fw4: Reject TCP traffic"
+		reject comment "!fw4: Reject any other traffic"
+	}
+
+	chain syn_flood {
+		limit rate 25/second burst 50 packets return comment "!fw4: Accept SYN packets below rate-limit"
+		drop comment "!fw4: Drop excess packets"
+	}
+
+	chain input_lan {
+		jump accept_from_lan
+	}
+
+	chain output_lan {
+		jump accept_to_lan
+	}
+
+	chain forward_lan {
+		jump accept_to_wan comment "!fw4: Accept lan to wan forwarding"
+		jump accept_to_lan
+	}
+
+	chain helper_lan {
+	}
+
+	chain accept_from_lan {
+		iifname "br-lan" counter packets 882 bytes 55020 accept comment "!fw4: accept lan IPv4/IPv6 traffic"
+	}
+
+	chain accept_to_lan {
+		oifname "br-lan" counter packets 2972 bytes 818693 accept comment "!fw4: accept lan IPv4/IPv6 traffic"
+	}
+
+	chain input_wan {
+		meta nfproto ipv4 udp dport 68 counter packets 0 bytes 0 accept comment "!fw4: Allow-DHCP-Renew"
+		icmp type echo-request counter packets 404 bytes 19924 accept comment "!fw4: Allow-Ping"
+		meta nfproto ipv4 meta l4proto igmp counter packets 0 bytes 0 accept comment "!fw4: Allow-IGMP"
+		meta nfproto ipv6 udp dport 546 counter packets 0 bytes 0 accept comment "!fw4: Allow-DHCPv6"
+		ip6 saddr fe80::/10 icmpv6 type . icmpv6 code { mld-listener-query . 0, mld-listener-report . 0, mld-listener-done . 
+0, mld2-listener-report . 0 } counter packets 0 bytes 0 accept comment "!fw4: Allow-MLD"
+		icmpv6 type { destination-unreachable, time-exceeded, echo-request, echo-reply, nd-router-solicit, nd-router-advert }
+ limit rate 1000/second burst 5 packets counter packets 15 bytes 1008 accept comment "!fw4: Allow-ICMPv6-Input"
+		icmpv6 type . icmpv6 code { packet-too-big . 0, parameter-problem . 0, nd-neighbor-solicit . 0, nd-neighbor-advert . 
+0, parameter-problem . 1 } limit rate 1000/second burst 5 packets counter packets 28 bytes 1968 accept comment "!fw4: A
+llow-ICMPv6-Input"
+		jump reject_from_wan
+	}
+
+	chain output_wan {
+		jump accept_to_wan
+	}
+
+	chain forward_wan {
+		icmpv6 type { destination-unreachable, time-exceeded, echo-request, echo-reply } limit rate 1000/second burst 5 packe
+ts counter packets 0 bytes 0 accept comment "!fw4: Allow-ICMPv6-Forward"
+		icmpv6 type . icmpv6 code { packet-too-big . 0, parameter-problem . 0, parameter-problem . 1 } limit rate 1000/second
+ burst 5 packets counter packets 0 bytes 0 accept comment "!fw4: Allow-ICMPv6-Forward"
+		meta l4proto esp counter packets 0 bytes 0 jump accept_to_lan comment "!fw4: Allow-IPSec-ESP"
+		udp dport 500 counter packets 0 bytes 0 jump accept_to_lan comment "!fw4: Allow-ISAKMP"
+		jump reject_to_wan
+		limit name "wan.log_limit" log prefix "reject wan forward: "
+	}
+
+	chain accept_to_wan {
+		meta nfproto ipv4 oifname "eth1" ct state invalid limit name "wan.log_limit" log prefix "drop wan invalid ct state: "
+		meta nfproto ipv4 oifname "eth1" ct state invalid counter packets 270 bytes 13957 drop comment "!fw4: Prevent NAT lea
+kage"
+		oifname "eth1" counter packets 11716 bytes 2052505 accept comment "!fw4: accept wan IPv4/IPv6 traffic"
+	}
+
+	chain reject_from_wan {
+		iifname "eth1" limit name "wan.log_limit" log prefix "reject wan in: "
+		iifname "eth1" counter packets 3715 bytes 254280 jump handle_reject comment "!fw4: reject wan IPv4/IPv6 traffic"
+	}
+
+	chain reject_to_wan {
+		oifname "eth1" limit name "wan.log_limit" log prefix "reject wan out: "
+		oifname "eth1" counter packets 12 bytes 864 jump handle_reject comment "!fw4: reject wan IPv4/IPv6 traffic"
+	}
+
+	chain dstnat {
+		type nat hook prerouting priority dstnat; policy accept;
+	}
+
+	chain srcnat {
+		type nat hook postrouting priority srcnat; policy accept;
+		oifname "eth1" jump srcnat_wan comment "!fw4: Handle wan IPv4/IPv6 srcnat traffic"
+	}
+
+	chain srcnat_wan {
+		meta nfproto ipv4 masquerade comment "!fw4: Masquerade IPv4 wan traffic"
+	}
+
+	chain raw_prerouting {
+		type filter hook prerouting priority raw; policy accept;
+	}
+
+	chain raw_output {
+		type filter hook output priority raw; policy accept;
+	}
+
+	chain mangle_prerouting {
+		type filter hook prerouting priority mangle; policy accept;
+	}
+
+	chain mangle_postrouting {
+		type filter hook postrouting priority mangle; policy accept;
+		oifname "eth1" tcp flags & (fin | syn | rst) == syn tcp option maxseg size set rt mtu comment "!fw4: Zone wan IPv4/IP
+v6 egress MTU fixing"
+	}
+
+	chain mangle_input {
+		type filter hook input priority mangle; policy accept;
+	}
+
+	chain mangle_output {
+		type route hook output priority mangle; policy accept;
+	}
+
+	chain mangle_forward {
+		type filter hook forward priority mangle; policy accept;
+		iifname "eth1" tcp flags & (fin | syn | rst) == syn tcp option maxseg size set rt mtu comment "!fw4: Zone wan IPv4/IP
+v6 ingress MTU fixing"
+	}
+
+	chain en3_security_pre_input {
+		type filter hook input priority filter - 5; policy accept;
+		ip saddr @en3_block4 limit rate 10/minute burst 5 packets log prefix "3en blocked in: " counter packets 1530 bytes 64
+336 drop
+	}
+
+	chain en3_security_pre_forward {
+		type filter hook forward priority filter - 5; policy accept;
+		ip saddr @en3_block4 limit rate 10/minute burst 5 packets log prefix "3en blocked fwd: " counter packets 0 bytes 0 dr
+op
+	}
+}
+table inet banIP {
+	counter cnt_icmpflood {
+		packets 0 bytes 0
+	}
+
+	counter cnt_udpflood {
+		packets 0 bytes 0
+	}
+
+	counter cnt_synflood {
+		packets 2 bytes 80
+	}
+
+	counter cnt_tcpinvalid {
+		packets 0 bytes 0
+	}
+
+	counter cnt_ctinvalid {
+		packets 253 bytes 10352
+	}
+
+	set allowlist.v4MAC {
+		type ether_addr . ipv4_addr
+		policy memory
+		flags interval
+		auto-merge
+	}
+
+	set allowlist.v6MAC {
+		type ether_addr . ipv6_addr
+		policy memory
+		flags interval
+		auto-merge
+	}
+
+	set allowlist.v4 {
+		type ipv4_addr
+		policy memory
+		flags interval
+		auto-merge
+		elements = { 31.182.124.128/26 }
+	}
+
+	set allowlist.v6 {
+		type ipv6_addr
+		policy memory
+		flags interval
+		auto-merge
+
+=== BANIP_STATUS ===
+::: banIP runtime information
+  + status            : active (nft: Ôťö, monitor: Ôťö)
+  + version           : 1.5.6-r7
+  + element_count     : 2 785 (chains: 7, sets: 11, rules: 38)
+  + active_feeds      : allowlist.v4MAC, allowlist.v6MAC, allowlist.v4, allowlist.v6, blocklist.v4MAC, dshield.v4, feod
+o.v4, blocklist.v6MAC, blocklist.v4, blocklist.v6, greensnow.v4
+  + active_devices    : wan: eth1 / wan-if: wan, - / vlan-allow: - / vlan-block: -
+  + active_uplink     : 31.182.124.146/26
+  + nft_info          : ver: 1.1.1-r1, priority: -100, policy: memory, loglevel: warn, expiry: -, limit (icmp/syn/udp):
+ 25/10/100
+  + run_info          : base: /tmp, backup: /tmp/banIP-backup, report: /tmp/banIP-report, error: /tmp/banIP-error
+  + run_flags         : auto: Ôťö, proto (4/6): Ôťö/Ôťś, log (pre/in/out): Ôťś/Ôťś/Ôťś, count: Ôťś, dedup: Ôťö, split: 
+Ôťś, custom feed: Ôťś, allowed only: Ôťś
+  + last_run          : mode: restart, 2026-09-09 05:38:44, duration: 0m 4s, memory: 1741.64 MB available
+  + system_info       : cores: 4, log: logread, fetch: uclient-fetch, Raspberry Pi 4 Model B Rev 1.1, bcm27xx/bcm2711, 
+OpenWrt 24.10.7 r29197-ab4c7d6af7 
+
+=== LOGREAD_LAST_300 ===
+Wed Sep  9 09:53:18 2026 kern.warn kernel: [52854.122817] drop wan invalid ct state: IN=br-lan OUT=eth1 MAC=dc:a6:32:01
+:f9:80:30:c5:99:af:0f:a7:08:00 SRC=192.168.1.35 DST=140.82.121.6 LEN=40 TOS=0x00 PREC=0x00 TTL=127 ID=32635 DF PROTO=TC
+P SPT=51541 DPT=443 WINDOW=0 RES=0x00 ACK RST URGP=0
+Wed Sep  9 09:53:26 2026 kern.warn kernel: [52861.740025] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=185.242.3.226 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=110 ID=0 DF PROTO=TCP SPT=9019 DPT=2948
+ WINDOW=14600 RES=0x00 SYN URGP=0
+Wed Sep  9 09:53:35 2026 kern.warn kernel: [52871.220892] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=102.180.207.161 DST=31.182.124.146 LEN=60 TOS=0x08 PREC=0x60 TTL=46 ID=58996 DF PROTO=TCP SPT=35590 DP
+T=23 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:53:35 2026 kern.warn kernel: [52871.241518] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=102.180.207.161 DST=31.182.124.146 LEN=60 TOS=0x08 PREC=0x60 TTL=47 ID=37846 DF PROTO=TCP SPT=38894 DP
+T=22 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:53:40 2026 kern.warn kernel: [52876.374414] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=47.84.103.98 DST=31.182.124.146 LEN=84 TOS=0x00 PREC=0x00 TTL=43 ID=42486 PROTO=UDP SPT=43510 DPT=6881
+ LEN=64
+Wed Sep  9 09:53:52 2026 kern.warn kernel: [52887.688303] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.126 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=42120 PROTO=TCP SPT=46306 DPT=2
+3166 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 09:53:52 2026 kern.warn kernel: [52887.761065] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=78.128.114.174 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=244 ID=54935 PROTO=TCP SPT=46254 DPT=8
+091 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:53:59 2026 kern.warn kernel: [52895.531699] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=69.5.169.132 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=52 ID=0 PROTO=TCP SPT=48863 DPT=5050 WIN
+DOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:54:03 2026 kern.warn kernel: [52898.735581] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=45609 PROTO=TCP SPT=47605 DPT=562
+00 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:54:15 2026 kern.warn kernel: [52910.971594] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=17933 PROTO=TCP SPT=45092 DPT=4
+3242 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 09:54:20 2026 kern.warn kernel: [52916.229013] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=80.94.95.245 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=28055 PROTO=TCP SPT=53144 DPT=484
+41 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:54:27 2026 kern.warn kernel: [52923.387517] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=223.123.73.3 DST=31.182.124.146 LEN=44 TOS=0x08 PREC=0x00 TTL=48 ID=53795 PROTO=TCP SPT=6384 DPT=23 WI
+NDOW=6002 RES=0x00 SYN URGP=0
+Wed Sep  9 09:54:28 2026 kern.warn kernel: [52923.815943] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=102.180.207.161 DST=31.182.124.146 LEN=60 TOS=0x08 PREC=0x60 TTL=46 ID=4861 DF PROTO=TCP SPT=50162 DPT
+=23 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:54:28 2026 kern.warn kernel: [52923.836485] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=102.180.207.161 DST=31.182.124.146 LEN=60 TOS=0x08 PREC=0x60 TTL=47 ID=18179 DF PROTO=TCP SPT=53468 DP
+T=22 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:54:43 2026 kern.warn kernel: [52939.439722] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=24454 PROTO=TCP SPT=47605 DPT=203
+41 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:54:58 2026 kern.warn kernel: [52953.853867] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=79.124.49.70 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=246 ID=9471 PROTO=TCP SPT=51323 DPT=2021
+ WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:54:58 2026 kern.warn kernel: [52954.526311] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=103.152.101.204 DST=31.182.124.146 LEN=60 TOS=0x08 PREC=0x00 TTL=46 ID=19357 DF PROTO=TCP SPT=58740 DP
+T=23 WINDOW=14400 RES=0x00 SYN URGP=0
+Wed Sep  9 09:55:01 2026 kern.warn kernel: [52956.945542] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=130.12.180.48 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x20 TTL=245 ID=50893 PROTO=TCP SPT=53379 DPT=31
+29 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 09:55:04 2026 kern.warn kernel: [52959.652765] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=150.107.36.236 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=44 ID=9851 PROTO=TCP SPT=33520 DPT=811
+1 WINDOW=63546 RES=0x00 SYN URGP=0
+Wed Sep  9 09:55:08 2026 kern.warn kernel: [52964.562449] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=151.243.11.183 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x20 TTL=53 ID=50684 DF PROTO=TCP SPT=61148 DPT
+=50011 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:55:13 2026 kern.warn kernel: [52968.940310] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=15326 PROTO=TCP SPT=47605 DPT=319
+54 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:55:31 2026 kern.warn kernel: [52987.269895] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=174.138.38.79 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=243 ID=21519 PROTO=TCP SPT=47573 DPT=10
+02 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 09:55:34 2026 kern.warn kernel: [52989.686032] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=69.5.169.213 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=52 ID=0 PROTO=TCP SPT=29534 DPT=6005 WIN
+DOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:55:36 2026 kern.warn kernel: [52991.681402] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=87.120.104.79 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=247 ID=22983 PROTO=TCP SPT=49240 DPT=12
+443 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 09:55:37 2026 kern.warn kernel: [52993.638048] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=91.191.209.98 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=244 ID=60144 PROTO=TCP SPT=58865 DPT=44
+777 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:55:40 2026 kern.warn kernel: [52996.337786] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=31.76.38.117 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x60 TTL=118 ID=7418 DF PROTO=TCP SPT=22 DPT=23 W
+INDOW=28400 RES=0x00 SYN URGP=0
+Wed Sep  9 09:55:47 2026 kern.warn kernel: [53003.618909] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=213.166.84.58 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=53161 DPT=48918 W
+INDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:56:03 2026 kern.warn kernel: [53019.317135] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=91.92.47.58 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=54321 PROTO=TCP SPT=33021 DPT=7681
+ WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:56:05 2026 kern.warn kernel: [53020.761357] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=177.72.227.112 DST=31.182.124.146 LEN=61 TOS=0x00 PREC=0x00 TTL=49 ID=56127 DF PROTO=UDP SPT=31415 DPT
+=10201 LEN=41
+Wed Sep  9 09:56:10 2026 kern.warn kernel: [53025.946104] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=8.216.8.127 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=49 ID=27198 DF PROTO=TCP SPT=28222 DPT=80
+88 WINDOW=61690 RES=0x00 SYN URGP=0
+Wed Sep  9 09:56:14 2026 kern.warn kernel: [53030.173162] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=62420 PROTO=TCP SPT=47605 DPT=245
+98 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:56:25 2026 kern.warn kernel: [53040.817917] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=78.128.114.162 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=1066 PROTO=TCP SPT=50225 DPT=13
+320 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:56:39 2026 kern.warn kernel: [53054.953518] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=100.50.17.159 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=54 ID=50616 PROTO=TCP SPT=61234 DPT=826
+5 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:56:40 2026 kern.warn kernel: [53056.497985] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=156.225.1.87 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=238 ID=279 PROTO=TCP SPT=58914 DPT=10039
+ WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:56:42 2026 kern.warn kernel: [53058.001839] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=34.78.141.113 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=246 ID=41045 PROTO=TCP SPT=59555 DPT=33
+06 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 09:56:44 2026 kern.warn kernel: [53059.676502] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=34.78.141.113 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=246 ID=41045 PROTO=TCP SPT=59555 DPT=33
+06 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 09:56:44 2026 kern.warn kernel: [53060.507493] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=34.78.141.113 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=247 ID=58136 PROTO=TCP SPT=59539 DPT=33
+06 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 09:56:46 2026 kern.warn kernel: [53062.217544] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=40945 PROTO=TCP SPT=45092 DPT=5
+6114 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 09:57:00 2026 kern.warn kernel: [53075.995968] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=193.32.204.199 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=55 ID=0 PROTO=TCP SPT=4497 DPT=8080 WI
+NDOW=0 RES=0x00 SYN URGP=0
+Wed Sep  9 09:57:02 2026 kern.warn kernel: [53077.707035] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=81.19.219.246 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=52593 DPT=60808 W
+INDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:57:04 2026 kern.warn kernel: [53079.737594] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=78.128.114.174 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=62840 PROTO=TCP SPT=46254 DPT=4
+9719 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:57:11 2026 kern.warn kernel: [53086.909928] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=216.25.89.128 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=246 ID=54321 PROTO=TCP SPT=54834 DPT=50
+100 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:57:19 2026 kern.warn kernel: [53094.915542] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=31.14.32.8 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=54 ID=16578 PROTO=TCP SPT=43809 DPT=9999 W
+INDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:57:32 2026 kern.warn kernel: [53108.644538] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=193.176.31.235 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=0 PROTO=TCP SPT=60447 DPT=52197 
+WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:57:37 2026 kern.warn kernel: [53113.421780] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=20.65.219.122 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=39 ID=63565 PROTO=TCP SPT=56714 DPT=200
+0 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:57:51 2026 kern.warn kernel: [53127.090037] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=216.25.89.110 DST=31.182.124.146 LEN=88 TOS=0x00 PREC=0x00 TTL=11 ID=0 DF PROTO=UDP SPT=41199 DPT=5351
+ LEN=68
+Wed Sep  9 09:58:06 2026 kern.warn kernel: [53142.211370] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=81.19.219.215 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=52 ID=0 PROTO=TCP SPT=20867 DPT=523 WIN
+DOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:58:13 2026 kern.warn kernel: [53149.352105] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=221.182.16.58 DST=31.182.124.146 LEN=564 TOS=0x14 PREC=0x00 TTL=44 ID=51604 DF PROTO=47
+Wed Sep  9 09:58:29 2026 kern.warn kernel: [53164.933514] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=26880 PROTO=TCP SPT=47605 DPT=228
+50 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:58:32 2026 kern.warn kernel: [53167.791707] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=52450 PROTO=TCP SPT=47605 DPT=590
+36 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:58:41 2026 kern.warn kernel: [53177.140805] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=91.224.92.135 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=246 ID=54321 PROTO=TCP SPT=51307 DPT=30
+01 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:58:43 2026 kern.warn kernel: [53179.004482] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=31.76.38.117 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x60 TTL=245 ID=61188 DF PROTO=TCP SPT=22 DPT=23 
+WINDOW=28400 RES=0x00 SYN URGP=0
+Wed Sep  9 09:59:04 2026 kern.warn kernel: [53200.447285] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=45.33.120.143 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=41 ID=1972 PROTO=TCP SPT=52436 DPT=21 W
+INDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:59:16 2026 kern.warn kernel: [53212.017561] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=194.88.98.112 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=36870 DPT=6057 WI
+NDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:59:17 2026 kern.warn kernel: [53212.733375] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=45.135.193.159 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x40 TTL=247 ID=54321 PROTO=TCP SPT=59162 DPT=8
+383 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:59:23 2026 kern.warn kernel: [53218.674881] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=213.166.84.62 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=52 ID=0 PROTO=TCP SPT=20437 DPT=37832 W
+INDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:59:24 2026 kern.warn kernel: [53220.620555] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=244 ID=38756 PROTO=TCP SPT=42283 DPT=3
+0735 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:59:34 2026 kern.warn kernel: [53229.729133] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=184.105.139.100 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=240 ID=54321 PROTO=TCP SPT=56188 DPT=
+83 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:59:34 2026 kern.warn kernel: [53230.246001] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=194.187.176.84 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=54 ID=10074 DF PROTO=TCP SPT=13532 DPT
+=6006 WINDOW=8192 RES=0x00 SYN URGP=0
+Wed Sep  9 09:59:38 2026 kern.warn kernel: [53234.184253] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=77.90.185.78 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=53 ID=49961 PROTO=TCP SPT=53145 DPT=3306
+ WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:59:54 2026 kern.warn kernel: [53250.033760] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=188.240.59.33 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=52 ID=0 PROTO=TCP SPT=55941 DPT=44464 W
+INDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 09:59:54 2026 kern.warn kernel: [53250.289347] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=244 ID=4515 PROTO=TCP SPT=42283 DPT=13
+183 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:59:57 2026 kern.warn kernel: [53253.347749] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=61578 PROTO=TCP SPT=47605 DPT=262
+77 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 09:59:59 2026 kern.warn kernel: [53255.260424] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=45916 PROTO=TCP SPT=47605 DPT=478
+38 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:00:00 2026 cron.err crond[11059]: USER root pid 25929 cmd /root/3en-net-health.sh >/dev/null 2>&1
+Wed Sep  9 10:00:06 2026 kern.warn kernel: [53262.100434] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=151.243.11.174 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x20 TTL=54 ID=19702 DF PROTO=TCP SPT=61226 DPT
+=6036 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:00:07 2026 kern.warn kernel: [53263.280441] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.126 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=244 ID=47826 PROTO=TCP SPT=46322 DPT=7
+311 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:00:14 2026 kern.warn kernel: [53270.458944] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=20.150.211.25 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=33 ID=47701 PROTO=TCP SPT=47740 DPT=26 
+WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:00:19 2026 kern.warn kernel: [53274.790767] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=45.142.193.161 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=247 ID=22598 PROTO=TCP SPT=46651 DPT=3
+389 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:00:38 2026 kern.warn kernel: [53294.118329] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=34.228.104.231 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=53 ID=42627 PROTO=TCP SPT=61234 DPT=40
+00 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:00:38 2026 kern.warn kernel: [53294.296414] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=79.124.58.18 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=47525 PROTO=TCP SPT=51566 DPT=200
+2 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:00:41 2026 kern.warn kernel: [53297.243527] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=194.50.235.155 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=56361 DPT=13082 
+WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:00:58 2026 kern.warn kernel: [53313.820848] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=66.240.223.214 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=49 ID=58158 PROTO=TCP SPT=38291 DPT=13
+9 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:00:58 2026 kern.warn kernel: [53314.334423] drop wan invalid ct state: IN=br-lan OUT=eth1 MAC=dc:a6:32:01
+:f9:80:30:c5:99:af:0f:a7:08:00 SRC=192.168.1.35 DST=140.82.121.4 LEN=40 TOS=0x00 PREC=0x00 TTL=127 ID=7814 DF PROTO=TCP
+ SPT=54910 DPT=443 WINDOW=0 RES=0x00 ACK RST URGP=0
+Wed Sep  9 10:01:00 2026 kern.warn kernel: [53315.678254] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=66.240.223.214 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=48 ID=64981 PROTO=TCP SPT=51861 DPT=44
+5 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:01:01 2026 kern.warn kernel: [53316.788664] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=79.124.56.202 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=45250 PROTO=TCP SPT=53139 DPT=55
+556 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:01:32 2026 kern.warn kernel: [53348.532716] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=34482 PROTO=TCP SPT=45076 DPT=2
+5776 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:01:35 2026 kern.warn kernel: [53350.861279] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=31.14.254.100 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=26951 DPT=45018 W
+INDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:01:38 2026 kern.warn kernel: [53353.885056] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=111.21.35.226 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=228 ID=38877 PROTO=TCP SPT=25213 DPT=18
+066 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:01:49 2026 kern.warn kernel: [53365.319584] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=92.118.39.57 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=246 ID=60847 PROTO=TCP SPT=45392 DPT=808
+0 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:01:50 2026 kern.warn kernel: [53366.649126] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=46.19.138.10 DST=31.182.124.146 LEN=493 TOS=0x08 PREC=0x00 TTL=114 ID=5920 PROTO=UDP SPT=9659 DPT=6099
+ LEN=473
+Wed Sep  9 10:01:53 2026 kern.warn kernel: [53369.591107] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=3.131.24.55 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=54 ID=22948 PROTO=TCP SPT=61234 DPT=8089 
+WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:02:22 2026 kern.warn kernel: [53397.665385] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=54972 PROTO=TCP SPT=47605 DPT=519
+11 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:02:26 2026 kern.warn kernel: [53402.010172] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=27906 PROTO=TCP SPT=48031 DPT=6
+1753 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:02:31 2026 kern.warn kernel: [53407.288519] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=11083 PROTO=TCP SPT=48031 DPT=5
+3921 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:02:42 2026 kern.warn kernel: [53418.076343] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=193.32.209.226 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=41617 DPT=10012 
+WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:02:44 2026 kern.warn kernel: [53419.841731] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=29982 PROTO=TCP SPT=47605 DPT=621
+02 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:02:52 2026 kern.warn kernel: [53427.852623] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=244 ID=47163 PROTO=TCP SPT=45092 DPT=5
+8501 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:02:54 2026 kern.warn kernel: [53430.602583] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=91.230.168.148 DST=31.182.124.146 LEN=60 TOS=0x00 PREC=0x00 TTL=43 ID=17655 DF PROTO=TCP SPT=22820 DPT
+=61616 WINDOW=5840 RES=0x00 SYN URGP=0
+Wed Sep  9 10:02:57 2026 kern.warn kernel: [53432.951334] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=159.203.67.164 DST=31.182.124.146 LEN=114 TOS=0x00 PREC=0x00 TTL=51 ID=21934 DF PROTO=UDP SPT=8081 DPT
+=8081 LEN=94
+Wed Sep  9 10:03:05 2026 kern.warn kernel: [53440.827156] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=38.104.167.221 DST=31.182.124.146 LEN=564 TOS=0x08 PREC=0x00 TTL=51 ID=8576 DF PROTO=47
+Wed Sep  9 10:03:12 2026 kern.warn kernel: [53447.962432] drop wan invalid ct state: IN=br-lan OUT=eth1 MAC=dc:a6:32:01
+:f9:80:30:c5:99:af:0f:a7:08:00 SRC=192.168.1.35 DST=140.82.121.5 LEN=40 TOS=0x00 PREC=0x00 TTL=127 ID=46667 DF PROTO=TC
+P SPT=50527 DPT=443 WINDOW=0 RES=0x00 ACK RST URGP=0
+Wed Sep  9 10:03:22 2026 kern.warn kernel: [53458.147707] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=78.128.114.46 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=36587 PROTO=TCP SPT=50235 DPT=34
+13 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:03:35 2026 kern.warn kernel: [53470.786410] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=193.176.31.229 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=53 ID=0 PROTO=TCP SPT=23865 DPT=25665 
+WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:04:01 2026 kern.warn kernel: [53497.140176] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=69.5.169.166 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=52 ID=0 PROTO=TCP SPT=52715 DPT=2087 WIN
+DOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:04:05 2026 kern.warn kernel: [53501.387095] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=60570 PROTO=TCP SPT=45092 DPT=1
+8698 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:04:16 2026 kern.warn kernel: [53512.590264] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=6066 PROTO=TCP SPT=45076 DPT=35
+17 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:04:20 2026 kern.warn kernel: [53516.219767] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=3.147.122.184 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=53 ID=55207 PROTO=TCP SPT=61234 DPT=484
+0 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:04:22 2026 kern.warn kernel: [53518.361508] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=43.228.157.8 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=110 ID=0 DF PROTO=TCP SPT=24957 DPT=2949
+ WINDOW=14600 RES=0x00 SYN URGP=0
+Wed Sep  9 10:04:33 2026 kern.warn kernel: [53529.566480] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=192.248.150.180 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=49 ID=10152 PROTO=TCP SPT=40662 DPT=3
+389 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:04:43 2026 kern.warn kernel: [53538.981096] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=4726 PROTO=TCP SPT=47605 DPT=4786
+9 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:04:45 2026 kern.warn kernel: [53541.451048] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=185.224.128.16 DST=31.182.124.146 LEN=40 TOS=0x08 PREC=0x00 TTL=243 ID=54321 PROTO=TCP SPT=33087 DPT=3
+128 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:04:51 2026 kern.warn kernel: [53546.738148] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=244 ID=50429 PROTO=TCP SPT=48031 DPT=4
+3587 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:05:02 2026 kern.warn kernel: [53558.475648] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=114.33.143.118 DST=31.182.124.146 LEN=60 TOS=0x00 PREC=0x00 TTL=47 ID=14013 DF PROTO=TCP SPT=45186 DPT
+=23 WINDOW=14520 RES=0x00 SYN URGP=0
+Wed Sep  9 10:05:06 2026 kern.warn kernel: [53562.238950] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=89.248.165.203 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=247 ID=14693 PROTO=TCP SPT=50799 DPT=1
+35 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:05:13 2026 kern.warn kernel: [53569.634633] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=18336 PROTO=TCP SPT=47605 DPT=262
+73 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:05:18 2026 kern.warn kernel: [53573.774669] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=11665 PROTO=TCP SPT=47605 DPT=268
+89 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:05:35 2026 kern.warn kernel: [53591.368367] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=91.191.209.198 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=28734 PROTO=TCP SPT=56913 DPT=3
+161 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:05:43 2026 kern.warn kernel: [53599.651218] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=8.211.187.185 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=113 ID=325 DF PROTO=TCP SPT=57177 DPT=1
+8789 WINDOW=7152 RES=0x00 SYN URGP=0
+Wed Sep  9 10:06:02 2026 kern.warn kernel: [53618.221590] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=185.226.197.33 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=239 ID=61223 PROTO=TCP SPT=23277 DPT=5
+03 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:06:12 2026 kern.warn kernel: [53628.273076] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=79.124.59.106 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=246 ID=45377 PROTO=TCP SPT=53143 DPT=74
+33 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:06:13 2026 kern.warn kernel: [53628.882446] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=53961 PROTO=TCP SPT=47605 DPT=163
+14 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:06:31 2026 kern.warn kernel: [53647.006967] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.126 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=244 ID=5098 PROTO=TCP SPT=46306 DPT=53
+0 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:06:34 2026 kern.warn kernel: [53649.855166] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=14069 PROTO=TCP SPT=45076 DPT=1
+5210 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:06:39 2026 kern.warn kernel: [53655.155860] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=89.37.172.141 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=55745 DPT=445 WIN
+DOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:06:41 2026 kern.warn kernel: [53657.372027] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=6202 PROTO=TCP SPT=47605 DPT=4745
+7 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:06:43 2026 kern.warn kernel: [53659.498251] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=200.112.104.58 DST=31.182.124.146 LEN=1118 TOS=0x00 PREC=0x00 TTL=45 ID=7709 DF PROTO=UDP SPT=44399 DP
+T=45309 LEN=1098
+Wed Sep  9 10:06:50 2026 kern.warn kernel: [53665.918111] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=28044 PROTO=TCP SPT=47605 DPT=335
+39 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:06:51 2026 kern.warn kernel: [53666.709912] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=19735 PROTO=TCP SPT=47605 DPT=704
+9 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:07:00 2026 kern.warn kernel: [53676.412777] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=62765 PROTO=TCP SPT=47605 DPT=571
+76 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:07:01 2026 kern.warn kernel: [53677.540932] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=91.191.209.98 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=27271 PROTO=TCP SPT=58865 DPT=43
+030 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:07:07 2026 authpriv.info dropbear[32064]: Child connection from 192.168.1.35:56517
+Wed Sep  9 10:07:07 2026 authpriv.info dropbear[32064]: Exit before auth from <192.168.1.35:56517>: Exited normally
+Wed Sep  9 10:07:07 2026 user.info banIP-1.5.6-r7[7905]: suspicious IP '192.168.1.35'
+Wed Sep  9 10:07:07 2026 user.info banIP-1.5.6-r7[7905]: add IP '192.168.1.35' (expiry: -) to blocklist.v4 set
+Wed Sep  9 10:07:07 2026 user.info banIP-1.5.6-r7[7905]: add IP '192.168.1.35' to local blocklist
+Wed Sep  9 10:07:08 2026 kern.warn kernel: [53684.537623] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=108.31.82.198 DST=31.182.124.146 LEN=46 TOS=0x00 PREC=0x00 TTL=51 ID=25453 DF PROTO=UDP SPT=37353 DPT=
+16314 LEN=26
+Wed Sep  9 10:07:10 2026 kern.warn kernel: [53686.255763] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=244 ID=2316 PROTO=TCP SPT=48031 DPT=29
+842 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:07:10 2026 kern.warn kernel: [53686.573227] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=4.148.17.175 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=33 ID=62417 PROTO=TCP SPT=48559 DPT=4332
+ WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:07:11 2026 kern.warn kernel: [53687.329763] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=23193 PROTO=TCP SPT=48031 DPT=6
+1759 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:07:11 2026 kern.warn kernel: [53687.442932] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=11170 PROTO=TCP SPT=47605 DPT=204
+78 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:07:24 2026 kern.warn kernel: [53700.434285] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=34.101.121.69 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=247 ID=54886 PROTO=TCP SPT=45432 DPT=21
+ WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:07:27 2026 kern.warn kernel: [53702.713549] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=36451 PROTO=TCP SPT=47605 DPT=283
+96 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:07:42 2026 kern.warn kernel: [53718.418910] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=1203 PROTO=TCP SPT=47605 DPT=2254
+0 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:07:55 2026 kern.warn kernel: [53731.631417] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=36.25.131.163 DST=31.182.124.146 LEN=60 TOS=0x00 PREC=0x00 TTL=48 ID=45323 DF PROTO=TCP SPT=43112 DPT=
+23 WINDOW=28880 RES=0x00 SYN URGP=0
+Wed Sep  9 10:08:03 2026 kern.warn kernel: [53738.940936] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=193.176.29.5 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=21367 DPT=27036 WI
+NDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:08:16 2026 kern.warn kernel: [53752.449248] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=91.231.89.44 DST=31.182.124.146 LEN=60 TOS=0x00 PREC=0x00 TTL=50 ID=43198 DF PROTO=TCP SPT=58620 DPT=5
+090 WINDOW=5840 RES=0x00 SYN URGP=0
+Wed Sep  9 10:08:28 2026 kern.warn kernel: [53763.802778] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=46720 PROTO=TCP SPT=47605 DPT=236
+92 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:08:33 2026 kern.warn kernel: [53769.625384] drop wan invalid ct state: IN=br-lan OUT=eth1 MAC=dc:a6:32:01
+:f9:80:30:c5:99:af:0f:a7:08:00 SRC=192.168.1.35 DST=140.82.121.4 LEN=40 TOS=0x00 PREC=0x00 TTL=127 ID=7876 DF PROTO=TCP
+ SPT=54265 DPT=443 WINDOW=0 RES=0x00 ACK RST URGP=0
+Wed Sep  9 10:08:43 2026 kern.warn kernel: [53779.052293] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=15894 PROTO=TCP SPT=47605 DPT=239
+81 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:08:56 2026 kern.warn kernel: [53792.532649] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=78.128.112.6 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=40801 PROTO=TCP SPT=58878 DPT=367
+18 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:09:02 2026 kern.warn kernel: [53798.453057] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=47.251.126.28 DST=31.182.124.146 LEN=52 TOS=0x14 PREC=0x00 TTL=51 ID=25206 DF PROTO=TCP SPT=26230 DPT=
+8593 WINDOW=61690 RES=0x00 SYN URGP=0
+Wed Sep  9 10:09:12 2026 kern.warn kernel: [53808.170131] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=45.82.76.118 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=242 ID=0 PROTO=TCP SPT=33936 DPT=6686 WI
+NDOW=64240 RES=0x00 SYN URGP=0
+Wed Sep  9 10:09:17 2026 kern.warn kernel: [53812.948932] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=62608 PROTO=TCP SPT=48031 DPT=4
+6754 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:09:20 2026 kern.warn kernel: [53816.017598] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=20.84.165.220 DST=31.182.124.146 LEN=51 TOS=0x00 PREC=0x00 TTL=37 ID=61424 PROTO=UDP SPT=43159 DPT=623
+ LEN=31
+Wed Sep  9 10:09:24 2026 kern.warn kernel: [53820.379779] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=157.10.53.29 DST=31.182.124.146 LEN=60 TOS=0x08 PREC=0x00 TTL=45 ID=47886 DF PROTO=TCP SPT=54212 DPT=4
+000 WINDOW=64240 RES=0x00 SYN URGP=0
+Wed Sep  9 10:09:31 2026 kern.warn kernel: [53827.519660] drop wan invalid ct state: IN=br-lan OUT=eth1 MAC=dc:a6:32:01
+:f9:80:30:c5:99:af:0f:a7:08:00 SRC=192.168.1.35 DST=140.82.121.5 LEN=40 TOS=0x00 PREC=0x00 TTL=127 ID=46681 DF PROTO=TC
+P SPT=57851 DPT=443 WINDOW=0 RES=0x00 ACK RST URGP=0
+Wed Sep  9 10:09:33 2026 kern.warn kernel: [53829.003274] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=25766 PROTO=TCP SPT=45076 DPT=3
+389 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:09:36 2026 kern.warn kernel: [53832.310091] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=95.214.53.157 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=248 ID=54321 PROTO=TCP SPT=51612 DPT=41
+53 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:09:38 2026 kern.warn kernel: [53833.664153] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=13.89.124.143 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=39 ID=30825 PROTO=TCP SPT=45154 DPT=920
+0 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:09:43 2026 kern.warn kernel: [53838.929073] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=8366 PROTO=TCP SPT=48031 DPT=21
+367 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:09:59 2026 kern.warn kernel: [53855.322576] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=195.182.16.23 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=54321 PROTO=TCP SPT=54391 DPT=80
+ WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:10:10 2026 kern.warn kernel: [53866.645427] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=61581 PROTO=TCP SPT=47605 DPT=499
+45 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:10:18 2026 kern.warn kernel: [53874.025534] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=24640 PROTO=TCP SPT=48031 DPT=3
+0799 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:10:20 2026 kern.warn kernel: [53876.354441] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=79.124.58.90 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=46168 PROTO=TCP SPT=50254 DPT=885
+1 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:10:27 2026 kern.warn kernel: [53883.623787] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=61625 PROTO=TCP SPT=47605 DPT=589
+67 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:10:28 2026 kern.warn kernel: [53883.904264] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.126 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=244 ID=38567 PROTO=TCP SPT=46322 DPT=5
+373 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:10:35 2026 kern.warn kernel: [53891.532656] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=58374 PROTO=TCP SPT=47605 DPT=793
+3 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:10:45 2026 kern.warn kernel: [53900.852873] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=194.88.98.117 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=52 ID=0 PROTO=TCP SPT=34844 DPT=5672 WI
+NDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:10:45 2026 kern.warn kernel: [53901.265915] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=44727 PROTO=TCP SPT=45092 DPT=3
+6845 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:10:46 2026 kern.warn kernel: [53902.271924] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=193.32.209.236 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=52 ID=0 PROTO=TCP SPT=31062 DPT=1911 W
+INDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:10:52 2026 kern.warn kernel: [53907.849527] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=34.38.225.145 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=246 ID=26531 PROTO=TCP SPT=59510 DPT=38
+9 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:10:53 2026 kern.warn kernel: [53909.497040] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=34.38.225.145 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=246 ID=27473 PROTO=TCP SPT=59526 DPT=38
+9 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:10:55 2026 kern.warn kernel: [53911.157813] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=109.105.210.55 DST=31.182.124.146 LEN=40 TOS=0x08 PREC=0x00 TTL=235 ID=14920 PROTO=TCP SPT=30800 DPT=9
+100 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:11:07 2026 kern.warn kernel: [53923.075057] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=184.105.247.223 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=241 ID=54321 PROTO=TCP SPT=50194 DPT=
+2096 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:11:34 2026 kern.warn kernel: [53950.509697] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=47.245.138.1 DST=31.182.124.146 LEN=52 TOS=0x14 PREC=0x00 TTL=50 ID=20722 DF PROTO=TCP SPT=21746 DPT=8
+082 WINDOW=61690 RES=0x00 SYN URGP=0
+Wed Sep  9 10:11:35 2026 kern.warn kernel: [53950.966032] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=34062 PROTO=TCP SPT=47605 DPT=158
+59 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:11:39 2026 kern.warn kernel: [53954.813994] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=65.49.20.99 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=240 ID=54321 PROTO=TCP SPT=57993 DPT=5222
+ WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:11:42 2026 kern.warn kernel: [53958.508459] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=47.84.113.115 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=45 ID=41117 DF PROTO=TCP SPT=42141 DPT=
+8022 WINDOW=61690 RES=0x00 SYN URGP=0
+Wed Sep  9 10:11:53 2026 kern.warn kernel: [53969.047426] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=45.82.76.131 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=244 ID=0 PROTO=TCP SPT=33939 DPT=7080 WI
+NDOW=64240 RES=0x00 SYN URGP=0
+Wed Sep  9 10:11:57 2026 kern.warn kernel: [53973.119524] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=79.124.56.142 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=246 ID=1928 PROTO=TCP SPT=51442 DPT=500
+08 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:12:11 2026 authpriv.info dropbear[12878]: Child connection from 192.168.1.35:55183
+Wed Sep  9 10:12:11 2026 authpriv.info dropbear[12878]: Exit before auth from <192.168.1.35:55183>: Exited normally
+Wed Sep  9 10:12:17 2026 kern.warn kernel: [53992.861766] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=200.59.88.29 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=44 ID=61056 DF PROTO=TCP SPT=47883 DPT=2
+3 WINDOW=29200 RES=0x00 SYN URGP=0
+Wed Sep  9 10:12:23 2026 kern.warn kernel: [53998.712444] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=193.124.20.245 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=52 ID=0 PROTO=TCP SPT=26285 DPT=48899 
+WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:12:24 2026 kern.warn kernel: [53999.834219] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=78.128.114.174 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=682 PROTO=TCP SPT=46254 DPT=134
+4 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:12:25 2026 kern.warn kernel: [54001.533729] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.126 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=244 ID=62798 PROTO=TCP SPT=46306 DPT=3
+389 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:12:43 2026 kern.warn kernel: [54018.886307] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=8.216.8.151 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=50 ID=59685 DF PROTO=TCP SPT=60709 DPT=74
+43 WINDOW=61690 RES=0x00 SYN URGP=0
+Wed Sep  9 10:12:55 2026 kern.warn kernel: [54031.402962] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=10804 PROTO=TCP SPT=48031 DPT=1
+600 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:12:58 2026 kern.warn kernel: [54034.271875] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=45.82.76.112 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=243 ID=0 PROTO=TCP SPT=48333 DPT=8500 WI
+NDOW=64240 RES=0x00 SYN URGP=0
+Wed Sep  9 10:13:29 2026 kern.warn kernel: [54065.388051] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=79.124.49.70 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=4710 PROTO=TCP SPT=51323 DPT=2018
+ WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:13:30 2026 kern.warn kernel: [54066.350761] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=193.8.186.45 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x20 TTL=54 ID=26408 PROTO=TCP SPT=50778 DPT=5265
+ WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:13:38 2026 kern.warn kernel: [54073.870802] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=45.135.193.159 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x40 TTL=246 ID=54321 PROTO=TCP SPT=40309 DPT=1
+0000 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:13:45 2026 kern.warn kernel: [54080.956705] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=167.71.173.4 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=242 ID=54030 PROTO=TCP SPT=60001 DPT=570
+6 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:13:46 2026 kern.warn kernel: [54081.925708] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=209.97.129.94 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=243 ID=33076 PROTO=TCP SPT=60001 DPT=50
+41 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:13:49 2026 kern.warn kernel: [54085.649193] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=89.37.172.156 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=52 ID=0 PROTO=TCP SPT=31284 DPT=20306 W
+INDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:13:54 2026 kern.warn kernel: [54090.229420] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=56887 PROTO=TCP SPT=47605 DPT=215
+26 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:13:57 2026 kern.warn kernel: [54093.627331] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=79.124.59.106 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=16863 PROTO=TCP SPT=53143 DPT=14
+44 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:13:57 2026 kern.warn kernel: [54093.656576] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=55936 PROTO=TCP SPT=48031 DPT=1
+8439 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:14:00 2026 kern.warn kernel: [54096.376821] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=39.34.155.61 DST=31.182.124.146 LEN=1245 TOS=0x00 PREC=0x00 TTL=44 ID=1458 DF PROTO=UDP SPT=26071 DPT=
+19243 LEN=1225
+Wed Sep  9 10:14:08 2026 kern.warn kernel: [54103.896570] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=18.119.209.50 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=54 ID=54419 PROTO=TCP SPT=61234 DPT=818
+1 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:14:23 2026 kern.warn kernel: [54119.390646] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=50961 PROTO=TCP SPT=48031 DPT=2
+8100 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:14:29 2026 kern.warn kernel: [54125.254167] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=43782 PROTO=TCP SPT=47605 DPT=591
+40 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:14:34 2026 kern.warn kernel: [54130.253555] drop wan invalid ct state: IN=br-lan OUT=eth1 MAC=dc:a6:32:01
+:f9:80:30:c5:99:af:0f:a7:08:00 SRC=192.168.1.35 DST=140.82.121.5 LEN=40 TOS=0x00 PREC=0x00 TTL=127 ID=46696 DF PROTO=TC
+P SPT=56509 DPT=443 WINDOW=0 RES=0x00 ACK RST URGP=0
+Wed Sep  9 10:14:34 2026 kern.warn kernel: [54130.380169] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=33800 PROTO=TCP SPT=47605 DPT=543
+55 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:14:40 2026 kern.warn kernel: [54136.610174] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=109.105.210.103 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=238 ID=2285 PROTO=TCP SPT=20169 DPT=8
+080 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:14:41 2026 kern.warn kernel: [54137.350361] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=20.15.203.62 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=41 ID=33459 PROTO=TCP SPT=45602 DPT=4911
+ WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:14:48 2026 kern.warn kernel: [54144.574110] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=104.232.79.58 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=235 ID=64971 PROTO=TCP SPT=60000 DPT=49
+21 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:14:54 2026 kern.warn kernel: [54150.343841] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=35281 PROTO=TCP SPT=47605 DPT=227
+49 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:14:55 2026 kern.warn kernel: [54151.153516] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=5.226.140.81 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=36795 DPT=30612 WI
+NDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:14:58 2026 kern.warn kernel: [54154.223082] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=18.221.179.104 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=54 ID=63874 PROTO=TCP SPT=61234 DPT=18
+210 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:15:00 2026 cron.err crond[11059]: USER root pid 1255 cmd /root/3en-net-health.sh >/dev/null 2>&1
+Wed Sep  9 10:15:12 2026 kern.warn kernel: [54167.809263] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=12960 PROTO=TCP SPT=47605 DPT=582
+35 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:15:20 2026 kern.warn kernel: [54176.635759] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=43.228.157.9 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=110 ID=0 DF PROTO=TCP SPT=32542 DPT=2949
+ WINDOW=14600 RES=0x00 SYN URGP=0
+Wed Sep  9 10:15:28 2026 kern.warn kernel: [54184.633139] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=200.8.235.241 DST=31.182.124.146 LEN=60 TOS=0x08 PREC=0x00 TTL=46 ID=58599 DF PROTO=TCP SPT=22482 DPT=
+23 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:15:29 2026 kern.warn kernel: [54185.366698] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=200.8.235.241 DST=31.182.124.146 LEN=60 TOS=0x08 PREC=0x00 TTL=46 ID=31667 DF PROTO=TCP SPT=34742 DPT=
+22 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:15:34 2026 kern.warn kernel: [54190.399865] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.126 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=35741 PROTO=TCP SPT=46322 DPT=5
+6264 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:15:45 2026 kern.warn kernel: [54201.077569] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=244 ID=13188 PROTO=TCP SPT=48031 DPT=3
+1096 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:15:50 2026 kern.warn kernel: [54205.753634] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=9782 PROTO=TCP SPT=47605 DPT=113 
+WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:15:57 2026 kern.warn kernel: [54213.347723] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.126 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=44455 PROTO=TCP SPT=46306 DPT=8
+443 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:15:58 2026 kern.warn kernel: [54213.950650] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=26115 PROTO=TCP SPT=45092 DPT=5
+4844 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:16:16 2026 kern.warn kernel: [54231.706866] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=5.226.140.89 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=52 ID=0 PROTO=TCP SPT=46611 DPT=13398 WI
+NDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:16:22 2026 kern.warn kernel: [54237.956596] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=103.152.101.206 DST=31.182.124.146 LEN=60 TOS=0x08 PREC=0x00 TTL=46 ID=10385 DF PROTO=TCP SPT=35527 DP
+T=23 WINDOW=14400 RES=0x00 SYN URGP=0
+Wed Sep  9 10:16:27 2026 kern.warn kernel: [54243.186238] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=64688 PROTO=TCP SPT=45092 DPT=5
+1647 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:16:31 2026 kern.warn kernel: [54247.370634] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=40.76.102.101 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=43 ID=55575 PROTO=TCP SPT=55637 DPT=953
+ WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:02 2026 kern.warn kernel: [54278.367629] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=244 ID=22427 PROTO=TCP SPT=45092 DPT=3
+2611 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:07 2026 kern.warn kernel: [54283.025241] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=217.146.80.125 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=24672 DPT=44624 
+WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:11 2026 kern.warn kernel: [54286.818335] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=153.68.213.202 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=116 ID=39749 DF PROTO=TCP SPT=60565 DP
+T=25571 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:15 2026 kern.warn kernel: [54290.897074] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=40665 PROTO=TCP SPT=47605 DPT=625
+83 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:15 2026 kern.warn kernel: [54291.281818] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=70.74.220.158 DST=31.182.124.146 LEN=60 TOS=0x00 PREC=0x00 TTL=43 ID=55896 DF PROTO=TCP SPT=33812 DPT=
+25568 WINDOW=64240 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:15 2026 kern.warn kernel: [54291.562929] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=71.227.205.95 DST=31.182.124.146 LEN=60 TOS=0x00 PREC=0x00 TTL=51 ID=9949 DF PROTO=TCP SPT=53748 DPT=2
+5570 WINDOW=64240 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:17 2026 kern.warn kernel: [54292.836463] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=30534 PROTO=TCP SPT=47605 DPT=624
+78 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:26 2026 kern.warn kernel: [54301.793259] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=45.148.10.230 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=247 ID=39054 PROTO=TCP SPT=48120 DPT=22
+22 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:28 2026 kern.warn kernel: [54304.521860] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=79.124.56.142 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=678 PROTO=TCP SPT=51442 DPT=4000
+3 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:29 2026 kern.warn kernel: [54305.153476] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=45.187.243.132 DST=31.182.124.146 LEN=949 TOS=0x00 PREC=0x00 TTL=45 ID=13939 DF PROTO=UDP SPT=53404 DP
+T=63376 LEN=929
+Wed Sep  9 10:17:32 2026 kern.warn kernel: [54307.846695] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=8529 PROTO=TCP SPT=47605 DPT=7570
+ WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:40 2026 kern.warn kernel: [54316.138590] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=62241 PROTO=TCP SPT=47605 DPT=135
+69 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:43 2026 kern.warn kernel: [54319.442478] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=71.227.205.95 DST=31.182.124.146 LEN=60 TOS=0x00 PREC=0x00 TTL=50 ID=61740 DF PROTO=TCP SPT=43706 DPT=
+6743 WINDOW=64240 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:44 2026 kern.warn kernel: [54320.534078] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=9054 PROTO=TCP SPT=48031 DPT=56
+200 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:17:59 2026 kern.warn kernel: [54335.238056] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=70.74.220.158 DST=31.182.124.146 LEN=60 TOS=0x00 PREC=0x00 TTL=44 ID=6257 DF PROTO=TCP SPT=53906 DPT=2
+5569 WINDOW=64240 RES=0x00 SYN URGP=0
+Wed Sep  9 10:18:07 2026 kern.warn kernel: [54343.054339] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=78.128.114.162 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=6709 PROTO=TCP SPT=50225 DPT=31
+720 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:18:20 2026 kern.warn kernel: [54355.782979] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=50130 PROTO=TCP SPT=45076 DPT=4
+9586 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:18:23 2026 kern.warn kernel: [54359.505138] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=45.82.76.133 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=243 ID=0 PROTO=TCP SPT=41412 DPT=50300 W
+INDOW=64240 RES=0x00 SYN URGP=0
+Wed Sep  9 10:18:29 2026 kern.warn kernel: [54365.208747] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=31.14.254.36 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=44830 DPT=1883 WIN
+DOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:18:31 2026 kern.warn kernel: [54366.830841] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=46027 PROTO=TCP SPT=47605 DPT=498
+93 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:18:50 2026 kern.warn kernel: [54386.598583] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=79.124.56.142 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=6113 PROTO=TCP SPT=51442 DPT=500
+02 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:18:57 2026 kern.warn kernel: [54393.439716] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.134 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=244 ID=16092 PROTO=TCP SPT=48031 DPT=4
+6628 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:19:16 2026 kern.warn kernel: [54411.832832] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=136.243.150.244 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=243 ID=2459 PROTO=TCP SPT=60001 DPT=5
+902 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:19:20 2026 kern.warn kernel: [54416.395913] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=47.250.137.24 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=45 ID=15626 DF PROTO=TCP SPT=16650 DPT=
+49155 WINDOW=61690 RES=0x00 SYN URGP=0
+Wed Sep  9 10:19:23 2026 kern.warn kernel: [54419.058901] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=18.217.208.51 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=53 ID=17926 PROTO=TCP SPT=61234 DPT=22 
+WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:19:34 2026 kern.warn kernel: [54430.130083] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=47.89.250.198 DST=31.182.124.146 LEN=52 TOS=0x14 PREC=0x00 TTL=51 ID=35930 DF PROTO=TCP SPT=36954 DPT=
+8464 WINDOW=61690 RES=0x00 SYN URGP=0
+Wed Sep  9 10:19:36 2026 kern.warn kernel: [54431.929902] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.126 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=244 ID=9951 PROTO=TCP SPT=46306 DPT=45
+330 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:19:42 2026 kern.warn kernel: [54437.846766] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=192.248.150.180 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=50 ID=3450 PROTO=TCP SPT=52974 DPT=10
+80 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:19:53 2026 kern.warn kernel: [54448.877338] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=45.179.216.18 DST=31.182.124.146 LEN=89 TOS=0x00 PREC=0x00 TTL=46 ID=11141 DF PROTO=UDP SPT=64202 DPT=
+5353 LEN=69
+Wed Sep  9 10:19:59 2026 kern.warn kernel: [54455.180902] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=29179 PROTO=TCP SPT=47605 DPT=577
+09 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:20:14 2026 kern.warn kernel: [54470.211932] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=11447 PROTO=TCP SPT=47605 DPT=283
+20 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:20:15 2026 kern.warn kernel: [54470.855041] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=213.166.84.35 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=22386 DPT=4222 WI
+NDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:20:37 2026 kern.warn kernel: [54492.935983] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=40533 PROTO=TCP SPT=45076 DPT=2
+6151 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:20:43 2026 kern.warn kernel: [54499.270448] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.126 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=244 ID=52406 PROTO=TCP SPT=46306 DPT=3
+33 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:20:55 2026 kern.warn kernel: [54510.764797] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=8.216.6.6 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=49 ID=36164 DF PROTO=TCP SPT=37188 DPT=4840
+ WINDOW=61690 RES=0x00 SYN URGP=0
+Wed Sep  9 10:20:56 2026 kern.warn kernel: [54511.955282] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=185.104.141.72 DST=31.182.124.146 LEN=564 TOS=0x00 PREC=0x00 TTL=53 ID=55210 DF PROTO=47
+Wed Sep  9 10:21:06 2026 kern.warn kernel: [54522.566366] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=27886 PROTO=TCP SPT=47605 DPT=162
+79 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:21:07 2026 authpriv.info dropbear[10491]: Child connection from 192.168.1.35:51113
+Wed Sep  9 10:21:07 2026 authpriv.info dropbear[10491]: Exit before auth from <192.168.1.35:51113>: (user 'root', 0 fai
+ls): Error reading: Connection reset by peer
+Wed Sep  9 10:21:08 2026 kern.warn kernel: [54524.425302] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=89.21.67.172 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=52 ID=0 PROTO=TCP SPT=55202 DPT=26492 WI
+NDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:21:09 2026 kern.warn kernel: [54524.798297] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=244 ID=7552 PROTO=TCP SPT=45092 DPT=33
+158 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:21:25 2026 kern.warn kernel: [54541.331914] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=79.124.58.90 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=54210 PROTO=TCP SPT=50254 DPT=349
+6 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:21:38 2026 kern.warn kernel: [54554.371520] drop wan invalid ct state: IN=br-lan OUT=eth1 MAC=dc:a6:32:01
+:f9:80:30:c5:99:af:0f:a7:08:00 SRC=192.168.1.35 DST=140.82.121.5 LEN=40 TOS=0x00 PREC=0x00 TTL=127 ID=46715 DF PROTO=TC
+P SPT=59118 DPT=443 WINDOW=0 RES=0x00 ACK RST URGP=0
+Wed Sep  9 10:21:49 2026 kern.warn kernel: [54564.821483] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=61875 PROTO=TCP SPT=47605 DPT=463
+34 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:21:57 2026 kern.warn kernel: [54572.696880] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=47428 PROTO=TCP SPT=45076 DPT=9
+926 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:22:03 2026 kern.warn kernel: [54579.225835] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=191.240.153.252 DST=31.182.124.146 LEN=834 TOS=0x00 PREC=0x00 TTL=46 ID=25938 DF PROTO=UDP SPT=57131 D
+PT=10735 LEN=814
+Wed Sep  9 10:22:05 2026 kern.warn kernel: [54581.208934] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=28653 PROTO=TCP SPT=47605 DPT=566
+4 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:22:08 2026 kern.warn kernel: [54583.859618] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=31.76.38.117 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x60 TTL=55 ID=15631 DF PROTO=TCP SPT=22 DPT=23 W
+INDOW=35902 RES=0x00 SYN URGP=0
+Wed Sep  9 10:22:08 2026 kern.warn kernel: [54583.908187] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=52.15.153.107 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=53 ID=15521 PROTO=TCP SPT=61234 DPT=800
+2 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:22:23 2026 authpriv.info dropbear[8043]: Child connection from 192.168.1.35:54197
+Wed Sep  9 10:22:30 2026 kern.warn kernel: [54605.877912] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=109.207.88.47 DST=31.182.124.146 LEN=60 TOS=0x08 PREC=0x60 TTL=52 ID=43167 DF PROTO=TCP SPT=52137 DPT=
+23 WINDOW=5840 RES=0x00 SYN URGP=0
+Wed Sep  9 10:22:33 2026 authpriv.notice dropbear[8043]: Password auth succeeded for 'root' from 192.168.1.35:54197
+Wed Sep  9 10:22:33 2026 authpriv.info dropbear[8043]: Exit (root) from <192.168.1.35:54197>: Disconnect received
+Wed Sep  9 10:22:33 2026 kern.warn kernel: [54609.565352] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=20.150.195.25 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=36 ID=61394 PROTO=TCP SPT=38868 DPT=270
+18 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:22:34 2026 kern.warn kernel: [54610.587487] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=81.19.219.231 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=59702 DPT=36329 W
+INDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:22:37 2026 kern.warn kernel: [54613.060121] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=59065 PROTO=TCP SPT=47605 DPT=517
+59 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:22:54 2026 kern.warn kernel: [54629.799921] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=79.124.58.90 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=27988 PROTO=TCP SPT=50254 DPT=200
+22 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:22:57 2026 kern.warn kernel: [54633.001895] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=37250 PROTO=TCP SPT=47605 DPT=318
+78 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:23:02 2026 kern.warn kernel: [54638.662003] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=78.128.114.174 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=32790 PROTO=TCP SPT=46254 DPT=4
+9739 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:23:09 2026 kern.warn kernel: [54645.188992] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=156.227.234.198 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=29151 PROTO=TCP SPT=60467 DPT=2
+3 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:23:12 2026 kern.warn kernel: [54648.048403] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=20.168.10.169 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=32 ID=30709 PROTO=TCP SPT=40959 DPT=338
+9 WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:23:13 2026 kern.warn kernel: [54648.841120] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=156.227.234.198 DST=31.182.124.146 LEN=60 TOS=0x00 PREC=0x00 TTL=51 ID=17492 DF PROTO=TCP SPT=35276 DP
+T=23 WINDOW=64240 RES=0x00 SYN URGP=0
+Wed Sep  9 10:23:16 2026 kern.warn kernel: [54651.669915] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=60768 PROTO=TCP SPT=47605 DPT=645
+52 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:23:35 2026 kern.warn kernel: [54671.050855] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=20.83.166.58 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=41 ID=8376 PROTO=TCP SPT=53382 DPT=2222 
+WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:23:46 2026 kern.warn kernel: [54682.171469] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=20194 PROTO=TCP SPT=47605 DPT=106
+70 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:23:52 2026 kern.warn kernel: [54688.243453] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=18.190.15.50 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=53 ID=53363 PROTO=TCP SPT=61234 DPT=9500
+ WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:23:54 2026 kern.warn kernel: [54690.506137] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=244 ID=1144 PROTO=TCP SPT=45076 DPT=16
+771 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:23:56 2026 authpriv.info dropbear[29965]: Child connection from 192.168.1.35:53353
+Wed Sep  9 10:23:57 2026 authpriv.notice dropbear[29965]: Pubkey auth succeeded for 'root' with ssh-ed25519 key SHA256:
+nuhoxBSHp8nv6trCHOD6zpymPRVLpylsYn2jo+7wReo from 192.168.1.35:53353
+Wed Sep  9 10:23:57 2026 authpriv.info dropbear[29965]: Exit (root) from <192.168.1.35:53353>: Disconnect received
+Wed Sep  9 10:24:07 2026 kern.warn kernel: [54703.371170] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=244 ID=28043 PROTO=TCP SPT=45092 DPT=6
+2080 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:24:14 2026 kern.warn kernel: [54710.580560] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=20792 PROTO=TCP SPT=47605 DPT=579
+15 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:24:19 2026 kern.warn kernel: [54714.882677] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=195.206.182.221 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=51 ID=0 PROTO=TCP SPT=18295 DPT=2097 
+WINDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:24:22 2026 kern.warn kernel: [54718.180821] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=116.72.105.185 DST=31.182.124.146 LEN=60 TOS=0x00 PREC=0x00 TTL=49 ID=23715 DF PROTO=TCP SPT=37080 DPT
+=23 WINDOW=4380 RES=0x00 SYN URGP=0
+Wed Sep  9 10:24:24 2026 kern.warn kernel: [54719.969306] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=47.250.94.185 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=45 ID=23447 DF PROTO=TCP SPT=24471 DPT=
+8880 WINDOW=61690 RES=0x00 SYN URGP=0
+Wed Sep  9 10:24:25 2026 kern.warn kernel: [54721.066555] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=244 ID=51533 PROTO=TCP SPT=47605 DPT=515
+26 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:24:26 2026 kern.warn kernel: [54722.318471] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=79.124.49.70 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=246 ID=41289 PROTO=TCP SPT=51323 DPT=201
+6 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:24:27 2026 kern.warn kernel: [54722.997280] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=5.253.84.77 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x20 TTL=245 ID=24318 PROTO=TCP SPT=47605 DPT=306
+32 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:24:44 2026 kern.warn kernel: [54739.931324] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=89.21.67.153 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=52 ID=0 PROTO=TCP SPT=30470 DPT=39816 WI
+NDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:24:49 2026 kern.warn kernel: [54744.716655] 3en blocked in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4
+d:01:87:08:00 SRC=79.124.62.230 DST=31.182.124.146 LEN=44 TOS=0x00 PREC=0x00 TTL=245 ID=65364 PROTO=TCP SPT=45092 DPT=4
+4993 WINDOW=1025 RES=0x00 SYN URGP=0
+Wed Sep  9 10:24:50 2026 kern.warn kernel: [54746.635080] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=45.148.10.230 DST=31.182.124.146 LEN=40 TOS=0x08 PREC=0x60 TTL=248 ID=12162 PROTO=TCP SPT=48120 DPT=22
+ WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:24:53 2026 kern.warn kernel: [54748.702512] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=3.83.245.221 DST=31.182.124.146 LEN=52 TOS=0x00 PREC=0x00 TTL=54 ID=44406 PROTO=TCP SPT=61234 DPT=82 W
+INDOW=65535 RES=0x00 SYN URGP=0
+Wed Sep  9 10:24:55 2026 kern.warn kernel: [54751.330205] reject wan in: IN=eth1 OUT= MAC=00:e0:4c:43:47:13:50:1d:93:4d
+:01:87:08:00 SRC=78.128.114.174 DST=31.182.124.146 LEN=40 TOS=0x00 PREC=0x00 TTL=244 ID=46263 PROTO=TCP SPT=46254 DPT=2
+382 WINDOW=1024 RES=0x00 SYN URGP=0
+Wed Sep  9 10:25:01 2026 authpriv.info dropbear[27172]: Child connection from 192.168.1.35:49489
+Wed Sep  9 10:25:02 2026 authpriv.notice dropbear[27172]: Pubkey auth succeeded for 'root' with ssh-ed25519 key SHA256:
+nuhoxBSHp8nv6trCHOD6zpymPRVLpylsYn2jo+7wReo from 192.168.1.35:49489
+
+=== AUDIT_END ===
+--- SSH END ---
+SSH_EXIT_CODE=0
+SSH_AUDIT=PASS
+OPENWRT SSH AUDIT 010 COLLECTION TEST COMPLETE
