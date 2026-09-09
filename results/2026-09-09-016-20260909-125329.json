@@ -1,0 +1,17 @@
+[
+    {
+        "name":  "BACKUP",
+        "status":  "OK",
+        "error":  null
+    },
+    {
+        "name":  "SCRIPT",
+        "status":  "FAILED",
+        "error":  "Nie można odnaleźć części ścieżki „C:\\3EN-Agent\\backups\\016\\20260909-125329\\C_\\3EN-Agent\\runs\\20260909-125329-2026-09-09-016\\task.json”."
+    },
+    {
+        "name":  "ROLLBACK",
+        "status":  "OK",
+        "error":  null
+    }
+]
