@@ -3,12 +3,13 @@ $ErrorActionPreference='Stop'
 $root='C:\3EN-Agent'
 $state=Join-Path $root '3en-project.state.json'
 $runner=Join-Path $root '3en-agent-runner-v3.10.1.ps1'
+$acceptedProjects=@('2026-09-09-router-pihole-final-v1','2026-09-09-router-pihole-final-v2')
 $deadline=(Get-Date).AddMinutes(15)
 while((Get-Date)-lt$deadline){
   try{
     if(Test-Path $state){
       $s=Get-Content $state -Raw|ConvertFrom-Json
-      if([string]$s.projectId -eq '2026-09-09-router-pihole-final-v1'){
+      if([string]$s.projectId -in $acceptedProjects){
         $p=$s.chapterStatuses.PSObject.Properties['router-pihole-005-final']
         if($p -and [string]$p.Value -in @('SUCCESS','SUCCESS_RECOVERED')){break}
         if($p -and [string]$p.Value -like 'FAILED_*'){exit 20}
