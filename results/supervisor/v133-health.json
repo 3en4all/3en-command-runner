@@ -19,12 +19,12 @@
                       "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  4,
+                      "attempts":  5,
                       "lastError":  "RUNNER_EXIT_2",
-                      "nextRetryUtc":  "2026-09-09T22:57:15.8991031Z",
+                      "nextRetryUtc":  "2026-09-09T23:02:24.2486756Z",
                       "runnerPid":  null,
                       "lastExitCode":  2,
-                      "updatedUtc":  "2026-09-09T22:56:19.9691414Z"
+                      "updatedUtc":  "2026-09-09T22:57:24.2503201Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,23 +39,23 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T22:56:31.7065637Z"
+                      "updatedUtc":  "2026-09-09T22:57:32.7548212Z"
                   },
                   {
                       "lane":  "openclaw",
                       "workerRunning":  true,
                       "workerPid":  31120,
-                      "pointerRevision":  "2026-09-10T00:58:00+02:00-v446-057o-admin-repair",
-                      "pointerProject":  "project-v446.json",
+                      "pointerRevision":  "2026-09-10T01:03:00+02:00-v447-057o2-direct-tools",
+                      "pointerProject":  "project-v447.json",
                       "processedRevision":  "2026-09-10T00:53:00+02:00-v445-057n-qwen3-e2e",
                       "status":  "RETRY_PENDING",
-                      "attempts":  3,
+                      "attempts":  1,
                       "lastError":  "RUNNER_EXIT_4",
-                      "nextRetryUtc":  "2026-09-09T22:57:25.9551865Z",
+                      "nextRetryUtc":  "2026-09-09T22:57:57.9067012Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "updatedUtc":  "2026-09-09T22:56:29.0286321Z"
+                      "updatedUtc":  "2026-09-09T22:57:27.9072091Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T22:56:34.8139212Z"
+    "updatedUtc":  "2026-09-09T22:57:40.6416291Z"
 }
