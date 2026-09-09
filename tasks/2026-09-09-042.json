@@ -1,0 +1,9 @@
+{
+  "id": "2026-09-09-042",
+  "title": "v4.0 low-risk autonomous execution acceptance",
+  "risk": "low",
+  "backup": "$root='C:/3EN-Agent/v40-acceptance'; New-Item -ItemType Directory -Force -Path $root | Out-Null; $target=Join-Path $root 'low-risk.flag'; $bak=Join-Path $root 'low-risk.flag.bak'; if(Test-Path $target){Copy-Item $target $bak -Force}; Write-Output 'V40_042_BACKUP=PASS'",
+  "script": "$root='C:/3EN-Agent/v40-acceptance'; Set-Content -LiteralPath (Join-Path $root 'low-risk.flag') -Value 'LOW_RISK_OK' -Encoding ASCII; Write-Output 'V40_042_SCRIPT=PASS'",
+  "test": "$p='C:/3EN-Agent/v40-acceptance/low-risk.flag'; if(-not(Test-Path $p)){throw 'LOW_RISK_FLAG_MISSING'}; if((Get-Content $p -Raw) -notmatch 'LOW_RISK_OK'){throw 'LOW_RISK_FLAG_INVALID'}; Write-Output 'V40_042_TEST=PASS'",
+  "rollback": "$root='C:/3EN-Agent/v40-acceptance'; $target=Join-Path $root 'low-risk.flag'; $bak=Join-Path $root 'low-risk.flag.bak'; if(Test-Path $bak){Copy-Item $bak $target -Force}else{Remove-Item $target -Force -ErrorAction SilentlyContinue}; Write-Output 'V40_042_ROLLBACK=PASS'"
+}
