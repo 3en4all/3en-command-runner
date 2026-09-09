@@ -1,0 +1,17 @@
+{
+    "schemaVersion":  3,
+    "lane":  "network-privacy",
+    "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
+    "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
+    "processedRevision":  "",
+    "status":  "SYNCING",
+    "attempts":  1,
+    "lastError":  "",
+    "nextRetryUtc":  "",
+    "lastStartedUtc":  "2026-09-09T22:48:53.4993716Z",
+    "lastTerminalUtc":  "",
+    "lastExitCode":  null,
+    "workerPid":  37224,
+    "runnerPid":  null,
+    "updatedUtc":  "2026-09-09T22:48:53.5008823Z"
+}
