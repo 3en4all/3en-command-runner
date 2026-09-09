@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-10-v4613-openclaw-plugin-install-diagnostic",
+  "title":"OpenClaw plugin install diagnostic",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-10-058a4","path":"tasks/2026-09-10-058a4.json","expectedStatus":"SUCCESS"}]
+}
