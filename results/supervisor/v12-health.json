@@ -32,7 +32,7 @@
                       "lastError":  "",
                       "nextRetryUtc":  "",
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T22:37:57.5168302Z"
+                      "updatedUtc":  "2026-09-09T22:38:12.4352042Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -47,5 +47,5 @@
                       "updatedUtc":  "2026-09-09T22:35:06.3003947Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T22:38:07.6322192Z"
+    "updatedUtc":  "2026-09-09T22:38:12.4768609Z"
 }
