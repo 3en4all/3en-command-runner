@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-057e",
+  "title":"OpenClaw tool-call failure evidence diagnostic",
+  "risk":"low",
+  "backup":"Write-Output 'V434_057E_BACKUP=READ_ONLY'",
+  "script":"$ErrorActionPreference='Stop';$root='C:/3EN-Agent/openclaw-bridge';$ev=Join-Path $root '057d-model-tool-evidence.json';if(-not(Test-Path $ev)){throw '057D_EVIDENCE_MISSING'};$j=Get-Content $ev -Raw|ConvertFrom-Json;Write-Output '=== 057D MODEL TOOL EVIDENCE ===';foreach($r in @($j)){Write-Output ('MODEL='+$r.model+' EXIT='+$r.exit+' FILE='+$r.fileCreated+' PASS='+$r.pass)};Write-Output '=== OPENCLAW TOOL LIST SNAPSHOT ===';$out=& openclaw.cmd agent --session-key '3en-057e' --message 'Reply with exactly TOOL_DIAG_OK' --json --timeout 120 2>&1;$raw=$out|Out-String;if($LASTEXITCODE -ne 0){Write-Output ('AGENT_EXIT='+$LASTEXITCODE)}else{Write-Output 'AGENT_EXIT=0'};try{$o=$raw|ConvertFrom-Json;$entries=@($o.result.meta.systemPromptReport.tools.entries|ForEach-Object{$_.name});Write-Output ('TOOLS='+($entries -join ','));$payload=@($o.result.payloads|ForEach-Object{$_.text}) -join ' ';Write-Output ('PAYLOAD='+$payload)}catch{Write-Output 'AGENT_JSON_PARSE=FAILED'};Write-Output 'V434_057E_DIAG=PASS'",
+  "test":"$ev='C:/3EN-Agent/openclaw-bridge/057d-model-tool-evidence.json';if(-not(Test-Path $ev)){throw 'EVIDENCE_FILE_MISSING'};$j=Get-Content $ev -Raw|ConvertFrom-Json;if(@($j).Count -lt 1){throw 'EVIDENCE_EMPTY'};Write-Output ('V434_057E_TEST=PASS models='+@($j).Count)",
+  "rollback":"Write-Output 'V434_057E_ROLLBACK=NOT_REQUIRED'"
+}
