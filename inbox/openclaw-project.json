@@ -1,6 +1,6 @@
 {
   "schemaVersion":1,
-  "revision":"2026-09-09T18:42:00+02:00-v435-tools-profile-repair",
+  "revision":"2026-09-09T18:58:00+02:00-v436-transport-recovery",
   "enabled":true,
-  "projectPath":"project-v435-openclaw-tools-profile.json"
+  "projectPath":"project-v436-openclaw-transport-recovery.json"
 }
