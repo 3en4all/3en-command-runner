@@ -3,10 +3,10 @@
     "pointerRevision":  "2026-09-10T00:10:30+02:00-v444-057m-v11-requeue",
     "pointerProject":  "project-v444.json",
     "processedRevision":  "",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  4,
     "lastError":  "",
     "nextRetryUtc":  "2026-09-09T22:15:46.1559067Z",
     "lastExitCode":  1,
-    "updatedUtc":  "2026-09-09T22:16:00.5729540Z"
+    "updatedUtc":  "2026-09-09T22:16:05.2893449Z"
 }
