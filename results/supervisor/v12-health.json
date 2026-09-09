@@ -1,9 +1,9 @@
 {
     "schemaVersion":  3,
     "version":  "1.2",
-    "status":  "IDLE",
-    "activeLane":  "",
-    "activeProject":  "",
+    "status":  "SYNCING",
+    "activeLane":  "network-privacy",
+    "activeProject":  "project-security-privacy-merge-monitor-v1.json",
     "pid":  35440,
     "runner":  "C:\\3EN-Agent\\3en-agent-runner-v4.0.3.ps1",
     "pollSeconds":  15,
@@ -12,15 +12,15 @@
     "lanes":  [
                   {
                       "lane":  "network-privacy",
-                      "pointerRevision":  "",
-                      "pointerProject":  "",
+                      "pointerRevision":  "2026-09-10T00:07:30+02:00-security-monitor-merge-v11-requeue",
+                      "pointerProject":  "project-security-privacy-merge-monitor-v1.json",
                       "processedRevision":  "",
-                      "status":  "NEW",
-                      "attempts":  0,
+                      "status":  "SYNCING",
+                      "attempts":  1,
                       "lastError":  "",
                       "nextRetryUtc":  "",
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T22:10:36.9189856Z"
+                      "updatedUtc":  "2026-09-09T22:10:41.8318736Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -32,7 +32,7 @@
                       "lastError":  "",
                       "nextRetryUtc":  "",
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T22:10:36.9332235Z"
+                      "updatedUtc":  "2026-09-09T22:10:41.8394374Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -44,8 +44,8 @@
                       "lastError":  "",
                       "nextRetryUtc":  "",
                       "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-09T22:10:36.9347325Z"
+                      "updatedUtc":  "2026-09-09T22:10:41.8394374Z"
                   }
               ],
-    "updatedUtc":  "2026-09-09T22:10:36.9363555Z"
+    "updatedUtc":  "2026-09-09T22:10:41.8394374Z"
 }
