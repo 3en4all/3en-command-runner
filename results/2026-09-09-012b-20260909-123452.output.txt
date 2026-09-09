@@ -1,0 +1,10 @@
+READ-ONLY TASK: no backup required.
+ssh.exe : ash: base64: not found
+At line:79 char:121
++ ... 4 -d | sh"; & $ssh -i $Key -o BatchMode=yes -o IdentitiesOnly=yes -o  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ash: base64: not found:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+READ-ONLY TASK: rollback not applicable.
