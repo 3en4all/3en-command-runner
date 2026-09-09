@@ -1,0 +1,31 @@
+PRIVACY_DISCOVERY_PREP=PASS
+
+PRIVACY_DISCOVERY=PASS;PYTHON=C:\Users\wi3lk\AppData\Local\Programs\Python\Python311\python.exe;MONITOR_CANDIDATES=56;ROUTER
+_PI_READY=True
+
+if : The term 'if' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling
+ of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:438
++ ... RY_TEST=PASS;PI_SSH='+[bool]$rp.piSsh+';MANAGEMENT_MODE='+(if([bool]$ ...
++                                                                ~~
+    + CategoryInfo          : ObjectNotFound: (if:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+PRIVACY_DISCOVERY=PASS;PYTHON=C:\Users\wi3lk\AppData\Local\Programs\Python\Python311\python.exe;MONITOR_CANDIDATES=56;ROUTER
+_PI_READY=True
+
+PRIVACY_DISCOVERY=PASS;PYTHON=C:\Users\wi3lk\AppData\Local\Programs\Python\Python311\python.exe;MONITOR_CANDIDATES=56;ROUTER
+_PI_READY=True
+
+if : The term 'if' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling
+ of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:438
++ ... RY_TEST=PASS;PI_SSH='+[bool]$rp.piSsh+';MANAGEMENT_MODE='+(if([bool]$ ...
++                                                                ~~
+    + CategoryInfo          : ObjectNotFound: (if:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+DISCOVERY_ONLY_NO_ROLLBACK
+
