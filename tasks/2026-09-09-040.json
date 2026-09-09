@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-040",
+  "title":"QUEUE TEST 10/10 - final queue acceptance",
+  "description":"Automated queue validation chapter 10 of 10. Verifies Chapter 039 was persisted as REJECTED and closes the ten-chapter queue test.",
+  "backup":"Write-Host 'QUEUE040_BACKUP=PASS'",
+  "script":"$ErrorActionPreference='Stop';$s=Get-Content 'C:/3EN-Agent/3en-agent.state.json' -Raw|ConvertFrom-Json;Write-Host ('PREVIOUS_ID='+$s.lastExecutedId);Write-Host ('PREVIOUS_STATUS='+$s.lastTerminalStatus);if($s.lastExecutedId -ne '2026-09-09-039'){throw '039 state continuity missing'};if($s.lastTerminalStatus -ne 'REJECTED'){throw '039 REJECTED status missing'};Write-Host 'QUEUE040_SCRIPT=PASS';Write-Host 'QUEUE_031_040_FINAL_CHAPTER_REACHED=TRUE'",
+  "test":"Write-Host 'QUEUE040_TEST=PASS';Write-Host 'TEN_CHAPTER_QUEUE_TEST=COMPLETE'",
+  "rollback":"Write-Host 'QUEUE040_ROLLBACK_NOT_REQUIRED'"
+}
