@@ -1,0 +1,11 @@
+V442_057K_BACKUP=READ_ONLY_NO_CONFIG_CHANGE
+
+V442_057K_CAPS=completion,tools,insert
+V442_057K_MESSAGE_PROPS=role,content
+V442_057K_TOOL_CALL_COUNT=0
+V442_057K_CONTENT={   "name": "write_probe",   "arguments": {     "path": "C:/3EN-Agent/workbench/qwen-native-tool-probe.txt",     "content": "QWEN_NATIVE_TOOL_OK"   } }
+V442_057K_ARTIFACT=C:\3EN-Agent\openclaw-bridge\qwen-native-tool-diagnostic.json
+V442_057K_CAPTURE=PASS
+
+V442_057K_TEST=PASS toolCallCount=0 structured=False
+
