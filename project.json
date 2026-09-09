@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "projectId": "2026-09-09-stress-031-040",
+  "title": "3EN Agent v3.7 native project orchestration stress test",
+  "description": "Ten chapter project validating automatic chapter progression, SUCCESS, FAILED_SCRIPT, FAILED_TEST and REJECTED terminal handling without external queue controllers or task.json promotion.",
+  "repo": "3en4all/3en-command-runner",
+  "branch": "main",
+  "policy": {
+    "continueOnSuccess": true,
+    "continueOnFailure": true,
+    "continueOnRejected": true,
+    "requireApprovalEachChapter": true
+  },
+  "chapters": [
+    {"id":"2026-09-09-031","path":"tasks/2026-09-09-031.json"},
+    {"id":"2026-09-09-032","path":"tasks/2026-09-09-032.json"},
+    {"id":"2026-09-09-033","path":"tasks/2026-09-09-033.json"},
+    {"id":"2026-09-09-034","path":"tasks/2026-09-09-034.json"},
+    {"id":"2026-09-09-035","path":"tasks/2026-09-09-035.json"},
+    {"id":"2026-09-09-036","path":"tasks/2026-09-09-036.json"},
+    {"id":"2026-09-09-037","path":"tasks/2026-09-09-037.json"},
+    {"id":"2026-09-09-038","path":"tasks/2026-09-09-038.json"},
+    {"id":"2026-09-09-039","path":"tasks/2026-09-09-039.json"},
+    {"id":"2026-09-09-040","path":"tasks/2026-09-09-040.json"}
+  ]
+}
