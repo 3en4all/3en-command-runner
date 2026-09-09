@@ -1,12 +1,12 @@
 {
     "lane":  "network-privacy",
-    "pointerRevision":  "2026-09-10T00:07:30+02:00-security-monitor-merge-v11-requeue",
-    "pointerProject":  "project-security-privacy-merge-monitor-v1.json",
+    "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
+    "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
     "processedRevision":  "",
-    "status":  "RETRY_PENDING",
-    "attempts":  4,
-    "lastError":  "RUNNER_EXIT_1",
+    "status":  "SYNCING",
+    "attempts":  5,
+    "lastError":  "",
     "nextRetryUtc":  "2026-09-09T22:19:40.9038114Z",
     "lastExitCode":  1,
-    "updatedUtc":  "2026-09-09T22:15:40.9054769Z"
+    "updatedUtc":  "2026-09-09T22:19:50.8943129Z"
 }
