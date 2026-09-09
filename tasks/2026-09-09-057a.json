@@ -1,0 +1,9 @@
+{
+  "id":"2026-09-09-057a",
+  "title":"OpenClaw real local file-operation proof",
+  "risk":"low",
+  "backup":"$root='C:/3EN-Agent/workbench';New-Item -ItemType Directory -Force -Path $root|Out-Null;$target=Join-Path $root 'openclaw-tool-proof.txt';$bk=Join-Path $root ('openclaw-tool-proof.'+(Get-Date -Format 'yyyyMMdd-HHmmss')+'.bak');if(Test-Path $target){Copy-Item $target $bk -Force};Write-Output ('V430_057A_BACKUP='+$bk)",
+  "script":"$ErrorActionPreference='Stop';$root='C:/3EN-Agent/workbench';$target=Join-Path $root 'openclaw-tool-proof.txt';Remove-Item $target -Force -ErrorAction SilentlyContinue;$prompt='Create exactly this file on the local Windows machine: C:\\3EN-Agent\\workbench\\openclaw-tool-proof.txt . Put exactly this single line in it: OPENCLAW_FILE_TOOL_OK . Do not only describe what to do; actually use your available local file/shell tools to create the file. After doing it, reply with exactly FILE_CREATED_OK';$out=& openclaw.cmd agent --session-key '3en-057a' --message $prompt --json --timeout 180 2>&1;$code=$LASTEXITCODE;$raw=$out|Out-String;Write-Output $raw;if($code -ne 0){throw ('OPENCLAW_AGENT_FAILED code='+$code)};if(-not(Test-Path $target)){throw 'OPENCLAW_FILE_NOT_CREATED'};$content=(Get-Content $target -Raw).Trim();if($content -ne 'OPENCLAW_FILE_TOOL_OK'){throw ('OPENCLAW_FILE_CONTENT_MISMATCH='+$content)};if($raw -notmatch 'FILE_CREATED_OK'){throw 'OPENCLAW_CONFIRMATION_MISSING'};Write-Output 'V430_057A_FILE_TOOL=PASS'",
+  "test":"$target='C:/3EN-Agent/workbench/openclaw-tool-proof.txt';if(-not(Test-Path $target)){throw 'FINAL_FILE_MISSING'};if((Get-Content $target -Raw).Trim() -ne 'OPENCLAW_FILE_TOOL_OK'){throw 'FINAL_FILE_CONTENT_BAD'};Write-Output 'V430_057A_TEST=PASS'",
+  "rollback":"$target='C:/3EN-Agent/workbench/openclaw-tool-proof.txt';Remove-Item $target -Force -ErrorAction SilentlyContinue;Write-Output 'V430_057A_ROLLBACK=REMOVED_TEST_FILE'"
+}
