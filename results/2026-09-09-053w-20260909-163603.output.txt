@@ -1,0 +1,12 @@
+V416_053W_BACKUP=READ_ONLY
+
+AGENT_FAILED code=1
+At line:1 char:453
++ ... f($p.ExitCode -ne 0){throw ('AGENT_FAILED code='+$p.ExitCode)};$raw=G ...
++                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (AGENT_FAILED code=1:String) [], RuntimeException
+    + FullyQualifiedErrorId : AGENT_FAILED code=1
+ 
+
+V416_053W_ROLLBACK=NO_CHANGE
+
