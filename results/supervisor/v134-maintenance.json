@@ -1,17 +1,17 @@
 {
     "schemaVersion":  4,
     "lane":  "maintenance",
-    "pointerRevision":  "v467-058g-r2-3d4ed6c0",
-    "pointerProject":  "project-v467.json",
+    "pointerRevision":  "v468-058h-r1-4f8c5659",
+    "pointerProject":  "project-v468.json",
     "processedRevision":  "v465-058e-r1-2ebbc530",
-    "status":  "RETRY_PENDING",
-    "attempts":  4,
-    "lastError":  "RUNNER_EXIT_4",
-    "nextRetryUtc":  "2026-09-10T00:48:54.5115884Z",
-    "lastStartedUtc":  "2026-09-10T00:44:49.6185376Z",
+    "status":  "SYNCING",
+    "attempts":  1,
+    "lastError":  "",
+    "nextRetryUtc":  "",
+    "lastStartedUtc":  "2026-09-10T00:46:11.8157370Z",
     "lastTerminalUtc":  "2026-09-10T00:44:54.5115884Z",
-    "lastExitCode":  4,
+    "lastExitCode":  null,
     "workerPid":  36016,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T00:44:54.5131094Z"
+    "updatedUtc":  "2026-09-10T00:46:11.8157370Z"
 }
