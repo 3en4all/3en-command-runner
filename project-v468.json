@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-10-v468-supervisor-v135-serialized-execution-fix",
+  "title":"Supervisor v1.3.5 serialized execution corrected migration",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-10-058h","path":"tasks/2026-09-10-058h.json","expectedStatus":"SUCCESS"}]
+}
