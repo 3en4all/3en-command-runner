@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-10-v4625-openclaw-pure-local-executor",
+  "title":"OpenClaw pure-local 3EN job executor acceptance",
+  "policy":{"showErrors":true,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-10-058a15","path":"tasks/2026-09-10-058a15.json","expectedStatus":"SUCCESS"}]
+}
