@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  15,
+                      "stateAgeSeconds":  3,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:41:22.8839603Z"
+                      "updatedUtc":  "2026-09-10T01:42:08.9711220Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -42,9 +42,9 @@
                       "nextRetryUtc":  "2026-09-10T01:43:16.6067716Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  2,
+                      "stateAgeSeconds":  6,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:41:35.8070372Z"
+                      "updatedUtc":  "2026-09-10T01:42:06.3279476Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  14,
+                      "stateAgeSeconds":  3,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:41:23.8666673Z"
+                      "updatedUtc":  "2026-09-10T01:42:09.6418101Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -71,15 +71,15 @@
                       "pointerProject":  "project-v4619.json",
                       "processedRevision":  "v4618-058a9-local-evidence-r1-09012294",
                       "status":  "RETRY_PENDING",
-                      "attempts":  1,
+                      "attempts":  2,
                       "lastError":  "RUNNER_EXIT_4",
-                      "nextRetryUtc":  "2026-09-10T01:41:40.4694885Z",
+                      "nextRetryUtc":  "2026-09-10T01:42:48.6254011Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  11,
+                      "stateAgeSeconds":  7,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:41:27.0238434Z"
+                      "updatedUtc":  "2026-09-10T01:42:05.0281249Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T01:41:38.4154539Z"
+    "updatedUtc":  "2026-09-10T01:42:12.4978128Z"
 }
