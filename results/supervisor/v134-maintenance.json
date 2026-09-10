@@ -3,15 +3,15 @@
     "lane":  "maintenance",
     "pointerRevision":  "v464-058d-r1-4b5199fc",
     "pointerProject":  "project-v464.json",
-    "processedRevision":  "",
-    "status":  "RUNNING",
+    "processedRevision":  "v464-058d-r1-4b5199fc",
+    "status":  "TERMINAL",
     "attempts":  3,
     "lastError":  "",
-    "nextRetryUtc":  "2026-09-10T00:17:53.8631312Z",
+    "nextRetryUtc":  "",
     "lastStartedUtc":  "2026-09-10T00:17:56.0205696Z",
-    "lastTerminalUtc":  "2026-09-10T00:16:53.8631312Z",
-    "lastExitCode":  2,
+    "lastTerminalUtc":  "2026-09-10T00:18:13.7306480Z",
+    "lastExitCode":  0,
     "workerPid":  8436,
-    "runnerPid":  44888,
-    "updatedUtc":  "2026-09-10T00:17:58.6759330Z"
+    "runnerPid":  null,
+    "updatedUtc":  "2026-09-10T00:18:13.7336767Z"
 }
