@@ -1,0 +1,14 @@
+058A11_ENGINE_BUILD=PASS;EXPLICIT_CHILD_WORKDIR=true;TARGETED_TYPEBOX_INSTALL=true
+V4620_058A11_BACKUP=PASS;PLUGIN_PREEXISTING=True;BACKUP=C:\3EN-Agent\backups\openclaw-plugin-3en-job-executor\20260910-034710
+
+powershell.exe : 058A11_UNINSTALL_TIMEOUT_12S
+At line:1 char:1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (058A11_UNINSTALL_TIMEOUT_12S:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+058A11_ENGINE_BUILD=PASS;EXPLICIT_CHILD_WORKDIR=true;TARGETED_TYPEBOX_INSTALL=true
+V4620_058A11_ROLLBACK=PASS;PLUGIN_DISABLED=true;BASELINE_RESTORED=true
+
