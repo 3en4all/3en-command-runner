@@ -6,7 +6,7 @@
     "runnerTransport":  "child-process-timeout",
     "runnerTimeoutSeconds":  180,
     "status":  "HEALTHY",
-    "coordinatorPid":  15256,
+    "coordinatorPid":  46972,
     "runner":  "C:\\3EN-Agent\\3en-agent-runner-v4.0.3.ps1",
     "pollSeconds":  15,
     "publishSeconds":  30,
@@ -15,24 +15,24 @@
                   {
                       "lane":  "maintenance",
                       "workerRunning":  true,
-                      "workerPid":  8436,
-                      "pointerRevision":  "v464-058d-r1-4b5199fc",
-                      "pointerProject":  "project-v464.json",
-                      "processedRevision":  "v464-058d-r1-4b5199fc",
+                      "workerPid":  36016,
+                      "pointerRevision":  "v465-058e-r1-2ebbc530",
+                      "pointerProject":  "project-v465.json",
+                      "processedRevision":  "v465-058e-r1-2ebbc530",
                       "status":  "TERMINAL",
-                      "attempts":  3,
+                      "attempts":  1,
                       "lastError":  "",
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  4,
+                      "stateAgeSeconds":  2,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:18:13.7336767Z"
+                      "updatedUtc":  "2026-09-10T00:18:54.6322828Z"
                   },
                   {
                       "lane":  "network-privacy",
                       "workerRunning":  true,
-                      "workerPid":  18376,
+                      "workerPid":  18412,
                       "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
                       "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
                       "processedRevision":  "",
@@ -42,14 +42,14 @@
                       "nextRetryUtc":  "2026-09-10T00:20:37.5628612Z",
                       "runnerPid":  null,
                       "lastExitCode":  2,
-                      "stateAgeSeconds":  8,
+                      "stateAgeSeconds":  2,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:18:10.1423979Z"
+                      "updatedUtc":  "2026-09-10T00:18:55.4137032Z"
                   },
                   {
                       "lane":  "security-monitor",
                       "workerRunning":  true,
-                      "workerPid":  38088,
+                      "workerPid":  40524,
                       "pointerRevision":  "v463-058c-r1-ab315a12",
                       "pointerProject":  "project-v463.json",
                       "processedRevision":  "v463-058c-r1-ab315a12",
@@ -59,27 +59,27 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  2,
+                      "stateAgeSeconds":  1,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:18:15.6378702Z"
+                      "updatedUtc":  "2026-09-10T00:18:56.2320757Z"
                   },
                   {
                       "lane":  "openclaw",
                       "workerRunning":  true,
-                      "workerPid":  30012,
+                      "workerPid":  9464,
                       "pointerRevision":  "v4616-058a7-r1-4f2791ef",
                       "pointerProject":  "project-v4616.json",
                       "processedRevision":  "",
-                      "status":  "RETRY_PENDING",
-                      "attempts":  3,
-                      "lastError":  "Cannot overwrite variable pid because it is read-only or constant.",
+                      "status":  "SYNCING",
+                      "attempts":  5,
+                      "lastError":  "",
                       "nextRetryUtc":  "2026-09-10T00:18:42.5578360Z",
-                      "runnerPid":  null,
+                      "runnerPid":  42332,
                       "lastExitCode":  2,
-                      "stateAgeSeconds":  3,
+                      "stateAgeSeconds":  1,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:18:15.3269737Z"
+                      "updatedUtc":  "2026-09-10T00:18:57.0938050Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T00:18:18.1302229Z"
+    "updatedUtc":  "2026-09-10T00:18:57.7690990Z"
 }
