@@ -1,0 +1,408 @@
+058A9_READ_ONLY_NO_BACKUP_REQUIRED
+
+=== 058A8 LOCAL EVIDENCE START ===
+HOST=3EN035
+UTC=2026-09-10T01:30:50.7611959+00:00
+ROOTS=C:\3EN-Agent\runs;C:\3EN-Agent\workbench\plugin-acceptance-058a8
+CANDIDATE_COUNT=40
+FILE=C:\3EN-Agent\runs\20260910-033050-2026-09-10-058a9\transcript.txt | 41 | 2026-09-10T03:30:50.2269748+02:00
+FILE=C:\3EN-Agent\runs\20260910-032700-security-privacy-007-merge-diagnostic-recovery\result.json | 992 | 2026-09-10T03:27:22.7278306+02:00
+FILE=C:\3EN-Agent\runs\20260910-032700-security-privacy-007-merge-diagnostic-recovery\transcript.txt | 1172 | 2026-09-10T03:27:22.7220439+02:00
+FILE=C:\3EN-Agent\runs\20260910-032600-2026-09-10-058a8\result.json | 872 | 2026-09-10T03:26:18.0444566+02:00
+FILE=C:\3EN-Agent\runs\20260910-032600-2026-09-10-058a8\transcript.txt | 680 | 2026-09-10T03:26:18.0358245+02:00
+FILE=C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_DISABLE.json | 278 | 2026-09-10T03:26:18.0090637+02:00
+FILE=C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_NPM.json | 802 | 2026-09-10T03:26:07.2722745+02:00
+FILE=C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_ENABLE_HELP.json | 558 | 2026-09-10T03:26:05.8372499+02:00
+FILE=C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_INSTALL_HELP.json | 1742 | 2026-09-10T03:26:04.0265260+02:00
+FILE=C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_VERSION.json | 326 | 2026-09-10T03:26:02.1908155+02:00
+FILE=C:\3EN-Agent\workbench\plugin-acceptance-058a8\target.baseline.json | 35 | 2026-09-10T03:26:01.6462373+02:00
+FILE=C:\3EN-Agent\runs\20260910-032123-security-privacy-007-merge-diagnostic-recovery\result.json | 992 | 2026-09-10T03:21:45.7703038+02:00
+FILE=C:\3EN-Agent\runs\20260910-032123-security-privacy-007-merge-diagnostic-recovery\transcript.txt | 1172 | 2026-09-10T03:21:45.7627069+02:00
+FILE=C:\3EN-Agent\runs\20260910-031613-2026-09-10-058a8\result.json | 872 | 2026-09-10T03:16:34.4372337+02:00
+FILE=C:\3EN-Agent\runs\20260910-031613-2026-09-10-058a8\transcript.txt | 680 | 2026-09-10T03:16:34.4281319+02:00
+FILE=C:\3EN-Agent\runs\20260910-031545-security-privacy-007-merge-diagnostic-recovery\result.json | 992 | 2026-09-10T03:16:08.4503743+02:00
+FILE=C:\3EN-Agent\runs\20260910-031545-security-privacy-007-merge-diagnostic-recovery\transcript.txt | 1172 | 2026-09-10T03:16:08.4430185+02:00
+FILE=C:\3EN-Agent\runs\20260910-031035-2026-09-10-058a8\result.json | 872 | 2026-09-10T03:12:04.9439669+02:00
+FILE=C:\3EN-Agent\runs\20260910-031035-2026-09-10-058a8\transcript.txt | 680 | 2026-09-10T03:12:04.9348511+02:00
+FILE=C:\3EN-Agent\runs\20260910-031008-security-privacy-007-merge-diagnostic-recovery\result.json | 992 | 2026-09-10T03:10:30.7913983+02:00
+FILE=C:\3EN-Agent\runs\20260910-031008-security-privacy-007-merge-diagnostic-recovery\transcript.txt | 1172 | 2026-09-10T03:10:30.7836781+02:00
+FILE=C:\3EN-Agent\runs\20260910-030705-2026-09-10-058a7\transcript.txt | 131 | 2026-09-10T03:08:00.3083287+02:00
+FILE=C:\3EN-Agent\runs\20260910-030154-security-privacy-007-merge-diagnostic-recovery\result.json | 992 | 2026-09-10T03:02:16.5661264+02:00
+FILE=C:\3EN-Agent\runs\20260910-030154-security-privacy-007-merge-diagnostic-recovery\transcript.txt | 1172 | 2026-09-10T03:02:16.5574129+02:00
+FILE=C:\3EN-Agent\runs\20260910-025851-2026-09-10-058a7\transcript.txt | 607 | 2026-09-10T03:01:32.0261985+02:00
+FILE=C:\3EN-Agent\runs\20260910-025340-security-privacy-007-merge-diagnostic-recovery\result.json | 992 | 2026-09-10T02:54:03.5395734+02:00
+FILE=C:\3EN-Agent\runs\20260910-025340-security-privacy-007-merge-diagnostic-recovery\transcript.txt | 1172 | 2026-09-10T02:54:03.5319435+02:00
+FILE=C:\3EN-Agent\runs\20260910-025038-2026-09-10-058a7\transcript.txt | 607 | 2026-09-10T02:53:31.2276843+02:00
+FILE=C:\3EN-Agent\runs\20260910-024908-2026-09-10-058i\result.json | 742 | 2026-09-10T02:49:09.5114810+02:00
+FILE=C:\3EN-Agent\runs\20260910-024908-2026-09-10-058i\transcript.txt | 354 | 2026-09-10T02:49:09.5010931+02:00
+FILE=C:\3EN-Agent\runs\20260910-024615-2026-09-10-058h\result.json | 772 | 2026-09-10T02:46:16.5474454+02:00
+FILE=C:\3EN-Agent\runs\20260910-024615-2026-09-10-058h\transcript.txt | 458 | 2026-09-10T02:46:16.5388331+02:00
+FILE=C:\3EN-Agent\runs\20260910-024058-2026-09-10-058g\result.json | 884 | 2026-09-10T02:41:00.7461954+02:00
+FILE=C:\3EN-Agent\runs\20260910-024058-2026-09-10-058g\transcript.txt | 577 | 2026-09-10T02:41:00.7391176+02:00
+FILE=C:\3EN-Agent\runs\20260910-023731-2026-09-10-058a7\transcript.txt | 201644 | 2026-09-10T02:40:24.8675969+02:00
+FILE=C:\3EN-Agent\runs\20260910-023640-security-privacy-007-merge-diagnostic-recovery\result.json | 992 | 2026-09-10T02:37:03.2613574+02:00
+FILE=C:\3EN-Agent\runs\20260910-023640-security-privacy-007-merge-diagnostic-recovery\transcript.txt | 1172 | 2026-09-10T02:37:03.2532318+02:00
+FILE=C:\3EN-Agent\runs\20260910-023252-2026-09-10-058f\result.json | 865 | 2026-09-10T02:32:53.2447509+02:00
+FILE=C:\3EN-Agent\runs\20260910-023252-2026-09-10-058f\transcript.txt | 569 | 2026-09-10T02:32:53.2376565+02:00
+FILE=C:\3EN-Agent\runs\20260910-022921-2026-09-10-058a7\result.json | 971 | 2026-09-10T02:32:20.0168176+02:00
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-032700-security-privacy-007-merge-diagnostic-recovery\result.json ---
+5:     "status":  "FAILED",
+12:                       "error":  null
+16:                       "status":  "FAILED",
+17:                       "error":  "The operation has timed out."
+21:                       "status":  "FAILED",
+22:                       "error":  "The operation has timed out."
+27:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-032700-security-privacy-007-merge-diagnostic-recovery\transcript.txt ---
+10:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+15: +   $bridge=Invoke-RestMethod -Uri ($BridgeUrl+'/api/status') -TimeoutS ...
+19:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+22: MERGE007_PHASE=ROLLBACK
+23: MERGE007_ROLLBACK=FAILED;ERROR=merge state missing
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-032600-2026-09-10-058a8\result.json ---
+2:     "projectId":  "2026-09-10-v4617-openclaw-bounded-plugin-executor",
+5:     "status":  "FAILED",
+12:                       "error":  null
+16:                       "status":  "FAILED",
+17:                       "error":  "058A8_NPM_EXIT_-4058 OUTPUT=npm error code ENOENT | npm error syscall open | npm error path C:\\3EN-Agent\\package.json | npm "
+22:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-032600-2026-09-10-058a8\transcript.txt ---
+1: V4617_058A8_BACKUP=PASS;PLUGIN_PREEXISTING=True;BACKUP=C:\3EN-Agent\backups\openclaw-plugin-3en-job-executor\20260910-032601
+3: powershell.exe : 058A8_NPM_EXIT_-4058 OUTPUT=npm error code ENOENT | npm error syscall open | npm error path C:\3EN-Agent\pa
+4: ckage.json | npm 
+8:     + CategoryInfo          : NotSpecified: (058A8_NPM_EXIT_...age.json | npm :String) [], RemoteException
+9:     + FullyQualifiedErrorId : NativeCommandError
+12: V4617_058A8_ROLLBACK=PASS;PLUGIN_DISABLED=true;BASELINE_RESTORED=true
+--- EVIDENCE_FILE C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_DISABLE.json ---
+2:     "tag":  "058A8_DISABLE",
+3:     "command":  "openclaw.cmd plugins disable 3en-job-executor",
+5:     "timeoutSec":  10,
+--- EVIDENCE_FILE C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_NPM.json ---
+2:     "tag":  "058A8_NPM",
+3:     "command":  "npm.cmd install --omit=dev --no-audit --no-fund",
+6:     "timeoutSec":  35,
+10:     "output":  "npm error code ENOENT\nnpm error syscall open\nnpm error path C:\\3EN-Agent\\package.json\nnpm error errno -4058\nnpm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open \u0027C:\\3EN-Agent\\package.json\u0027\nnpm error enoent This is related to npm not being able to find a file.\nnpm error enoent\nnpm error A complete log of this run can be found in: C:\\Users\\wi3lk\\AppData\\Local\\npm-cache\\_logs\\2026-09-10T01_26_06_839Z-debug-0.log"
+--- EVIDENCE_FILE C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_ENABLE_HELP.json ---
+2:     "tag":  "058A8_ENABLE_HELP",
+3:     "command":  "openclaw.cmd plugins enable --help",
+6:     "timeoutSec":  12,
+10:     "output":  "OpenClaw 2026.7.1-2 (0790d9f) ÔÇö All your chats, one OpenClaw.\n\nUsage: openclaw plugins enable [options] \u003cid\u003e\n\nEnable a plugin in config\n\nArguments:\n  id          Plugin id\n\nOptions:\n  -h, --help  Display help for command"
+--- EVIDENCE_FILE C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_INSTALL_HELP.json ---
+2:     "tag":  "058A8_INSTALL_HELP",
+3:     "command":  "openclaw.cmd plugins install --help",
+6:     "timeoutSec":  12,
+10:     "output":  "OpenClaw 2026.7.1-2 (0790d9f) ÔÇö All your chats, one OpenClaw.\n\nUsage: openclaw plugins install [options] \u003cpath-or-spec-or-plugin\u003e\n\nInstall a plugin or hook pack (path, archive, npm spec, git repo,\nclawhub:package, or marketplace entry)\n\nArguments:\n  path-or-spec-or-plugin              Path (.ts/.js/.zip/.tgz/.tar.gz), npm\n                                      package spec, or marketplace plugin name\n\nOptions:\n  --acknowledge-clawhub-risk          Acknowledge ClawHub release trust warnings\n                                      without prompting (default: false)\n  --dangerously-force-unsafe-install  Deprecated no-op; security.installPolicy\n                                      may still block (default: false)\n  --force                             Overwrite an existing installed plugin or\n                                      hook pack (default: false)\n  -h, --help                          Display help for command\n  -l, --link                          Link a local path instead of copying\n                                      (default: false)\n  --marketplace \u003csource\u003e              Install a Claude marketplace plugin from a\n                                      local repo/path or git/GitHub source\n  --pin                               Record npm installs as exact resolved\n                                      \u003cname\u003e@\u003cversion\u003e (default: false)"
+--- EVIDENCE_FILE C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_VERSION.json ---
+2:     "tag":  "058A8_VERSION",
+3:     "command":  "openclaw.cmd --version",
+6:     "timeoutSec":  12,
+10:     "output":  "OpenClaw 2026.7.1-2 (0790d9f)"
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-032123-security-privacy-007-merge-diagnostic-recovery\result.json ---
+5:     "status":  "FAILED",
+12:                       "error":  null
+16:                       "status":  "FAILED",
+17:                       "error":  "The operation has timed out."
+21:                       "status":  "FAILED",
+22:                       "error":  "The operation has timed out."
+27:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-032123-security-privacy-007-merge-diagnostic-recovery\transcript.txt ---
+10:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+15: +   $bridge=Invoke-RestMethod -Uri ($BridgeUrl+'/api/status') -TimeoutS ...
+19:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+22: MERGE007_PHASE=ROLLBACK
+23: MERGE007_ROLLBACK=FAILED;ERROR=merge state missing
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-031613-2026-09-10-058a8\result.json ---
+2:     "projectId":  "2026-09-10-v4617-openclaw-bounded-plugin-executor",
+5:     "status":  "FAILED",
+12:                       "error":  null
+16:                       "status":  "FAILED",
+17:                       "error":  "058A8_NPM_EXIT_-4058 OUTPUT=npm error code ENOENT | npm error syscall open | npm error path C:\\3EN-Agent\\package.json | npm "
+22:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-031613-2026-09-10-058a8\transcript.txt ---
+1: V4617_058A8_BACKUP=PASS;PLUGIN_PREEXISTING=True;BACKUP=C:\3EN-Agent\backups\openclaw-plugin-3en-job-executor\20260910-031613
+3: powershell.exe : 058A8_NPM_EXIT_-4058 OUTPUT=npm error code ENOENT | npm error syscall open | npm error path C:\3EN-Agent\pa
+4: ckage.json | npm 
+8:     + CategoryInfo          : NotSpecified: (058A8_NPM_EXIT_...age.json | npm :String) [], RemoteException
+9:     + FullyQualifiedErrorId : NativeCommandError
+12: V4617_058A8_ROLLBACK=PASS;PLUGIN_DISABLED=true;BASELINE_RESTORED=true
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-031545-security-privacy-007-merge-diagnostic-recovery\result.json ---
+5:     "status":  "FAILED",
+12:                       "error":  null
+16:                       "status":  "FAILED",
+17:                       "error":  "The operation has timed out."
+21:                       "status":  "FAILED",
+22:                       "error":  "The operation has timed out."
+27:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-031545-security-privacy-007-merge-diagnostic-recovery\transcript.txt ---
+10:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+15: +   $bridge=Invoke-RestMethod -Uri ($BridgeUrl+'/api/status') -TimeoutS ...
+19:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+22: MERGE007_PHASE=ROLLBACK
+23: MERGE007_ROLLBACK=FAILED;ERROR=merge state missing
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-031035-2026-09-10-058a8\result.json ---
+2:     "projectId":  "2026-09-10-v4617-openclaw-bounded-plugin-executor",
+5:     "status":  "FAILED",
+12:                       "error":  null
+16:                       "status":  "FAILED",
+17:                       "error":  "058A8_NPM_EXIT_-4058 OUTPUT=npm error code ENOENT | npm error syscall open | npm error path C:\\3EN-Agent\\package.json | npm "
+22:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-031035-2026-09-10-058a8\transcript.txt ---
+1: V4617_058A8_BACKUP=PASS;PLUGIN_PREEXISTING=True;BACKUP=C:\3EN-Agent\backups\openclaw-plugin-3en-job-executor\20260910-031036
+3: powershell.exe : 058A8_NPM_EXIT_-4058 OUTPUT=npm error code ENOENT | npm error syscall open | npm error path C:\3EN-Agent\pa
+4: ckage.json | npm 
+8:     + CategoryInfo          : NotSpecified: (058A8_NPM_EXIT_...age.json | npm :String) [], RemoteException
+9:     + FullyQualifiedErrorId : NativeCommandError
+12: V4617_058A8_ROLLBACK=PASS;PLUGIN_DISABLED=true;BASELINE_RESTORED=true
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-031008-security-privacy-007-merge-diagnostic-recovery\result.json ---
+5:     "status":  "FAILED",
+12:                       "error":  null
+16:                       "status":  "FAILED",
+17:                       "error":  "The operation has timed out."
+21:                       "status":  "FAILED",
+22:                       "error":  "The operation has timed out."
+27:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-031008-security-privacy-007-merge-diagnostic-recovery\transcript.txt ---
+10:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+15: +   $bridge=Invoke-RestMethod -Uri ($BridgeUrl+'/api/status') -TimeoutS ...
+19:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+22: MERGE007_PHASE=ROLLBACK
+23: MERGE007_ROLLBACK=FAILED;ERROR=merge state missing
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-030705-2026-09-10-058a7\transcript.txt ---
+1: V4616_058A7_BACKUP=PASS;PLUGIN_PREEXISTING=True;BACKUP=C:\3EN-Agent\backups\openclaw-plugin-3en-job-executor\20260910-030706
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-030154-security-privacy-007-merge-diagnostic-recovery\result.json ---
+5:     "status":  "FAILED",
+12:                       "error":  null
+16:                       "status":  "FAILED",
+17:                       "error":  "The operation has timed out."
+21:                       "status":  "FAILED",
+22:                       "error":  "The operation has timed out."
+27:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-030154-security-privacy-007-merge-diagnostic-recovery\transcript.txt ---
+10:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+15: +   $bridge=Invoke-RestMethod -Uri ($BridgeUrl+'/api/status') -TimeoutS ...
+19:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+22: MERGE007_PHASE=ROLLBACK
+23: MERGE007_ROLLBACK=FAILED;ERROR=merge state missing
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-025851-2026-09-10-058a7\transcript.txt ---
+1: V4616_058A7_BACKUP=PASS;PLUGIN_PREEXISTING=True;BACKUP=C:\3EN-Agent\backups\openclaw-plugin-3en-job-executor\20260910-025851
+3: powershell.exe : 058A7_INSTALL_EXIT_1 OUTPUT=Plugin manifest id "3en-job-executor" differs from npm package name "@3en4all/o
+9:     + FullyQualifiedErrorId : NativeCommandError
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-025340-security-privacy-007-merge-diagnostic-recovery\result.json ---
+5:     "status":  "FAILED",
+12:                       "error":  null
+16:                       "status":  "FAILED",
+17:                       "error":  "The operation has timed out."
+21:                       "status":  "FAILED",
+22:                       "error":  "The operation has timed out."
+27:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-025340-security-privacy-007-merge-diagnostic-recovery\transcript.txt ---
+10:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+15: +   $bridge=Invoke-RestMethod -Uri ($BridgeUrl+'/api/status') -TimeoutS ...
+19:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+22: MERGE007_PHASE=ROLLBACK
+23: MERGE007_ROLLBACK=FAILED;ERROR=merge state missing
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-025038-2026-09-10-058a7\transcript.txt ---
+1: V4616_058A7_BACKUP=PASS;PLUGIN_PREEXISTING=True;BACKUP=C:\3EN-Agent\backups\openclaw-plugin-3en-job-executor\20260910-025038
+3: powershell.exe : 058A7_INSTALL_EXIT_1 OUTPUT=Plugin manifest id "3en-job-executor" differs from npm package name "@3en4all/o
+9:     + FullyQualifiedErrorId : NativeCommandError
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-024908-2026-09-10-058i\result.json ---
+12:                       "error":  null
+17:                       "error":  null
+22:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-024908-2026-09-10-058i\transcript.txt ---
+5: V469_058I_TEST=PASS;LOCAL_SOURCE=PASS;SYNTAX=PASS;SERIALIZED_EXECUTION=PASS;TIMEOUT=180;FINAL_STATE_COPY_DEFERRED=PASS;CONTROLLED_RESTART_SCHEDULED=PASS
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-024615-2026-09-10-058h\result.json ---
+5:     "status":  "FAILED",
+12:                       "error":  null
+16:                       "status":  "FAILED",
+17:                       "error":  "058H_VERSION_MISSING"
+22:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-024615-2026-09-10-058h\transcript.txt ---
+8:     + FullyQualifiedErrorId : NativeCommandError
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-024058-2026-09-10-058g\result.json ---
+5:     "status":  "FAILED",
+12:                       "error":  null
+16:                       "status":  "FAILED",
+17:                       "error":  "C:\\3EN-Agent\\harden-supervisor-v135-execution-058g.ps1 : The variable \u0027$uri\u0027 cannot be retrieved because it has not been set"
+22:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-024058-2026-09-10-058g\transcript.txt ---
+9:     + FullyQualifiedErrorId : NativeCommandError
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-023731-2026-09-10-058a7\transcript.txt ---
+3764: 058A7_LIST=      "source": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\together\\index.js",
+3765: 058A7_LIST=      "rootDir": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\together",
+3796: 058A7_LIST=      "gatewayDiscoveryServiceIds": [],
+3819: 058A7_LIST=      "name": "@openclaw/tts-local-cli",
+3821: 058A7_LIST=      "format": "openclaw",
+3822: 058A7_LIST=      "source": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\tts-local-cli\\index.js",
+3823: 058A7_LIST=      "rootDir": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\tts-local-cli",
+3853: 058A7_LIST=      "gatewayDiscoveryServiceIds": [],
+3877: 058A7_LIST=      "name": "@openclaw/vllm-provider",
+3879: 058A7_LIST=      "format": "openclaw",
+3880: 058A7_LIST=      "source": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\vllm\\index.js",
+3881: 058A7_LIST=      "rootDir": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\vllm",
+3910: 058A7_LIST=      "gatewayDiscoveryServiceIds": [],
+3928: 058A7_LIST=      "name": "@openclaw/volcengine-provider",
+3930: 058A7_LIST=      "format": "openclaw",
+3931: 058A7_LIST=      "source": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\volcengine\\index.js",
+3932: 058A7_LIST=      "rootDir": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\volcengine",
+3964: 058A7_LIST=      "gatewayDiscoveryServiceIds": [],
+3987: 058A7_LIST=      "name": "@openclaw/voyage-provider",
+3989: 058A7_LIST=      "format": "openclaw",
+3990: 058A7_LIST=      "source": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\voyage\\index.js",
+3991: 058A7_LIST=      "rootDir": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\voyage",
+4020: 058A7_LIST=      "gatewayDiscoveryServiceIds": [],
+4043: 058A7_LIST=      "name": "@openclaw/vydra-provider",
+4045: 058A7_LIST=      "format": "openclaw",
+4046: 058A7_LIST=      "source": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\vydra\\index.js",
+4047: 058A7_LIST=      "rootDir": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\vydra",
+4082: 058A7_LIST=      "gatewayDiscoveryServiceIds": [],
+4114: 058A7_LIST=      "format": "openclaw",
+4115: 058A7_LIST=      "source": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\web-readability\\index.js",
+4116: 058A7_LIST=      "rootDir": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\web-readability",
+4143: 058A7_LIST=      "gatewayDiscoveryServiceIds": [],
+4166: 058A7_LIST=            "resolvedPath": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\node_modules\\@mozilla\\readability"
+4173: 058A7_LIST=            "resolvedPath": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\node_modules\\linkedom"
+4183: 058A7_LIST=      "description": "Authenticated inbound webhooks that bind external automation to OpenClaw TaskFlows.",
+4184: 058A7_LIST=      "format": "openclaw",
+4185: 058A7_LIST=      "source": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\webhooks\\index.js",
+4186: 058A7_LIST=      "rootDir": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\webhooks",
+4213: 058A7_LIST=      "gatewayDiscoveryServiceIds": [],
+4231: 058A7_LIST=            "resolvedPath": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\node_modules\\zod"
+4242: 058A7_LIST=      "format": "openclaw",
+4243: 058A7_LIST=      "source": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\workboard\\index.js",
+4244: 058A7_LIST=      "rootDir": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\workboard",
+4273: 058A7_LIST=      "gatewayDiscoveryServiceIds": [],
+4331: 058A7_LIST=            "resolvedPath": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\node_modules\\typebox"
+4339: 058A7_LIST=      "name": "@openclaw/xai-plugin",
+4341: 058A7_LIST=      "format": "openclaw",
+4342: 058A7_LIST=      "source": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\xai\\index.js",
+4343: 058A7_LIST=      "rootDir": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\xai",
+4386: 058A7_LIST=      "gatewayDiscoveryServiceIds": [],
+4428: 058A7_LIST=            "resolvedPath": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\node_modules\\typebox"
+4436: 058A7_LIST=      "name": "@openclaw/xiaomi-provider",
+4438: 058A7_LIST=      "format": "openclaw",
+4439: 058A7_LIST=      "source": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\xiaomi\\index.js",
+4440: 058A7_LIST=      "rootDir": "C:\\Users\\wi3lk\\AppData\\Roaming\\npm\\node_modules\\openclaw\\dist\\extensions\\xiaomi",
+4474: 058A7_LIST=      "gatewayDiscoveryServiceIds": [],
+4505: 058A7_UNINSTALL=Restart the gateway to apply changes.
+4506: V4616_058A7_SELECTED_INSTALL_FLAGS=-l " C:\3EN-Agent\openclaw-plugins\3en-job-executor "
+4507: 058A7_INSTALL=Plugin manifest id "3en-job-executor" differs from npm package name "@3en4all/openclaw-3en-job-executor"; using manifest id as the config key.
+4508: 058A7_INSTALL=Linked plugin path: C:\3EN-Agent\openclaw-plugins\3en-job-executor
+4509: 058A7_INSTALL=Restart the gateway to load plugins.
+4510: 058A7_ENABLE=Enabled plugin "3en-job-executor". Restart the gateway to apply.
+4511: 058A7_GATEWAY_RESTART=Restarted Scheduled Task: OpenClaw Gateway
+4513: 058A7_INSPECT_HELP=OpenClaw 2026.7.1-2 (0790d9f) ÔÇö All your chats, one OpenClaw.
+4515: 058A7_INSPECT_HELP=Usage: openclaw plugins inspect|info [options] [id]
+4528: 058A7_INSPECT=  "workspaceDir": "C:\\Users\\wi3lk\\.openclaw\\workspace",
+4534: 058A7_INSPECT=    "packageName": "@3en4all/openclaw-3en-job-executor",
+4535: 058A7_INSPECT=    "format": "openclaw",
+4536: 058A7_INSPECT=    "source": "C:\\3EN-Agent\\openclaw-plugins\\3en-job-executor\\index.js",
+4537: 058A7_INSPECT=    "rootDir": "C:\\3EN-Agent\\openclaw-plugins\\3en-job-executor",
+4548: 058A7_INSPECT=      "3en_job"
+4571: 058A7_INSPECT=    "gatewayDiscoveryServiceIds": [],
+4582: 058A7_INSPECT=        "3en_job"
+4606: 058A7_INSPECT=        "3en_job"
+4614: 058A7_INSPECT=  "gatewayDiscoveryServices": [],
+4615: 058A7_INSPECT=  "gatewayMethods": [],
+4629: 058A7_INSPECT=    "sourcePath": "C:\\3EN-Agent\\openclaw-plugins\\3en-job-executor",
+4630: 058A7_INSPECT=    "installPath": "C:\\3EN-Agent\\openclaw-plugins\\3en-job-executor",
+4635: V4616_058A7_INSTALL=PASS;PLUGIN=3en-job-executor;TOOL=3en_job
+4642:     + FullyQualifiedErrorId : NativeCommandError
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-023640-security-privacy-007-merge-diagnostic-recovery\result.json ---
+5:     "status":  "FAILED",
+12:                       "error":  null
+16:                       "status":  "FAILED",
+17:                       "error":  "The operation has timed out."
+21:                       "status":  "FAILED",
+22:                       "error":  "The operation has timed out."
+27:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-023640-security-privacy-007-merge-diagnostic-recovery\transcript.txt ---
+10:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+15: +   $bridge=Invoke-RestMethod -Uri ($BridgeUrl+'/api/status') -TimeoutS ...
+19:     + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+22: MERGE007_PHASE=ROLLBACK
+23: MERGE007_ROLLBACK=FAILED;ERROR=merge state missing
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-023252-2026-09-10-058f\result.json ---
+5:     "status":  "FAILED",
+12:                       "error":  null
+16:                       "status":  "FAILED",
+17:                       "error":  "C:\\3EN-Agent\\migrate-supervisor-v135-058f.ps1 : The variable \u0027$uri\u0027 cannot be retrieved because it has not been set."
+22:                       "error":  null
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-023252-2026-09-10-058f\transcript.txt ---
+9:     + FullyQualifiedErrorId : NativeCommandError
+--- EVIDENCE_FILE C:\3EN-Agent\runs\20260910-022921-2026-09-10-058a7\result.json ---
+2:     "projectId":  "2026-09-10-v4616-openclaw-linked-plugin-executor",
+5:     "status":  "FAILED",
+12:                       "error":  null
+17:                       "error":  null
+21:                       "status":  "FAILED",
+22:                       "error":  "058A7_ACCEPTANCE_FAIL pos=500/False neg=500/False outside=False"
+27:                       "error":  null
+=== PROCESS EVIDENCE ===
+--- C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_VERSION.json ---
+{
+    "tag":  "058A8_VERSION",
+    "command":  "openclaw.cmd --version",
+    "pid":  38456,
+    "exitCode":  0,
+    "timeoutSec":  12,
+    "timedOut":  false,
+    "started":  "2026-09-10T03:26:01.9911870+02:00",
+    "ended":  "2026-09-10T03:26:02.1562327+02:00",
+    "output":  "OpenClaw 2026.7.1-2 (0790d9f)"
+}
+
+--- C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_INSTALL_HELP.json ---
+{
+    "tag":  "058A8_INSTALL_HELP",
+    "command":  "openclaw.cmd plugins install --help",
+    "pid":  17160,
+    "exitCode":  0,
+    "timeoutSec":  12,
+    "timedOut":  false,
+    "started":  "2026-09-10T03:26:02.1968922+02:00",
+    "ended":  "2026-09-10T03:26:04.0250062+02:00",
+    "output":  "OpenClaw 2026.7.1-2 (0790d9f) ÔÇö All your chats, one OpenClaw.\n\nUsage: openclaw plugins install [options] \u003cpath-or-spec-or-plugin\u003e\n\nInstall a plugin or hook pack (path, archive, npm spec, git repo,\nclawhub:package, or marketplace entry)\n\nArguments:\n  path-or-spec-or-plugin              Path (.ts/.js/.zip/.tgz/.tar.gz), npm\n                                      package spec, or marketplace plugin name\n\nOptions:\n  --acknowledge-clawhub-risk          Acknowledge ClawHub release trust warnings\n                                      without prompting (default: false)\n  --dangerously-force-unsafe-install  Deprecated no-op; security.installPolicy\n                                      may still block (default: false)\n  --force                             Overwrite an existing installed plugin or\n                                      hook pack (default: false)\n  -h, --help                          Display help for command\n  -l, --link                          Link a local path instead of copying\n                                      (default: false)\n  --marketplace \u003csource\u003e              Install a Claude marketplace plugin from a\n                                      local repo/path or git/GitHub source\n  --pin                               Record npm installs as exact resolved\n                                      \u003cname\u003e@\u003cversion\u003e (default: false)"
+}
+
+--- C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_ENABLE_HELP.json ---
+{
+    "tag":  "058A8_ENABLE_HELP",
+    "command":  "openclaw.cmd plugins enable --help",
+    "pid":  46332,
+    "exitCode":  0,
+    "timeoutSec":  12,
+    "timedOut":  false,
+    "started":  "2026-09-10T03:26:04.0403632+02:00",
+    "ended":  "2026-09-10T03:26:05.8342074+02:00",
+    "output":  "OpenClaw 2026.7.1-2 (0790d9f) ÔÇö All your chats, one OpenClaw.\n\nUsage: openclaw plugins enable [options] \u003cid\u003e\n\nEnable a plugin in config\n\nArguments:\n  id          Plugin id\n\nOptions:\n  -h, --help  Display help for command"
+}
+
+--- C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_NPM.json ---
+{
+    "tag":  "058A8_NPM",
+    "command":  "npm.cmd install --omit=dev --no-audit --no-fund",
+    "pid":  11200,
+    "exitCode":  -4058,
+    "timeoutSec":  35,
+    "timedOut":  false,
+    "started":  "2026-09-10T03:26:06.5400702+02:00",
+    "ended":  "2026-09-10T03:26:07.2707589+02:00",
+    "output":  "npm error code ENOENT\nnpm error syscall open\nnpm error path C:\\3EN-Agent\\package.json\nnpm error errno -4058\nnpm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open \u0027C:\\3EN-Agent\\package.json\u0027\nnpm error enoent This is related to npm not being able to find a file.\nnpm error enoent\nnpm error A complete log of this run can be found in: C:\\Users\\wi3lk\\AppData\\Local\\npm-cache\\_logs\\2026-09-10T01_26_06_839Z-debug-0.log"
+}
+
+--- C:\3EN-Agent\workbench\plugin-acceptance-058a8\process-evidence\058A8_DISABLE.json ---
+{
+    "tag":  "058A8_DISABLE",
+    "command":  "openclaw.cmd plugins disable 3en-job-executor",
+    "pid":  22228,
+    "timeoutSec":  10,
+    "timedOut":  true,
+    "started":  "2026-09-10T03:26:07.7108149+02:00",
+    "ended":  "2026-09-10T03:26:17.9737626+02:00"
+}
+
+=== 058A8 LOCAL EVIDENCE END ===
+
+058A9_LOCAL_EVIDENCE_COLLECTION=PASS
+
