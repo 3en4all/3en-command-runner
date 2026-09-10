@@ -3,15 +3,15 @@
     "lane":  "network-privacy",
     "pointerRevision":  "np-v3-local-bridge-evidence-r1-e9c362bb",
     "pointerProject":  "project-security-privacy-local-evidence-v3.json",
-    "processedRevision":  "",
-    "status":  "RUNNING",
+    "processedRevision":  "np-v3-local-bridge-evidence-r1-e9c362bb",
+    "status":  "TERMINAL",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
     "lastStartedUtc":  "2026-09-10T01:45:09.4759402Z",
-    "lastTerminalUtc":  "2026-09-10T01:44:53.0582044Z",
-    "lastExitCode":  null,
+    "lastTerminalUtc":  "2026-09-10T01:46:10.3377640Z",
+    "lastExitCode":  0,
     "workerPid":  23736,
-    "runnerPid":  8588,
-    "updatedUtc":  "2026-09-10T01:46:02.9748099Z"
+    "runnerPid":  null,
+    "updatedUtc":  "2026-09-10T01:46:10.3392820Z"
 }
