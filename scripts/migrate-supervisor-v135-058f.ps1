@@ -51,7 +51,18 @@ if($Phase-eq'Prepare'){
   @'
 $ErrorActionPreference='SilentlyContinue'
 $Root='C:\3EN-Agent'
-Start-Sleep -Seconds 15
+$state134=Join-Path $Root 'supervisor-state-v134'
+$state135=Join-Path $Root 'supervisor-state-v135'
+Start-Sleep -Seconds 10
+for($i=0;$i -lt 30;$i++){
+  $mf=Join-Path $state134 'maintenance.json'
+  $busy=$false
+  if(Test-Path $mf){try{$ms=Get-Content $mf -Raw|ConvertFrom-Json;$busy=([string]$ms.status -in @('RUNNING','SYNCING'))}catch{}}
+  if(-not $busy){break}
+  Start-Sleep -Seconds 1
+}
+New-Item -ItemType Directory -Force -Path $state135|Out-Null
+if(Test-Path $state134){Copy-Item -Path (Join-Path $state134 '*') -Destination $state135 -Recurse -Force -ErrorAction SilentlyContinue}
 $old=@(Get-CimInstance Win32_Process|Where-Object{$_.Name -in @('powershell.exe','pwsh.exe') -and $_.CommandLine -and $_.CommandLine -match '3en-multiproject-supervisor-v1\.3\.4\.ps1'})
 foreach($p in $old|Sort-Object ProcessId -Descending){try{Stop-Process -Id ([int]$p.ProcessId) -Force}catch{}}
 Start-Sleep -Seconds 3
