@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  10,
+                      "stateAgeSeconds":  14,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:00:55.6717697Z"
+                      "updatedUtc":  "2026-09-10T01:01:26.1771356Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -42,7 +42,7 @@
                       "nextRetryUtc":  "2026-09-10T00:59:06.3657289Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  111,
+                      "stateAgeSeconds":  145,
                       "stale":  false,
                       "updatedUtc":  "2026-09-10T00:59:15.1660467Z"
                   },
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  10,
+                      "stateAgeSeconds":  13,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:00:56.7810100Z"
+                      "updatedUtc":  "2026-09-10T01:01:27.4495230Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -76,10 +76,10 @@
                       "nextRetryUtc":  "2026-09-10T00:58:38.8227262Z",
                       "runnerPid":  32152,
                       "lastExitCode":  124,
-                      "stateAgeSeconds":  136,
+                      "stateAgeSeconds":  170,
                       "stale":  false,
                       "updatedUtc":  "2026-09-10T00:58:50.4309942Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T01:01:06.5657192Z"
+    "updatedUtc":  "2026-09-10T01:01:40.8508838Z"
 }
