@@ -1,0 +1,20 @@
+{
+    "projectId":  "2026-09-10-v4625-openclaw-pure-local-executor",
+    "chapterId":  "2026-09-10-058a15",
+    "risk":  "medium",
+    "status":  "FAILED",
+    "stage":  "TERMINAL",
+    "attempts":  0,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "FAILED",
+                      "error":  "058A15_NODE_PATCH_TARGET_MISSING"
+                  },
+                  {
+                      "name":  "ROLLBACK",
+                      "status":  "FAILED",
+                      "error":  "058A15_NODE_PATCH_TARGET_MISSING"
+                  }
+              ]
+}
