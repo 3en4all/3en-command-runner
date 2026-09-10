@@ -1,0 +1,10 @@
+{
+  "id":"security-privacy-009-bridge-handler-evidence",
+  "title":"Security Privacy - inspect bridge handler locally",
+  "description":"Read-only focused diagnosis of the live 127.0.0.1:8766 bridge using curl max-time 3 and local source context around status_payload, SSH execution, subprocess timeouts and /api/status. No configuration changes.",
+  "risk":"low",
+  "backup":"Write-Host 'NP009_READ_ONLY_NO_BACKUP_REQUIRED'",
+  "script":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/collect-network-privacy-bridge-handler-evidence.ps1';$d='C:/3EN-Agent/collect-network-privacy-bridge-handler-evidence.ps1';Invoke-WebRequest -UseBasicParsing -Uri ($u+'?ts='+[DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()) -OutFile $d -TimeoutSec 20;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d",
+  "test":"if(-not(Test-Path 'C:/3EN-Agent/collect-network-privacy-bridge-handler-evidence.ps1')){throw 'NP009_COLLECTOR_MISSING'};Write-Host 'NP009_HANDLER_EVIDENCE=PASS'",
+  "rollback":"Write-Host 'NP009_READ_ONLY_NO_ROLLBACK_REQUIRED'"
+}
