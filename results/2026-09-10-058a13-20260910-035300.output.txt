@@ -1,0 +1,12 @@
+058A13_BACKUP=PASS;CONFIG=true;PLUGIN_BASELINE=true
+
+powershell.exe : 058A13_NPM_EXIT_1
+At line:1 char:1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (058A13_NPM_EXIT_1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+058A13_ROLLBACK=PASS;CONFIG_RESTORED=true;PLUGIN_RESTORED=true
+
