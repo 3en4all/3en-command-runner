@@ -4,14 +4,14 @@
     "pointerRevision":  "v4628-058a18-evidence-r1-c3172ee3",
     "pointerProject":  "project-v4628-evidence.json",
     "processedRevision":  "v4613-058a4-r1-13ea28e0",
-    "status":  "RUNNING",
+    "status":  "RETRY_PENDING",
     "attempts":  1,
-    "lastError":  "",
-    "nextRetryUtc":  "",
+    "lastError":  "RUNNER_EXIT_1",
+    "nextRetryUtc":  "2026-09-10T15:05:10.9322294Z",
     "lastStartedUtc":  "2026-09-10T15:04:36.0110611Z",
-    "lastTerminalUtc":  "2026-09-10T00:11:06.2159253Z",
-    "lastExitCode":  null,
+    "lastTerminalUtc":  "2026-09-10T15:04:40.9154099Z",
+    "lastExitCode":  1,
     "workerPid":  34396,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T15:04:38.2481064Z"
+    "updatedUtc":  "2026-09-10T15:04:40.9367691Z"
 }
