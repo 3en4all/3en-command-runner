@@ -4,14 +4,14 @@
     "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
     "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
     "processedRevision":  "",
-    "status":  "RETRY_PENDING",
-    "attempts":  5,
-    "lastError":  "RUNNER_EXIT_2",
+    "status":  "SYNCING",
+    "attempts":  6,
+    "lastError":  "",
     "nextRetryUtc":  "2026-09-10T00:25:46.2182621Z",
-    "lastStartedUtc":  "2026-09-10T00:20:42.3613997Z",
+    "lastStartedUtc":  "2026-09-10T00:25:52.4803969Z",
     "lastTerminalUtc":  "2026-09-10T00:20:46.2040176Z",
     "lastExitCode":  2,
     "workerPid":  18412,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T00:20:46.2213113Z"
+    "updatedUtc":  "2026-09-10T00:25:52.4803969Z"
 }
