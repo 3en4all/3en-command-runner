@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-10-v463-supervisor-v134-migration",
+  "title":"3EN multi-project supervisor v1.3.4 migration",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-10-058c","path":"tasks/2026-09-10-058c.json","expectedStatus":"SUCCESS"}]
+}
