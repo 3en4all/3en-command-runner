@@ -1,0 +1,334 @@
+NP009_READ_ONLY_NO_BACKUP_REQUIRED
+
+=== NP009_BRIDGE_HANDLER_EVIDENCE_START ===
+BRIDGE_EXISTS=True
+CURL_EXIT=28
+curl: (28) Operation timed out after 3008 milliseconds with 0 bytes received
+
+CURL_HTTP=000;CURL_TIME=3.008831
+--- CONTEXT subprocess line 2 ---
+1: from __future__ import annotations
+2: import json, ipaddress, os, re, subprocess, time
+3: from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+4: from pathlib import Path
+5: 
+6: ROOT=Path(r'C:\3EN-Agent')
+7: WORK=ROOT/'security-monitor-integration'
+8: WORK.mkdir(parents=True,exist_ok=True)
+9: DISC=WORK/'discovery.json'
+10: AUDIT=WORK/'actions.jsonl'
+11: ROUTER='192.168.1.2'
+12: ROUTER_USER='root'
+13: ROUTER_KEY=Path(r'C:\Users\wi3lk\.ssh\3en002_agent_ed25519')
+14: HOST='127.0.0.1'; PORT=8766
+15: 
+16: HTML='''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3EN Threat Control</title><style>body{font:14px Segoe UI,Arial;background:#0b0f14;color:#eef4fb;margin:0;padding:20px}h1{margin-top:0}.bar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.btn{background:#162235;border:1px solid #2c3d52;color:#eef4fb;border-radius:8px;padding:8px 12px;cursor:pointer}.danger{background:#5b1f29}.ok{color:#48d597}.warn{color:#f5c15d}table{width:100%;border-collapse:collapse;background:#111821}th,td{padding:9px;border-bottom:1px solid #263244;text-align:left}th{color:#91a2b5}.muted{color:#91a2b5}.pill{padding:3px 7px;border:1px solid #3a4a5e;border-radius:999px}</style></head><body><h1>3EN Threat Control</h1><div id="status" class="muted">loading...</div><div class="bar"><button class="btn danger" onclick="act('block')">Block selected</button><button class="btn" onclick="act('unblock')">Unblock selected</button><button class="btn" onclick="load()">Refresh</button></div><table><thead><tr><th></th><th>IP</th><th>Attempts</th><th>Blocked</th><th>Source</th><th>Evidence</th></tr></thead><tbody id="rows"></tbody></table><script>
+17: async function api(p,o){let r=await fetch(p,o);let j=await r.json();if(!r.ok)throw new Error(j.error||'request failed');return j}
+18: async function load(){try{let s=await api('/api/status');document.getElementById('status').innerHTML=`source: <span class="pill">${s.source||'none'}</span> â?˘ router SSH: ${s.routerSsh?'OK':'NO'} â?˘ threats: ${s.items.length}`;document.getElementById('rows').innerHTML=s.items.map(x=>`<tr><td><input type="checkbox" value="${x.ip}"></td><td>${x.ip}</td><td>${x.attempts}</td><td class="${x.blocked?'ok':'muted'}">${x.blocked?'YES':'NO'}</td><td>${x.source||''}</td><td>${(x.evidence||'').slice(0,120)}</td></tr>`).join('')}catch(e){document.getElementById('status').textContent=e.message}}
+19: async function act(a){let ips=[...document.querySelectorAll('tbody input:checked')].map(x=>x.value);if(!ips.length)return;try{await api('/api/action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:a,ips})});await load()}catch(e){alert(e.message)}}
+20: load();setInterval(load,15000)</script></body></html>'''
+21: 
+22: def run(cmd, timeout=20):
+23:     p=subprocess.run(cmd,capture_output=True,text=True,timeout=timeout,encoding='utf-8',errors='replace')
+24:     if p.returncode!=0: raise RuntimeError((p.stderr or p.stdout or 'command failed').strip())
+25:     return p.stdout.strip()
+26: 
+27: def ssh(command, timeout=20):
+--- CONTEXT subprocess line 23 ---
+16: HTML='''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3EN Threat Control</title><style>body{font:14px Segoe UI,Arial;background:#0b0f14;color:#eef4fb;margin:0;padding:20px}h1{margin-top:0}.bar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.btn{background:#162235;border:1px solid #2c3d52;color:#eef4fb;border-radius:8px;padding:8px 12px;cursor:pointer}.danger{background:#5b1f29}.ok{color:#48d597}.warn{color:#f5c15d}table{width:100%;border-collapse:collapse;background:#111821}th,td{padding:9px;border-bottom:1px solid #263244;text-align:left}th{color:#91a2b5}.muted{color:#91a2b5}.pill{padding:3px 7px;border:1px solid #3a4a5e;border-radius:999px}</style></head><body><h1>3EN Threat Control</h1><div id="status" class="muted">loading...</div><div class="bar"><button class="btn danger" onclick="act('block')">Block selected</button><button class="btn" onclick="act('unblock')">Unblock selected</button><button class="btn" onclick="load()">Refresh</button></div><table><thead><tr><th></th><th>IP</th><th>Attempts</th><th>Blocked</th><th>Source</th><th>Evidence</th></tr></thead><tbody id="rows"></tbody></table><script>
+17: async function api(p,o){let r=await fetch(p,o);let j=await r.json();if(!r.ok)throw new Error(j.error||'request failed');return j}
+18: async function load(){try{let s=await api('/api/status');document.getElementById('status').innerHTML=`source: <span class="pill">${s.source||'none'}</span> â?˘ router SSH: ${s.routerSsh?'OK':'NO'} â?˘ threats: ${s.items.length}`;document.getElementById('rows').innerHTML=s.items.map(x=>`<tr><td><input type="checkbox" value="${x.ip}"></td><td>${x.ip}</td><td>${x.attempts}</td><td class="${x.blocked?'ok':'muted'}">${x.blocked?'YES':'NO'}</td><td>${x.source||''}</td><td>${(x.evidence||'').slice(0,120)}</td></tr>`).join('')}catch(e){document.getElementById('status').textContent=e.message}}
+19: async function act(a){let ips=[...document.querySelectorAll('tbody input:checked')].map(x=>x.value);if(!ips.length)return;try{await api('/api/action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:a,ips})});await load()}catch(e){alert(e.message)}}
+20: load();setInterval(load,15000)</script></body></html>'''
+21: 
+22: def run(cmd, timeout=20):
+23:     p=subprocess.run(cmd,capture_output=True,text=True,timeout=timeout,encoding='utf-8',errors='replace')
+24:     if p.returncode!=0: raise RuntimeError((p.stderr or p.stdout or 'command failed').strip())
+25:     return p.stdout.strip()
+26: 
+27: def ssh(command, timeout=20):
+28:     if not ROUTER_KEY.exists(): raise RuntimeError('router SSH key missing')
+29:     return run(['ssh.exe','-i',str(ROUTER_KEY),'-o','BatchMode=yes','-o','ConnectTimeout=5','-o','StrictHostKeyChecking=accept-new',f'{ROUTER_USER}@{ROUTER}',command],timeout)
+30: 
+31: def router_ok():
+32:     try: return 'OK' in ssh("printf OK",8)
+33:     except Exception: return False
+34: 
+35: def discover_source():
+36:     candidates=[]
+37:     roots=[ROOT,Path(r'E:\skrypty'),Path.home()/'Desktop',Path.home()/'Documents']
+38:     pats=['3en-threats.json','*threat*.json','*security*.json']
+39:     for base in roots:
+40:         if not base.exists(): continue
+41:         for pat in pats:
+42:             try:
+43:                 for p in base.rglob(pat):
+44:                     if p.is_file() and p.stat().st_size<50_000_000: candidates.append(p)
+45:             except Exception: pass
+46:     seen=[]
+47:     for p in candidates:
+48:         if str(p).lower() not in [x.lower() for x in seen]: seen.append(str(p))
+--- CONTEXT timeout line 22 ---
+15: 
+16: HTML='''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3EN Threat Control</title><style>body{font:14px Segoe UI,Arial;background:#0b0f14;color:#eef4fb;margin:0;padding:20px}h1{margin-top:0}.bar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.btn{background:#162235;border:1px solid #2c3d52;color:#eef4fb;border-radius:8px;padding:8px 12px;cursor:pointer}.danger{background:#5b1f29}.ok{color:#48d597}.warn{color:#f5c15d}table{width:100%;border-collapse:collapse;background:#111821}th,td{padding:9px;border-bottom:1px solid #263244;text-align:left}th{color:#91a2b5}.muted{color:#91a2b5}.pill{padding:3px 7px;border:1px solid #3a4a5e;border-radius:999px}</style></head><body><h1>3EN Threat Control</h1><div id="status" class="muted">loading...</div><div class="bar"><button class="btn danger" onclick="act('block')">Block selected</button><button class="btn" onclick="act('unblock')">Unblock selected</button><button class="btn" onclick="load()">Refresh</button></div><table><thead><tr><th></th><th>IP</th><th>Attempts</th><th>Blocked</th><th>Source</th><th>Evidence</th></tr></thead><tbody id="rows"></tbody></table><script>
+17: async function api(p,o){let r=await fetch(p,o);let j=await r.json();if(!r.ok)throw new Error(j.error||'request failed');return j}
+18: async function load(){try{let s=await api('/api/status');document.getElementById('status').innerHTML=`source: <span class="pill">${s.source||'none'}</span> â?˘ router SSH: ${s.routerSsh?'OK':'NO'} â?˘ threats: ${s.items.length}`;document.getElementById('rows').innerHTML=s.items.map(x=>`<tr><td><input type="checkbox" value="${x.ip}"></td><td>${x.ip}</td><td>${x.attempts}</td><td class="${x.blocked?'ok':'muted'}">${x.blocked?'YES':'NO'}</td><td>${x.source||''}</td><td>${(x.evidence||'').slice(0,120)}</td></tr>`).join('')}catch(e){document.getElementById('status').textContent=e.message}}
+19: async function act(a){let ips=[...document.querySelectorAll('tbody input:checked')].map(x=>x.value);if(!ips.length)return;try{await api('/api/action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:a,ips})});await load()}catch(e){alert(e.message)}}
+20: load();setInterval(load,15000)</script></body></html>'''
+21: 
+22: def run(cmd, timeout=20):
+23:     p=subprocess.run(cmd,capture_output=True,text=True,timeout=timeout,encoding='utf-8',errors='replace')
+24:     if p.returncode!=0: raise RuntimeError((p.stderr or p.stdout or 'command failed').strip())
+25:     return p.stdout.strip()
+26: 
+27: def ssh(command, timeout=20):
+28:     if not ROUTER_KEY.exists(): raise RuntimeError('router SSH key missing')
+29:     return run(['ssh.exe','-i',str(ROUTER_KEY),'-o','BatchMode=yes','-o','ConnectTimeout=5','-o','StrictHostKeyChecking=accept-new',f'{ROUTER_USER}@{ROUTER}',command],timeout)
+30: 
+31: def router_ok():
+32:     try: return 'OK' in ssh("printf OK",8)
+33:     except Exception: return False
+34: 
+35: def discover_source():
+36:     candidates=[]
+37:     roots=[ROOT,Path(r'E:\skrypty'),Path.home()/'Desktop',Path.home()/'Documents']
+38:     pats=['3en-threats.json','*threat*.json','*security*.json']
+39:     for base in roots:
+40:         if not base.exists(): continue
+41:         for pat in pats:
+42:             try:
+43:                 for p in base.rglob(pat):
+44:                     if p.is_file() and p.stat().st_size<50_000_000: candidates.append(p)
+45:             except Exception: pass
+46:     seen=[]
+47:     for p in candidates:
+--- CONTEXT timeout line 23 ---
+16: HTML='''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3EN Threat Control</title><style>body{font:14px Segoe UI,Arial;background:#0b0f14;color:#eef4fb;margin:0;padding:20px}h1{margin-top:0}.bar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.btn{background:#162235;border:1px solid #2c3d52;color:#eef4fb;border-radius:8px;padding:8px 12px;cursor:pointer}.danger{background:#5b1f29}.ok{color:#48d597}.warn{color:#f5c15d}table{width:100%;border-collapse:collapse;background:#111821}th,td{padding:9px;border-bottom:1px solid #263244;text-align:left}th{color:#91a2b5}.muted{color:#91a2b5}.pill{padding:3px 7px;border:1px solid #3a4a5e;border-radius:999px}</style></head><body><h1>3EN Threat Control</h1><div id="status" class="muted">loading...</div><div class="bar"><button class="btn danger" onclick="act('block')">Block selected</button><button class="btn" onclick="act('unblock')">Unblock selected</button><button class="btn" onclick="load()">Refresh</button></div><table><thead><tr><th></th><th>IP</th><th>Attempts</th><th>Blocked</th><th>Source</th><th>Evidence</th></tr></thead><tbody id="rows"></tbody></table><script>
+17: async function api(p,o){let r=await fetch(p,o);let j=await r.json();if(!r.ok)throw new Error(j.error||'request failed');return j}
+18: async function load(){try{let s=await api('/api/status');document.getElementById('status').innerHTML=`source: <span class="pill">${s.source||'none'}</span> â?˘ router SSH: ${s.routerSsh?'OK':'NO'} â?˘ threats: ${s.items.length}`;document.getElementById('rows').innerHTML=s.items.map(x=>`<tr><td><input type="checkbox" value="${x.ip}"></td><td>${x.ip}</td><td>${x.attempts}</td><td class="${x.blocked?'ok':'muted'}">${x.blocked?'YES':'NO'}</td><td>${x.source||''}</td><td>${(x.evidence||'').slice(0,120)}</td></tr>`).join('')}catch(e){document.getElementById('status').textContent=e.message}}
+19: async function act(a){let ips=[...document.querySelectorAll('tbody input:checked')].map(x=>x.value);if(!ips.length)return;try{await api('/api/action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:a,ips})});await load()}catch(e){alert(e.message)}}
+20: load();setInterval(load,15000)</script></body></html>'''
+21: 
+22: def run(cmd, timeout=20):
+23:     p=subprocess.run(cmd,capture_output=True,text=True,timeout=timeout,encoding='utf-8',errors='replace')
+24:     if p.returncode!=0: raise RuntimeError((p.stderr or p.stdout or 'command failed').strip())
+25:     return p.stdout.strip()
+26: 
+27: def ssh(command, timeout=20):
+28:     if not ROUTER_KEY.exists(): raise RuntimeError('router SSH key missing')
+29:     return run(['ssh.exe','-i',str(ROUTER_KEY),'-o','BatchMode=yes','-o','ConnectTimeout=5','-o','StrictHostKeyChecking=accept-new',f'{ROUTER_USER}@{ROUTER}',command],timeout)
+30: 
+31: def router_ok():
+32:     try: return 'OK' in ssh("printf OK",8)
+33:     except Exception: return False
+34: 
+35: def discover_source():
+36:     candidates=[]
+37:     roots=[ROOT,Path(r'E:\skrypty'),Path.home()/'Desktop',Path.home()/'Documents']
+38:     pats=['3en-threats.json','*threat*.json','*security*.json']
+39:     for base in roots:
+40:         if not base.exists(): continue
+41:         for pat in pats:
+42:             try:
+43:                 for p in base.rglob(pat):
+44:                     if p.is_file() and p.stat().st_size<50_000_000: candidates.append(p)
+45:             except Exception: pass
+46:     seen=[]
+47:     for p in candidates:
+48:         if str(p).lower() not in [x.lower() for x in seen]: seen.append(str(p))
+--- CONTEXT timeout line 27 ---
+20: load();setInterval(load,15000)</script></body></html>'''
+21: 
+22: def run(cmd, timeout=20):
+23:     p=subprocess.run(cmd,capture_output=True,text=True,timeout=timeout,encoding='utf-8',errors='replace')
+24:     if p.returncode!=0: raise RuntimeError((p.stderr or p.stdout or 'command failed').strip())
+25:     return p.stdout.strip()
+26: 
+27: def ssh(command, timeout=20):
+28:     if not ROUTER_KEY.exists(): raise RuntimeError('router SSH key missing')
+29:     return run(['ssh.exe','-i',str(ROUTER_KEY),'-o','BatchMode=yes','-o','ConnectTimeout=5','-o','StrictHostKeyChecking=accept-new',f'{ROUTER_USER}@{ROUTER}',command],timeout)
+30: 
+31: def router_ok():
+32:     try: return 'OK' in ssh("printf OK",8)
+33:     except Exception: return False
+34: 
+35: def discover_source():
+36:     candidates=[]
+37:     roots=[ROOT,Path(r'E:\skrypty'),Path.home()/'Desktop',Path.home()/'Documents']
+38:     pats=['3en-threats.json','*threat*.json','*security*.json']
+39:     for base in roots:
+40:         if not base.exists(): continue
+41:         for pat in pats:
+42:             try:
+43:                 for p in base.rglob(pat):
+44:                     if p.is_file() and p.stat().st_size<50_000_000: candidates.append(p)
+45:             except Exception: pass
+46:     seen=[]
+47:     for p in candidates:
+48:         if str(p).lower() not in [x.lower() for x in seen]: seen.append(str(p))
+49:     seen.sort(key=lambda x:(Path(x).name.lower()!='3en-threats.json',-Path(x).stat().st_mtime if Path(x).exists() else 0))
+50:     return seen[0] if seen else ''
+51: 
+52: def load_json(path):
+--- CONTEXT timeout line 29 ---
+22: def run(cmd, timeout=20):
+23:     p=subprocess.run(cmd,capture_output=True,text=True,timeout=timeout,encoding='utf-8',errors='replace')
+24:     if p.returncode!=0: raise RuntimeError((p.stderr or p.stdout or 'command failed').strip())
+25:     return p.stdout.strip()
+26: 
+27: def ssh(command, timeout=20):
+28:     if not ROUTER_KEY.exists(): raise RuntimeError('router SSH key missing')
+29:     return run(['ssh.exe','-i',str(ROUTER_KEY),'-o','BatchMode=yes','-o','ConnectTimeout=5','-o','StrictHostKeyChecking=accept-new',f'{ROUTER_USER}@{ROUTER}',command],timeout)
+30: 
+31: def router_ok():
+32:     try: return 'OK' in ssh("printf OK",8)
+33:     except Exception: return False
+34: 
+35: def discover_source():
+36:     candidates=[]
+37:     roots=[ROOT,Path(r'E:\skrypty'),Path.home()/'Desktop',Path.home()/'Documents']
+38:     pats=['3en-threats.json','*threat*.json','*security*.json']
+39:     for base in roots:
+40:         if not base.exists(): continue
+41:         for pat in pats:
+42:             try:
+43:                 for p in base.rglob(pat):
+44:                     if p.is_file() and p.stat().st_size<50_000_000: candidates.append(p)
+45:             except Exception: pass
+46:     seen=[]
+47:     for p in candidates:
+48:         if str(p).lower() not in [x.lower() for x in seen]: seen.append(str(p))
+49:     seen.sort(key=lambda x:(Path(x).name.lower()!='3en-threats.json',-Path(x).stat().st_mtime if Path(x).exists() else 0))
+50:     return seen[0] if seen else ''
+51: 
+52: def load_json(path):
+53:     try: return json.loads(Path(path).read_text(encoding='utf-8-sig'))
+54:     except Exception: return None
+--- CONTEXT /api/status line 18 ---
+11: ROUTER='192.168.1.2'
+12: ROUTER_USER='root'
+13: ROUTER_KEY=Path(r'C:\Users\wi3lk\.ssh\3en002_agent_ed25519')
+14: HOST='127.0.0.1'; PORT=8766
+15: 
+16: HTML='''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3EN Threat Control</title><style>body{font:14px Segoe UI,Arial;background:#0b0f14;color:#eef4fb;margin:0;padding:20px}h1{margin-top:0}.bar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.btn{background:#162235;border:1px solid #2c3d52;color:#eef4fb;border-radius:8px;padding:8px 12px;cursor:pointer}.danger{background:#5b1f29}.ok{color:#48d597}.warn{color:#f5c15d}table{width:100%;border-collapse:collapse;background:#111821}th,td{padding:9px;border-bottom:1px solid #263244;text-align:left}th{color:#91a2b5}.muted{color:#91a2b5}.pill{padding:3px 7px;border:1px solid #3a4a5e;border-radius:999px}</style></head><body><h1>3EN Threat Control</h1><div id="status" class="muted">loading...</div><div class="bar"><button class="btn danger" onclick="act('block')">Block selected</button><button class="btn" onclick="act('unblock')">Unblock selected</button><button class="btn" onclick="load()">Refresh</button></div><table><thead><tr><th></th><th>IP</th><th>Attempts</th><th>Blocked</th><th>Source</th><th>Evidence</th></tr></thead><tbody id="rows"></tbody></table><script>
+17: async function api(p,o){let r=await fetch(p,o);let j=await r.json();if(!r.ok)throw new Error(j.error||'request failed');return j}
+18: async function load(){try{let s=await api('/api/status');document.getElementById('status').innerHTML=`source: <span class="pill">${s.source||'none'}</span> â?˘ router SSH: ${s.routerSsh?'OK':'NO'} â?˘ threats: ${s.items.length}`;document.getElementById('rows').innerHTML=s.items.map(x=>`<tr><td><input type="checkbox" value="${x.ip}"></td><td>${x.ip}</td><td>${x.attempts}</td><td class="${x.blocked?'ok':'muted'}">${x.blocked?'YES':'NO'}</td><td>${x.source||''}</td><td>${(x.evidence||'').slice(0,120)}</td></tr>`).join('')}catch(e){document.getElementById('status').textContent=e.message}}
+19: async function act(a){let ips=[...document.querySelectorAll('tbody input:checked')].map(x=>x.value);if(!ips.length)return;try{await api('/api/action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:a,ips})});await load()}catch(e){alert(e.message)}}
+20: load();setInterval(load,15000)</script></body></html>'''
+21: 
+22: def run(cmd, timeout=20):
+23:     p=subprocess.run(cmd,capture_output=True,text=True,timeout=timeout,encoding='utf-8',errors='replace')
+24:     if p.returncode!=0: raise RuntimeError((p.stderr or p.stdout or 'command failed').strip())
+25:     return p.stdout.strip()
+26: 
+27: def ssh(command, timeout=20):
+28:     if not ROUTER_KEY.exists(): raise RuntimeError('router SSH key missing')
+29:     return run(['ssh.exe','-i',str(ROUTER_KEY),'-o','BatchMode=yes','-o','ConnectTimeout=5','-o','StrictHostKeyChecking=accept-new',f'{ROUTER_USER}@{ROUTER}',command],timeout)
+30: 
+31: def router_ok():
+32:     try: return 'OK' in ssh("printf OK",8)
+33:     except Exception: return False
+34: 
+35: def discover_source():
+36:     candidates=[]
+37:     roots=[ROOT,Path(r'E:\skrypty'),Path.home()/'Desktop',Path.home()/'Documents']
+38:     pats=['3en-threats.json','*threat*.json','*security*.json']
+39:     for base in roots:
+40:         if not base.exists(): continue
+41:         for pat in pats:
+42:             try:
+43:                 for p in base.rglob(pat):
+--- CONTEXT /api/status line 132 ---
+125:     arr.sort(key=lambda x:(not x['blocked'],-int(x.get('attempts',0)),x['ip']))
+126:     return {'ok':True,'source':src,'routerSsh':router_ok(),'items':arr,'blockedCount':len(blocked),'audit':str(AUDIT)}
+127: 
+128: class H(BaseHTTPRequestHandler):
+129:     def sendj(self,obj,code=200):
+130:         b=json.dumps(obj,ensure_ascii=False).encode(); self.send_response(code); self.send_header('Content-Type','application/json; charset=utf-8'); self.send_header('Content-Length',str(len(b))); self.end_headers(); self.wfile.write(b)
+131:     def do_GET(self):
+132:         if self.path.startswith('/api/status'):
+133:             try:self.sendj(status())
+134:             except Exception as e:self.sendj({'error':str(e)},500)
+135:         else:
+136:             b=HTML.encode(); self.send_response(200); self.send_header('Content-Type','text/html; charset=utf-8'); self.send_header('Content-Length',str(len(b))); self.end_headers(); self.wfile.write(b)
+137:     def do_POST(self):
+138:         try:
+139:             n=int(self.headers.get('Content-Length','0')); body=json.loads(self.rfile.read(n) or b'{}')
+140:             if self.path!='/api/action': raise ValueError('unknown endpoint')
+141:             a=body.get('action'); ips=body.get('ips') or []
+142:             if a not in ('block','unblock'): raise ValueError('unknown action')
+143:             for ip in ips: change(a,str(ip))
+144:             self.sendj({'ok':True,'status':status()})
+145:         except Exception as e:self.sendj({'error':str(e)},500)
+146:     def log_message(self,*a): pass
+147: 
+148: if __name__=='__main__': ThreadingHTTPServer((HOST,PORT),H).serve_forever()
+--- CONTEXT routerSsh line 18 ---
+11: ROUTER='192.168.1.2'
+12: ROUTER_USER='root'
+13: ROUTER_KEY=Path(r'C:\Users\wi3lk\.ssh\3en002_agent_ed25519')
+14: HOST='127.0.0.1'; PORT=8766
+15: 
+16: HTML='''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3EN Threat Control</title><style>body{font:14px Segoe UI,Arial;background:#0b0f14;color:#eef4fb;margin:0;padding:20px}h1{margin-top:0}.bar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.btn{background:#162235;border:1px solid #2c3d52;color:#eef4fb;border-radius:8px;padding:8px 12px;cursor:pointer}.danger{background:#5b1f29}.ok{color:#48d597}.warn{color:#f5c15d}table{width:100%;border-collapse:collapse;background:#111821}th,td{padding:9px;border-bottom:1px solid #263244;text-align:left}th{color:#91a2b5}.muted{color:#91a2b5}.pill{padding:3px 7px;border:1px solid #3a4a5e;border-radius:999px}</style></head><body><h1>3EN Threat Control</h1><div id="status" class="muted">loading...</div><div class="bar"><button class="btn danger" onclick="act('block')">Block selected</button><button class="btn" onclick="act('unblock')">Unblock selected</button><button class="btn" onclick="load()">Refresh</button></div><table><thead><tr><th></th><th>IP</th><th>Attempts</th><th>Blocked</th><th>Source</th><th>Evidence</th></tr></thead><tbody id="rows"></tbody></table><script>
+17: async function api(p,o){let r=await fetch(p,o);let j=await r.json();if(!r.ok)throw new Error(j.error||'request failed');return j}
+18: async function load(){try{let s=await api('/api/status');document.getElementById('status').innerHTML=`source: <span class="pill">${s.source||'none'}</span> â?˘ router SSH: ${s.routerSsh?'OK':'NO'} â?˘ threats: ${s.items.length}`;document.getElementById('rows').innerHTML=s.items.map(x=>`<tr><td><input type="checkbox" value="${x.ip}"></td><td>${x.ip}</td><td>${x.attempts}</td><td class="${x.blocked?'ok':'muted'}">${x.blocked?'YES':'NO'}</td><td>${x.source||''}</td><td>${(x.evidence||'').slice(0,120)}</td></tr>`).join('')}catch(e){document.getElementById('status').textContent=e.message}}
+19: async function act(a){let ips=[...document.querySelectorAll('tbody input:checked')].map(x=>x.value);if(!ips.length)return;try{await api('/api/action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:a,ips})});await load()}catch(e){alert(e.message)}}
+20: load();setInterval(load,15000)</script></body></html>'''
+21: 
+22: def run(cmd, timeout=20):
+23:     p=subprocess.run(cmd,capture_output=True,text=True,timeout=timeout,encoding='utf-8',errors='replace')
+24:     if p.returncode!=0: raise RuntimeError((p.stderr or p.stdout or 'command failed').strip())
+25:     return p.stdout.strip()
+26: 
+27: def ssh(command, timeout=20):
+28:     if not ROUTER_KEY.exists(): raise RuntimeError('router SSH key missing')
+29:     return run(['ssh.exe','-i',str(ROUTER_KEY),'-o','BatchMode=yes','-o','ConnectTimeout=5','-o','StrictHostKeyChecking=accept-new',f'{ROUTER_USER}@{ROUTER}',command],timeout)
+30: 
+31: def router_ok():
+32:     try: return 'OK' in ssh("printf OK",8)
+33:     except Exception: return False
+34: 
+35: def discover_source():
+36:     candidates=[]
+37:     roots=[ROOT,Path(r'E:\skrypty'),Path.home()/'Desktop',Path.home()/'Documents']
+38:     pats=['3en-threats.json','*threat*.json','*security*.json']
+39:     for base in roots:
+40:         if not base.exists(): continue
+41:         for pat in pats:
+42:             try:
+43:                 for p in base.rglob(pat):
+--- CONTEXT routerSsh line 126 ---
+119:     blocked=blocked_set()
+120:     arr=[]
+121:     for x in items.values():
+122:         x['blocked']=x['ip'] in blocked; arr.append(x)
+123:     for ip in sorted(blocked):
+124:         if ip not in items: arr.append({'ip':ip,'attempts':0,'blocked':True,'source':'manual blocklist','evidence':'persisted on 3EN002'})
+125:     arr.sort(key=lambda x:(not x['blocked'],-int(x.get('attempts',0)),x['ip']))
+126:     return {'ok':True,'source':src,'routerSsh':router_ok(),'items':arr,'blockedCount':len(blocked),'audit':str(AUDIT)}
+127: 
+128: class H(BaseHTTPRequestHandler):
+129:     def sendj(self,obj,code=200):
+130:         b=json.dumps(obj,ensure_ascii=False).encode(); self.send_response(code); self.send_header('Content-Type','application/json; charset=utf-8'); self.send_header('Content-Length',str(len(b))); self.end_headers(); self.wfile.write(b)
+131:     def do_GET(self):
+132:         if self.path.startswith('/api/status'):
+133:             try:self.sendj(status())
+134:             except Exception as e:self.sendj({'error':str(e)},500)
+135:         else:
+136:             b=HTML.encode(); self.send_response(200); self.send_header('Content-Type','text/html; charset=utf-8'); self.send_header('Content-Length',str(len(b))); self.end_headers(); self.wfile.write(b)
+137:     def do_POST(self):
+138:         try:
+139:             n=int(self.headers.get('Content-Length','0')); body=json.loads(self.rfile.read(n) or b'{}')
+140:             if self.path!='/api/action': raise ValueError('unknown endpoint')
+141:             a=body.get('action'); ips=body.get('ips') or []
+142:             if a not in ('block','unblock'): raise ValueError('unknown action')
+143:             for ip in ips: change(a,str(ip))
+144:             self.sendj({'ok':True,'status':status()})
+145:         except Exception as e:self.sendj({'error':str(e)},500)
+146:     def log_message(self,*a): pass
+147: 
+148: if __name__=='__main__': ThreadingHTTPServer((HOST,PORT),H).serve_forever()
+=== NP009_BRIDGE_HANDLER_EVIDENCE_END ===
+
+NP009_HANDLER_EVIDENCE=PASS
+
