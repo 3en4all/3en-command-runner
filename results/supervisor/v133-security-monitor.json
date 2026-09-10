@@ -1,17 +1,17 @@
 {
     "schemaVersion":  3,
     "lane":  "security-monitor",
-    "pointerRevision":  "v462-058b-r1-8ec40754",
-    "pointerProject":  "project-v462.json",
+    "pointerRevision":  "v4621-058b2-r1-8ec40754",
+    "pointerProject":  "project-v4621.json",
     "processedRevision":  "v462-058b-r1-8ec40754",
-    "status":  "TERMINAL",
+    "status":  "SYNCING",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
-    "lastStartedUtc":  "2026-09-09T23:58:02.9025780Z",
+    "lastStartedUtc":  "2026-09-10T00:05:03.2703427Z",
     "lastTerminalUtc":  "2026-09-09T23:58:09.9672508Z",
-    "lastExitCode":  0,
+    "lastExitCode":  null,
     "workerPid":  47436,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-09T23:58:09.9692722Z"
+    "updatedUtc":  "2026-09-10T00:05:03.2703427Z"
 }
