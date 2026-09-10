@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  8,
+                      "stateAgeSeconds":  12,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:50:01.6757668Z"
+                      "updatedUtc":  "2026-09-10T01:50:32.1780510Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -42,9 +42,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  6,
+                      "stateAgeSeconds":  10,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:50:03.4476309Z"
+                      "updatedUtc":  "2026-09-10T01:50:33.9413782Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  8,
+                      "stateAgeSeconds":  12,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:50:02.3183051Z"
+                      "updatedUtc":  "2026-09-10T01:50:32.7894827Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -76,10 +76,10 @@
                       "nextRetryUtc":  "2026-09-10T01:49:53.0383435Z",
                       "runnerPid":  26544,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  10,
+                      "stateAgeSeconds":  45,
                       "stale":  false,
                       "updatedUtc":  "2026-09-10T01:50:00.0572036Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T01:50:10.2181078Z"
+    "updatedUtc":  "2026-09-10T01:50:44.7426634Z"
 }
