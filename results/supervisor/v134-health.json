@@ -16,18 +16,18 @@
                       "lane":  "maintenance",
                       "workerRunning":  true,
                       "workerPid":  8436,
-                      "pointerRevision":  "bootstrap-0",
-                      "pointerProject":  "",
+                      "pointerRevision":  "v464-058d-r1-4b5199fc",
+                      "pointerProject":  "project-v464.json",
                       "processedRevision":  "",
-                      "status":  "IDLE",
-                      "attempts":  0,
-                      "lastError":  "",
-                      "nextRetryUtc":  "",
+                      "status":  "RETRY_PENDING",
+                      "attempts":  1,
+                      "lastError":  "RUNNER_EXIT_2",
+                      "nextRetryUtc":  "2026-09-10T00:16:48.3105392Z",
                       "runnerPid":  null,
-                      "lastExitCode":  null,
-                      "stateAgeSeconds":  1,
+                      "lastExitCode":  2,
+                      "stateAgeSeconds":  16,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:15:58.9543077Z"
+                      "updatedUtc":  "2026-09-10T00:16:18.3135707Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -36,15 +36,15 @@
                       "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
                       "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
                       "processedRevision":  "",
-                      "status":  "RETRY_PENDING",
-                      "attempts":  3,
-                      "lastError":  "RUNNER_EXIT_2",
+                      "status":  "SYNCING",
+                      "attempts":  4,
+                      "lastError":  "",
                       "nextRetryUtc":  "2026-09-10T00:16:30.0437296Z",
                       "runnerPid":  null,
                       "lastExitCode":  2,
-                      "stateAgeSeconds":  12,
+                      "stateAgeSeconds":  1,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:15:47.4901950Z"
+                      "updatedUtc":  "2026-09-10T00:16:33.4326601Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  2,
+                      "stateAgeSeconds":  5,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:15:58.2382839Z"
+                      "updatedUtc":  "2026-09-10T00:16:28.9116213Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -76,10 +76,10 @@
                       "nextRetryUtc":  "2026-09-10T00:13:36.8003825Z",
                       "runnerPid":  19572,
                       "lastExitCode":  2,
-                      "stateAgeSeconds":  139,
+                      "stateAgeSeconds":  173,
                       "stale":  false,
                       "updatedUtc":  "2026-09-10T00:13:41.5314959Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T00:16:00.1798118Z"
+    "updatedUtc":  "2026-09-10T00:16:34.5811978Z"
 }
