@@ -4,7 +4,7 @@
     "pointerRevision":  "np-v3-local-bridge-evidence-r1-e9c362bb",
     "pointerProject":  "project-security-privacy-local-evidence-v3.json",
     "processedRevision":  "",
-    "status":  "RUNNING",
+    "status":  "EXECUTION_WAIT",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
@@ -13,5 +13,5 @@
     "lastExitCode":  null,
     "workerPid":  23736,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T01:45:11.0588053Z"
+    "updatedUtc":  "2026-09-10T01:45:12.2244097Z"
 }
