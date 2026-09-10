@@ -1,0 +1,14 @@
+058A10_ENGINE_BUILD=PASS;EXPLICIT_CHILD_WORKDIR=true
+V4619_058A10_BACKUP=PASS;PLUGIN_PREEXISTING=True;BACKUP=C:\3EN-Agent\backups\openclaw-plugin-3en-job-executor\20260910-034014
+
+powershell.exe : 058A10_NPM_TIMEOUT_35S
+At line:1 char:1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (058A10_NPM_TIMEOUT_35S:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+058A10_ENGINE_BUILD=PASS;EXPLICIT_CHILD_WORKDIR=true
+V4619_058A10_ROLLBACK=PASS;PLUGIN_DISABLED=true;BASELINE_RESTORED=true
+
