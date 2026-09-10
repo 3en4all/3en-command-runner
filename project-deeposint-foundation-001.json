@@ -1,0 +1,19 @@
+{
+  "projectId": "deeposint-foundation-001",
+  "policy": {
+    "showErrors": true,
+    "maxAttempts": 2,
+    "publishRetries": 3,
+    "autoRollbackOnFinalFailure": true,
+    "highRiskAction": "reject"
+  },
+  "chapters": [
+    {
+      "id": "2026-09-10-deeposint-001",
+      "path": "tasks/deeposint/2026-09-10-deeposint-001.json",
+      "expectedStatus": "SUCCESS",
+      "maxAttempts": 2,
+      "dependsOn": []
+    }
+  ]
+}
