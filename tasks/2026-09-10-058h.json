@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-10-058h",
+  "title":"Correct and complete supervisor v1.3.5 serialized execution migration",
+  "description":"Fix the failed 058g bootstrap by using StrictMode-safe literal replacements, serialize only runner execution across independent lane workers, retain 180-second watchdog behavior, migrate v134 lane state to v135, persist canonical v1.3.5, and schedule restart only after successful verification.",
+  "risk":"medium",
+  "backup":"Write-Output 'V468_058H_BACKUP=PERFORMED_INSIDE_HARDENING_SCRIPT'",
+  "script":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/harden-supervisor-v135-execution-058h.ps1';$d='C:/3EN-Agent/harden-supervisor-v135-execution-058h.ps1';Invoke-WebRequest -UseBasicParsing -Uri ($u+'?ts='+[DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()) -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d -Phase Prepare",
+  "test":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/harden-supervisor-v135-execution-058h.ps1 -Phase Test",
+  "rollback":"$dirs=@(Get-ChildItem 'C:/3EN-Agent/backups/supervisor-v135-execution-058h' -Directory -ErrorAction SilentlyContinue|Sort-Object Name -Descending);if($dirs.Count-gt0){$b=Join-Path $dirs[0].FullName '3en-multiproject-supervisor-v1.3.4.ps1';if(Test-Path $b){Copy-Item $b 'C:/3EN-Agent/3en-multiproject-supervisor-v1.3.4.ps1' -Force;Write-Output 'V468_058H_ROLLBACK_SOURCE=PASS'}else{Write-Output 'V468_058H_ROLLBACK_SOURCE=NO_BACKUP'}}else{Write-Output 'V468_058H_ROLLBACK_SOURCE=NO_BACKUP_DIR'}"
+}
