@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  4,
+                      "stateAgeSeconds":  8,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:39:51.2124382Z"
+                      "updatedUtc":  "2026-09-10T01:40:21.7330428Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -42,9 +42,9 @@
                       "nextRetryUtc":  "2026-09-10T01:43:16.6067716Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  6,
+                      "stateAgeSeconds":  10,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:39:49.1777897Z"
+                      "updatedUtc":  "2026-09-10T01:40:19.6637658Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,27 +59,27 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  3,
+                      "stateAgeSeconds":  7,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:39:52.3846199Z"
+                      "updatedUtc":  "2026-09-10T01:40:22.8417204Z"
                   },
                   {
                       "lane":  "openclaw",
                       "workerRunning":  true,
                       "workerPid":  10132,
-                      "pointerRevision":  "v4618-058a9-local-evidence-r1-09012294",
-                      "pointerProject":  "project-v4618.json",
+                      "pointerRevision":  "v4619-058a10-r1-6cd0a2d1",
+                      "pointerProject":  "project-v4619.json",
                       "processedRevision":  "v4618-058a9-local-evidence-r1-09012294",
-                      "status":  "TERMINAL",
+                      "status":  "RUNNING",
                       "attempts":  1,
                       "lastError":  "",
                       "nextRetryUtc":  "",
-                      "runnerPid":  null,
-                      "lastExitCode":  0,
-                      "stateAgeSeconds":  4,
+                      "runnerPid":  38344,
+                      "lastExitCode":  null,
+                      "stateAgeSeconds":  18,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:39:51.9444011Z"
+                      "updatedUtc":  "2026-09-10T01:40:12.6165020Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T01:39:55.5011070Z"
+    "updatedUtc":  "2026-09-10T01:40:30.1759467Z"
 }
