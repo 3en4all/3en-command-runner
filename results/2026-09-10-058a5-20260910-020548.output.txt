@@ -1,0 +1,14 @@
+V4614_058A5_BACKUP=PASS;PLUGIN_PREEXISTING=True;BACKUP=C:\3EN-Agent\backups\openclaw-plugin-3en-job-executor\20260910-020549
+
+powershell.exe : 058A5_INSTALL_EXIT_1 OUTPUT=OpenClaw does not recognize option "--acknowledge-install-policy-warning". | Tr
+y: openclaw plugi
+At line:1 char:1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (058A5_INSTALL_E... openclaw plugi:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+058A5_DISABLE=Plugin not found: 3en-job-executor. Run `openclaw plugins list` to see installed plugins, or `openclaw plugins search 3en-job-executor` to look for installable plugins.
+V4614_058A5_ROLLBACK=PASS;PLUGIN_DISABLED=true;BASELINE_RESTORED=true
+
