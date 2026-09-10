@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-10-v464-openclaw-cli-capability-discovery",
+  "title":"OpenClaw CLI capability discovery",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-10-058d","path":"tasks/2026-09-10-058d.json","expectedStatus":"SUCCESS"}]
+}
