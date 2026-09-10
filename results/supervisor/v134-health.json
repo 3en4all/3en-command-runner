@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  null,
-                      "stateAgeSeconds":  12,
+                      "stateAgeSeconds":  1,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:15:12.9857904Z"
+                      "updatedUtc":  "2026-09-10T00:15:58.9543077Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -42,9 +42,9 @@
                       "nextRetryUtc":  "2026-09-10T00:16:30.0437296Z",
                       "runnerPid":  null,
                       "lastExitCode":  2,
-                      "stateAgeSeconds":  8,
+                      "stateAgeSeconds":  12,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:15:16.9116022Z"
+                      "updatedUtc":  "2026-09-10T00:15:47.4901950Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  13,
+                      "stateAgeSeconds":  2,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:15:12.4580346Z"
+                      "updatedUtc":  "2026-09-10T00:15:58.2382839Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -76,10 +76,10 @@
                       "nextRetryUtc":  "2026-09-10T00:13:36.8003825Z",
                       "runnerPid":  19572,
                       "lastExitCode":  2,
-                      "stateAgeSeconds":  104,
+                      "stateAgeSeconds":  139,
                       "stale":  false,
                       "updatedUtc":  "2026-09-10T00:13:41.5314959Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T00:15:25.1940420Z"
+    "updatedUtc":  "2026-09-10T00:16:00.1798118Z"
 }
