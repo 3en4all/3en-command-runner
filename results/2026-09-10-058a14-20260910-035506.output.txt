@@ -1,0 +1,14 @@
+058A14_ENGINE_BUILD=PASS;NPM_REMOVED=true;DIRECT_CONFIG=true
+058A14_BACKUP=PASS;CONFIG=true;PLUGIN_BASELINE=true
+
+powershell.exe : 058A14_NODE_EXIT_124
+At line:1 char:1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (058A14_NODE_EXIT_124:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+058A14_ENGINE_BUILD=PASS;NPM_REMOVED=true;DIRECT_CONFIG=true
+058A14_ROLLBACK=PASS;CONFIG_RESTORED=true;PLUGIN_RESTORED=true
+
