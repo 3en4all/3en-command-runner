@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-10-v4616-openclaw-linked-plugin-executor",
+  "title":"OpenClaw linked 3EN job executor acceptance r7",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-10-058a7","path":"tasks/2026-09-10-058a7.json","expectedStatus":"SUCCESS"}]
+}
