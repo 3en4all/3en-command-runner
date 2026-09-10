@@ -1,0 +1,25 @@
+{
+    "projectId":  "2026-09-10-v4622-openclaw-reuse-registered-plugin",
+    "chapterId":  "2026-09-10-058a12",
+    "risk":  "medium",
+    "status":  "FAILED",
+    "stage":  "TERMINAL",
+    "attempts":  1,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "FAILED",
+                      "error":  "058A12_ENABLE_TIMEOUT_12S"
+                  },
+                  {
+                      "name":  "ROLLBACK",
+                      "status":  "OK",
+                      "error":  null
+                  }
+              ]
+}
