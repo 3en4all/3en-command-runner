@@ -18,16 +18,16 @@
                       "workerPid":  8436,
                       "pointerRevision":  "v464-058d-r1-4b5199fc",
                       "pointerProject":  "project-v464.json",
-                      "processedRevision":  "",
-                      "status":  "RETRY_PENDING",
-                      "attempts":  2,
-                      "lastError":  "RUNNER_EXIT_2",
-                      "nextRetryUtc":  "2026-09-10T00:17:53.8631312Z",
+                      "processedRevision":  "v464-058d-r1-4b5199fc",
+                      "status":  "TERMINAL",
+                      "attempts":  3,
+                      "lastError":  "",
+                      "nextRetryUtc":  "",
                       "runnerPid":  null,
-                      "lastExitCode":  2,
-                      "stateAgeSeconds":  3,
+                      "lastExitCode":  0,
+                      "stateAgeSeconds":  4,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:17:40.8016811Z"
+                      "updatedUtc":  "2026-09-10T00:18:13.7336767Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -42,9 +42,9 @@
                       "nextRetryUtc":  "2026-09-10T00:20:37.5628612Z",
                       "runnerPid":  null,
                       "lastExitCode":  2,
-                      "stateAgeSeconds":  4,
+                      "stateAgeSeconds":  8,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:17:39.6585864Z"
+                      "updatedUtc":  "2026-09-10T00:18:10.1423979Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  14,
+                      "stateAgeSeconds":  2,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:17:29.8834147Z"
+                      "updatedUtc":  "2026-09-10T00:18:15.6378702Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -76,10 +76,10 @@
                       "nextRetryUtc":  "2026-09-10T00:18:42.5578360Z",
                       "runnerPid":  null,
                       "lastExitCode":  2,
-                      "stateAgeSeconds":  14,
+                      "stateAgeSeconds":  3,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:17:29.5624151Z"
+                      "updatedUtc":  "2026-09-10T00:18:15.3269737Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T00:17:44.0103996Z"
+    "updatedUtc":  "2026-09-10T00:18:18.1302229Z"
 }
