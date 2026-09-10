@@ -14,7 +14,7 @@
                   {
                       "lane":  "network-privacy",
                       "workerRunning":  true,
-                      "workerPid":  32292,
+                      "workerPid":  18348,
                       "pointerRevision":  "np-v5-status-source-r1-6844dab3",
                       "pointerProject":  "project-security-privacy-status-source-v5.json",
                       "processedRevision":  "",
@@ -24,12 +24,12 @@
                       "nextRetryUtc":  "2026-09-10T18:03:43.2402657Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-10T17:59:46.3240339Z"
+                      "updatedUtc":  "2026-09-10T18:00:53.6519308Z"
                   },
                   {
                       "lane":  "security-monitor",
                       "workerRunning":  true,
-                      "workerPid":  34236,
+                      "workerPid":  36052,
                       "pointerRevision":  "v463-058c-r1-ab315a12",
                       "pointerProject":  "project-v463.json",
                       "processedRevision":  "v463-058c-r1-ab315a12",
@@ -39,12 +39,12 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-10T17:59:47.4914007Z"
+                      "updatedUtc":  "2026-09-10T18:00:53.4594045Z"
                   },
                   {
                       "lane":  "openclaw",
                       "workerRunning":  true,
-                      "workerPid":  34396,
+                      "workerPid":  30152,
                       "pointerRevision":  "v4628-058a18-evidence-r1-c3172ee3",
                       "pointerProject":  "project-v4628-evidence.json",
                       "processedRevision":  "v4613-058a4-r1-13ea28e0",
@@ -54,8 +54,8 @@
                       "nextRetryUtc":  "2026-09-10T18:03:40.4785270Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-10T17:59:58.7554850Z"
+                      "updatedUtc":  "2026-09-10T18:00:52.8122588Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T18:00:00.8264345Z"
+    "updatedUtc":  "2026-09-10T18:01:07.5919293Z"
 }
