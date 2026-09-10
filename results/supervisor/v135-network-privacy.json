@@ -4,7 +4,7 @@
     "pointerRevision":  "np-v5-status-source-r1-6844dab3",
     "pointerProject":  "project-security-privacy-status-source-v5.json",
     "processedRevision":  "np-v4-bridge-handler-r1-35c82b19",
-    "status":  "EXECUTION_WAIT",
+    "status":  "RUNNING",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
@@ -12,6 +12,6 @@
     "lastTerminalUtc":  "2026-09-10T01:49:31.7201212Z",
     "lastExitCode":  null,
     "workerPid":  23736,
-    "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T01:53:39.5046554Z"
+    "runnerPid":  39432,
+    "updatedUtc":  "2026-09-10T01:53:41.7068804Z"
 }
