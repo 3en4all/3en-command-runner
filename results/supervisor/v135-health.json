@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  6,
+                      "stateAgeSeconds":  10,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:53:02.7586444Z"
+                      "updatedUtc":  "2026-09-10T00:53:33.2606646Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -36,15 +36,15 @@
                       "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
                       "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
                       "processedRevision":  "",
-                      "status":  "EXECUTION_WAIT",
+                      "status":  "RUNNING",
                       "attempts":  9,
                       "lastError":  "",
                       "nextRetryUtc":  "2026-09-10T00:42:05.9613410Z",
-                      "runnerPid":  null,
+                      "runnerPid":  39216,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  140,
+                      "stateAgeSeconds":  3,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:50:48.9860426Z"
+                      "updatedUtc":  "2026-09-10T00:53:40.0652793Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  5,
+                      "stateAgeSeconds":  9,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:53:04.1556182Z"
+                      "updatedUtc":  "2026-09-10T00:53:34.6396394Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -70,16 +70,16 @@
                       "pointerRevision":  "v4616-058a7-r1-4f2791ef",
                       "pointerProject":  "project-v4616.json",
                       "processedRevision":  "",
-                      "status":  "RUNNING",
+                      "status":  "RETRY_PENDING",
                       "attempts":  9,
-                      "lastError":  "",
-                      "nextRetryUtc":  "2026-09-10T00:45:31.7998112Z",
-                      "runnerPid":  40248,
+                      "lastError":  "RUNNER_TIMEOUT",
+                      "nextRetryUtc":  "2026-09-10T00:58:38.8227262Z",
+                      "runnerPid":  null,
                       "lastExitCode":  124,
-                      "stateAgeSeconds":  152,
+                      "stateAgeSeconds":  5,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:50:37.3898829Z"
+                      "updatedUtc":  "2026-09-10T00:53:38.8257613Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T00:53:09.3756397Z"
+    "updatedUtc":  "2026-09-10T00:53:43.6231175Z"
 }
