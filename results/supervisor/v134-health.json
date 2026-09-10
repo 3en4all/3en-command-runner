@@ -20,14 +20,14 @@
                       "pointerProject":  "project-v464.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  1,
+                      "attempts":  2,
                       "lastError":  "RUNNER_EXIT_2",
-                      "nextRetryUtc":  "2026-09-10T00:16:48.3105392Z",
+                      "nextRetryUtc":  "2026-09-10T00:17:53.8631312Z",
                       "runnerPid":  null,
                       "lastExitCode":  2,
-                      "stateAgeSeconds":  16,
+                      "stateAgeSeconds":  15,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:16:18.3135707Z"
+                      "updatedUtc":  "2026-09-10T00:16:53.8631312Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -36,15 +36,15 @@
                       "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
                       "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
                       "processedRevision":  "",
-                      "status":  "SYNCING",
+                      "status":  "RETRY_PENDING",
                       "attempts":  4,
-                      "lastError":  "",
-                      "nextRetryUtc":  "2026-09-10T00:16:30.0437296Z",
+                      "lastError":  "RUNNER_EXIT_2",
+                      "nextRetryUtc":  "2026-09-10T00:20:37.5628612Z",
                       "runnerPid":  null,
                       "lastExitCode":  2,
-                      "stateAgeSeconds":  1,
+                      "stateAgeSeconds":  15,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:16:33.4326601Z"
+                      "updatedUtc":  "2026-09-10T00:16:53.8965775Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  5,
+                      "stateAgeSeconds":  10,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:16:28.9116213Z"
+                      "updatedUtc":  "2026-09-10T00:16:59.4143863Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -70,16 +70,16 @@
                       "pointerRevision":  "v4616-058a7-r1-4f2791ef",
                       "pointerProject":  "project-v4616.json",
                       "processedRevision":  "",
-                      "status":  "RUNNING",
+                      "status":  "RETRY_PENDING",
                       "attempts":  3,
-                      "lastError":  "",
-                      "nextRetryUtc":  "2026-09-10T00:13:36.8003825Z",
-                      "runnerPid":  19572,
+                      "lastError":  "Cannot overwrite variable pid because it is read-only or constant.",
+                      "nextRetryUtc":  "2026-09-10T00:18:42.5578360Z",
+                      "runnerPid":  null,
                       "lastExitCode":  2,
-                      "stateAgeSeconds":  173,
+                      "stateAgeSeconds":  10,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:13:41.5314959Z"
+                      "updatedUtc":  "2026-09-10T00:16:59.1183411Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T00:16:34.5811978Z"
+    "updatedUtc":  "2026-09-10T00:17:09.1143775Z"
 }
