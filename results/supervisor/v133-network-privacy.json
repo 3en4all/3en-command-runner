@@ -5,13 +5,13 @@
     "pointerProject":  "project-security-privacy-status-source-v5.json",
     "processedRevision":  "",
     "status":  "SYNCING",
-    "attempts":  10,
+    "attempts":  11,
     "lastError":  "",
-    "nextRetryUtc":  "2026-09-10T15:38:23.1614045Z",
-    "lastStartedUtc":  "2026-09-10T15:38:29.7363712Z",
-    "lastTerminalUtc":  "2026-09-10T15:33:23.1614045Z",
+    "nextRetryUtc":  "2026-09-10T15:43:34.3560151Z",
+    "lastStartedUtc":  "2026-09-10T15:43:41.1023776Z",
+    "lastTerminalUtc":  "2026-09-10T15:38:34.3560151Z",
     "lastExitCode":  1,
     "workerPid":  32292,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T15:38:29.7363712Z"
+    "updatedUtc":  "2026-09-10T15:43:41.1023776Z"
 }
