@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-10-v4624-openclaw-local-dependency-reuse",
+  "title":"OpenClaw local dependency reuse 3EN job acceptance",
+  "policy":{"showErrors":true,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-10-058a14","path":"tasks/2026-09-10-058a14.json","expectedStatus":"SUCCESS"}]
+}
