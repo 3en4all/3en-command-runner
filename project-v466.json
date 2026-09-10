@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-10-v466-supervisor-v135-migration",
+  "title":"Supervisor v1.3.5 canonical migration",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-10-058f","path":"tasks/2026-09-10-058f.json","expectedStatus":"SUCCESS"}]
+}
