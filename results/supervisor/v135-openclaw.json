@@ -4,7 +4,7 @@
     "pointerRevision":  "v4616-058a7-r1-4f2791ef",
     "pointerProject":  "project-v4616.json",
     "processedRevision":  "",
-    "status":  "EXECUTION_WAIT",
+    "status":  "RUNNING",
     "attempts":  9,
     "lastError":  "",
     "nextRetryUtc":  "2026-09-10T00:45:31.7998112Z",
@@ -13,5 +13,5 @@
     "lastExitCode":  124,
     "workerPid":  10132,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T00:50:35.0731715Z"
+    "updatedUtc":  "2026-09-10T00:50:36.3009262Z"
 }
