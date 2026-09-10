@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  2,
+                      "stateAgeSeconds":  10,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:25:15.7618310Z"
+                      "updatedUtc":  "2026-09-10T00:26:16.7544414Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -37,14 +37,14 @@
                       "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  5,
-                      "lastError":  "RUNNER_EXIT_2",
-                      "nextRetryUtc":  "2026-09-10T00:25:46.2182621Z",
+                      "attempts":  6,
+                      "lastError":  "RUNNER_EXIT_4",
+                      "nextRetryUtc":  "2026-09-10T00:31:21.5962460Z",
                       "runnerPid":  null,
-                      "lastExitCode":  2,
-                      "stateAgeSeconds":  11,
+                      "lastExitCode":  4,
+                      "stateAgeSeconds":  5,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:25:06.7595614Z"
+                      "updatedUtc":  "2026-09-10T00:26:21.5977630Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  1,
+                      "stateAgeSeconds":  9,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:25:17.4489201Z"
+                      "updatedUtc":  "2026-09-10T00:26:18.4000057Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -76,10 +76,10 @@
                       "nextRetryUtc":  "2026-09-10T00:29:11.8707091Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  5,
+                      "stateAgeSeconds":  13,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:25:13.8195953Z"
+                      "updatedUtc":  "2026-09-10T00:26:14.7999657Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T00:25:18.3263359Z"
+    "updatedUtc":  "2026-09-10T00:26:27.4429625Z"
 }
