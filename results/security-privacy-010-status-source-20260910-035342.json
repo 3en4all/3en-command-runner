@@ -1,0 +1,25 @@
+{
+    "projectId":  "2026-09-10-security-privacy-status-source-v5",
+    "chapterId":  "security-privacy-010-status-source",
+    "risk":  "low",
+    "status":  "SUCCESS",
+    "stage":  "TERMINAL",
+    "attempts":  1,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "TEST_1",
+                      "status":  "OK",
+                      "error":  null
+                  }
+              ]
+}
