@@ -4,14 +4,14 @@
     "pointerRevision":  "np-v5-status-source-r1-6844dab3",
     "pointerProject":  "project-security-privacy-status-source-v5.json",
     "processedRevision":  "",
-    "status":  "RETRY_PENDING",
-    "attempts":  22,
-    "lastError":  "RUNNER_EXIT_1",
+    "status":  "SYNCING",
+    "attempts":  23,
+    "lastError":  "",
     "nextRetryUtc":  "2026-09-10T16:45:42.9398122Z",
-    "lastStartedUtc":  "2026-09-10T16:40:38.7929289Z",
+    "lastStartedUtc":  "2026-09-10T16:45:49.3316978Z",
     "lastTerminalUtc":  "2026-09-10T16:40:42.9398122Z",
     "lastExitCode":  1,
     "workerPid":  32292,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T16:40:42.9413236Z"
+    "updatedUtc":  "2026-09-10T16:45:49.3316978Z"
 }
