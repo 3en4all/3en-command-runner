@@ -4,14 +4,14 @@
     "pointerRevision":  "v4616-058a7-r1-4f2791ef",
     "pointerProject":  "project-v4616.json",
     "processedRevision":  "",
-    "status":  "RUNNING",
+    "status":  "RETRY_PENDING",
     "attempts":  3,
-    "lastError":  "",
-    "nextRetryUtc":  "2026-09-10T00:13:36.8003825Z",
+    "lastError":  "Cannot overwrite variable pid because it is read-only or constant.",
+    "nextRetryUtc":  "2026-09-10T00:18:42.5578360Z",
     "lastStartedUtc":  "2026-09-10T00:13:38.9058298Z",
     "lastTerminalUtc":  "2026-09-10T00:12:36.7988638Z",
     "lastExitCode":  2,
     "workerPid":  30012,
-    "runnerPid":  19572,
-    "updatedUtc":  "2026-09-10T00:13:41.5314959Z"
+    "runnerPid":  null,
+    "updatedUtc":  "2026-09-10T00:16:42.5578360Z"
 }
