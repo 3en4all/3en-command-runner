@@ -1,0 +1,18 @@
+powershell.exe : C:\3EN-Agent\install-3en-job-executor-058a17.ps1 : Exception calling ".ctor" with "2" argument(s): "analizo
+wanie "(?s)  if\(
+At line:1 char:299
++ ... meoutSec 20;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\3EN-Agent\in...nie "(?s)  if\(:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+powershell.exe : C:\3EN-Agent\install-3en-job-executor-058a17.ps1 : Exception calling ".ctor" with "2" argument(s): "analizo
+wanie "(?s)  if\(
+At line:1 char:1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\3EN-Agent\in...nie "(?s)  if\(:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
