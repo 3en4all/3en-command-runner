@@ -4,7 +4,7 @@
     "pointerRevision":  "np-v4-bridge-handler-r1-35c82b19",
     "pointerProject":  "project-security-privacy-local-handler-v4.json",
     "processedRevision":  "np-v3-local-bridge-evidence-r1-e9c362bb",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
@@ -13,5 +13,5 @@
     "lastExitCode":  null,
     "workerPid":  23736,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T01:48:59.5462384Z"
+    "updatedUtc":  "2026-09-10T01:49:01.0180154Z"
 }
