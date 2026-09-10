@@ -4,7 +4,7 @@
     "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
     "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
     "processedRevision":  "",
-    "status":  "EXECUTION_WAIT",
+    "status":  "RUNNING",
     "attempts":  13,
     "lastError":  "",
     "nextRetryUtc":  "2026-09-10T01:21:11.2334679Z",
@@ -13,5 +13,5 @@
     "lastExitCode":  4,
     "workerPid":  23736,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T01:21:20.0683748Z"
+    "updatedUtc":  "2026-09-10T01:21:21.1574691Z"
 }
