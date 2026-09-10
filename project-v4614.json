@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-10-v4614-openclaw-installed-cli-compatible-executor",
+  "title":"OpenClaw installed-CLI compatible 3EN job executor acceptance",
+  "policy":{"showErrors":false,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":true,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-10-058a5","path":"tasks/2026-09-10-058a5.json","expectedStatus":"SUCCESS"}]
+}
