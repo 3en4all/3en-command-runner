@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-10-058e",
+  "title":"Hotfix supervisor v1.3.4 timeout kill and pointer freshness",
+  "description":"Backup the live supervisor v1.3.4, replace the read-only $PID collision in timeout tree-kill, add cache-busting to pointer/file reads when exact patterns match, validate PowerShell syntax, schedule a delayed scoped restart of v1.3.4, and verify the patched file.",
+  "risk":"medium",
+  "backup":"Write-Output 'V465_058E_BACKUP=PERFORMED_INSIDE_PATCH_WITH_EXACT_LOCAL_COPY'",
+  "script":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/2ebbc5300a0ba368596d37549a82cd2536c68e32/scripts/hotfix-supervisor-v134-058e.ps1';$d='C:/3EN-Agent/hotfix-supervisor-v134-058e.ps1';Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d -Phase Patch",
+  "test":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/hotfix-supervisor-v134-058e.ps1 -Phase Test",
+  "rollback":"$b='C:/3EN-Agent/backups/supervisor-v134-pre-hotfix-058e.ps1';$d='C:/3EN-Agent/3en-multiproject-supervisor-v1.3.4.ps1';if(Test-Path $b){Copy-Item $b $d -Force;Write-Output 'V465_058E_ROLLBACK=PASS'}else{Write-Output 'V465_058E_ROLLBACK=NO_BACKUP';exit 52}"
+}
