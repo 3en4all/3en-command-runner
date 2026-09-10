@@ -1,0 +1,15 @@
+V4613_058A4_BACKUP=DIAGNOSTIC_ONLY_OPENCLAW_INSTALL_IS_TRANSACTIONAL
+
+V4613_058A4_VERSION_EXIT=0;TIMEOUT=False
+V4613_058A4_DOCTOR_EXIT=1;TIMEOUT=False
+V4613_058A4_DOCTOR_ERROR= OpenClaw does not recognize option "--json". Try: openclaw plugins doctor --help 
+V4613_058A4_LIST_EXIT=0;TIMEOUT=False
+V4613_058A4_NODE_CHECK_EXIT=1;TIMEOUT=False
+V4613_058A4_NODE_CHECK_ERROR= node:internal/modules/cjs/loader:1520   throw err;   ^ Error: Cannot find module 'C:\3EN-Agent\"C:\3EN-Agent\openclaw-plugins\3en-job-executor\index.js"'     at node:internal/modules/cjs/loader:1517:15     at node:internal/main/check_syntax:33:20 {   code: 'MODULE_NOT_FOUND',   requireStack: [] } Node.js v24.19.0 
+V4613_058A4_NPM_LS_EXIT=1;TIMEOUT=False
+V4613_058A4_NPM_LS_ERROR= Nazwa pliku, nazwa katalogu lub składnia etykiety woluminu jest niepoprawna. 
+V4613_058A4_INSTALL_PROBE_EXIT=1;TIMEOUT=False
+V4613_058A4_INSTALL_PROBE_ERROR= OpenClaw does not recognize option "--accept-capabilities". Try: openclaw plugins install --help 
+
+V4613_058A4_TEST=PASS;VERSION_EXIT=0;DOCTOR_EXIT=1;INSTALL_EXIT=1
+
