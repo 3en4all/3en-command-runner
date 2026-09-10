@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-10-058a12",
+  "title":"Reuse registered OpenClaw plugin and verify 3en_job",
+  "description":"Evidence-based correction after 058a11: preserve explicit child working directory and targeted TypeBox install, skip the hanging uninstall/reinstall cycle when 3en-job-executor is already registered, enable it, restart Gateway, and perform actual model-free 3en_job positive write plus path-escape negative acceptance with rollback on failure.",
+  "risk":"medium",
+  "backup":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/install-3en-job-executor-058a12.ps1';$d='C:/3EN-Agent/install-3en-job-executor-058a12.ps1';Invoke-WebRequest -UseBasicParsing -Uri ($u+'?ts='+[DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()) -OutFile $d -TimeoutSec 20;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d -Phase Backup",
+  "script":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/install-3en-job-executor-058a12.ps1 -Phase Install",
+  "test":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/install-3en-job-executor-058a12.ps1 -Phase Test",
+  "rollback":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/install-3en-job-executor-058a12.ps1 -Phase Rollback"
+}
