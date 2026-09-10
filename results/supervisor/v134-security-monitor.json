@@ -1,0 +1,17 @@
+{
+    "schemaVersion":  4,
+    "lane":  "security-monitor",
+    "pointerRevision":  "v463-058c-r1-ab315a12",
+    "pointerProject":  "project-v463.json",
+    "processedRevision":  "",
+    "status":  "SYNCING",
+    "attempts":  1,
+    "lastError":  "",
+    "nextRetryUtc":  "",
+    "lastStartedUtc":  "2026-09-10T00:11:55.9875659Z",
+    "lastTerminalUtc":  "",
+    "lastExitCode":  null,
+    "workerPid":  38088,
+    "runnerPid":  null,
+    "updatedUtc":  "2026-09-10T00:11:55.9890849Z"
+}
