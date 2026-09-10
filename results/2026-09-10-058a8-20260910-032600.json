@@ -1,0 +1,25 @@
+{
+    "projectId":  "2026-09-10-v4617-openclaw-bounded-plugin-executor",
+    "chapterId":  "2026-09-10-058a8",
+    "risk":  "medium",
+    "status":  "FAILED",
+    "stage":  "TERMINAL",
+    "attempts":  1,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "FAILED",
+                      "error":  "058A8_NPM_EXIT_-4058 OUTPUT=npm error code ENOENT | npm error syscall open | npm error path C:\\3EN-Agent\\package.json | npm "
+                  },
+                  {
+                      "name":  "ROLLBACK",
+                      "status":  "OK",
+                      "error":  null
+                  }
+              ]
+}
