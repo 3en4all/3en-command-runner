@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  6,
+                      "stateAgeSeconds":  9,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:47:13.9268608Z"
+                      "updatedUtc":  "2026-09-10T01:47:44.4176661Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -42,9 +42,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  7,
+                      "stateAgeSeconds":  10,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:47:12.8529318Z"
+                      "updatedUtc":  "2026-09-10T01:47:43.3358100Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  5,
+                      "stateAgeSeconds":  9,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:47:14.5504574Z"
+                      "updatedUtc":  "2026-09-10T01:47:45.0140590Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -76,10 +76,10 @@
                       "nextRetryUtc":  "2026-09-10T01:47:01.6649561Z",
                       "runnerPid":  46476,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  11,
+                      "stateAgeSeconds":  45,
                       "stale":  false,
                       "updatedUtc":  "2026-09-10T01:47:09.1008277Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T01:47:20.0644352Z"
+    "updatedUtc":  "2026-09-10T01:47:54.1474905Z"
 }
