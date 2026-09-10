@@ -4,7 +4,7 @@
     "pointerRevision":  "np-v5-status-source-r1-6844dab3",
     "pointerProject":  "project-security-privacy-status-source-v5.json",
     "processedRevision":  "",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  31,
     "lastError":  "",
     "nextRetryUtc":  "2026-09-10T17:27:15.3338118Z",
@@ -13,5 +13,5 @@
     "lastExitCode":  1,
     "workerPid":  32292,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T17:27:23.6144385Z"
+    "updatedUtc":  "2026-09-10T17:27:25.2470438Z"
 }
