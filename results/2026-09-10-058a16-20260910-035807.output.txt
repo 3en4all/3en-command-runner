@@ -1,0 +1,18 @@
+powershell.exe : C:\3EN-Agent\install-3en-job-executor-058a16.ps1 : Exception calling "Replace" with "4" argument(s): "anali
+zowanie "(?s)  if
+At line:1 char:299
++ ... meoutSec 20;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\3EN-Agent\in...wanie "(?s)  if:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+powershell.exe : C:\3EN-Agent\install-3en-job-executor-058a16.ps1 : Exception calling "Replace" with "4" argument(s): "anali
+zowanie "(?s)  if
+At line:1 char:1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\3EN-Agent\in...wanie "(?s)  if:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
