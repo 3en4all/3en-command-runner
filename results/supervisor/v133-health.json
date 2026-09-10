@@ -19,12 +19,12 @@
                       "pointerProject":  "project-security-privacy-status-source-v5.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  8,
+                      "attempts":  9,
                       "lastError":  "RUNNER_EXIT_1",
-                      "nextRetryUtc":  "2026-09-10T15:33:12.1077654Z",
+                      "nextRetryUtc":  "2026-09-10T15:38:23.1614045Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-10T15:32:33.3418032Z"
+                      "updatedUtc":  "2026-09-10T15:33:39.5939745Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,7 +39,7 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-10T15:32:34.8456161Z"
+                      "updatedUtc":  "2026-09-10T15:33:36.0664838Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -49,13 +49,13 @@
                       "pointerProject":  "project-v4628-evidence.json",
                       "processedRevision":  "v4613-058a4-r1-13ea28e0",
                       "status":  "RETRY_PENDING",
-                      "attempts":  8,
+                      "attempts":  9,
                       "lastError":  "RUNNER_EXIT_1",
-                      "nextRetryUtc":  "2026-09-10T15:33:12.1649563Z",
+                      "nextRetryUtc":  "2026-09-10T15:38:23.1076488Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-10T15:32:33.1451072Z"
+                      "updatedUtc":  "2026-09-10T15:33:39.6384598Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T15:32:37.4502974Z"
+    "updatedUtc":  "2026-09-10T15:33:42.0570465Z"
 }
