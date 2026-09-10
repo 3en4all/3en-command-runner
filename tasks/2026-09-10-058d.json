@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-10-058d",
+  "title":"Discover installed OpenClaw plugin CLI capabilities",
+  "description":"Read-only discovery of the locally installed OpenClaw version and plugin install/enable/inspect help so automation can select the exact supported non-interactive contract.",
+  "risk":"low",
+  "backup":"Write-Output 'V464_058D_BACKUP=READ_ONLY_DISCOVERY'",
+  "script":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/4b5199fce08fb2290779077ce4913aa3aa6be5e0/scripts/openclaw-cli-capability-discovery-058d.ps1';$d='C:/3EN-Agent/openclaw-cli-capability-discovery-058d.ps1';Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d",
+  "test":"$p='C:/3EN-Agent/workbench/maintenance-058d/openclaw-cli-capabilities.json';if(-not(Test-Path $p)){throw '058D_EVIDENCE_MISSING'};$e=Get-Content $p -Raw|ConvertFrom-Json;if([string]$e.status-ne'PASS'){throw '058D_BAD_STATUS'};Write-Output 'V464_058D_TEST=PASS'",
+  "rollback":"Write-Output 'V464_058D_ROLLBACK=NOT_REQUIRED_READ_ONLY'"
+}
