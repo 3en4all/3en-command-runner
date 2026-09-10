@@ -1,17 +1,17 @@
 {
     "schemaVersion":  4,
     "lane":  "network-privacy",
-    "pointerRevision":  "np-v4-bridge-handler-r1-35c82b19",
-    "pointerProject":  "project-security-privacy-local-handler-v4.json",
+    "pointerRevision":  "np-v5-status-source-r1-6844dab3",
+    "pointerProject":  "project-security-privacy-status-source-v5.json",
     "processedRevision":  "np-v4-bridge-handler-r1-35c82b19",
-    "status":  "TERMINAL",
+    "status":  "SYNCING",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
-    "lastStartedUtc":  "2026-09-10T01:48:59.5462384Z",
+    "lastStartedUtc":  "2026-09-10T01:53:36.9046007Z",
     "lastTerminalUtc":  "2026-09-10T01:49:31.7201212Z",
-    "lastExitCode":  0,
+    "lastExitCode":  null,
     "workerPid":  23736,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T01:49:31.7201212Z"
+    "updatedUtc":  "2026-09-10T01:53:36.9046007Z"
 }
