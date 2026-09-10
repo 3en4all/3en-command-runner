@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-10-058a5",
+  "title":"Install and accept 3EN job executor with installed OpenClaw CLI",
+  "description":"Use only flags supported by the locally installed OpenClaw CLI, preserve full command evidence, install and enable the deterministic 3en_job plugin, restart Gateway, verify an allowed model-free write, and verify path escape is blocked.",
+  "risk":"medium",
+  "backup":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/594f0e21b6e3b552e7c45f1a34bee3537385f95d/scripts/install-3en-job-executor-058a5.ps1';$d='C:/3EN-Agent/install-3en-job-executor-058a5.ps1';Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d -Phase Backup",
+  "script":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/install-3en-job-executor-058a5.ps1 -Phase Install",
+  "test":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/install-3en-job-executor-058a5.ps1 -Phase Test",
+  "rollback":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/install-3en-job-executor-058a5.ps1 -Phase Rollback"
+}
