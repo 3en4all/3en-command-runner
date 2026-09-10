@@ -24,22 +24,22 @@
                       "nextRetryUtc":  "2026-09-10T00:06:56.5480746Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "updatedUtc":  "2026-09-10T00:04:30.3900198Z"
+                      "updatedUtc":  "2026-09-10T00:05:31.6098262Z"
                   },
                   {
                       "lane":  "security-monitor",
                       "workerRunning":  true,
                       "workerPid":  47436,
-                      "pointerRevision":  "v462-058b-r1-8ec40754",
-                      "pointerProject":  "project-v462.json",
-                      "processedRevision":  "v462-058b-r1-8ec40754",
+                      "pointerRevision":  "v4621-058b2-r1-8ec40754",
+                      "pointerProject":  "project-v4621.json",
+                      "processedRevision":  "v4621-058b2-r1-8ec40754",
                       "status":  "TERMINAL",
-                      "attempts":  1,
+                      "attempts":  2,
                       "lastError":  "",
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-10T00:04:32.7904076Z"
+                      "updatedUtc":  "2026-09-10T00:05:44.8068413Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -49,13 +49,13 @@
                       "pointerProject":  "project-v4614.json",
                       "processedRevision":  "v4613-058a4-r1-13ea28e0",
                       "status":  "RUNNING",
-                      "attempts":  1,
+                      "attempts":  2,
                       "lastError":  "",
-                      "nextRetryUtc":  "",
+                      "nextRetryUtc":  "2026-09-10T00:05:42.9183946Z",
                       "runnerPid":  null,
-                      "lastExitCode":  null,
-                      "updatedUtc":  "2026-09-10T00:03:01.2622684Z"
+                      "lastExitCode":  4,
+                      "updatedUtc":  "2026-09-10T00:05:46.4717074Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T00:04:41.3688475Z"
+    "updatedUtc":  "2026-09-10T00:05:47.2114893Z"
 }
