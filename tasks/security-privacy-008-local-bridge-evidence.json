@@ -1,0 +1,10 @@
+{
+  "id":"security-privacy-008-local-bridge-evidence",
+  "title":"Security Privacy - collect bridge evidence locally",
+  "description":"Read-only local diagnosis of the 127.0.0.1:8766 Security Monitor bridge: listener/process ownership, short HTTP status probe, relevant scheduled tasks/process command lines, and local source references. No configuration changes.",
+  "risk":"low",
+  "backup":"Write-Host 'NP008_READ_ONLY_NO_BACKUP_REQUIRED'",
+  "script":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/collect-network-privacy-bridge-local-evidence.ps1';$d='C:/3EN-Agent/collect-network-privacy-bridge-local-evidence.ps1';Invoke-WebRequest -UseBasicParsing -Uri ($u+'?ts='+[DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()) -OutFile $d -TimeoutSec 20;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d",
+  "test":"if(-not(Test-Path 'C:/3EN-Agent/collect-network-privacy-bridge-local-evidence.ps1')){throw 'NP008_COLLECTOR_MISSING'};Write-Host 'NP008_LOCAL_EVIDENCE_COLLECTION=PASS'",
+  "rollback":"Write-Host 'NP008_READ_ONLY_NO_ROLLBACK_REQUIRED'"
+}
