@@ -1,0 +1,13 @@
+V467_058G_BACKUP=PERFORMED_INSIDE_HARDENING_SCRIPT
+
+powershell.exe : C:\3EN-Agent\harden-supervisor-v135-execution-058g.ps1 : The variable '$uri' cannot be retrieved because it
+ has not been set
+At line:1 char:296
++ ... -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\3EN-Agent\ha...as not been set:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+V467_058G_ROLLBACK_SOURCE=PASS
+
