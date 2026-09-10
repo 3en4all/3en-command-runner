@@ -1,0 +1,24 @@
+MERGE007_BACKUP=MERGER_MANAGED
+MERGE007_TIME=2026-09-10T02:36:40.7306125+02:00
+
+Invoke-RestMethod : The operation has timed out.
+At line:1 char:423
++ ... ECK';try{$b=Invoke-RestMethod -Uri 'http://127.0.0.1:8766/api/status' ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebExceptio 
+   n
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+ 
+
+Invoke-RestMethod : The operation has timed out.
+At C:\3EN-Agent\merge-security-monitor-into-privacy-gui-v1.ps1:26 char:11
++   $bridge=Invoke-RestMethod -Uri ($BridgeUrl+'/api/status') -TimeoutS ...
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebExceptio 
+   n
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+ 
+
+MERGE007_PHASE=ROLLBACK
+MERGE007_ROLLBACK=FAILED;ERROR=merge state missing
+
