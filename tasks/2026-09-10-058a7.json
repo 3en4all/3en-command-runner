@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-10-058a7",
+  "title":"Install and accept 3EN job executor using compatible linked-plugin flags",
+  "description":"Install the local deterministic 3en_job plugin using link mode without incompatible force, dynamically use only supported CLI flags, restart Gateway, verify a model-free write inside the allowed workspace, verify path escape is blocked, and rollback automatically on failure.",
+  "risk":"medium",
+  "backup":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/4f2791eff7fc7e181b68f88c83b2fd90c6717ecd/scripts/install-3en-job-executor-058a7.ps1';$d='C:/3EN-Agent/install-3en-job-executor-058a7.ps1';Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d -Phase Backup",
+  "script":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/install-3en-job-executor-058a7.ps1 -Phase Install",
+  "test":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/install-3en-job-executor-058a7.ps1 -Phase Test",
+  "rollback":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/install-3en-job-executor-058a7.ps1 -Phase Rollback"
+}
