@@ -1,0 +1,13 @@
+V466_058F_BACKUP=PERFORMED_INSIDE_MIGRATION_SCRIPT
+
+powershell.exe : C:\3EN-Agent\migrate-supervisor-v135-058f.ps1 : The variable '$uri' cannot be retrieved because it has not 
+been set.
+At line:1 char:278
++ ... -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\3EN-Agent\mi...s not been set.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+V466_058F_ROLLBACK_SOURCE=PASS
+
