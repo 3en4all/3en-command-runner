@@ -15,16 +15,16 @@
                       "lane":  "network-privacy",
                       "workerRunning":  true,
                       "workerPid":  32292,
-                      "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
-                      "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
+                      "pointerRevision":  "np-v5-status-source-r1-6844dab3",
+                      "pointerProject":  "project-security-privacy-status-source-v5.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  18,
-                      "lastError":  "RUNNER_EXIT_2",
-                      "nextRetryUtc":  "2026-09-10T00:12:06.4008103Z",
+                      "attempts":  2,
+                      "lastError":  "RUNNER_EXIT_1",
+                      "nextRetryUtc":  "2026-09-10T15:06:16.2959891Z",
                       "runnerPid":  null,
-                      "lastExitCode":  2,
-                      "updatedUtc":  "2026-09-10T00:11:42.7001478Z"
+                      "lastExitCode":  1,
+                      "updatedUtc":  "2026-09-10T15:05:32.7998419Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,23 +39,23 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-10T00:11:37.4513241Z"
+                      "updatedUtc":  "2026-09-10T15:05:36.6258994Z"
                   },
                   {
                       "lane":  "openclaw",
                       "workerRunning":  true,
                       "workerPid":  34396,
-                      "pointerRevision":  "v4615-058a6-r1-ac9f0041",
-                      "pointerProject":  "project-v4615.json",
+                      "pointerRevision":  "v4628-058a18-evidence-r1-c3172ee3",
+                      "pointerProject":  "project-v4628-evidence.json",
                       "processedRevision":  "v4613-058a4-r1-13ea28e0",
                       "status":  "RETRY_PENDING",
                       "attempts":  2,
-                      "lastError":  "RUNNER_EXIT_4",
-                      "nextRetryUtc":  "2026-09-10T00:12:06.2159253Z",
+                      "lastError":  "RUNNER_EXIT_1",
+                      "nextRetryUtc":  "2026-09-10T15:06:16.6208748Z",
                       "runnerPid":  null,
-                      "lastExitCode":  4,
-                      "updatedUtc":  "2026-09-10T00:11:37.7875645Z"
+                      "lastExitCode":  1,
+                      "updatedUtc":  "2026-09-10T15:05:33.1291052Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T15:04:34.5337705Z"
+    "updatedUtc":  "2026-09-10T15:05:39.4517521Z"
 }
