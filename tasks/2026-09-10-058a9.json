@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-10-058a9",
+  "title":"Collect OpenClaw 058a8 evidence locally",
+  "description":"Read local 058a8 runner/workbench/process evidence directly on C:\\3EN-Agent and emit the exact failure markers to the runner transcript. No OpenClaw configuration changes are made in this diagnostic chapter.",
+  "risk":"low",
+  "backup":"Write-Host '058A9_READ_ONLY_NO_BACKUP_REQUIRED'",
+  "script":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/collect-openclaw-058a8-local-evidence.ps1';$d='C:/3EN-Agent/collect-openclaw-058a8-local-evidence.ps1';Invoke-WebRequest -UseBasicParsing -Uri ($u+'?ts='+[DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()) -OutFile $d -TimeoutSec 20;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d",
+  "test":"if(-not(Test-Path 'C:/3EN-Agent/collect-openclaw-058a8-local-evidence.ps1')){throw '058A9_COLLECTOR_MISSING'};Write-Host '058A9_LOCAL_EVIDENCE_COLLECTION=PASS'",
+  "rollback":"Write-Host '058A9_READ_ONLY_NO_ROLLBACK_REQUIRED'"
+}
