@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  2,
+                      "stateAgeSeconds":  7,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:29:50.0148595Z"
+                      "updatedUtc":  "2026-09-10T00:30:20.5123377Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -42,9 +42,9 @@
                       "nextRetryUtc":  "2026-09-10T00:31:21.5962460Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  12,
+                      "stateAgeSeconds":  1,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:29:40.8206137Z"
+                      "updatedUtc":  "2026-09-10T00:30:26.5580792Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  1,
+                      "stateAgeSeconds":  5,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:29:51.8239800Z"
+                      "updatedUtc":  "2026-09-10T00:30:22.2943115Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -76,10 +76,10 @@
                       "nextRetryUtc":  "2026-09-10T00:29:11.8707091Z",
                       "runnerPid":  27920,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  33,
+                      "stateAgeSeconds":  67,
                       "stale":  false,
                       "updatedUtc":  "2026-09-10T00:29:20.4226496Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T00:29:52.9875074Z"
+    "updatedUtc":  "2026-09-10T00:30:27.6342868Z"
 }
