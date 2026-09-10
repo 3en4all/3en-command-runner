@@ -1,0 +1,16 @@
+powershell.exe : 058A15_NODE_PATCH_TARGET_MISSING
+At line:1 char:299
++ ... meoutSec 20;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (058A15_NODE_PATCH_TARGET_MISSING:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+powershell.exe : 058A15_NODE_PATCH_TARGET_MISSING
+At line:1 char:1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (058A15_NODE_PATCH_TARGET_MISSING:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
