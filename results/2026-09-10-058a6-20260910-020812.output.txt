@@ -1,0 +1,14 @@
+V4615_058A6_BACKUP=PASS;PLUGIN_PREEXISTING=True;BACKUP=C:\3EN-Agent\backups\openclaw-plugin-3en-job-executor\20260910-020813
+
+powershell.exe : 058A6_INSTALL_EXIT_1 OUTPUT=--force is not supported with --link. Linked plugins point at the source path d
+irectly; remove -
+At line:1 char:1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (058A6_INSTALL_E...ectly; remove -:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+058A6_DISABLE=Plugin not found: 3en-job-executor. Run `openclaw plugins list` to see installed plugins, or `openclaw plugins search 3en-job-executor` to look for installable plugins.
+V4615_058A6_ROLLBACK=PASS;PLUGIN_DISABLED=true;BASELINE_RESTORED=true
+
