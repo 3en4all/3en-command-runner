@@ -1,17 +1,17 @@
 {
     "schemaVersion":  4,
     "lane":  "openclaw",
-    "pointerRevision":  "v4622-058a12-r1-fada4319",
-    "pointerProject":  "project-v4622.json",
+    "pointerRevision":  "v4623-058a13-r1-2fb10675",
+    "pointerProject":  "project-v4623.json",
     "processedRevision":  "v4618-058a9-local-evidence-r1-09012294",
-    "status":  "RETRY_PENDING",
-    "attempts":  3,
-    "lastError":  "RUNNER_EXIT_4",
-    "nextRetryUtc":  "2026-09-10T01:54:06.9971846Z",
-    "lastStartedUtc":  "2026-09-10T01:51:59.3986232Z",
+    "status":  "SYNCING",
+    "attempts":  1,
+    "lastError":  "",
+    "nextRetryUtc":  "",
+    "lastStartedUtc":  "2026-09-10T01:52:53.9961007Z",
     "lastTerminalUtc":  "2026-09-10T01:52:06.9971846Z",
-    "lastExitCode":  4,
+    "lastExitCode":  null,
     "workerPid":  10132,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T01:52:06.9987003Z"
+    "updatedUtc":  "2026-09-10T01:52:53.9961007Z"
 }
