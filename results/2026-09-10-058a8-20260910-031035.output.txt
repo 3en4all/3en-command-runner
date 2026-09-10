@@ -1,0 +1,13 @@
+V4617_058A8_BACKUP=PASS;PLUGIN_PREEXISTING=True;BACKUP=C:\3EN-Agent\backups\openclaw-plugin-3en-job-executor\20260910-031036
+
+powershell.exe : 058A8_NPM_EXIT_-4058 OUTPUT=npm error code ENOENT | npm error syscall open | npm error path C:\3EN-Agent\pa
+ckage.json | npm 
+At line:1 char:1
++ & powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agen ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (058A8_NPM_EXIT_...age.json | npm :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+V4617_058A8_ROLLBACK=PASS;PLUGIN_DISABLED=true;BASELINE_RESTORED=true
+
