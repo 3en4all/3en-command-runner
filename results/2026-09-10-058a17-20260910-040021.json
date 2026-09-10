@@ -1,0 +1,20 @@
+{
+    "projectId":  "2026-09-10-v4627-openclaw-pure-local-corrected",
+    "chapterId":  "2026-09-10-058a17",
+    "risk":  "medium",
+    "status":  "FAILED",
+    "stage":  "TERMINAL",
+    "attempts":  0,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "FAILED",
+                      "error":  "C:\\3EN-Agent\\install-3en-job-executor-058a17.ps1 : Exception calling \".ctor\" with \"2\" argument(s): \"analizowanie \"(?s)  if\\("
+                  },
+                  {
+                      "name":  "ROLLBACK",
+                      "status":  "FAILED",
+                      "error":  "C:\\3EN-Agent\\install-3en-job-executor-058a17.ps1 : Exception calling \".ctor\" with \"2\" argument(s): \"analizowanie \"(?s)  if\\("
+                  }
+              ]
+}
