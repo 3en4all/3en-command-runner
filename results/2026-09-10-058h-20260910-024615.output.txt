@@ -1,0 +1,12 @@
+V468_058H_BACKUP=PERFORMED_INSIDE_HARDENING_SCRIPT
+
+powershell.exe : 058H_VERSION_MISSING
+At line:1 char:296
++ ... -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (058H_VERSION_MISSING:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+V468_058H_ROLLBACK_SOURCE=PASS
+
