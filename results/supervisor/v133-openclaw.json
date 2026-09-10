@@ -5,13 +5,13 @@
     "pointerProject":  "project-v4628-evidence.json",
     "processedRevision":  "v4613-058a4-r1-13ea28e0",
     "status":  "RETRY_PENDING",
-    "attempts":  4,
+    "attempts":  5,
     "lastError":  "RUNNER_EXIT_1",
-    "nextRetryUtc":  "2026-09-10T15:12:30.2069922Z",
-    "lastStartedUtc":  "2026-09-10T15:08:26.3329442Z",
-    "lastTerminalUtc":  "2026-09-10T15:08:30.2054753Z",
+    "nextRetryUtc":  "2026-09-10T15:17:40.2306382Z",
+    "lastStartedUtc":  "2026-09-10T15:12:36.5461328Z",
+    "lastTerminalUtc":  "2026-09-10T15:12:40.2306382Z",
     "lastExitCode":  1,
     "workerPid":  34396,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T15:08:30.2069922Z"
+    "updatedUtc":  "2026-09-10T15:12:40.2321518Z"
 }
