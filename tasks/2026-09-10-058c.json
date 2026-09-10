@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-10-058c",
+  "title":"Migrate multi-project supervisor to v1.3.4",
+  "description":"Install supervisor v1.3.4 with a hard runner timeout and maintenance lane, validate syntax, schedule a delayed scoped switch after this chapter can finish publishing, and leave existing project pointers intact.",
+  "risk":"medium",
+  "backup":"$src='C:/3EN-Agent/3en-multiproject-supervisor-v1.3.3.ps1';$dst='C:/3EN-Agent/backups/supervisor-v133-before-v134.ps1';New-Item -ItemType Directory -Force -Path (Split-Path -Parent $dst)|Out-Null;if(Test-Path $src){Copy-Item $src $dst -Force};Write-Output 'V463_058C_BACKUP=PASS'",
+  "script":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/ab315a129490a29b075c1263452d6ea1222a483a/scripts/switch-supervisor-v134-058c.ps1';$d='C:/3EN-Agent/switch-supervisor-v134-058c.ps1';Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d -Phase Prepare",
+  "test":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/switch-supervisor-v134-058c.ps1 -Phase Verify",
+  "rollback":"Write-Output 'V463_058C_ROLLBACK=DELAYED_SWITCH_HAS_NOT_YET_EXECUTED_DURING_CHAPTER'"
+}
