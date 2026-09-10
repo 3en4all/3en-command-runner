@@ -1,0 +1,16 @@
+V464_058D_BACKUP=READ_ONLY_DISCOVERY
+
+058D_VERSION_EXIT=1
+058D_VERSION_TEXT= OpenClaw TUI needs an interactive TTY. Use `openclaw agent --local ...` for automation. | 
+058D_INSTALL_HELP_EXIT=1
+058D_INSTALL_HELP_TEXT= OpenClaw TUI needs an interactive TTY. Use `openclaw agent --local ...` for automation. | 
+058D_ENABLE_HELP_EXIT=1
+058D_ENABLE_HELP_TEXT= OpenClaw TUI needs an interactive TTY. Use `openclaw agent --local ...` for automation. | 
+058D_INSPECT_HELP_EXIT=1
+058D_INSPECT_HELP_TEXT= OpenClaw TUI needs an interactive TTY. Use `openclaw agent --local ...` for automation. | 
+058D_LIST_EXIT=1
+058D_LIST_TEXT= OpenClaw TUI needs an interactive TTY. Use `openclaw agent --local ...` for automation. | 
+V464_058D_DISCOVERY=PASS
+
+V464_058D_TEST=PASS
+
