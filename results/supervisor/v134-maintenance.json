@@ -1,0 +1,17 @@
+{
+    "schemaVersion":  4,
+    "lane":  "maintenance",
+    "pointerRevision":  "v464-058d-r1-4b5199fc",
+    "pointerProject":  "project-v464.json",
+    "processedRevision":  "",
+    "status":  "SYNCING",
+    "attempts":  1,
+    "lastError":  "",
+    "nextRetryUtc":  "",
+    "lastStartedUtc":  "2026-09-10T00:16:14.2558192Z",
+    "lastTerminalUtc":  "",
+    "lastExitCode":  null,
+    "workerPid":  8436,
+    "runnerPid":  null,
+    "updatedUtc":  "2026-09-10T00:16:14.2563286Z"
+}
