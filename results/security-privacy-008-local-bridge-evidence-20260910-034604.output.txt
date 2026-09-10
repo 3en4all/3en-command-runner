@@ -1,0 +1,52 @@
+NP008_READ_ONLY_NO_BACKUP_REQUIRED
+
+=== NP_BRIDGE_LOCAL_EVIDENCE_START ===
+TIME=2026-09-10T03:46:04.6304098+02:00
+LISTEN_COUNT=1
+LISTEN_PID=18168;ADDR=127.0.0.1
+PROCESS=python.exe;CMD="C:\Users\wi3lk\AppData\Local\Programs\Python\Python311\python.exe" C:\3EN-Agent\security-monitor-integration\3en-security-monitor-bridge-v1.py 
+HTTP_FAIL=System.Management.Automation.RuntimeException;ERROR=Unable to find type [System.Net.Http.HttpClient].
+TASK=3EN Network Autopilot;STATE=Running;LASTRESULT=267009;LASTRUN=09/09/2026 18:29:29
+TASK_ACTION=3EN Network Autopilot;EXEC=powershell.exe;ARGS=-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:/3EN-Agent/network-autopilot/3en-network-autopilot-v1.ps1
+TASK=3EN Security Monitor Bridge;STATE=Ready;LASTRESULT=267011;LASTRUN=11/30/1999 00:00:00
+TASK_ACTION=3EN Security Monitor Bridge;EXEC=C:\Users\wi3lk\AppData\Local\Programs\Python\Python311\python.exe;ARGS="C:\3EN-Agent\security-monitor-integration\3en-security-monitor-bridge-v1.py"
+MATCH_PROCESS_PID=8060;NAME=svchost.exe;CMD=C:\WINDOWS\system32\svchost.exe -k LocalSystemNetworkRestricted -p -s webthreatdefusersvc
+MATCH_PROCESS_PID=9600;NAME=svchost.exe;CMD=C:\WINDOWS\system32\svchost.exe -k WebThreatDefense -p -s webthreatdefsvc
+MATCH_PROCESS_PID=3800;NAME=msedgewebview2.exe;CMD="C:\Program Files (x86)\Microsoft\EdgeWebView\Application\148.0.3967.70\msedgewebview2.exe" --type=renderer --noerrdialogs --user-data-dir="C:\Users\wi3lk\AppData\Local\Google\DriveFS\webview2_user_data\1788970878456840\EBWebView" --webview-exe-name=GoogleDriveFS.exe --webview-exe-version=130.0.2.0 --embedded-browser-webview=1 --embedded-browser-webview-dpi-awareness=1 --video-capture-use-gpu-memory-buffer --lang=pl --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --js-flags="--expose-gc --ms-user-locale=pl_PL" --time-ticks-at-unix-epoch=-1788864240146902 --launch-time-ticks=106639035363 --ssd-no-pressure-read-main-dll --metrics-shmem-handle=3976,i,3343972461931891277,5460858766838361653,2097152 --field-trial-handle=2016,i,12751876138934430636,9153413230470766097,262144 --variations-seed-version --pseudonymization-salt-handle=2020,i,14454039933273321667,3971516775793694148,4 --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=3972 /pfhostedapp:c52a48fc96b57d556ba1e2caa440452a1ebb0728 /prefetch:1
+MATCH_PROCESS_PID=18168;NAME=python.exe;CMD="C:\Users\wi3lk\AppData\Local\Programs\Python\Python311\python.exe" C:\3EN-Agent\security-monitor-integration\3en-security-monitor-bridge-v1.py 
+MATCH_PROCESS_PID=23568;NAME=powershell.exe;CMD="C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\3EN-Agent\3en-multiproject-supervisor-v1.3.5.ps1 -Root C:\3EN-Agent -PollSeconds 15 -PublishSeconds 30 -RunnerTimeoutSeconds 180 -WorkerLane security-monitor 
+MATCH_PROCESS_PID=42332;NAME=powershell.exe;CMD="C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/collect-network-privacy-bridge-local-evidence.ps1
+SOURCE=C:\3EN-Agent\security-privacy-stack\3en-security-privacy-web.py
+51: <section id="threats" class="tab hidden"><div class="section"><h2>Threat Control</h2><div class="notice">Live threat evidence and persistent manual Block / Unblock on 3EN002. Actions are audited by 3EN Security Monitor bridge.</div><iframe title="3EN Threat Control" src="http://127.0.0.1:8766" style="width:100%;height:68vh;min-height:560px;border:1px solid var(--line);border-radius:14px;background:#0b0f14"></iframe></div></section><section id="system" class="tab hidden"><div class="section card"><h2>Detected integration</h2><div id="systemInfo" class="mono">Loading</div></div></section>
+57: async function refresh(){try{const s=await api('/api/status');state=s;$('router').textContent=s.router.ok?'ONLINE':'OFFLINE';$('router').className='v '+cls(s.router.ok);$('pihole').textContent=s.pihole.dns?'HEALTHY':'DOWN';$('pihole').className='v '+cls(s.pihole.dns);$('blocking').textContent=s.pihole.blocking?'ON':'OFF';$('blocking').className='v '+(s.pihole.blocking?'good':'warn');$('gravity').textContent='gravity: '+(s.pihole.gravity||'-');$('events').textContent=s.security.total??'-';$('health').textContent=s.summary;$('policy').textContent=JSON.stringify(s.policy,null,2);$('blockedCount').textContent=s.security.blocked;$('banipCount').textContent=s.security.banip;$('wanCount').textContent=s.security.wan;$('totalSec').textContent=s.security.total;$('recentEvents').textContent=(s.security.recent||[]).join('\n')||'No events';$('systemInfo').textContent=JSON.stringify(s.integration,null,2);$('toggleBtn').textContent=s.pihole.blocking?'Disable filtering (5 min)':'Enable filtering';$('refreshState').textContent='updated '+new Date().toLocaleTimeString();await loadLists();await loadDomains()}catch(e){$('refreshState').textContent='DEGRADED';$('health').textContent=e.message}}
+249:             if p == "/api/status": return self.send_json(status_payload())
+SOURCE=C:\3EN-Agent\3en-security-monitor-integration-v1.ps1
+11: $Url='http://127.0.0.1:8766'
+41:   $s=[pscustomobject][ordered]@{updatedUtc=$null;python=$py;routerSsh=$true;router=$Router;routerKey=$RouterKey;sourceCandidates=$hits;sourceCount=$hits.Count;bridge=$Bridge;url=$Url;backup=$null;deployed=$false}
+65:   $r=Invoke-RestMethod ($Url+'/api/status') -TimeoutSec 12
+66:   if(-not $r.routerSsh){throw 'bridge reports router SSH unavailable'}
+74:   $r=Invoke-RestMethod ($Url+'/api/status') -TimeoutSec 12
+75:   $report=@('3EN SECURITY MONITOR INTEGRATION FINAL','UTC='+((Get-Date).ToUniversalTime().ToString('o')),'URL='+$Url,'ROUTER_SSH='+$r.routerSsh,'SOURCE='+$r.source,'THREATS='+@($r.items).Count,'BLOCKED='+$r.blockedCount,'AUDIT='+$r.audit,'FINAL_STATUS=SUCCESS')
+SOURCE=C:\3EN-Agent\3en-security-privacy-deploy-v1.ps1
+59:   $r=Invoke-RestMethod -Uri ($UiUrl+'/api/status') -TimeoutSec 12
+79:   $after=Invoke-RestMethod -Uri ($UiUrl+'/api/status') -TimeoutSec 12
+90:   $st=Invoke-RestMethod -Uri ($UiUrl+'/api/status') -TimeoutSec 12
+SOURCE=C:\3EN-Agent\collect-network-privacy-bridge-local-evidence.ps1
+4: $port=8766
+15:   $sw=[Diagnostics.Stopwatch]::StartNew();$resp=$client.GetAsync('http://127.0.0.1:8766/api/status').GetAwaiter().GetResult();$body=$resp.Content.ReadAsStringAsync().GetAwaiter().GetResult();$sw.Stop()
+26:   Get-CimInstance Win32_Process -ErrorAction SilentlyContinue|Where-Object{$_.CommandLine -and ($_.CommandLine -match '8766|security.monitor|threat|bridge')}|ForEach-Object{Write-Host ('MATCH_PROCESS_PID='+$_.ProcessId+';NAME='+$_.Name+';CMD='+$_.CommandLine)}
+30: foreach($r in $roots){if(Test-Path $r){Get-ChildItem $r -File -ErrorAction SilentlyContinue|Where-Object{$_.Extension -in '.py','.ps1','.json','.txt','.log'}|ForEach-Object{if(-not$seen.ContainsKey($_.FullName)){$seen[$_.FullName]=$true;try{$m=Select-String -LiteralPath $_.FullName -Pattern '8766','api/status','routerSsh' -SimpleMatch -ErrorAction Stop|Select-Object -First 8;if($m){Write-Host ('SOURCE='+$_.FullName);foreach($h in $m){Write-Host ($h.LineNumber.ToString()+': '+$h.Line)}}}catch{}}}}}
+SOURCE=C:\3EN-Agent\merge-security-monitor-into-privacy-gui-v1.ps1
+7: $BridgeUrl='http://127.0.0.1:8766'
+26:   $bridge=Invoke-RestMethod -Uri ($BridgeUrl+'/api/status') -TimeoutSec 10
+27:   if(-not $bridge.routerSsh){throw 'Security Monitor bridge reports router SSH unavailable'}
+37:     $section='<section id="threats" class="tab hidden"><div class="section"><h2>Threat Control</h2><div class="notice">Live threat evidence and persistent manual Block / Unblock on 3EN002. Actions are audited by 3EN Security Monitor bridge.</div><iframe title="3EN Threat Control" src="http://127.0.0.1:8766" style="width:100%;height:68vh;min-height:560px;border:1px solid var(--line);border-radius:14px;background:#0b0f14"></iframe></div></section>'
+50:   if($h.Content -notmatch 'http://127\.0\.0\.1:8766'){throw 'Threat Control backend not embedded'}
+51:   $b=Invoke-RestMethod -Uri ($BridgeUrl+'/api/status') -TimeoutSec 12
+52:   if(-not $b.routerSsh){throw 'bridge router SSH unhealthy'}
+SOURCE=C:\3EN-Agent\router-pihole-finalize-v1.ps1
+116:         router = $Router; pihole = $PiHole; routerSsh = $true; piholeDns = $true
+=== NP_BRIDGE_LOCAL_EVIDENCE_END ===
+
+NP008_LOCAL_EVIDENCE_COLLECTION=PASS
+
