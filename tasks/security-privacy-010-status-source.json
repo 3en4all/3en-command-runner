@@ -1,0 +1,10 @@
+{
+  "id":"security-privacy-010-status-source",
+  "title":"Security Privacy - read exact bridge status source locally",
+  "description":"Read-only local extraction of the bridge status implementation lines needed for an evidence-based bounded-I/O repair.",
+  "risk":"low",
+  "backup":"Write-Host 'NP010_READ_ONLY_NO_BACKUP_REQUIRED'",
+  "script":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/collect-network-privacy-status-source.ps1';$d='C:/3EN-Agent/collect-network-privacy-status-source.ps1';Invoke-WebRequest -UseBasicParsing -Uri ($u+'?ts='+[DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()) -OutFile $d -TimeoutSec 20;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d",
+  "test":"Write-Host 'NP010_STATUS_SOURCE=PASS'",
+  "rollback":"Write-Host 'NP010_READ_ONLY_NO_ROLLBACK_REQUIRED'"
+}
