@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  5,
+                      "stateAgeSeconds":  9,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:11:22.9697234Z"
+                      "updatedUtc":  "2026-09-10T01:11:53.4498948Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -42,9 +42,9 @@
                       "nextRetryUtc":  "2026-09-10T01:15:33.5034988Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  8,
+                      "stateAgeSeconds":  12,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:11:20.2989828Z"
+                      "updatedUtc":  "2026-09-10T01:11:50.7557547Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  5,
+                      "stateAgeSeconds":  9,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T01:11:23.1584754Z"
+                      "updatedUtc":  "2026-09-10T01:11:53.6245525Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -76,10 +76,10 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  10632,
                       "lastExitCode":  null,
-                      "stateAgeSeconds":  54,
+                      "stateAgeSeconds":  89,
                       "stale":  false,
                       "updatedUtc":  "2026-09-10T01:10:34.5750356Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T01:11:28.7401545Z"
+    "updatedUtc":  "2026-09-10T01:12:03.1935161Z"
 }
