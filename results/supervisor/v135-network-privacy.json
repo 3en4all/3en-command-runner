@@ -3,15 +3,15 @@
     "lane":  "network-privacy",
     "pointerRevision":  "np-v4-bridge-handler-r1-35c82b19",
     "pointerProject":  "project-security-privacy-local-handler-v4.json",
-    "processedRevision":  "np-v3-local-bridge-evidence-r1-e9c362bb",
-    "status":  "RUNNING",
+    "processedRevision":  "np-v4-bridge-handler-r1-35c82b19",
+    "status":  "TERMINAL",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
     "lastStartedUtc":  "2026-09-10T01:48:59.5462384Z",
-    "lastTerminalUtc":  "2026-09-10T01:46:10.3377640Z",
-    "lastExitCode":  null,
+    "lastTerminalUtc":  "2026-09-10T01:49:31.7201212Z",
+    "lastExitCode":  0,
     "workerPid":  23736,
-    "runnerPid":  36228,
-    "updatedUtc":  "2026-09-10T01:49:24.1106691Z"
+    "runnerPid":  null,
+    "updatedUtc":  "2026-09-10T01:49:31.7201212Z"
 }
