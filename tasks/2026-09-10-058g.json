@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-10-058g",
+  "title":"Serialize supervisor execution plane and persist v1.3.5",
+  "description":"Prevent cross-lane runner mutex collisions by serializing only the execution plane with a dedicated global mutex, while preserving independent lane workers, timeout handling, state migration, canonical v1.3.5 source persistence, controlled restart, and verification.",
+  "risk":"medium",
+  "backup":"Write-Output 'V467_058G_BACKUP=PERFORMED_INSIDE_HARDENING_SCRIPT'",
+  "script":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/harden-supervisor-v135-execution-058g.ps1';$d='C:/3EN-Agent/harden-supervisor-v135-execution-058g.ps1';Invoke-WebRequest -UseBasicParsing -Uri ($u+'?ts='+[DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()) -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d -Phase Prepare",
+  "test":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/harden-supervisor-v135-execution-058g.ps1 -Phase Test",
+  "rollback":"$dirs=@(Get-ChildItem 'C:/3EN-Agent/backups/supervisor-v135-execution-058g' -Directory -ErrorAction SilentlyContinue|Sort-Object Name -Descending);if($dirs.Count-gt0){$b=Join-Path $dirs[0].FullName '3en-multiproject-supervisor-v1.3.4.ps1';if(Test-Path $b){Copy-Item $b 'C:/3EN-Agent/3en-multiproject-supervisor-v1.3.4.ps1' -Force;Write-Output 'V467_058G_ROLLBACK_SOURCE=PASS'}else{Write-Output 'V467_058G_ROLLBACK_SOURCE=NO_BACKUP'}}else{Write-Output 'V467_058G_ROLLBACK_SOURCE=NO_BACKUP_DIR'}"
+}
