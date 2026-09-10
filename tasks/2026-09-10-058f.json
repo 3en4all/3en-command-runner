@@ -1,0 +1,10 @@
+{
+  "id":"2026-09-10-058f",
+  "title":"Persist and migrate supervisor v1.3.5",
+  "description":"Build canonical supervisor v1.3.5 from repository v1.3.4 plus the proven 058e hotfix, preserve lane state, publish the v1.3.5 source to the repository, perform a controlled v1.3.4 to v1.3.5 restart, and verify syntax and hardening invariants.",
+  "risk":"medium",
+  "backup":"Write-Output 'V466_058F_BACKUP=PERFORMED_INSIDE_MIGRATION_SCRIPT'",
+  "script":"$u='https://raw.githubusercontent.com/3en4all/3en-command-runner/main/scripts/migrate-supervisor-v135-058f.ps1';$d='C:/3EN-Agent/migrate-supervisor-v135-058f.ps1';Invoke-WebRequest -UseBasicParsing -Uri ($u+'?ts='+[DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()) -OutFile $d;& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $d -Phase Prepare",
+  "test":"& powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/3EN-Agent/migrate-supervisor-v135-058f.ps1 -Phase Test",
+  "rollback":"$candidates=@(Get-ChildItem 'C:/3EN-Agent/backups/supervisor-v135-migration-058f' -Directory -ErrorAction SilentlyContinue|Sort-Object Name -Descending);if($candidates.Count-gt0){$b=Join-Path $candidates[0].FullName '3en-multiproject-supervisor-v1.3.4.live.ps1';if(Test-Path $b){Copy-Item $b 'C:/3EN-Agent/3en-multiproject-supervisor-v1.3.4.ps1' -Force;Write-Output 'V466_058F_ROLLBACK_SOURCE=PASS'}else{Write-Output 'V466_058F_ROLLBACK_SOURCE=NO_BACKUP'}}else{Write-Output 'V466_058F_ROLLBACK_SOURCE=NO_BACKUP_DIR'}"
+}
