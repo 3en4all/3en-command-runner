@@ -3,15 +3,15 @@
     "lane":  "security-monitor",
     "pointerRevision":  "v463-058c-r1-ab315a12",
     "pointerProject":  "project-v463.json",
-    "processedRevision":  "v4621-058b2-r1-8ec40754",
-    "status":  "RUNNING",
+    "processedRevision":  "v463-058c-r1-ab315a12",
+    "status":  "TERMINAL",
     "attempts":  3,
     "lastError":  "",
-    "nextRetryUtc":  "2026-09-10T00:11:27.2807986Z",
+    "nextRetryUtc":  "",
     "lastStartedUtc":  "2026-09-10T00:11:29.3351149Z",
-    "lastTerminalUtc":  "2026-09-10T00:10:27.2807986Z",
-    "lastExitCode":  2,
+    "lastTerminalUtc":  "2026-09-10T00:11:37.4498057Z",
+    "lastExitCode":  0,
     "workerPid":  47436,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T00:11:31.0248570Z"
+    "updatedUtc":  "2026-09-10T00:11:37.4513241Z"
 }
