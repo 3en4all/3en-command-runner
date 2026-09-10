@@ -1,0 +1,30 @@
+{
+    "projectId":  "2026-09-10-v4616-openclaw-linked-plugin-executor",
+    "chapterId":  "2026-09-10-058a7",
+    "risk":  "medium",
+    "status":  "FAILED",
+    "stage":  "TERMINAL",
+    "attempts":  1,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "TEST_1",
+                      "status":  "FAILED",
+                      "error":  "058A7_ACCEPTANCE_FAIL pos=500/False neg=500/False outside=False"
+                  },
+                  {
+                      "name":  "ROLLBACK",
+                      "status":  "OK",
+                      "error":  null
+                  }
+              ]
+}
