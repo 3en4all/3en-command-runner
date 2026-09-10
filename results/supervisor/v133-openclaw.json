@@ -4,7 +4,7 @@
     "pointerRevision":  "v4628-058a18-evidence-r1-c3172ee3",
     "pointerProject":  "project-v4628-evidence.json",
     "processedRevision":  "v4613-058a4-r1-13ea28e0",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  9,
     "lastError":  "",
     "nextRetryUtc":  "2026-09-10T15:33:12.1649563Z",
@@ -13,5 +13,5 @@
     "lastExitCode":  1,
     "workerPid":  34396,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T15:33:18.9658487Z"
+    "updatedUtc":  "2026-09-10T15:33:20.7398760Z"
 }
