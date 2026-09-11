@@ -4,14 +4,14 @@
     "pointerRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
     "pointerProject":  "project-rdc-remote-repair-20260911.json",
     "processedRevision":  "v4613-058a4-r1-13ea28e0",
-    "status":  "RETRY_PENDING",
-    "attempts":  17,
-    "lastError":  "RUNNER_EXIT_1",
+    "status":  "SYNCING",
+    "attempts":  18,
+    "lastError":  "",
     "nextRetryUtc":  "2026-09-11T06:20:22.3004961Z",
-    "lastStartedUtc":  "2026-09-11T06:15:18.6404627Z",
+    "lastStartedUtc":  "2026-09-11T06:20:28.1467637Z",
     "lastTerminalUtc":  "2026-09-11T06:15:22.3004961Z",
     "lastExitCode":  1,
     "workerPid":  6168,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-11T06:15:22.3020061Z"
+    "updatedUtc":  "2026-09-11T06:20:28.1467637Z"
 }
