@@ -1,4 +1,4 @@
 {
-  "id": "2026-09-09-001",
-  "command": "Get-Date; Get-ComputerInfo | Select-Object CsName, WindowsProductName, WindowsVersion"
+  "id": "2026-09-11-rdc-emergency-001",
+  "command": "$ErrorActionPreference='Stop'; $root='C:\\3EN-Agent'; $cmd=Join-Path $root 'start-remote-desktop-commander.cmd'; $npx=(Get-Command npx.cmd -ErrorAction Stop).Source; $body='@echo off`r`ntimeout /t 45 /nobreak >nul`r`n\"'+$npx+'\" -y @wonderwhy-er/desktop-commander >> \"C:\\3EN-Agent\\rdc-startup.log\" 2>&1`r`n'; Set-Content -LiteralPath $cmd -Value $body -Encoding ASCII; New-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run' -Name '3EN-RemoteDesktopCommander' -Value ('cmd.exe /d /c \"'+$cmd+'\"') -PropertyType String -Force | Out-Null; Start-Process -FilePath 'cmd.exe' -ArgumentList '/d','/c',('\"'+$cmd+'\"') -WindowStyle Hidden; Write-Output ('RDC_EMERGENCY_START=PASS;CMD='+$cmd+';NPX='+$npx)"
 }
