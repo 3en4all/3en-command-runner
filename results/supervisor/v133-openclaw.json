@@ -4,7 +4,7 @@
     "pointerRevision":  "rdc-autostart-repair-20260911-r1",
     "pointerProject":  "project-rdc-autostart-repair-20260911.json",
     "processedRevision":  "v4613-058a4-r1-13ea28e0",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  1,
     "lastError":  "",
     "nextRetryUtc":  "",
@@ -13,5 +13,5 @@
     "lastExitCode":  null,
     "workerPid":  6168,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-11T03:45:43.5557569Z"
+    "updatedUtc":  "2026-09-11T03:45:45.0662840Z"
 }
