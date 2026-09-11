@@ -19,12 +19,12 @@
                       "pointerProject":  "project-security-privacy-gui-v1.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  114,
+                      "attempts":  115,
                       "lastError":  "RUNNER_EXIT_1",
-                      "nextRetryUtc":  "2026-09-11T16:46:50.2123237Z",
+                      "nextRetryUtc":  "2026-09-11T16:51:59.7557472Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-11T16:46:25.9483375Z"
+                      "updatedUtc":  "2026-09-11T16:47:31.4219315Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,7 +39,7 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-11T16:46:19.3721873Z"
+                      "updatedUtc":  "2026-09-11T16:47:20.3666268Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -49,13 +49,13 @@
                       "pointerProject":  "project-rdc-remote-repair-20260911.json",
                       "processedRevision":  "v4613-058a4-r1-13ea28e0",
                       "status":  "RETRY_PENDING",
-                      "attempts":  99,
+                      "attempts":  100,
                       "lastError":  "RUNNER_EXIT_1",
-                      "nextRetryUtc":  "2026-09-11T16:46:50.4859719Z",
+                      "nextRetryUtc":  "2026-09-11T16:51:59.9085160Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-11T16:46:26.5797977Z"
+                      "updatedUtc":  "2026-09-11T16:47:31.5885399Z"
                   }
               ],
-    "updatedUtc":  "2026-09-11T16:46:29.5155223Z"
+    "updatedUtc":  "2026-09-11T16:47:34.0795686Z"
 }
