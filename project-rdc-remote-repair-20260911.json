@@ -1,0 +1,7 @@
+{
+  "schemaVersion":1,
+  "projectId":"2026-09-11-rdc-remote-repair",
+  "title":"Repair 3EN035 Remote Desktop Commander Remote Device startup",
+  "policy":{"showErrors":true,"maxAttempts":1,"publishRetries":3,"autoRollbackOnFinalFailure":false,"highRiskAction":"reject"},
+  "chapters":[{"id":"2026-09-11-060-rdc-remote-repair","path":"tasks/2026-09-11-060-rdc-remote-repair.json","expectedStatus":"SUCCESS"}]
+}
