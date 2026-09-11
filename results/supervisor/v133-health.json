@@ -19,12 +19,12 @@
                       "pointerProject":  "project-security-privacy-gui-v1.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  85,
+                      "attempts":  86,
                       "lastError":  "RUNNER_EXIT_1",
-                      "nextRetryUtc":  "2026-09-11T14:17:14.6579581Z",
+                      "nextRetryUtc":  "2026-09-11T14:22:24.2057206Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-11T14:16:20.0517997Z"
+                      "updatedUtc":  "2026-09-11T14:17:24.2072296Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,7 +39,7 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-11T14:16:16.9453279Z"
+                      "updatedUtc":  "2026-09-11T14:17:33.1744027Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -49,13 +49,13 @@
                       "pointerProject":  "project-rdc-remote-repair-20260911.json",
                       "processedRevision":  "v4613-058a4-r1-13ea28e0",
                       "status":  "RETRY_PENDING",
-                      "attempts":  70,
+                      "attempts":  71,
                       "lastError":  "RUNNER_EXIT_1",
-                      "nextRetryUtc":  "2026-09-11T14:17:15.6907767Z",
+                      "nextRetryUtc":  "2026-09-11T14:22:25.1302731Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-11T14:16:21.0615972Z"
+                      "updatedUtc":  "2026-09-11T14:17:25.1302731Z"
                   }
               ],
-    "updatedUtc":  "2026-09-11T14:16:29.5477565Z"
+    "updatedUtc":  "2026-09-11T14:17:33.9897767Z"
 }
