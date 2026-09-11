@@ -4,14 +4,14 @@
     "pointerRevision":  "rdc-autostart-repair-20260911-r2",
     "pointerProject":  "project-rdc-autostart-repair-20260911.json",
     "processedRevision":  "v4613-058a4-r1-13ea28e0",
-    "status":  "RUNNING",
+    "status":  "RETRY_PENDING",
     "attempts":  1,
-    "lastError":  "",
-    "nextRetryUtc":  "",
+    "lastError":  "RUNNER_EXIT_1",
+    "nextRetryUtc":  "2026-09-11T03:47:27.4511850Z",
     "lastStartedUtc":  "2026-09-11T03:46:53.8499303Z",
-    "lastTerminalUtc":  "2026-09-11T03:46:22.2744151Z",
-    "lastExitCode":  null,
+    "lastTerminalUtc":  "2026-09-11T03:46:57.4511850Z",
+    "lastExitCode":  1,
     "workerPid":  6168,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-11T03:46:55.3959419Z"
+    "updatedUtc":  "2026-09-11T03:46:57.4528112Z"
 }
