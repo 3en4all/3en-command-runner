@@ -5,7 +5,7 @@
     "pointerTransport":  "github-contents-api",
     "runnerTransport":  "synchronous-last-exit-code",
     "status":  "HEALTHY",
-    "coordinatorPid":  34340,
+    "coordinatorPid":  32700,
     "runner":  "C:\\3EN-Agent\\3en-agent-runner-v4.0.3.ps1",
     "pollSeconds":  15,
     "publishSeconds":  60,
@@ -14,22 +14,22 @@
                   {
                       "lane":  "network-privacy",
                       "workerRunning":  true,
-                      "workerPid":  18348,
+                      "workerPid":  32240,
                       "pointerRevision":  "2026-09-10T20:44:00+02:00-security-privacy-gui-v1",
                       "pointerProject":  "project-security-privacy-gui-v1.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  7,
+                      "attempts":  8,
                       "lastError":  "RUNNER_EXIT_1",
-                      "nextRetryUtc":  "2026-09-10T19:09:27.3710194Z",
+                      "nextRetryUtc":  "2026-09-10T19:14:37.4831860Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-10T19:08:47.8984844Z"
+                      "updatedUtc":  "2026-09-10T19:09:37.4846509Z"
                   },
                   {
                       "lane":  "security-monitor",
                       "workerRunning":  true,
-                      "workerPid":  36052,
+                      "workerPid":  4536,
                       "pointerRevision":  "v463-058c-r1-ab315a12",
                       "pointerProject":  "project-v463.json",
                       "processedRevision":  "v463-058c-r1-ab315a12",
@@ -39,12 +39,12 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-10T19:08:57.3689353Z"
+                      "updatedUtc":  "2026-09-10T19:09:43.2122178Z"
                   },
                   {
                       "lane":  "openclaw",
                       "workerRunning":  true,
-                      "workerPid":  30152,
+                      "workerPid":  6168,
                       "pointerRevision":  "v4628-058a18-evidence-r1-c3172ee3",
                       "pointerProject":  "project-v4628-evidence.json",
                       "processedRevision":  "v4613-058a4-r1-13ea28e0",
@@ -54,8 +54,8 @@
                       "nextRetryUtc":  "2026-09-10T19:11:16.6001045Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-10T19:08:50.2513383Z"
+                      "updatedUtc":  "2026-09-10T19:09:51.2563611Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T19:09:03.4825837Z"
+    "updatedUtc":  "2026-09-11T03:09:15.4944443Z"
 }
