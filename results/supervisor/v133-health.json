@@ -19,12 +19,12 @@
                       "pointerProject":  "project-security-privacy-gui-v1.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  123,
+                      "attempts":  124,
                       "lastError":  "RUNNER_EXIT_1",
-                      "nextRetryUtc":  "2026-09-11T17:33:16.4305576Z",
+                      "nextRetryUtc":  "2026-09-11T17:38:26.1004451Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-11T17:32:22.1387629Z"
+                      "updatedUtc":  "2026-09-11T17:33:26.1019586Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,7 +39,7 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-11T17:32:21.0418415Z"
+                      "updatedUtc":  "2026-09-11T17:33:37.3282801Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -49,13 +49,13 @@
                       "pointerProject":  "project-rdc-remote-repair-20260911.json",
                       "processedRevision":  "v4613-058a4-r1-13ea28e0",
                       "status":  "RETRY_PENDING",
-                      "attempts":  108,
+                      "attempts":  109,
                       "lastError":  "RUNNER_EXIT_1",
-                      "nextRetryUtc":  "2026-09-11T17:33:16.3651307Z",
+                      "nextRetryUtc":  "2026-09-11T17:38:25.6319685Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-11T17:32:21.6721803Z"
+                      "updatedUtc":  "2026-09-11T17:33:25.6334804Z"
                   }
               ],
-    "updatedUtc":  "2026-09-11T17:32:34.0804505Z"
+    "updatedUtc":  "2026-09-11T17:33:38.3168152Z"
 }
