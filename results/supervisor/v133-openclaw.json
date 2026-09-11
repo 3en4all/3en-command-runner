@@ -4,7 +4,7 @@
     "pointerRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
     "pointerProject":  "project-rdc-remote-repair-20260911.json",
     "processedRevision":  "v4613-058a4-r1-13ea28e0",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  13,
     "lastError":  "",
     "nextRetryUtc":  "2026-09-11T05:54:28.9597357Z",
@@ -13,5 +13,5 @@
     "lastExitCode":  1,
     "workerPid":  6168,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-11T05:54:36.0124188Z"
+    "updatedUtc":  "2026-09-11T05:54:37.7801858Z"
 }
