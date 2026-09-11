@@ -18,13 +18,13 @@
                       "pointerRevision":  "2026-09-10T20:44:00+02:00-security-privacy-gui-v1",
                       "pointerProject":  "project-security-privacy-gui-v1.json",
                       "processedRevision":  "",
-                      "status":  "SYNCING",
+                      "status":  "RETRY_PENDING",
                       "attempts":  50,
-                      "lastError":  "",
-                      "nextRetryUtc":  "2026-09-11T09:18:27.6440350Z",
+                      "lastError":  "RUNNER_EXIT_1",
+                      "nextRetryUtc":  "2026-09-11T09:23:37.5722170Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-11T09:18:33.7804094Z"
+                      "updatedUtc":  "2026-09-11T09:19:24.5067968Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,7 +39,7 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-11T09:18:19.1973407Z"
+                      "updatedUtc":  "2026-09-11T09:19:35.4841840Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -48,14 +48,14 @@
                       "pointerRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
                       "pointerProject":  "project-rdc-remote-repair-20260911.json",
                       "processedRevision":  "v4613-058a4-r1-13ea28e0",
-                      "status":  "SYNCING",
+                      "status":  "RETRY_PENDING",
                       "attempts":  35,
-                      "lastError":  "",
-                      "nextRetryUtc":  "2026-09-11T09:18:27.5499189Z",
+                      "lastError":  "RUNNER_EXIT_1",
+                      "nextRetryUtc":  "2026-09-11T09:23:37.5386251Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-11T09:18:33.7701896Z"
+                      "updatedUtc":  "2026-09-11T09:19:24.3312889Z"
                   }
               ],
-    "updatedUtc":  "2026-09-11T09:18:34.2396742Z"
+    "updatedUtc":  "2026-09-11T09:19:38.3355710Z"
 }
