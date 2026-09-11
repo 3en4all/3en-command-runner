@@ -5,13 +5,13 @@
     "pointerProject":  "project-security-privacy-gui-v1.json",
     "processedRevision":  "",
     "status":  "RETRY_PENDING",
-    "attempts":  70,
+    "attempts":  71,
     "lastError":  "RUNNER_EXIT_1",
-    "nextRetryUtc":  "2026-09-11T12:59:50.0151879Z",
-    "lastStartedUtc":  "2026-09-11T12:54:47.0495000Z",
-    "lastTerminalUtc":  "2026-09-11T12:54:50.0151879Z",
+    "nextRetryUtc":  "2026-09-11T13:05:00.0506293Z",
+    "lastStartedUtc":  "2026-09-11T12:59:56.6280408Z",
+    "lastTerminalUtc":  "2026-09-11T13:00:00.0506293Z",
     "lastExitCode":  1,
     "workerPid":  32240,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-11T12:54:50.0161932Z"
+    "updatedUtc":  "2026-09-11T13:00:00.0523191Z"
 }
