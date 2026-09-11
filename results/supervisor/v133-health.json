@@ -24,7 +24,7 @@
                       "nextRetryUtc":  "2026-09-11T22:21:58.6363829Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-11T22:20:02.8158945Z"
+                      "updatedUtc":  "2026-09-11T22:21:03.7553668Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,7 +39,7 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-11T22:19:51.9485041Z"
+                      "updatedUtc":  "2026-09-11T22:21:08.1273222Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -54,8 +54,8 @@
                       "nextRetryUtc":  "2026-09-11T22:21:56.9885612Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-11T22:20:01.2247469Z"
+                      "updatedUtc":  "2026-09-11T22:21:02.1531241Z"
                   }
               ],
-    "updatedUtc":  "2026-09-11T22:20:05.6600765Z"
+    "updatedUtc":  "2026-09-11T22:21:09.9187954Z"
 }
