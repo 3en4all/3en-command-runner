@@ -19,12 +19,12 @@
                       "pointerProject":  "project-security-privacy-gui-v1.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  250,
+                      "attempts":  251,
                       "lastError":  "RUNNER_EXIT_4",
-                      "nextRetryUtc":  "2026-09-12T13:00:45.7062250Z",
+                      "nextRetryUtc":  "2026-09-12T13:05:56.6399889Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "updatedUtc":  "2026-09-12T12:59:50.6789045Z"
+                      "updatedUtc":  "2026-09-12T13:00:56.6415000Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -39,7 +39,7 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-12T13:00:03.7156644Z"
+                      "updatedUtc":  "2026-09-12T13:01:05.0772554Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -54,8 +54,8 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-12T13:00:03.4851412Z"
+                      "updatedUtc":  "2026-09-12T13:01:04.7134299Z"
                   }
               ],
-    "updatedUtc":  "2026-09-12T13:00:05.7821703Z"
+    "updatedUtc":  "2026-09-12T13:01:10.2076934Z"
 }
