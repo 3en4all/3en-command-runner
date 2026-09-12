@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  2,
+                      "stateAgeSeconds":  4,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T07:32:58.3473146Z"
+                      "updatedUtc":  "2026-09-12T07:33:28.8196703Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -36,15 +36,15 @@
                       "pointerRevision":  "2026-09-10T20:44:00+02:00-security-privacy-gui-v1",
                       "pointerProject":  "project-security-privacy-gui-v1.json",
                       "processedRevision":  "",
-                      "status":  "RETRY_PENDING",
-                      "attempts":  5,
-                      "lastError":  "RUNNER_EXIT_4",
+                      "status":  "SYNCING",
+                      "attempts":  6,
+                      "lastError":  "",
                       "nextRetryUtc":  "2026-09-12T07:33:26.9041046Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  13,
+                      "stateAgeSeconds":  1,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T07:32:46.9734693Z"
+                      "updatedUtc":  "2026-09-12T07:33:32.7016372Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  1,
+                      "stateAgeSeconds":  4,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T07:32:59.3271046Z"
+                      "updatedUtc":  "2026-09-12T07:33:29.8279781Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -76,10 +76,10 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  2,
+                      "stateAgeSeconds":  4,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T07:32:58.9303971Z"
+                      "updatedUtc":  "2026-09-12T07:33:29.4058790Z"
                   }
               ],
-    "updatedUtc":  "2026-09-12T07:33:00.6506244Z"
+    "updatedUtc":  "2026-09-12T07:33:33.5889565Z"
 }
