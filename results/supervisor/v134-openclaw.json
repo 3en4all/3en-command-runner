@@ -1,17 +1,17 @@
 {
     "schemaVersion":  4,
     "lane":  "openclaw",
-    "pointerRevision":  "v4616-058a7-r1-4f2791ef",
-    "pointerProject":  "project-v4616.json",
+    "pointerRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
+    "pointerProject":  "project-rdc-remote-repair-20260911.json",
     "processedRevision":  "",
-    "status":  "RETRY_PENDING",
-    "attempts":  8,
-    "lastError":  "RUNNER_TIMEOUT",
-    "nextRetryUtc":  "2026-09-10T00:45:31.7998112Z",
-    "lastStartedUtc":  "2026-09-10T00:37:27.9868047Z",
+    "status":  "SYNCING",
+    "attempts":  1,
+    "lastError":  "",
+    "nextRetryUtc":  "",
+    "lastStartedUtc":  "2026-09-12T07:20:18.2501581Z",
     "lastTerminalUtc":  "2026-09-10T00:40:31.7998112Z",
-    "lastExitCode":  124,
-    "workerPid":  9464,
+    "lastExitCode":  null,
+    "workerPid":  23236,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T00:40:31.8014160Z"
+    "updatedUtc":  "2026-09-12T07:20:18.2531818Z"
 }
