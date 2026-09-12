@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  5,
+                      "stateAgeSeconds":  7,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T07:20:46.6770563Z"
+                      "updatedUtc":  "2026-09-12T07:21:17.1681787Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -37,14 +37,14 @@
                       "pointerProject":  "project-security-privacy-gui-v1.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  1,
-                      "lastError":  "RUNNER_EXIT_4",
-                      "nextRetryUtc":  "2026-09-12T07:20:54.7206443Z",
+                      "attempts":  2,
+                      "lastError":  "RUNNER_EXIT_2",
+                      "nextRetryUtc":  "2026-09-12T07:22:00.1907687Z",
                       "runnerPid":  null,
-                      "lastExitCode":  4,
-                      "stateAgeSeconds":  11,
+                      "lastExitCode":  2,
+                      "stateAgeSeconds":  8,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T07:20:41.0146406Z"
+                      "updatedUtc":  "2026-09-12T07:21:16.6896558Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  4,
+                      "stateAgeSeconds":  6,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T07:20:48.0736176Z"
+                      "updatedUtc":  "2026-09-12T07:21:18.5534898Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -69,17 +69,17 @@
                       "workerPid":  23236,
                       "pointerRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
                       "pointerProject":  "project-rdc-remote-repair-20260911.json",
-                      "processedRevision":  "",
-                      "status":  "RETRY_PENDING",
-                      "attempts":  1,
-                      "lastError":  "RUNNER_EXIT_2",
-                      "nextRetryUtc":  "2026-09-12T07:20:51.9443717Z",
+                      "processedRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
+                      "status":  "TERMINAL",
+                      "attempts":  2,
+                      "lastError":  "",
+                      "nextRetryUtc":  "",
                       "runnerPid":  null,
-                      "lastExitCode":  2,
-                      "stateAgeSeconds":  14,
+                      "lastExitCode":  0,
+                      "stateAgeSeconds":  9,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T07:20:38.3316532Z"
+                      "updatedUtc":  "2026-09-12T07:21:16.4163077Z"
                   }
               ],
-    "updatedUtc":  "2026-09-12T07:20:51.8941749Z"
+    "updatedUtc":  "2026-09-12T07:21:24.9936120Z"
 }
