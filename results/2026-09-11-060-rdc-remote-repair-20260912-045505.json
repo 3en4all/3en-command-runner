@@ -1,0 +1,25 @@
+{
+    "projectId":  "2026-09-11-rdc-remote-repair",
+    "chapterId":  "2026-09-11-060-rdc-remote-repair",
+    "risk":  "medium",
+    "status":  "SUCCESS",
+    "stage":  "TERMINAL",
+    "attempts":  1,
+    "steps":  [
+                  {
+                      "name":  "BACKUP",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "SCRIPT_1",
+                      "status":  "OK",
+                      "error":  null
+                  },
+                  {
+                      "name":  "TEST_1",
+                      "status":  "OK",
+                      "error":  null
+                  }
+              ]
+}
