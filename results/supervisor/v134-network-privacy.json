@@ -4,7 +4,7 @@
     "pointerRevision":  "2026-09-10T20:44:00+02:00-security-privacy-gui-v1",
     "pointerProject":  "project-security-privacy-gui-v1.json",
     "processedRevision":  "",
-    "status":  "SYNCING",
+    "status":  "RUNNING",
     "attempts":  37,
     "lastError":  "",
     "nextRetryUtc":  "2026-09-12T10:14:00.2839617Z",
@@ -13,5 +13,5 @@
     "lastExitCode":  4,
     "workerPid":  10088,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-12T10:14:06.3143340Z"
+    "updatedUtc":  "2026-09-12T10:14:07.9896400Z"
 }
