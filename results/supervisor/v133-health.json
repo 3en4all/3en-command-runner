@@ -5,7 +5,7 @@
     "pointerTransport":  "github-contents-api",
     "runnerTransport":  "synchronous-last-exit-code",
     "status":  "HEALTHY",
-    "coordinatorPid":  36132,
+    "coordinatorPid":  6876,
     "runner":  "C:\\3EN-Agent\\3en-agent-runner-v4.0.3.ps1",
     "pollSeconds":  15,
     "publishSeconds":  60,
@@ -14,7 +14,7 @@
                   {
                       "lane":  "network-privacy",
                       "workerRunning":  true,
-                      "workerPid":  32240,
+                      "workerPid":  26264,
                       "pointerRevision":  "2026-09-10T20:44:00+02:00-security-privacy-gui-v1",
                       "pointerProject":  "project-security-privacy-gui-v1.json",
                       "processedRevision":  "",
@@ -24,12 +24,12 @@
                       "nextRetryUtc":  "2026-09-12T02:54:45.8495388Z",
                       "runnerPid":  null,
                       "lastExitCode":  1,
-                      "updatedUtc":  "2026-09-12T02:52:19.1913178Z"
+                      "updatedUtc":  "2026-09-12T02:54:13.9584751Z"
                   },
                   {
                       "lane":  "security-monitor",
                       "workerRunning":  true,
-                      "workerPid":  4536,
+                      "workerPid":  20924,
                       "pointerRevision":  "v463-058c-r1-ab315a12",
                       "pointerProject":  "project-v463.json",
                       "processedRevision":  "v463-058c-r1-ab315a12",
@@ -39,12 +39,12 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-12T02:52:28.2558915Z"
+                      "updatedUtc":  "2026-09-12T02:54:13.9384832Z"
                   },
                   {
                       "lane":  "openclaw",
                       "workerRunning":  true,
-                      "workerPid":  6168,
+                      "workerPid":  27748,
                       "pointerRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
                       "pointerProject":  "project-rdc-remote-repair-20260911.json",
                       "processedRevision":  "v4613-058a4-r1-13ea28e0",
@@ -57,5 +57,5 @@
                       "updatedUtc":  "2026-09-12T02:52:19.9273231Z"
                   }
               ],
-    "updatedUtc":  "2026-09-12T02:52:29.1798493Z"
+    "updatedUtc":  "2026-09-12T02:54:14.7683893Z"
 }
