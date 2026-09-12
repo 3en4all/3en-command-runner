@@ -6,7 +6,7 @@
     "runnerTransport":  "child-process-timeout",
     "runnerTimeoutSeconds":  180,
     "status":  "HEALTHY",
-    "coordinatorPid":  46972,
+    "coordinatorPid":  27552,
     "runner":  "C:\\3EN-Agent\\3en-agent-runner-v4.0.3.ps1",
     "pollSeconds":  15,
     "publishSeconds":  30,
@@ -15,7 +15,7 @@
                   {
                       "lane":  "maintenance",
                       "workerRunning":  true,
-                      "workerPid":  36016,
+                      "workerPid":  8136,
                       "pointerRevision":  "v469-058i-r1-6321ae25",
                       "pointerProject":  "project-v469.json",
                       "processedRevision":  "v469-058i-r1-6321ae25",
@@ -25,31 +25,31 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  7,
+                      "stateAgeSeconds":  2,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:49:43.6072664Z"
+                      "updatedUtc":  "2026-09-12T07:20:16.2103177Z"
                   },
                   {
                       "lane":  "network-privacy",
                       "workerRunning":  true,
-                      "workerPid":  18412,
-                      "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
-                      "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
+                      "workerPid":  10088,
+                      "pointerRevision":  "2026-09-10T20:44:00+02:00-security-privacy-gui-v1",
+                      "pointerProject":  "project-security-privacy-gui-v1.json",
                       "processedRevision":  "",
-                      "status":  "IDLE",
-                      "attempts":  8,
-                      "lastError":  "RUNNER_EXIT_4",
-                      "nextRetryUtc":  "2026-09-10T00:42:05.9613410Z",
+                      "status":  "SYNCING",
+                      "attempts":  1,
+                      "lastError":  "",
+                      "nextRetryUtc":  "",
                       "runnerPid":  null,
-                      "lastExitCode":  4,
-                      "stateAgeSeconds":  15,
+                      "lastExitCode":  null,
+                      "stateAgeSeconds":  1,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:49:35.4812883Z"
+                      "updatedUtc":  "2026-09-12T07:20:16.8700877Z"
                   },
                   {
                       "lane":  "security-monitor",
                       "workerRunning":  true,
-                      "workerPid":  40524,
+                      "workerPid":  36576,
                       "pointerRevision":  "v463-058c-r1-ab315a12",
                       "pointerProject":  "project-v463.json",
                       "processedRevision":  "v463-058c-r1-ab315a12",
@@ -59,27 +59,27 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  9,
+                      "stateAgeSeconds":  1,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:49:41.8573170Z"
+                      "updatedUtc":  "2026-09-12T07:20:17.5759464Z"
                   },
                   {
                       "lane":  "openclaw",
                       "workerRunning":  true,
-                      "workerPid":  9464,
-                      "pointerRevision":  "v4616-058a7-r1-4f2791ef",
-                      "pointerProject":  "project-v4616.json",
+                      "workerPid":  23236,
+                      "pointerRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
+                      "pointerProject":  "project-rdc-remote-repair-20260911.json",
                       "processedRevision":  "",
-                      "status":  "IDLE",
-                      "attempts":  8,
-                      "lastError":  "RUNNER_TIMEOUT",
-                      "nextRetryUtc":  "2026-09-10T00:45:31.7998112Z",
+                      "status":  "SYNCING",
+                      "attempts":  1,
+                      "lastError":  "",
+                      "nextRetryUtc":  "",
                       "runnerPid":  null,
-                      "lastExitCode":  124,
-                      "stateAgeSeconds":  9,
+                      "lastExitCode":  null,
+                      "stateAgeSeconds":  0,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-10T00:49:41.7334284Z"
+                      "updatedUtc":  "2026-09-12T07:20:18.2531818Z"
                   }
               ],
-    "updatedUtc":  "2026-09-10T00:49:51.1699271Z"
+    "updatedUtc":  "2026-09-12T07:20:18.6140753Z"
 }
