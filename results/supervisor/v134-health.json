@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  12,
+                      "stateAgeSeconds":  15,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T07:53:48.4258585Z"
+                      "updatedUtc":  "2026-09-12T07:54:18.8907758Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -37,14 +37,14 @@
                       "pointerProject":  "project-security-privacy-gui-v1.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  9,
+                      "attempts":  10,
                       "lastError":  "RUNNER_EXIT_4",
-                      "nextRetryUtc":  "2026-09-12T07:54:08.0063816Z",
+                      "nextRetryUtc":  "2026-09-12T07:59:18.3664756Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  2,
+                      "stateAgeSeconds":  16,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T07:53:58.6165750Z"
+                      "updatedUtc":  "2026-09-12T07:54:18.3679940Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  11,
+                      "stateAgeSeconds":  15,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T07:53:49.2394448Z"
+                      "updatedUtc":  "2026-09-12T07:54:19.7832405Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -76,10 +76,10 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  12,
+                      "stateAgeSeconds":  0,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T07:53:48.3860144Z"
+                      "updatedUtc":  "2026-09-12T07:54:34.1174092Z"
                   }
               ],
-    "updatedUtc":  "2026-09-12T07:54:00.6972664Z"
+    "updatedUtc":  "2026-09-12T07:54:34.5790166Z"
 }
