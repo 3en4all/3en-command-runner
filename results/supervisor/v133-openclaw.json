@@ -3,15 +3,15 @@
     "lane":  "openclaw",
     "pointerRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
     "pointerProject":  "project-rdc-remote-repair-20260911.json",
-    "processedRevision":  "v4613-058a4-r1-13ea28e0",
-    "status":  "RUNNING",
+    "processedRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
+    "status":  "TERMINAL",
     "attempts":  218,
     "lastError":  "",
-    "nextRetryUtc":  "2026-09-12T02:54:46.3198228Z",
+    "nextRetryUtc":  "",
     "lastStartedUtc":  "2026-09-12T02:55:01.0399832Z",
-    "lastTerminalUtc":  "2026-09-12T02:49:46.3198228Z",
-    "lastExitCode":  1,
+    "lastTerminalUtc":  "2026-09-12T02:55:27.0227104Z",
+    "lastExitCode":  0,
     "workerPid":  27748,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-12T02:55:02.8132117Z"
+    "updatedUtc":  "2026-09-12T02:55:27.0272690Z"
 }
