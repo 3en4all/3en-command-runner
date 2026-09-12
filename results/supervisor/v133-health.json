@@ -20,11 +20,11 @@
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
                       "attempts":  236,
-                      "lastError":  "RUNNER_EXIT_4",
-                      "nextRetryUtc":  "2026-09-12T03:15:40.4816152Z",
+                      "lastError":  "Nie można rozpoznać nazwy zdalnej: \u0027raw.githubusercontent.com\u0027",
+                      "nextRetryUtc":  "2026-09-12T07:22:49.5745551Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "updatedUtc":  "2026-09-12T03:12:12.9109537Z"
+                      "updatedUtc":  "2026-09-12T07:17:49.5745551Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -33,13 +33,13 @@
                       "pointerRevision":  "v463-058c-r1-ab315a12",
                       "pointerProject":  "project-v463.json",
                       "processedRevision":  "v463-058c-r1-ab315a12",
-                      "status":  "TERMINAL",
+                      "status":  "RETRY_PENDING",
                       "attempts":  3,
-                      "lastError":  "",
-                      "nextRetryUtc":  "",
+                      "lastError":  "Nie można rozpoznać nazwy zdalnej: \u0027raw.githubusercontent.com\u0027",
+                      "nextRetryUtc":  "2026-09-12T07:19:49.5881860Z",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-12T03:12:16.2919727Z"
+                      "updatedUtc":  "2026-09-12T07:17:49.5881860Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -48,14 +48,14 @@
                       "pointerRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
                       "pointerProject":  "project-rdc-remote-repair-20260911.json",
                       "processedRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
-                      "status":  "TERMINAL",
+                      "status":  "RETRY_PENDING",
                       "attempts":  218,
-                      "lastError":  "",
-                      "nextRetryUtc":  "",
+                      "lastError":  "Nie można rozpoznać nazwy zdalnej: \u0027raw.githubusercontent.com\u0027",
+                      "nextRetryUtc":  "2026-09-12T07:22:49.5427385Z",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-12T03:12:13.9834335Z"
+                      "updatedUtc":  "2026-09-12T07:17:49.5427385Z"
                   }
               ],
-    "updatedUtc":  "2026-09-12T03:12:25.7421943Z"
+    "updatedUtc":  "2026-09-12T07:18:02.4951449Z"
 }
