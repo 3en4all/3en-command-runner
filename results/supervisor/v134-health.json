@@ -25,9 +25,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  12,
+                      "stateAgeSeconds":  15,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T10:49:37.9740332Z"
+                      "updatedUtc":  "2026-09-12T10:50:08.4209794Z"
                   },
                   {
                       "lane":  "network-privacy",
@@ -42,9 +42,9 @@
                       "nextRetryUtc":  "2026-09-12T10:50:21.1946566Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "stateAgeSeconds":  9,
+                      "stateAgeSeconds":  12,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T10:49:41.2827805Z"
+                      "updatedUtc":  "2026-09-12T10:50:11.7625375Z"
                   },
                   {
                       "lane":  "security-monitor",
@@ -59,9 +59,9 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  8,
+                      "stateAgeSeconds":  10,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T10:49:42.4868828Z"
+                      "updatedUtc":  "2026-09-12T10:50:13.1522660Z"
                   },
                   {
                       "lane":  "openclaw",
@@ -76,10 +76,10 @@
                       "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "stateAgeSeconds":  13,
+                      "stateAgeSeconds":  1,
                       "stale":  false,
-                      "updatedUtc":  "2026-09-12T10:49:37.4366025Z"
+                      "updatedUtc":  "2026-09-12T10:50:23.1351684Z"
                   }
               ],
-    "updatedUtc":  "2026-09-12T10:49:50.3301770Z"
+    "updatedUtc":  "2026-09-12T10:50:23.6922608Z"
 }
