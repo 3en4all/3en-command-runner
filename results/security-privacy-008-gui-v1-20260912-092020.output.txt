@@ -1,0 +1,24 @@
+GUI_V1_BACKUP=PATCHER_MANAGED
+
+Start-ScheduledTask : Zadanie zostało wyłączone.
+
+At line:1 char:770
++ ... lyContinue};Start-ScheduledTask -TaskName '3EN Security Privacy UI' - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (PS_ScheduledTask:Root/Microsoft/...S_ScheduledTask) [Start-ScheduledTask], Cim 
+   Exception
+    + FullyQualifiedErrorId : HRESULT 0x80041326,Start-ScheduledTask
+ 
+
+Start-ScheduledTask : Zadanie zostało wyłączone.
+
+At line:1 char:524
++ ... lyContinue};Start-ScheduledTask -TaskName '3EN Security Privacy UI' - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (PS_ScheduledTask:Root/Microsoft/...S_ScheduledTask) [Start-ScheduledTask], Cim 
+   Exception
+    + FullyQualifiedErrorId : HRESULT 0x80041326,Start-ScheduledTask
+ 
+
+GUI_V1_ROLLBACK=PASS;BACKUP=C:\3EN-Agent\security-privacy-stack\gui-v1-backups\3en-security-privacy-web-20260912-092021.py
+
