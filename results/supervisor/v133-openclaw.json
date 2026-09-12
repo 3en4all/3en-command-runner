@@ -5,13 +5,13 @@
     "pointerProject":  "project-rdc-remote-repair-20260911.json",
     "processedRevision":  "v4613-058a4-r1-13ea28e0",
     "status":  "RUNNING",
-    "attempts":  189,
+    "attempts":  190,
     "lastError":  "",
-    "nextRetryUtc":  "2026-09-12T00:25:30.6328050Z",
-    "lastStartedUtc":  "2026-09-12T00:25:36.7089192Z",
-    "lastTerminalUtc":  "2026-09-12T00:20:30.6328050Z",
+    "nextRetryUtc":  "2026-09-12T00:30:39.3775819Z",
+    "lastStartedUtc":  "2026-09-12T00:30:45.2961190Z",
+    "lastTerminalUtc":  "2026-09-12T00:25:39.3775819Z",
     "lastExitCode":  1,
     "workerPid":  6168,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-12T00:25:38.1375637Z"
+    "updatedUtc":  "2026-09-12T00:30:46.9520312Z"
 }
