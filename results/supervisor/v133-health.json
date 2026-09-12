@@ -5,7 +5,7 @@
     "pointerTransport":  "github-contents-api",
     "runnerTransport":  "synchronous-last-exit-code",
     "status":  "HEALTHY",
-    "coordinatorPid":  6876,
+    "coordinatorPid":  21408,
     "runner":  "C:\\3EN-Agent\\3en-agent-runner-v4.0.3.ps1",
     "pollSeconds":  15,
     "publishSeconds":  60,
@@ -14,48 +14,48 @@
                   {
                       "lane":  "network-privacy",
                       "workerRunning":  true,
-                      "workerPid":  26264,
+                      "workerPid":  25320,
                       "pointerRevision":  "2026-09-10T20:44:00+02:00-security-privacy-gui-v1",
                       "pointerProject":  "project-security-privacy-gui-v1.json",
                       "processedRevision":  "",
                       "status":  "RETRY_PENDING",
-                      "attempts":  236,
-                      "lastError":  "Nie można rozpoznać nazwy zdalnej: \u0027raw.githubusercontent.com\u0027",
-                      "nextRetryUtc":  "2026-09-12T07:22:49.5745551Z",
+                      "attempts":  237,
+                      "lastError":  "RUNNER_EXIT_4",
+                      "nextRetryUtc":  "2026-09-12T11:53:02.9770072Z",
                       "runnerPid":  null,
                       "lastExitCode":  4,
-                      "updatedUtc":  "2026-09-12T07:19:05.7824401Z"
+                      "updatedUtc":  "2026-09-12T11:48:50.7875329Z"
                   },
                   {
                       "lane":  "security-monitor",
                       "workerRunning":  true,
-                      "workerPid":  20924,
+                      "workerPid":  25032,
                       "pointerRevision":  "v463-058c-r1-ab315a12",
                       "pointerProject":  "project-v463.json",
                       "processedRevision":  "v463-058c-r1-ab315a12",
-                      "status":  "RETRY_PENDING",
-                      "attempts":  3,
-                      "lastError":  "Nie można rozpoznać nazwy zdalnej: \u0027raw.githubusercontent.com\u0027",
-                      "nextRetryUtc":  "2026-09-12T07:19:49.5881860Z",
+                      "status":  "TERMINAL",
+                      "attempts":  4,
+                      "lastError":  "",
+                      "nextRetryUtc":  "",
                       "runnerPid":  null,
                       "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-12T07:19:05.8893152Z"
+                      "updatedUtc":  "2026-09-12T11:48:58.7363768Z"
                   },
                   {
                       "lane":  "openclaw",
                       "workerRunning":  true,
-                      "workerPid":  27748,
+                      "workerPid":  25824,
                       "pointerRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
                       "pointerProject":  "project-rdc-remote-repair-20260911.json",
                       "processedRevision":  "2026-09-11T06:05:00+02:00-rdc-remote-repair-v1",
                       "status":  "RETRY_PENDING",
-                      "attempts":  218,
-                      "lastError":  "Nie można rozpoznać nazwy zdalnej: \u0027raw.githubusercontent.com\u0027",
-                      "nextRetryUtc":  "2026-09-12T07:22:49.5427385Z",
+                      "attempts":  219,
+                      "lastError":  "RUNNER_EXIT_2",
+                      "nextRetryUtc":  "2026-09-12T11:53:01.8684639Z",
                       "runnerPid":  null,
-                      "lastExitCode":  0,
-                      "updatedUtc":  "2026-09-12T07:19:05.7421155Z"
+                      "lastExitCode":  2,
+                      "updatedUtc":  "2026-09-12T11:48:48.8781331Z"
                   }
               ],
-    "updatedUtc":  "2026-09-12T07:19:06.9546634Z"
+    "updatedUtc":  "2026-09-12T11:49:03.9297176Z"
 }
