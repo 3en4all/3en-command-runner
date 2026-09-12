@@ -1,17 +1,17 @@
 {
     "schemaVersion":  4,
     "lane":  "network-privacy",
-    "pointerRevision":  "2026-09-10T00:16:30+02:00-security-privacy-merge-recovery-v2",
-    "pointerProject":  "project-security-privacy-merge-recovery-v2.json",
+    "pointerRevision":  "2026-09-10T20:44:00+02:00-security-privacy-gui-v1",
+    "pointerProject":  "project-security-privacy-gui-v1.json",
     "processedRevision":  "",
-    "status":  "RETRY_PENDING",
-    "attempts":  8,
-    "lastError":  "RUNNER_EXIT_4",
-    "nextRetryUtc":  "2026-09-10T00:42:05.9613410Z",
-    "lastStartedUtc":  "2026-09-10T00:36:37.2281286Z",
+    "status":  "SYNCING",
+    "attempts":  1,
+    "lastError":  "",
+    "nextRetryUtc":  "",
+    "lastStartedUtc":  "2026-09-12T07:20:16.8645264Z",
     "lastTerminalUtc":  "2026-09-10T00:37:05.9613410Z",
-    "lastExitCode":  4,
-    "workerPid":  18412,
+    "lastExitCode":  null,
+    "workerPid":  10088,
     "runnerPid":  null,
-    "updatedUtc":  "2026-09-10T00:37:05.9628561Z"
+    "updatedUtc":  "2026-09-12T07:20:16.8700877Z"
 }
