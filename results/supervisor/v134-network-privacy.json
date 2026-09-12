@@ -4,14 +4,14 @@
     "pointerRevision":  "2026-09-10T20:44:00+02:00-security-privacy-gui-v1",
     "pointerProject":  "project-security-privacy-gui-v1.json",
     "processedRevision":  "",
-    "status":  "RUNNING",
+    "status":  "RETRY_PENDING",
     "attempts":  20,
-    "lastError":  "",
-    "nextRetryUtc":  "2026-09-12T08:45:53.2093652Z",
+    "lastError":  "RUNNER_EXIT_4",
+    "nextRetryUtc":  "2026-09-12T08:51:03.6048974Z",
     "lastStartedUtc":  "2026-09-12T08:45:59.1656196Z",
-    "lastTerminalUtc":  "2026-09-12T08:40:53.2093652Z",
+    "lastTerminalUtc":  "2026-09-12T08:46:03.6048974Z",
     "lastExitCode":  4,
     "workerPid":  10088,
-    "runnerPid":  5240,
-    "updatedUtc":  "2026-09-12T08:46:01.5870878Z"
+    "runnerPid":  null,
+    "updatedUtc":  "2026-09-12T08:46:03.6064089Z"
 }
